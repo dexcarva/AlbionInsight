@@ -92,5 +92,5 @@ The entire application is contained within a single file for simplicity:
 1.  **Implement Photon Protocol Decoding:** The simulation logic must be replaced with code that properly decodes the **Photon Protocol** packets used by Albion Online to extract accurate event data (e.g., `UpdateSilverEvent`, `CombatEvent`). This is a complex task requiring reverse engineering of the game's network protocol.
 
 ---
-*Developed by Manus AI as a cross-platform solution for the Albion Online community.*
+*A cross-platform solution for the Albion Online community.*
 
