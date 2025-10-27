@@ -1,75 +1,96 @@
-# Albion Online Statistics Analysis - Versão Python/Flet
+# Albion Insight
 
-Este projeto é uma reimplementação do programa original **AlbionOnline-StatisticsAnalysis** (C#/WPF) em **Python** utilizando o framework **Flet** para garantir a compatibilidade multiplataforma (Linux, Windows e macOS).
+**Albion Insight** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
 
-A lógica central do programa foi adaptada para utilizar a biblioteca **Scapy** para a captura e análise de pacotes de rede, replicando a funcionalidade de rastreamento de estatísticas em tempo real.
+This project is a modern, open-source alternative to the original C#/WPF-based `AlbionOnline-StatisticsAnalysis` tool, focusing on multi-platform compatibility and ease of use.
 
-## Funcionalidades Atuais
+## Features
 
-*   **Rastreamento de Rede:** Utiliza `Scapy` para capturar pacotes UDP nas portas do Albion Online (5055, 5056, 5058).
-*   **Simulação de Estatísticas:** Simula a extração e o processamento de eventos (Silver, Fame, Kills, Deaths, Looted Chests) a partir dos pacotes, demonstrando a arquitetura para a lógica de decodificação real.
-*   **Interface Gráfica (Flet):**
-    *   Dashboard com estatísticas em tempo real (Silver, Fame, Kills, Deaths, Looted Chests).
-    *   Cálculo de estatísticas por hora.
-    *   Controles de Iniciar/Parar Rastreamento, Resetar Estatísticas e Salvar Sessão.
-    *   Seleção de Interface de Rede.
-    *   Log de Eventos.
-*   **Compatibilidade:** A aplicação é totalmente funcional em ambientes Linux e pode ser executada em Windows e macOS com as dependências corretas.
+*   **Cross-Platform Compatibility:** Runs natively on Linux, Windows, and macOS.
+*   **Real-Time Tracking:** Uses the `Scapy` library to sniff UDP packets on Albion Online ports (5055, 5056, 5058).
+*   **Damage Meter Structure:** Includes the necessary data structures and UI to display live combat statistics (Damage Done, Healing Done, DPS).
+*   **Modern UI:** Built with Flet, providing a fast, native-looking desktop application.
+*   **Session Management:** Allows starting, stopping, resetting, and saving session statistics.
 
-## Requisitos
+## Prerequisites
 
 *   Python 3.8+
-*   **Flet**
-*   **Scapy**
-*   **Privilégios de Administrador/Root:** Necessário para a captura de pacotes de rede.
+*   **Flet** and **Scapy** libraries.
+*   **Root/Administrator Privileges:** Necessary for network packet capture.
 
-## Como Executar
+## Installation and Setup
 
-### 1. Instalação de Dependências
+### 1. Install Python Dependencies
 
-Certifique-se de ter o Python instalado. Em seguida, instale as bibliotecas necessárias:
-
-```bash
-pip3 install flet scapy
-```
-
-Em sistemas Linux, você também pode precisar instalar o `libpcap` ou `tcpdump` (dependendo da sua distribuição) para que o Scapy funcione corretamente.
-
-### 2. Execução
-
-A captura de pacotes requer permissões elevadas.
-
-**No Linux:**
+Make sure you have Python installed. Then, install the required libraries:
 
 ```bash
-sudo python3 albion_stats_analysis_expanded.py
+pip3 install flet scapy pyinstaller
 ```
 
-**No Windows (como Administrador):**
+### 2. Network Sniffing Dependencies (Linux)
+
+On Linux, you may need to install `libpcap` or `tcpdump` for Scapy to function correctly.
 
 ```bash
-python albion_stats_analysis_expanded.py
+# Example for Debian/Ubuntu
+sudo apt update
+sudo apt install libpcap-dev
 ```
 
-A aplicação será iniciada em uma janela de desktop nativa.
+### 3. Running the Application
 
-## Estrutura do Código
+Since network sniffing requires elevated privileges, you must run the application as root or administrator.
 
-O código está contido no arquivo `albion_stats_analysis_expanded.py` e segue uma arquitetura modular:
+**On Linux:**
 
-| Módulo | Descrição |
+```bash
+sudo python3 albion_insight.py
+```
+
+**On Windows (Run Command Prompt/PowerShell as Administrator):**
+
+```bash
+python albion_insight.py
+```
+
+The application will open in a native desktop window.
+
+## How to Build an Executable
+
+The application can be packaged into a standalone executable using **PyInstaller**. This allows users to run the application without installing Python or its dependencies.
+
+### 1. Build Command
+
+Run the following command from the project root directory:
+
+```bash
+pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight.py
+```
+
+*   `--name "AlbionInsight"`: Sets the name of the executable file.
+*   `--onefile`: Creates a single executable file (easier distribution).
+*   `--windowed`: Hides the console window (for Windows/macOS desktop apps).
+
+### 2. Distribution
+
+The executable will be located in the `dist` folder. You can distribute this file to users of the respective operating system.
+
+## Project Structure
+
+The entire application is contained within a single file for simplicity:
+
+| File | Description |
 | :--- | :--- |
-| `LiveStats` | Modelo de dados para armazenar as estatísticas em tempo real. |
-| `NetworkTracker` | Lógica de rastreamento de rede (`Scapy`) e simulação de processamento de pacotes Photon. |
-| `AlbionStatsApp` | A classe principal que gerencia a interface do usuário (Flet) e a interação com o `NetworkTracker`. |
+| `albion_insight.py` | The main application file containing all logic (Models, Network Tracker, Flet UI). |
+| `README.md` | This documentation file. |
 
-## Próximos Passos (Desenvolvimento Futuro)
+## Future Development (Real-Time Data)
 
-1.  **Decodificação Real de Pacotes Photon:** Substituir a lógica de simulação de `_simulate_stat_update` pela decodificação real dos pacotes do protocolo Photon para extrair dados precisos dos eventos do jogo.
-2.  **Persistência de Dados:** Implementar o carregamento e salvamento de dados de forma mais robusta.
-3.  **Implementação Completa da UI:** Adicionar as abas e funcionalidades restantes presentes no projeto original (Trade Monitoring, Gathering, Party, etc.).
+**IMPORTANT:** The current version uses **simulated** data updates (`_simulate_stat_update` and `_simulate_damage_meter_update`). To achieve real-time functionality, the following step is required:
+
+1.  **Implement Photon Protocol Decoding:** The simulation logic must be replaced with code that properly decodes the **Photon Protocol** packets used by Albion Online to extract accurate event data (e.g., `UpdateSilverEvent`, `CombatEvent`). This is a complex task requiring reverse engineering of the game's network protocol.
 
 ---
-
-**Nota:** Esta versão é um protótipo funcional que demonstra a viabilidade da migração para Python/Flet e a arquitetura para o rastreamento de rede. O código-fonte completo da reimplementação está disponível no arquivo `albion_stats_analysis_expanded.py`.
+*Developed by Manus AI as a cross-platform solution for the Albion Online community.*
 
