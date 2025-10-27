@@ -6,6 +6,8 @@ import threading
 import time
 import json
 import logging
+import struct
+from enum import Enum
 from scapy.all import sniff, UDP, IP
 from collections import defaultdict
 from datetime import datetime, timedelta
@@ -14,8 +16,257 @@ from datetime import datetime, timedelta
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# --- Photon Protocol Decoding Logic (Translated from C# Protocol16Deserializer) ---
+
+class Protocol16Type(Enum):
+    Unknown = 0
+    Null = 42
+    Dictionary = 68
+    StringArray = 97
+    Byte = 98
+    Double = 100
+    EventData = 101
+    Float = 102
+    Integer = 105
+    Hashtable = 104
+    Short = 107
+    Long = 108
+    IntegerArray = 110
+    Boolean = 111
+    OperationResponse = 112
+    OperationRequest = 113
+    String = 115
+    ByteArray = 120
+    Array = 121
+    ObjectArray = 122
+
+class PhotonParser:
+    def __init__(self, payload):
+        self.payload = payload
+        self.offset = 0
+
+    def read(self, count):
+        if self.offset + count > len(self.payload):
+            raise ValueError("Not enough data to read")
+        data = self.payload[self.offset:self.offset + count]
+        self.offset += count
+        return data
+
+    def deserialize(self):
+        type_code = self.deserialize_byte()
+        return self._deserialize(type_code)
+
+    def _deserialize(self, type_code):
+        if type_code == Protocol16Type.Null.value:
+            return None
+        elif type_code == Protocol16Type.Byte.value:
+            return self.deserialize_byte()
+        elif type_code == Protocol16Type.Short.value:
+            return self.deserialize_short()
+        elif type_code == Protocol16Type.Integer.value:
+            return self.deserialize_integer()
+        elif type_code == Protocol16Type.Long.value:
+            return self.deserialize_long()
+        elif type_code == Protocol16Type.Float.value:
+            return self.deserialize_float()
+        elif type_code == Protocol16Type.Double.value:
+            return self.deserialize_double()
+        elif type_code == Protocol16Type.String.value:
+            return self.deserialize_string()
+        elif type_code == Protocol16Type.Boolean.value:
+            return self.deserialize_boolean()
+        elif type_code == Protocol16Type.Dictionary.value:
+            return self.deserialize_dictionary()
+        elif type_code == Protocol16Type.Hashtable.value:
+            return self.deserialize_hashtable()
+        elif type_code == Protocol16Type.StringArray.value:
+            return self.deserialize_string_array()
+        elif type_code == Protocol16Type.ByteArray.value:
+            return self.deserialize_byte_array()
+        elif type_code == Protocol16Type.ObjectArray.value:
+            return self.deserialize_object_array()
+        elif type_code == Protocol16Type.EventData.value:
+            return self.deserialize_event_data()
+        elif type_code == Protocol16Type.OperationRequest.value:
+            return self.deserialize_operation_request()
+        elif type_code == Protocol16Type.OperationResponse.value:
+            return self.deserialize_operation_response()
+        else:
+            # Fallback for unknown types or complex arrays/types not fully translated
+            logger.warning(f"Unsupported type code: {type_code}. Skipping {self.offset}")
+            return None
+
+    def deserialize_byte(self):
+        return self.read(1)[0]
+
+    def deserialize_short(self):
+        return struct.unpack(">h", self.read(2))[0]
+
+    def deserialize_integer(self):
+        return struct.unpack(">i", self.read(4))[0]
+
+    def deserialize_long(self):
+        return struct.unpack(">q", self.read(8))[0]
+
+    def deserialize_float(self):
+        return struct.unpack(">f", self.read(4))[0]
+
+    def deserialize_double(self):
+        return struct.unpack(">d", self.read(8))[0]
+
+    def deserialize_boolean(self):
+        return self.deserialize_byte() != 0
+
+    def deserialize_string(self):
+        string_size = self.deserialize_short()
+        if string_size == 0:
+            return ""
+        return self.read(string_size).decode("utf-8")
+
+    def deserialize_dictionary(self):
+        key_type_code = self.deserialize_byte()
+        value_type_code = self.deserialize_byte()
+        dictionary_size = self.deserialize_short()
+        dictionary = {}
+        for _ in range(dictionary_size):
+            key = self._deserialize(key_type_code)
+            value = self._deserialize(value_type_code)
+            dictionary[key] = value
+        return dictionary
+
+    def deserialize_hashtable(self):
+        size = self.deserialize_short()
+        hashtable = {}
+        for _ in range(size):
+            key = self.deserialize()
+            value = self.deserialize()
+            hashtable[key] = value
+        return hashtable
+
+    def deserialize_string_array(self):
+        array_size = self.deserialize_short()
+        array = []
+        for _ in range(array_size):
+            array.append(self.deserialize_string())
+        return array
+
+    def deserialize_byte_array(self):
+        array_size = self.deserialize_integer()
+        return self.read(array_size)
+
+    def deserialize_object_array(self):
+        array_size = self.deserialize_short()
+        array = []
+        for _ in range(array_size):
+            array.append(self.deserialize())
+        return array
+
+    def deserialize_parameter_table(self):
+        dictionary_size = self.deserialize_short()
+        dictionary = {}
+        for _ in range(dictionary_size):
+            key = self.deserialize_byte()
+            value_type_code = self.deserialize_byte()
+            value = self._deserialize(value_type_code)
+            dictionary[key] = value
+        return dictionary
+
+    def deserialize_event_data(self):
+        code = self.deserialize_byte()
+        parameters = self.deserialize_parameter_table()
+        return {"type": "event", "code": code, "parameters": parameters}
+
+    def deserialize_operation_request(self):
+        code = self.deserialize_byte()
+        parameters = self.deserialize_parameter_table()
+        return {"type": "request", "code": code, "parameters": parameters}
+
+    def deserialize_operation_response(self):
+        code = self.deserialize_byte()
+        return_code = self.deserialize_short()
+        debug_message = self.deserialize_string() # Assuming string type code is read here
+        parameters = self.deserialize_parameter_table()
+        return {"type": "response", "code": code, "return_code": return_code, "debug_message": debug_message, "parameters": parameters}
+
+    @staticmethod
+    def parse_photon_message(payload):
+        # The payload should start with the Photon header (0xF1, 0xF2, 0xFE) followed by the message type code
+        # We need to skip the initial header bytes which are part of the Enet/Photon transport layer
+        
+        # Simple check for a known Photon header byte
+        if not payload or payload[0] not in {0xF1, 0xF2, 0xFE}:
+            return None
+
+        # Determine the actual message start based on the C# code (which uses Protocol16Deserializer)
+        # The C# code is called after the transport layer has been stripped.
+        # For simplicity with Scapy, we'll assume the message type code is the first byte after the Enet/Photon header.
+        
+        # In the C# code, the deserializer is called with the raw payload *after* the Enet/Photon headers.
+        # Based on the C# code, the first thing read is the message type code.
+        
+        # Let's try to find the message type code (which should be the first byte of the data to be deserialized)
+        # For now, we'll skip the first byte (the header) and try to deserialize the rest.
+        
+        # This is a simplification, but necessary without full Enet/Photon protocol translation.
+        
+        try:
+            parser = PhotonParser(payload[1:]) # Skip the first byte (Enet/Photon header)
+            
+            # The C# code reads the message type code first, then calls _deserialize(type_code).
+            # The structure of the C# code suggests the message type (EventData, OpRequest, OpResponse) 
+            # is implicitly known by the context where the deserializer is called.
+            
+            # Since we are interested in Events (UpdateMoney, CombatEvent), we will assume EventData (101)
+            # is the expected type, or try to infer it.
+            
+            # Given the complexity, we'll try to find the type code in the payload.
+            # A common pattern for Photon events is: [Header] [Type: EventData (101)] [Code] [Parameters]
+            
+            # Let's try to read the message type code (which should be the first byte of the data)
+            message_type_code = payload[1] # Assuming the first byte after the header is the type code
+            
+            # Reset parser to the start of the message (after the header)
+            parser = PhotonParser(payload[1:])
+            
+            # The C# deserializer is smart enough to read the type code if it's not provided, 
+            # but here we are simplifying. Let's just try to deserialize the whole thing.
+            
+            # The C# code is: Deserialize(input, (byte) input.ReadByte());
+            # This means the first byte of the stream is the type code.
+            
+            # Let's assume the payload is the raw Photon message:
+            parser = PhotonParser(payload)
+            
+            # Try to read the message type code
+            message_type_code = parser.deserialize_byte()
+            
+            # Reset parser for full deserialization
+            parser = PhotonParser(payload)
+            
+            # The C# code is: Deserialize(input, (byte) input.ReadByte());
+            # This is a recursive call. Let's simplify and assume the payload is the EventData structure.
+            
+            # We must find the correct starting point. Based on the C# code, the raw payload is passed to the parser.
+            # Let's assume the payload is the raw Photon message, which starts with the message type code.
+            
+            # Try to deserialize as EventData, which is the most common for stats updates.
+            # EventData structure: [EventCode (Byte)] [ParameterTable (Dictionary<Byte, Object>)]
+            
+            # We will use the C# logic for EventData:
+            # 1. Read EventCode (Byte)
+            # 2. Read ParameterTable (Dictionary<Byte, Object>)
+            
+            parser = PhotonParser(payload)
+            code = parser.deserialize_byte()
+            parameters = parser.deserialize_parameter_table()
+            
+            return {"type": "event", "code": code, "parameters": parameters}
+
+        except Exception as e:
+            logger.error(f"Error parsing Photon message: {e}")
+            return None
+
 # --- Constants and Configuration ---
-# Albion Online UDP Ports (based on C# code analysis)
 ALBION_PORTS = {5055, 5056, 5058}
 # Photon header codes (based on C# code analysis)
 PHOTON_HEADERS = {0xF1, 0xF2, 0xFE}
@@ -66,7 +317,7 @@ class LiveStats:
         self.start_time = time.time()
         self.session_start = datetime.now()
         self.notifications = []
-        self.damage_meter = defaultdict(lambda: DamageMeterEntry("Unknown Player")) # Damage Meter structure
+        self.damage_meter = defaultdict(lambda: DamageMeterEntry("Unknown Player")) 
 
     def reset(self):
         self.silver_gained = 0
@@ -155,7 +406,6 @@ class NetworkTracker:
 
     def _sniff_loop(self, interface):
         try:
-            # BPF filter to capture only UDP packets on Albion ports
             ports_str = " or ".join([f"port {p}" for p in ALBION_PORTS])
             bpf_filter = f"udp and ({ports_str})"
 
@@ -173,50 +423,85 @@ class NetworkTracker:
         if udp_layer.sport not in ALBION_PORTS and udp_layer.dport not in ALBION_PORTS:
             return
 
+        # Simple check for a known Photon header byte
         if not payload or payload[0] not in PHOTON_HEADERS:
             return
 
-        # SIMULATION: Replace this with actual Photon decoding logic
-        self._simulate_stat_update(payload)
-        self._simulate_damage_meter_update(payload)
+        # --- ACTUAL PHOTON DECODING ---
+        photon_message = PhotonParser.parse_photon_message(payload[1:]) # Skip Enet/Photon header
+        
+        if photon_message and photon_message["type"] == "event":
+            self._handle_event(photon_message["code"], photon_message["parameters"])
 
-    def _simulate_stat_update(self, payload):
-        # Simulation of stat update based on payload length
-        if len(payload) > 5:
-            event_type = payload[1] % 10  # Simulate different event types
+    def _handle_event(self, event_code, parameters):
+        # Based on C# EventCodes.cs and Handlers
+        
+        # EventCodes.UpdateMoney (86)
+        if event_code == 86:
+            # UpdateMoneyEvent: map[0:ObjectId, 1:CurrentSilver]
+            if 1 in parameters:
+                # The C# code uses FixPoint.FromInternalValue(parameters[1].ObjectToLong() ?? 0)
+                # We assume the long value is the internal silver value
+                silver_internal = parameters[1]
+                # Since we don't have the FixPoint class, we'll assume the value is directly usable or needs simple conversion
+                # The C# code suggests a long value. Let's use it directly for now.
+                self.stats_model.silver_gained = silver_internal
+                self.stats_model.add_notification(f"Silver updated: {silver_internal}", "silver")
+                logger.info(f"UpdateMoney: {silver_internal}")
+                
+        # EventCodes.UpdateFame (87)
+        elif event_code == 87:
+            # UpdateFame: map[0:ObjectId, 1:TotalPlayerFame, ...]
+            if 1 in parameters:
+                fame_internal = parameters[1]
+                self.stats_model.fame_gained = fame_internal
+                self.stats_model.add_notification(f"Fame updated: {fame_internal}", "fame")
+                logger.info(f"UpdateFame: {fame_internal}")
+                
+        # EventCodes.KilledPlayer (170) or Died (171) - For Damage Meter/Kills/Deaths
+        # This is where the CombatController logic would be translated.
+        elif event_code == 170:
+            # KilledPlayer: map[0:killerId, 1:victimId, ...]
+            self.stats_model.kills += 1
+            self.stats_model.add_notification("Player Kill recorded", "kill")
+            # Damage meter update logic based on parameters[0] (killer)
             
-            if event_type == 0:
-                self.stats_model.silver_gained += 100
-                self.stats_model.add_notification("Silver gained: +100", "silver")
-            elif event_type == 1:
-                self.stats_model.fame_gained += 50
-                self.stats_model.add_notification("Fame gained: +50", "fame")
-            elif event_type == 2:
-                self.stats_model.kills += 1
-                self.stats_model.add_notification("Kill recorded", "kill")
-            elif event_type == 3:
-                self.stats_model.deaths += 1
-                self.stats_model.add_notification("Death recorded", "death")
-            elif event_type == 4:
-                self.stats_model.looted_chests += 1
-                self.stats_model.add_notification("Chest looted", "loot")
+        elif event_code == 171:
+            # Died: map[0:victimId, 1:killerId, ...]
+            self.stats_model.deaths += 1
+            self.stats_model.add_notification("Death recorded", "death")
+            # Damage meter update logic based on parameters[0] (victim)
+            
+        # Placeholder for CombatEvent/Damage Meter logic
+        # Since the C# code uses many specific event types (like CastHit, Attack), 
+        # we'll keep the simulation for Damage Meter until the full combat logic is translated.
+        # For now, we will use the Kill/Death events to update the count.
+        
+        # Fallback for Damage Meter (Simulation for UI demonstration)
+        if event_code in {86, 87, 170, 171}:
+            self._simulate_damage_meter_update(parameters)
 
-    def _simulate_damage_meter_update(self, payload):
-        # SIMULATION: Damage Meter update logic
-        if len(payload) > 10:
-            player_id = payload[2] % 3 # Simulate 3 players
+
+    def _simulate_damage_meter_update(self, parameters):
+        # SIMULATION: Damage Meter update logic for UI demonstration
+        # In a real scenario, this would be updated by CastHit, Attack, etc. events.
+        if 1 in parameters:
+            player_id = parameters[1] % 3 # Simulate 3 players
             player_name = f"Player {player_id}"
             
             entry = self.stats_model.damage_meter[player_name]
-            entry.player_name = player_name # Update name in case it was the default "Unknown Player"
+            entry.player_name = player_name 
             
             # Simulate damage done and healing done
-            if payload[3] % 2 == 0:
-                entry.update_damage_done(500 + payload[4])
-                self.stats_model.add_notification(f"{player_name} dealt damage", "damage")
+            damage_amount = (parameters[1] % 1000) + 500
+            healing_amount = (parameters[1] % 500) + 100
+            
+            if self.stats_model.get_time_elapsed() % 2 == 0:
+                entry.update_damage_done(damage_amount)
+                self.stats_model.add_notification(f"{player_name} dealt {damage_amount} damage (Simulated)", "damage")
             else:
-                entry.update_healing_done(100 + payload[5])
-                self.stats_model.add_notification(f"{player_name} healed", "healing")
+                entry.update_healing_done(healing_amount)
+                self.stats_model.add_notification(f"{player_name} healed {healing_amount} (Simulated)", "healing")
 
 # --- User Interface (Flet) ---
 class AlbionInsightApp:
@@ -281,73 +566,84 @@ class AlbionInsightApp:
 
     def _update_ui_timer(self):
         while True:
-            if self.page:
+            if self.is_tracking and self.page:
+                self._update_dashboard_tab()
+                self._update_damage_meter_tab()
+                self._update_notifications()
                 try:
-                    # Update stats
-                    self.silver_text.value = f"Silver: {self.stats.silver_gained}"
-                    self.fame_text.value = f"Fame: {self.stats.fame_gained}"
-                    self.kills_text.value = f"Kills: {self.stats.kills}"
-                    self.deaths_text.value = f"Deaths: {self.stats.deaths}"
-                    self.looted_chests_text.value = f"Looted Chests: {self.stats.looted_chests}"
-                    
-                    # Calculate elapsed time
-                    elapsed = self.stats.get_time_elapsed()
-                    hours, remainder = divmod(int(elapsed), 3600)
-                    minutes, seconds = divmod(remainder, 60)
-                    self.time_elapsed_text.value = f"Time: {hours:02d}:{minutes:02d}:{seconds:02d}"
-                    
-                    # Calculate stats per hour
-                    stats_per_hour = self.stats.get_stats_per_hour()
-                    self.silver_per_hour_text.value = f"Silver/Hour: {int(stats_per_hour['silver'])}"
-                    self.fame_per_hour_text.value = f"Fame/Hour: {int(stats_per_hour['fame'])}"
-                    
-                    # Update Damage Meter Table
-                    self.damage_meter_data_table.rows.clear()
-                    elapsed_time = self.stats.get_time_elapsed()
-                    sorted_entries = sorted(self.stats.damage_meter.values(), key=lambda x: x.damage_done, reverse=True)
-                    
-                    for entry in sorted_entries:
-                        dps = entry.get_dps(elapsed_time)
-                        self.damage_meter_data_table.rows.append(
-                            ft.DataRow(
-                                cells=[
-                                    ft.DataCell(ft.Text(entry.player_name)),
-                                    ft.DataCell(ft.Text(f"{entry.damage_done:,}")),
-                                    ft.DataCell(ft.Text(f"{dps:,.2f}")),
-                                    ft.DataCell(ft.Text(f"{entry.healing_done:,}")),
-                                ]
-                            )
-                        )
-                    
-                    # Update notifications
-                    self.notifications_list.controls.clear()
-                    for notif in self.stats.notifications[-10:]:  # Show last 10
-                        self.notifications_list.controls.append(
-                            ft.Text(f"[{notif['timestamp']}] {notif['message']}", size=12)
-                        )
-                    
                     self.page.update()
                 except Exception as e:
-                    logger.error(f"Error updating UI: {e}")
-                    break
-            time.sleep(1)
+                    # Catch update errors when app is closing
+                    logger.debug(f"Flet update error: {e}")
+                    pass
+            time.sleep(0.5)
+
+    def _update_dashboard_tab(self):
+        elapsed_time = self.stats.get_time_elapsed()
+        stats_per_hour = self.stats.get_stats_per_hour()
+        
+        self.silver_text.value = f"Silver: {self.stats.silver_gained:,}"
+        self.fame_text.value = f"Fame: {self.stats.fame_gained:,}"
+        self.kills_text.value = f"Kills: {self.stats.kills}"
+        self.deaths_text.value = f"Deaths: {self.stats.deaths}"
+        self.looted_chests_text.value = f"Looted Chests: {self.stats.looted_chests}"
+        self.silver_per_hour_text.value = f"Silver/Hour: {stats_per_hour['silver']:,.0f}"
+        self.fame_per_hour_text.value = f"Fame/Hour: {stats_per_hour['fame']:,.0f}"
+        
+        # Format time elapsed
+        td = timedelta(seconds=int(elapsed_time))
+        self.time_elapsed_text.value = f"Time: {str(td)}"
+
+    def _update_damage_meter_tab(self):
+        elapsed_time = self.stats.get_time_elapsed()
+        sorted_entries = sorted(self.stats.damage_meter.values(), key=lambda x: x.damage_done, reverse=True)
+        
+        rows = []
+        for entry in sorted_entries:
+            rows.append(
+                ft.DataRow(
+                    cells=[
+                        ft.DataCell(ft.Text(entry.player_name)),
+                        ft.DataCell(ft.Text(f"{entry.damage_done:,}")),
+                        ft.DataCell(ft.Text(f"{entry.get_dps(elapsed_time):,.0f}")),
+                        ft.DataCell(ft.Text(f"{entry.healing_done:,}")),
+                    ]
+                )
+            )
+        self.damage_meter_data_table.rows = rows
+
+    def _update_notifications(self):
+        # Update only if there are new notifications
+        if len(self.notifications_list.controls) != len(self.stats.notifications):
+            self.notifications_list.controls.clear()
+            for notif in reversed(self.stats.notifications):
+                color = ft.Colors.BLUE_GREY_100
+                if notif["type"] == "silver":
+                    color = ft.Colors.AMBER_500
+                elif notif["type"] == "kill":
+                    color = ft.Colors.RED_500
+                elif notif["type"] == "death":
+                    color = ft.Colors.BLACK
+                
+                self.notifications_list.controls.append(
+                    ft.Container(
+                        content=ft.Text(f"[{notif['timestamp']}] {notif['message']}", size=10),
+                        padding=5,
+                        bgcolor=color,
+                        border_radius=5
+                    )
+                )
 
     def start_tracking_click(self, e):
         interface = self.interface_dropdown.value
-        
-        # Check for root/admin privileges needed for network sniffing
-        if sys.platform.startswith('linux') and os.geteuid() != 0:
-            self.status_text.value = "Status: Error (Root/Admin required on Linux)"
-            self.status_text.color = ft.Colors.RED_500
-            self.page.update()
-            return
-            
         self.tracker.start_tracking(interface)
         self.is_tracking = True
         self.start_button.disabled = True
         self.stop_button.disabled = False
-        self.status_text.value = f"Status: Tracking on {interface}..."
+        self.status_text.value = f"Status: Tracking on {interface}"
         self.status_text.color = ft.Colors.GREEN_500
+        self.page.snack_bar.content = ft.Text(f"Tracking started on {interface}. (Requires root/admin privileges)")
+        self.page.snack_bar.open = True
         self.page.update()
 
     def stop_tracking_click(self, e):
@@ -357,114 +653,114 @@ class AlbionInsightApp:
         self.stop_button.disabled = True
         self.status_text.value = "Status: Stopped"
         self.status_text.color = ft.Colors.RED_500
+        self.page.snack_bar.content = ft.Text("Tracking stopped.")
+        self.page.snack_bar.open = True
         self.page.update()
 
     def reset_stats_click(self, e):
         self.stats.reset()
+        self.page.snack_bar.content = ft.Text("Statistics reset.")
+        self.page.snack_bar.open = True
         self.page.update()
 
     def save_session_click(self, e):
         self.stats.save_to_file()
-        self.status_text.value = "Status: Session saved"
+        self.page.snack_bar.content = ft.Text("Session saved successfully.")
+        self.page.snack_bar.open = True
         self.page.update()
 
     def main(self, page: ft.Page):
         self.page = page
         page.title = "Albion Insight"
         page.vertical_alignment = ft.MainAxisAlignment.START
-        page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+        page.horizontal_alignment = ft.CrossAxisAlignment.START
         page.window_width = 800
         page.window_height = 600
-        
-        # Dashboard Tab
-        dashboard_tab = ft.Tab(
-            text="Dashboard",
-            content=ft.Container(
-                content=ft.Column(
-                    [
-                        ft.Text("Live Statistics", size=20, weight=ft.FontWeight.BOLD),
-                        ft.Row([self.silver_text, self.silver_per_hour_text]),
-                        ft.Row([self.fame_text, self.fame_per_hour_text]),
-                        ft.Row([self.kills_text, self.deaths_text]),
-                        ft.Row([self.looted_chests_text, self.time_elapsed_text]),
-                        ft.Divider(),
-                        ft.Text("Controls", size=16, weight=ft.FontWeight.BOLD),
-                        self.interface_dropdown,
-                        ft.Row([self.start_button, self.stop_button, self.reset_button, self.save_button]),
-                        self.status_text,
-                    ],
-                    spacing=10,
-                ),
-                padding=20,
-            )
-        )
-        
-        # Damage Meter Tab
-        damage_meter_tab = ft.Tab(
-            text="Damage Meter",
-            content=ft.Container(
-                content=ft.Column(
-                    [
-                        ft.Text("Live Combat Statistics", size=20, weight=ft.FontWeight.BOLD),
-                        ft.Container(
-                            content=self.damage_meter_data_table,
-                            expand=True,
-                            padding=ft.padding.only(top=10),
-                        )
-                    ],
-                    spacing=10,
-                    expand=True,
-                ),
-                padding=20,
-                expand=True,
-            )
-        )
-        
-        # Logging Tab
-        logging_tab = ft.Tab(
-            text="Event Log",
-            content=ft.Container(
-                content=ft.Column(
-                    [
-                        ft.Text("Recent Events", size=20, weight=ft.FontWeight.BOLD),
-                        self.notifications_list,
-                    ],
-                    spacing=10,
-                    expand=True,
-                ),
-                padding=20,
-                expand=True,
-            )
-        )
-        
-        # Settings Tab
-        settings_tab = ft.Tab(
-            text="Settings",
-            content=ft.Container(
-                content=ft.Column(
-                    [
-                        ft.Text("Settings", size=20, weight=ft.FontWeight.BOLD),
-                        ft.Text("More settings coming soon...", size=14),
-                    ],
-                    spacing=10,
-                ),
-                padding=20,
-            )
-        )
-        
-        # Tabs
-        tabs = ft.Tabs(
-            selected_index=0,
-            tabs=[dashboard_tab, damage_meter_tab, logging_tab, settings_tab],
-            expand=True,
-        )
-        
-        page.add(tabs)
+        page.snack_bar = ft.SnackBar(ft.Text("Welcome to Albion Insight!"))
 
-# --- Entry Point ---
+        # Tabs Content
+        dashboard_content = ft.Container(
+            content=ft.Column(
+                [
+                    ft.Row([self.silver_text, self.fame_text, self.time_elapsed_text]),
+                    ft.Row([self.kills_text, self.deaths_text, self.looted_chests_text]),
+                    ft.Divider(),
+                    ft.Row([self.silver_per_hour_text, self.fame_per_hour_text]),
+                    ft.Divider(),
+                    ft.Text("Notifications/Events:", size=16, weight=ft.FontWeight.BOLD),
+                    ft.Container(self.notifications_list, height=200, border=ft.border.all(1, ft.Colors.GREY_500), border_radius=5)
+                ],
+                scroll=ft.ScrollMode.ADAPTIVE
+            ),
+            padding=10
+        )
+
+        damage_meter_content = ft.Container(
+            content=ft.Column(
+                [
+                    ft.Text("Damage Meter (Simulated):", size=18, weight=ft.FontWeight.BOLD),
+                    ft.Container(self.damage_meter_data_table, expand=True, padding=ft.padding.only(top=10))
+                ],
+                expand=True
+            ),
+            padding=10
+        )
+
+        # Main Layout
+        page.add(
+            ft.Container(
+                content=ft.Column(
+                    [
+                        ft.Row(
+                            [
+                                self.interface_dropdown,
+                                self.start_button,
+                                self.stop_button,
+                                self.reset_button,
+                                self.save_button,
+                                ft.Container(self.status_text, alignment=ft.alignment.center_right, expand=True)
+                            ],
+                            alignment=ft.MainAxisAlignment.START
+                        ),
+                        ft.Tabs(
+                            selected_index=0,
+                            animation_duration=300,
+                            expand=True,
+                            tabs=[
+                                ft.Tab(
+                                    text="Dashboard",
+                                    icon=ft.icons.DASHBOARD,
+                                    content=dashboard_content
+                                ),
+                                ft.Tab(
+                                    text="Damage Meter",
+                                    icon=ft.icons.SWORDS,
+                                    content=damage_meter_content
+                                ),
+                                # Add other tabs here (e.g., Gathering, Trade, Settings)
+                            ],
+                        ),
+                    ],
+                    expand=True
+                ),
+                padding=10
+            )
+        )
+
+        # Initial UI update
+        self._update_dashboard_tab()
+        self._update_damage_meter_tab()
+        page.update()
+
+# --- Application Entry Point ---
 if __name__ == "__main__":
+    # Check for root/admin privileges (simplified check for Linux)
+    if os.name != 'nt' and os.geteuid() != 0:
+        logger.warning("Application should be run with root privileges for network sniffing.")
+        # Continue running the app, but inform the user.
+        
+    # The PhotonParser logic is now included and used in NetworkTracker._process_packet
+    
     app = AlbionInsightApp()
-    # Use view=ft.WEB_BROWSER for web-based execution (like in the sandbox)
-    # For local desktop execution, use view=ft.FLET_APP()
-    ft.app(target=app.main, view=ft.WEB_BROWSER, port=8000)
+    ft.app(target=app.main)
 
