@@ -91,6 +91,28 @@ The application now includes the **Photon Protocol Decoding** logic, translated 
 
 **Note:** The full translation of every single combat event (like `CastHit`, `Attack`) is an ongoing effort. The current implementation focuses on the core statistics and the structure for the Damage Meter. The Damage Meter's DPS calculation is based on the decoded events.
 
+## Contributing
+
+We welcome contributions from the community! Whether you're a developer, designer, or just an Albion Online enthusiast, there are many ways to help improve Albion Insight.
+
+### How You Can Contribute:
+
+*   **Report Bugs:** Found a bug? Open an issue on our [GitHub Issues](https://github.com/dexcarva/AlbionInsight/issues) page with detailed steps to reproduce it.
+*   **Suggest Features:** Have an idea for a new feature? Share it in the Issues section with the "enhancement" label.
+*   **Improve Documentation:** Help us improve the README, add tutorials, or translate the documentation to other languages.
+*   **Code Contributions:** Fork the repository, make your changes, and submit a Pull Request. Make sure to follow the coding style and include tests if applicable.
+*   **Test on Different Platforms:** Help us test the application on various Linux distributions, Windows versions, and macOS to ensure compatibility.
+*   **Decode More Events:** The Photon Protocol has hundreds of event types. Help us translate more event handlers from the original C# code to Python.
+
+### Getting Started:
+
+1.  Fork the repository: [github.com/dexcarva/AlbionInsight](https://github.com/dexcarva/AlbionInsight)
+2.  Clone your fork: `git clone https://github.com/YOUR_USERNAME/AlbionInsight.git`
+3.  Create a new branch: `git checkout -b feature/your-feature-name`
+4.  Make your changes and commit: `git commit -m "Add your feature"`
+5.  Push to your fork: `git push origin feature/your-feature-name`
+6.  Open a Pull Request on the main repository
+
 ---
 *A cross-platform solution for the Albion Online community.*
 

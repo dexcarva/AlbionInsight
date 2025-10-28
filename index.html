@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Albion Insight - A cross-platform statistics analysis tool for Albion Online. Track silver, fame, damage, and more in real-time.">
+    <title>Albion Insight - Cross-Platform Statistics Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
+        .requirements {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .requirements h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .requirements ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .requirements li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .requirements li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: #667eea;
+        }
+
+        .feature-card h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .feature-card p {
+            color: #c0c0c0;
+        }
+
+        .contributing {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .contributing h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contributing p {
+            margin-bottom: 15px;
+            color: #c0c0c0;
+        }
+
+        .contributing ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .contributing li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .contributing li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .platform-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .platform-icons span {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Albion Insight</h1>
+            <p>A cross-platform statistics analysis tool for Albion Online</p>
+            <p style="font-size: 0.9em; color: #888;">Track silver, fame, damage, and more in real-time on Linux, Windows, and macOS</p>
+            <div style="margin-top: 20px;">
+                <a href="https://github.com/dexcarva/AlbionInsight/releases/latest" class="download-btn">
+                    Download Latest Release <span class="badge">Beta 0.0.1</span>
+                </a>
+            </div>
+            <div class="platform-icons">
+                <span title="Linux">🐧</span>
+                <span title="Windows">🪟</span>
+                <span title="macOS">🍎</span>
+            </div>
+        </header>
+
+        <div class="requirements">
+            <h3>📋 Requirements</h3>
+            <ul>
+                <li><strong>Python 3.8+</strong> (or use the standalone executable from releases)</li>
+                <li><strong>Root/Administrator Privileges</strong> for network packet capture</li>
+                <li><strong>Linux:</strong> Install <code>libpcap-dev</code> for Scapy support</li>
+                <li><strong>Windows/macOS:</strong> No additional dependencies for the executable</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 style="text-align: center; color: #ffd700; margin-bottom: 30px;">✨ Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🌍 Cross-Platform</h3>
+                    <p>Runs natively on Linux, Windows, and macOS. Built with Python and Flet for maximum compatibility.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Real-Time Tracking</h3>
+                    <p>Captures UDP packets on Albion Online ports (5055, 5056, 5058) and decodes the Photon Protocol in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚔️ Damage Meter</h3>
+                    <p>Track damage done, healing done, DPS, kills, and deaths for you and your party members during combat.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Silver & Fame Tracking</h3>
+                    <p>Monitor your silver and fame gains with per-hour statistics to optimize your farming routes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔔 Live Notifications</h3>
+                    <p>Get instant notifications for important events like kills, deaths, silver gains, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💾 Session Management</h3>
+                    <p>Save your session statistics to JSON files for later analysis and comparison.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="contributing">
+            <h2>🤝 Contributing to Albion Insight</h2>
+            <p>We welcome contributions from the community! Whether you're a developer, designer, or just an Albion Online enthusiast, there are many ways to help improve Albion Insight.</p>
+            
+            <h3 style="color: #ffd700; margin-top: 20px; margin-bottom: 10px;">How You Can Contribute:</h3>
+            <ul>
+                <li><strong>Report Bugs:</strong> Found a bug? Open an issue on our <a href="https://github.com/dexcarva/AlbionInsight/issues" style="color: #667eea;">GitHub Issues</a> page with detailed steps to reproduce it.</li>
+                <li><strong>Suggest Features:</strong> Have an idea for a new feature? Share it in the Issues section with the "enhancement" label.</li>
+                <li><strong>Improve Documentation:</strong> Help us improve the README, add tutorials, or translate the documentation to other languages.</li>
+                <li><strong>Code Contributions:</strong> Fork the repository, make your changes, and submit a Pull Request. Make sure to follow the coding style and include tests if applicable.</li>
+                <li><strong>Test on Different Platforms:</strong> Help us test the application on various Linux distributions, Windows versions, and macOS to ensure compatibility.</li>
+                <li><strong>Decode More Events:</strong> The Photon Protocol has hundreds of event types. Help us translate more event handlers from the original C# code to Python.</li>
+            </ul>
+
+            <h3 style="color: #ffd700; margin-top: 20px; margin-bottom: 10px;">Getting Started:</h3>
+            <ul>
+                <li>Fork the repository: <a href="https://github.com/dexcarva/AlbionInsight" style="color: #667eea;">github.com/dexcarva/AlbionInsight</a></li>
+                <li>Clone your fork: <code>git clone https://github.com/YOUR_USERNAME/AlbionInsight.git</code></li>
+                <li>Create a new branch: <code>git checkout -b feature/your-feature-name</code></li>
+                <li>Make your changes and commit: <code>git commit -m "Add your feature"</code></li>
+                <li>Push to your fork: <code>git push origin feature/your-feature-name</code></li>
+                <li>Open a Pull Request on the main repository</li>
+            </ul>
+
+            <p style="margin-top: 20px;">For more details, check the <a href="https://github.com/dexcarva/AlbionInsight/blob/master/README.md" style="color: #667eea;">README.md</a> on GitHub.</p>
+        </div>
+
+        <footer>
+            <p>Open Source Project | <a href="https://github.com/dexcarva/AlbionInsight">GitHub Repository</a></p>
+            <p style="margin-top: 10px; color: #888;">A cross-platform solution for the Albion Online community</p>
+        </footer>
+    </div>
+</body>
+</html>
+
