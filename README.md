@@ -85,11 +85,11 @@ The entire application is contained within a single file for simplicity:
 | `albion_insight.py` | The main application file containing all logic (Models, Network Tracker, Flet UI). |
 | `README.md` | This documentation file. |
 
-## Future Development (Real-Time Data)
+## Current Status (Real-Time Data)
 
-**IMPORTANT:** The current version uses **simulated** data updates (`_simulate_stat_update` and `_simulate_damage_meter_update`). To achieve real-time functionality, the following step is required:
+The application now includes the **Photon Protocol Decoding** logic, translated from the original C# project. This allows the application to process real-time events like `UpdateMoney`, `UpdateFame`, `KilledPlayer`, and `Died` directly from the network traffic.
 
-1.  **Implement Photon Protocol Decoding:** The simulation logic must be replaced with code that properly decodes the **Photon Protocol** packets used by Albion Online to extract accurate event data (e.g., `UpdateSilverEvent`, `CombatEvent`). This is a complex task requiring reverse engineering of the game's network protocol.
+**Note:** The full translation of every single combat event (like `CastHit`, `Attack`) is an ongoing effort. The current implementation focuses on the core statistics and the structure for the Damage Meter. The Damage Meter's DPS calculation is based on the decoded events.
 
 ---
 *A cross-platform solution for the Albion Online community.*
