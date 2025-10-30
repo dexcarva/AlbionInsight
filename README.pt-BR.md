@@ -22,29 +22,82 @@ Este projeto é uma alternativa moderna e de código aberto à ferramenta origin
 
 ## Instalação e Configuração
 
-### 1. Instalar Dependências do Python
+### Opção 1: Instalação Rápida (Linux - Recomendado)
 
-Certifique-se de ter o Python instalado. Em seguida, instale as bibliotecas necessárias:
+Para usuários Linux, fornecemos scripts de instalação automatizados:
 
 ```bash
-pip3 install flet scapy pyinstaller
+# 1. Clone o repositório
+git clone https://github.com/dexcarva/AlbionInsight.git
+cd AlbionInsight
+
+# 2. Execute o script de instalação
+./install.sh
+
+# 3. Execute a aplicação
+./run.sh
 ```
 
-### 2. Dependências de Captura de Rede (Linux)
+O script `install.sh` irá:
+- Instalar dependências do sistema (`libpcap-dev`, `python3-pip`, `python3-venv`)
+- Criar um ambiente virtual Python
+- Instalar todos os pacotes Python necessários (Flet, Scapy)
 
-No Linux, você pode precisar instalar o `libpcap` ou `tcpdump` para que o Scapy funcione corretamente.
+O script `run.sh` irá automaticamente solicitar privilégios de root e executar a aplicação.
+
+### Opção 2: Instalação Manual
+
+#### 1. Instalar Dependências do Sistema
+
+**No Linux (Debian/Ubuntu):**
 
 ```bash
-# Exemplo para Debian/Ubuntu
 sudo apt update
-sudo apt install libpcap-dev
+sudo apt install libpcap-dev python3-pip python3-venv
 ```
 
-### 3. Executando a Aplicação
+**No Windows:**
+
+Instale o Python 3.8+ de [python.org](https://www.python.org/downloads/)
+
+#### 2. Instalar Dependências do Python
+
+**No Linux (usando ambiente virtual - recomendado):**
+
+```bash
+# Criar ambiente virtual
+python3 -m venv venv
+
+# Ativar ambiente virtual
+source venv/bin/activate
+
+# Instalar dependências
+pip install flet scapy
+```
+
+**No Linux (instalação em todo o sistema):**
+
+```bash
+pip3 install flet scapy --break-system-packages
+```
+
+**No Windows:**
+
+```bash
+pip install flet scapy
+```
+
+#### 3. Executando a Aplicação
 
 Como a captura de rede requer privilégios elevados, você deve executar a aplicação como root ou administrador.
 
-**No Linux:**
+**No Linux (com ambiente virtual):**
+
+```bash
+sudo venv/bin/python3 albion_insight.py
+```
+
+**No Linux (instalação em todo o sistema):**
 
 ```bash
 sudo python3 albion_insight.py

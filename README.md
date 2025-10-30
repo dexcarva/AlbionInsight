@@ -22,29 +22,82 @@ This project is a modern, open-source alternative to the original C#/WPF-based `
 
 ## Installation and Setup
 
-### 1. Install Python Dependencies
+### Option 1: Quick Install (Linux - Recommended)
 
-Make sure you have Python installed. Then, install the required libraries:
+For Linux users, we provide automated installation scripts:
 
 ```bash
-pip3 install flet scapy pyinstaller
+# 1. Clone the repository
+git clone https://github.com/dexcarva/AlbionInsight.git
+cd AlbionInsight
+
+# 2. Run the installation script
+./install.sh
+
+# 3. Run the application
+./run.sh
 ```
 
-### 2. Network Sniffing Dependencies (Linux)
+The `install.sh` script will:
+- Install system dependencies (`libpcap-dev`, `python3-pip`, `python3-venv`)
+- Create a Python virtual environment
+- Install all required Python packages (Flet, Scapy)
 
-On Linux, you may need to install `libpcap` or `tcpdump` for Scapy to function correctly.
+The `run.sh` script will automatically request root privileges and run the application.
+
+### Option 2: Manual Installation
+
+#### 1. Install System Dependencies
+
+**On Linux (Debian/Ubuntu):**
 
 ```bash
-# Example for Debian/Ubuntu
 sudo apt update
-sudo apt install libpcap-dev
+sudo apt install libpcap-dev python3-pip python3-venv
 ```
 
-### 3. Running the Application
+**On Windows:**
+
+Install Python 3.8+ from [python.org](https://www.python.org/downloads/)
+
+#### 2. Install Python Dependencies
+
+**On Linux (using virtual environment - recommended):**
+
+```bash
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Install dependencies
+pip install flet scapy
+```
+
+**On Linux (system-wide installation):**
+
+```bash
+pip3 install flet scapy --break-system-packages
+```
+
+**On Windows:**
+
+```bash
+pip install flet scapy
+```
+
+#### 3. Running the Application
 
 Since network sniffing requires elevated privileges, you must run the application as root or administrator.
 
-**On Linux:**
+**On Linux (with virtual environment):**
+
+```bash
+sudo venv/bin/python3 albion_insight.py
+```
+
+**On Linux (system-wide installation):**
 
 ```bash
 sudo python3 albion_insight.py
