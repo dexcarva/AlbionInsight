@@ -115,21 +115,17 @@ A aplicação será aberta em uma janela desktop nativa.
 
 A aplicação pode ser empacotada em um executável standalone usando o **PyInstaller**. Isso permite que os usuários executem a aplicação sem instalar o Python ou suas dependências.
 
-### 1. Comando de Build
+Para instruções detalhadas sobre como criar executáveis para Linux, Windows e macOS, consulte o guia **[PACKAGING.md](PACKAGING.md)** (em inglês).
 
-Execute o seguinte comando no diretório raiz do projeto:
+### Build Rápido (Linux)
 
 ```bash
+source venv/bin/activate
+pip install pyinstaller
 pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight.py
 ```
 
-*   `--name "AlbionInsight"`: Define o nome do arquivo executável.
-*   `--onefile`: Cria um único arquivo executável (facilita a distribuição).
-*   `--windowed`: Oculta a janela do console (para aplicações desktop no Windows/macOS).
-
-### 2. Distribuição
-
-O executável estará localizado na pasta `dist`. Você pode distribuir este arquivo para usuários do respectivo sistema operacional.
+O executável estará localizado na pasta `dist/`.
 
 ## Estrutura do Projeto
 

@@ -34,9 +34,9 @@ echo "🐍 Activating virtual environment..."
 source venv/bin/activate
 
 # Install Python dependencies
-echo "📦 Installing Python dependencies (flet, scapy)..."
+echo "📦 Installing Python dependencies from requirements.txt..."
 pip install --upgrade pip
-pip install flet scapy
+pip install -r requirements.txt
 
 echo ""
 echo "✅ Installation complete!"
