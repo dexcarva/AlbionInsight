@@ -1,5 +1,11 @@
 # Albion Insight
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/dexcarva/AlbionInsight)
+[![GitHub Issues](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 **[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**
 
 **Albion Insight** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
@@ -146,16 +152,9 @@ The application now includes the **Photon Protocol Decoding** logic, translated 
 
 We welcome contributions from the community! Whether you're a developer, designer, or just an Albion Online enthusiast, there are many ways to help improve Albion Insight.
 
-### How You Can Contribute:
+Please read our [Contributing Guidelines](CONTRIBUTING.md) for detailed information on how to contribute to this project.
 
-*   **Report Bugs:** Found a bug? Open an issue on our [GitHub Issues](https://github.com/dexcarva/AlbionInsight/issues) page with detailed steps to reproduce it.
-*   **Suggest Features:** Have an idea for a new feature? Share it in the Issues section with the "enhancement" label.
-*   **Improve Documentation:** Help us improve the README, add tutorials, or translate the documentation to other languages.
-*   **Code Contributions:** Fork the repository, make your changes, and submit a Pull Request. Make sure to follow the coding style and include tests if applicable.
-*   **Test on Different Platforms:** Help us test the application on various Linux distributions, Windows versions, and macOS to ensure compatibility.
-*   **Decode More Events:** The Photon Protocol has hundreds of event types. Help us translate more event handlers from the original C# code to Python.
-
-### Getting Started:
+### Quick Start for Contributors:
 
 1.  Fork the repository: [github.com/dexcarva/AlbionInsight](https://github.com/dexcarva/AlbionInsight)
 2.  Clone your fork: `git clone https://github.com/YOUR_USERNAME/AlbionInsight.git`
@@ -163,6 +162,16 @@ We welcome contributions from the community! Whether you're a developer, designe
 4.  Make your changes and commit: `git commit -m "Add your feature"`
 5.  Push to your fork: `git push origin feature/your-feature-name`
 6.  Open a Pull Request on the main repository
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Original project: [AlbionOnline-StatisticsAnalysis](https://github.com/Triky313/AlbionOnline-StatisticsAnalysis) by Triky313
+- Built with [Flet](https://flet.dev/) framework
+- Network analysis powered by [Scapy](https://scapy.net/)
 
 ---
 *A cross-platform solution for the Albion Online community.*
