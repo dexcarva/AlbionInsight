@@ -730,7 +730,7 @@ class AlbionInsightApp:
                             tabs=[
                                 ft.Tab(
                                     text="Dashboard",
-                                    icon=ft.icons.DASHBOARD,
+                                    icon=ft.Icons.DASHBOARD,
                                     content=dashboard_content
                                 ),
                                 ft.Tab(
