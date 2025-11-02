@@ -9,7 +9,7 @@ import json
 import logging
 import struct
 from enum import Enum
-from scapy.all import sniff, UDP, IP
+from scapy.all import sniff, UDP, IP, get_if_list
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -545,14 +545,17 @@ class AlbionInsightApp:
         self.save_button = ft.ElevatedButton("Save Session", on_click=self.save_session_click)
         
         # Interface Selection
+        # Interface Selection
+        try:
+            interfaces = get_if_list()
+        except Exception as e:
+            logger.error(f"Could not get network interfaces: {e}")
+            interfaces = ["eth0", "wlan0", "lo"] # Fallback
+            
         self.interface_dropdown = ft.Dropdown(
             label="Network Interface",
-            options=[
-                ft.dropdown.Option("eth0"),
-                ft.dropdown.Option("wlan0"),
-                ft.dropdown.Option("lo"),
-            ],
-            value="eth0"
+            options=[ft.dropdown.Option(i) for i in interfaces],
+            value=interfaces[0] if interfaces else None
         )
         
         # Notifications List
