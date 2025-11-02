@@ -2,14 +2,13 @@
 # Tested on Ubuntu 24.04 LTS with Python 3.12
 
 # UI Framework
-flet==0.28.3
+flet
 
 # Network packet capture and analysis
-scapy==2.6.1
+scapy
 
 # Async I/O support (required by Flet)
-anyio==4.6.2.post1
+anyio==4.11.0
 
 # Optional: For building executables
-# pyinstaller==6.11.1
-
+# pyinstaller
