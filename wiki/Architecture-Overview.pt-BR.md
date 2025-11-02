@@ -1,6 +1,7 @@
 # Visão Geral da Arquitetura
 
 **[Read in English](Architecture-Overview.md)**
+**[Leer en Español](Architecture-Overview.es-ES.md)**
 
 Este documento fornece uma visão geral de alto nível da arquitetura do Albion Insight, explicando como os diferentes componentes trabalham juntos para rastrear e exibir as estatísticas do Albion Online.
 

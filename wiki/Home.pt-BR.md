@@ -1,6 +1,7 @@
 # Bem-vindo à Wiki do Albion Insight
 
 **[Read in English](Home.md)**
+**[Leer en Español](Home.es-ES.md)**
 
 Bem-vindo à documentação oficial do **Albion Insight**, uma ferramenta de análise de estatísticas multiplataforma para Albion Online.
 

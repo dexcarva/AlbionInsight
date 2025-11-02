@@ -1,6 +1,7 @@
 # Welcome to the Albion Insight Wiki
 
 **[Leia em Português](Home.pt-BR.md)**
+**[Leer en Español](Home.es-ES.md)**
 
 Welcome to the official documentation for **Albion Insight**, a cross-platform statistics analysis tool for Albion Online.
 
