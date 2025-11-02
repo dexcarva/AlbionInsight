@@ -1,40 +1,39 @@
 ---
-name: Bug Report
-about: Create a report to help us improve
-title: '[BUG] '
-labels: bug
-assignees: ''
+name: 🐛 Relatório de Bug
+about: Crie um relatório para nos ajudar a reproduzir e corrigir um erro.
+title: "[BUG] Descrição concisa do problema"
+labels: ["bug", "triage"]
+assignees: []
 ---
 
-## Bug Description
-A clear and concise description of what the bug is.
+### Descreva o Bug
 
-## Steps to Reproduce
-1. Go to '...'
-2. Click on '...'
-3. Scroll down to '...'
-4. See error
+Uma descrição clara e concisa do que é o bug.
 
-## Expected Behavior
-A clear and concise description of what you expected to happen.
+### Para Reproduzir
 
-## Actual Behavior
-A clear and concise description of what actually happened.
+Passos para reproduzir o comportamento:
 
-## Screenshots
-If applicable, add screenshots to help explain your problem.
+1.  Vá para '...'
+2.  Clique em '....'
+3.  Role para '....'
+4.  Veja o erro
 
-## Environment
-- **OS**: [e.g. Ubuntu 22.04, Windows 11, macOS 13]
-- **Python Version**: [e.g. 3.10.5]
-- **AlbionInsight Version**: [e.g. commit hash or release version]
-- **Installation Method**: [Quick Install / Manual / Executable]
+### Comportamento Esperado
 
-## Logs
-Please paste any relevant error messages or logs here:
-```
-[Paste logs here]
-```
+Uma descrição clara e concisa do que você esperava que acontecesse.
 
-## Additional Context
-Add any other context about the problem here.
+### Capturas de Tela
+
+Se aplicável, adicione capturas de tela para ajudar a explicar seu problema.
+
+### Ambiente
+
+*   **Sistema Operacional:** [e.g. Windows 10, macOS Big Sur, Ubuntu 20.04]
+*   **Versão do Python:** [e.g. 3.10.x]
+*   **Versão do Flet:** [e.g. 0.28.x]
+*   **Versão do Albion Insight:** [e.g. v1.0.0 ou commit hash]
+
+### Contexto Adicional
+
+Adicione qualquer outro contexto sobre o problema aqui.
