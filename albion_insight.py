@@ -735,7 +735,7 @@ class AlbionInsightApp:
                                 ),
                                 ft.Tab(
                                     text="Damage Meter",
-                                    icon=ft.icons.SWORDS,
+                                    icon=ft.Icons.SPORTS_MARTIAL_ARTS,
                                     content=damage_meter_content
                                 ),
                                 # Add other tabs here (e.g., Gathering, Trade, Settings)
