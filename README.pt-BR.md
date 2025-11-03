@@ -8,6 +8,8 @@
 
 **[Read this in English (Leia em Inglês)](README.md)**
 **[Leia em Espanhol (Leer en Español)](README.es-ES.md)**
+**[Leia em Francês (Lire en Français)](README.fr-FR.md)**
+**[Leia em Italiano (Leggi in Italiano)](README.it-IT.md)**
 
 **Albion Insight** é uma ferramenta de análise de estatísticas multiplataforma (Linux, Windows, macOS) para o jogo Albion Online, reimplementada em **Python** usando o framework **Flet**. Ela foi projetada para rastrear estatísticas do jogo em tempo real, incluindo prata, fama e dados de combate (Medidor de Dano), analisando o tráfego de rede.
 
@@ -144,6 +146,7 @@ A aplicação inteira está contida em um único arquivo para simplicidade:
 | `README.md` | Este arquivo de documentação (em inglês). |
 | `README.pt-BR.md` | Este arquivo de documentação (em português). |
 | `README.fr-FR.md` | Este arquivo de documentação (em francês). |
+| `README.it-IT.md` | Este arquivo de documentação (em italiano). |
 
 ## Status Atual (Dados em Tempo Real)
 
