@@ -1,14 +1,3 @@
-# Albion Insight - Python Dependencies
-# Tested on Ubuntu 24.04 LTS with Python 3.12
-
-# UI Framework
 flet
-
-# Network packet capture and analysis
 scapy
-
-# Async I/O support (required by Flet)
-anyio==4.11.0
-
-# Optional: For building executables
-# pyinstaller
+anyio

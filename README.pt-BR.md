@@ -143,6 +143,7 @@ A aplicação inteira está contida em um único arquivo para simplicidade:
 | `albion_insight.py` | O arquivo principal da aplicação contendo toda a lógica (Modelos, Rastreador de Rede, Interface Flet). |
 | `README.md` | Este arquivo de documentação (em inglês). |
 | `README.pt-BR.md` | Este arquivo de documentação (em português). |
+| `README.fr-FR.md` | Este arquivo de documentação (em francês). |
 
 ## Status Atual (Dados em Tempo Real)
 

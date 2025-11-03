@@ -1,6 +1,8 @@
 # Contribuindo para o Albion Insight
 
 **[Read in English](CONTRIBUTING.md)**
+**[Leer en Español](CONTRIBUTING.es-ES.md)**
+**[Lire en Français](CONTRIBUTING.fr-FR.md)**
 
 Antes de mais nada, obrigado por considerar contribuir com o Albion Insight! São pessoas como você que tornam o Albion Insight uma ferramenta incrível para a comunidade de Albion Online.
 
