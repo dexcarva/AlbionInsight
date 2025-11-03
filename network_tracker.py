@@ -233,64 +233,6 @@ class PhotonParser:
             logger.error(f"Error parsing Photon message: {e}")
             return None
 
-# --- Network Tracker Logic ---
-
-class NetworkTracker:
-    def __init__(self, update_callback):
-        self.update_callback = update_callback
-        self.sniff_thread = None
-        self.stop_event = threading.Event()
-        self.is_running = False
-        self.start_time = None
-        self.players = defaultdict(lambda: {"damage_done": 0, "healing_done": 0, "name": "Unknown"})
-        self.player_id_map = {} # Map object ID to player name/ID
-
-    def get_interfaces(self):
-        '''Returns a list of available network interfaces.'''
-        return [iface for iface in get_if_list() if iface != 'lo']
-
-    def start_sniffing(self, interface):
-        if self.is_running:
-            logger.warning("Sniffing is already running.")
-            return
-
-        self.stop_event.clear()
-        self.is_running = True
-        self.start_time = datetime.now()
-        self.players.clear()
-        self.player_id_map.clear()
-        
-        # Start the sniffing thread
-        self.sniff_thread = threading.Thread(
-            target=self._sniff_packets, 
-            args=(interface,), 
-            daemon=True
-        )
-        self.sniff_thread.start()
-        logger.info(f"Started sniffing on interface {interface}")
-
-    def stop_sniffing(self):
-        if not self.is_running:
-            logger.warning("Sniffing is not running.")
-            return
-        
-        self.stop_event.set()
-        self.is_running = False
-        logger.info("Stopped sniffing.")
-
-    def _sniff_packets(self, interface):
-        # BPF filter for Albion Online UDP ports
-        bpf_filter = "udp and (port 5055 or port 5056 or port 5058)"
-        
-        try:
-            # Sniff packets until the stop event is set
-            sniff(
-                iface=interface, 
-                filter=bpf_filter, 
-                prn=self._process_packet, 
-                stop_filter=lambda p: self.stop_event.is_set(),
-                store=0 # Don't store packets in memory
-            )
         except Exception as e:
             logger.error(f"Error during sniffing: {e}")
             self.is_running = False
