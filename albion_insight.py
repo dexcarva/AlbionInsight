@@ -234,15 +234,4 @@ def main(page: ft.Page):
     page.add(app)
 
 if __name__ == "__main__":
-    # The original code had a lot of logic here, now it's just the app setup
-    # The icon logic that caused the bug is now handled by ft.icons.DASHBOARD
-    # which should be correct after the fix in Issue #1.
-    try:
-        ft.app(target=main, assets_dir="assets")
-    except AttributeError as e:
-        # This is a fallback for the bug that was fixed in Issue #1
-        if "icons" in str(e):
-            logger.error("AttributeError: module 'flet' has no attribute 'icons'. Did you mean: 'Icons'?")
-            logger.error("This suggests an older version of Flet or a regression. Please ensure Flet is up to date.")
-            sys.exit(1)
-        raise
+    ft.app(target=main, assets_dir="assets")

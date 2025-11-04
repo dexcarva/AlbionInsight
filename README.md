@@ -6,7 +6,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**
+**[Read this in German (Lesen Sie dies auf Deutsch)](README.de-DE.md)**\n**[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**
 **[Read this in Spanish (Leer en Español)](README.es-ES.md)**
 **[Read this in French (Lire en Français)](README.fr-FR.md)**
 **[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**

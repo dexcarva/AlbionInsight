@@ -233,11 +233,6 @@ class PhotonParser:
             logger.error(f"Error parsing Photon message: {e}")
             return None
 
-        except Exception as e:
-            logger.error(f"Error during sniffing: {e}")
-            self.is_running = False
-            self.update_callback() # Notify UI of error
-
     def _process_packet(self, packet):
         if not self.is_running:
             return
@@ -372,6 +367,4 @@ class PhotonParser:
             logger.error(f"Error saving session: {e}")
             return None
 
-# Set up basic logging for this module
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+
