@@ -63,25 +63,25 @@ class AlbionInsightApp(ft.UserControl):
         )
         self.start_button = ft.ElevatedButton(
             "Start Sniffing", 
-            icon=ft.icons.PLAY_ARROW, 
+            icon=ft.icons.PLAY_ARROW_ROUNDED, 
             on_click=self.start_sniffing,
             disabled=True
         )
         self.stop_button = ft.ElevatedButton(
             "Stop Sniffing", 
-            icon=ft.icons.STOP, 
+            icon=ft.icons.STOP_ROUNDED, 
             on_click=self.stop_sniffing,
             disabled=True
         )
         self.reset_button = ft.ElevatedButton(
             "Reset Session", 
-            icon=ft.icons.REFRESH, 
+            icon=ft.icons.REFRESH_ROUNDED, 
             on_click=self.reset_session,
             disabled=True
         )
         self.save_button = ft.ElevatedButton(
             "Save Session", 
-            icon=ft.icons.SAVE, 
+            icon=ft.icons.SAVE_ROUNDED, 
             on_click=self.save_session,
             disabled=True
         )
