@@ -8,10 +8,10 @@ Este projeto é um port moderno e em Python do projeto original em C# (`AlbionOn
 
 | Tópico | Descrição |
 | :--- | :--- |
-| **[Guia de Instalação](Installation-Guide)** | Instruções passo a passo para instalar e executar o Albion Insight em diferentes sistemas operacionais. |
-| **[Guia de Uso](Usage-Guide)** | Como usar o Damage Meter, gerenciar sessões e interpretar os dados coletados. |
-| **[Contribuição](Contribution-Guide)** | Quer ajudar? Saiba como reportar bugs, sugerir funcionalidades e contribuir com código. |
-| **[Detalhes Técnicos: Protocolo Photon](Technical-Details-Photon-Protocol)** | Uma visão aprofundada sobre como o Albion Insight decodifica os pacotes de rede do Albion Online. |
+| **[Guia de Instalação](Wiki_Installation_Guide)** | Instruções passo a passo para instalar e executar o Albion Insight em diferentes sistemas operacionais. |
+| **[Guia de Uso](Wiki_Usage_Guide)** | Como usar o Damage Meter, gerenciar sessões e interpretar os dados coletados. |
+| **[Contribuição](CONTRIBUTING.md)** | Quer ajudar? Saiba como reportar bugs, sugerir funcionalidades e contribuir com código. |
+| **[Detalhes Técnicos: Protocolo Photon](Wiki_Photon_Protocol_Decodification)** | Uma visão aprofundada sobre como o Albion Insight decodifica os pacotes de rede do Albion Online. |
 
 ## Status do Projeto
 
