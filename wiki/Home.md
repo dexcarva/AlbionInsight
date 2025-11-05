@@ -1,66 +1,28 @@
-# Welcome to the Albion Insight Wiki
+# Bem-vindo à Wiki do Albion Insight
 
-**[Leia em Português](Home.pt-BR.md)**
-**[Leer en Español](Home.es-ES.md)**
+O **Albion Insight** é uma ferramenta de análise de estatísticas multiplataforma e de código aberto para o jogo Albion Online. Ele rastreia dados de combate (Damage Meter), prata e fama em tempo real, analisando o tráfego de rede do jogo.
 
-Welcome to the official documentation for **Albion Insight**, a cross-platform statistics analysis tool for Albion Online.
+Este projeto é um port moderno e em Python do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), focado em compatibilidade com Linux, Windows e macOS.
 
-## Quick Links
+## Comece Aqui
 
-### Getting Started
-- [Installation Guide](Installation-Guide.md)
-- [Quick Start Tutorial](Quick-Start-Tutorial.md)
-- [System Requirements](System-Requirements.md)
+| Tópico | Descrição |
+| :--- | :--- |
+| **[Guia de Instalação](Wiki_Installation_Guide)** | Instruções passo a passo para instalar e executar o Albion Insight em diferentes sistemas operacionais. |
+| **[Guia de Uso](Wiki_Usage_Guide)** | Como usar o Damage Meter, gerenciar sessões e interpretar os dados coletados. |
+| **[Contribuição](CONTRIBUTING.md)** | Quer ajudar? Saiba como reportar bugs, sugerir funcionalidades e contribuir com código. |
+| **[Detalhes Técnicos: Protocolo Photon](Wiki_Photon_Protocol_Decodification)** | Uma visão aprofundada sobre como o Albion Insight decodifica os pacotes de rede do Albion Online. |
 
-### User Guides
-- [Using the Damage Meter](Using-the-Damage-Meter.md)
-- [Session Management](Session-Management.md)
-- [Exporting Statistics](Exporting-Statistics.md)
-- [Troubleshooting Common Issues](Troubleshooting.md)
+## Status do Projeto
 
-### Developer Documentation
-- [Architecture Overview](Architecture-Overview.md)
-- [Photon Protocol Decoding](Photon-Protocol-Decoding.md)
-- [Network Packet Capture](Network-Packet-Capture.md)
-- [Contributing to the Project](../CONTRIBUTING.md)
-- [Building from Source](Building-from-Source.md)
+O projeto está em desenvolvimento ativo. A funcionalidade principal de rastreamento de dano e cura está implementada, mas a decodificação completa de todos os eventos de combate é um esforço contínuo.
 
-### Technical Reference
-- [Event Types Reference](Event-Types-Reference.md)
-- [API Documentation](API-Documentation.md)
-- [Configuration Options](Configuration-Options.md)
+**Recursos Principais:**
+*   **Multiplataforma:** Suporte nativo para Linux, Windows e macOS.
+*   **Decodificação de Pacotes:** Utiliza `Scapy` e lógica de decodificação do protocolo Photon.
+*   **Interface Moderna:** Construído com o framework Flet.
 
-### Community
-- [FAQ](FAQ.md)
-- [Known Issues](Known-Issues.md)
-- [Roadmap](Roadmap.md)
-- [Changelog](../CHANGELOG.md)
-
-## About This Project
-
-Albion Insight is a modern, open-source reimplementation of the popular AlbionOnline-StatisticsAnalysis tool, designed to work across multiple platforms including Linux, Windows, and macOS. Built with Python and the Flet framework, it provides real-time tracking of in-game statistics by analyzing network traffic.
-
-### Key Features
-
-- **Cross-Platform**: Works on Linux, Windows, and macOS
-- **Real-Time Tracking**: Monitor silver, fame, and combat statistics live
-- **Damage Meter**: Track damage dealt, healing done, and DPS
-- **Session Management**: Save and analyze your gaming sessions
-- **Open Source**: Free and community-driven development
-
-## Getting Help
-
-If you need help or have questions:
-
-1. Check the [FAQ](FAQ.md) for common questions
-2. Review the [Troubleshooting Guide](Troubleshooting.md)
-3. Search [existing issues](https://github.com/dexcarva/AlbionInsight/issues)
-4. Open a new issue using the appropriate template
-
-## Contributing
-
-We welcome contributions from the community! Please read our [Contributing Guidelines](../CONTRIBUTING.md) to get started.
+Agradecemos o seu interesse e contribuição!
 
 ---
-
-*Last updated: October 2025*
+*Última atualização: 03 de Novembro de 2025*

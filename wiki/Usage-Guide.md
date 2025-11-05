@@ -1,56 +1,53 @@
 # Guia de Uso do Albion Insight
 
-Este guia explica como usar as principais funcionalidades do Albion Insight, focando no Damage Meter e na gestão de sessões.
+Este guia explica como usar a interface do **Albion Insight** para rastrear e analisar suas estatísticas de jogo.
 
-## 1. Iniciando a Captura de Pacotes
+## Interface Principal
 
-1.  **Selecione a Interface de Rede:** No menu suspenso **"Network Interface"**, escolha a interface de rede correta que o seu computador está usando para se conectar ao Albion Online.
-2.  **Clique em "Start Sniffing":** A aplicação começará a monitorar o tráfego de rede nas portas do Albion Online (5055, 5056, 5058).
-3.  **Verifique o Status:** O texto de status mudará para **"Status: Sniffing on [Interface]..."** e o cronômetro **"Duration"** começará a contar.
+A interface do Albion Insight é dividida em três seções principais:
 
-**Importante:** A aplicação deve ser executada com privilégios de administrador/root para que a captura de pacotes funcione.
+1.  **Controles de Sessão:** Para iniciar, parar e gerenciar a captura de dados.
+2.  **Status e Duração:** Exibe o estado atual do rastreador e o tempo de sessão.
+3.  **Medidor de Dano (Damage Meter):** A tabela principal que exibe as estatísticas de combate.
 
-## 2. O Damage Meter
+## 1. Controles de Sessão
 
-O Damage Meter exibe estatísticas de combate em tempo real para todos os jogadores que interagem com o tráfego de rede capturado.
+| Elemento | Função |
+| :--- | :--- |
+| **Network Interface (Dropdown)** | Selecione a interface de rede que está sendo usada para se conectar ao Albion Online. **Importante:** Se você estiver usando VPN, selecione a interface da VPN. |
+| **Start Sniffing** | Inicia a captura de pacotes de rede. O aplicativo começará a processar os dados em tempo real. |
+| **Stop Sniffing** | Pausa a captura de pacotes. As estatísticas atuais permanecem na tela. |
+| **Reset Session** | Limpa todas as estatísticas de dano, cura e duração da sessão. |
+| **Save Session** | Salva as estatísticas atuais em um arquivo (geralmente um arquivo JSON ou CSV, dependendo da implementação futura) para análise posterior. |
+
+## 2. Status e Duração
+
+*   **Status:** Indica o estado atual do rastreador (Pronto, Sniffing, Parado, Erro).
+*   **Duration:** Exibe o tempo decorrido desde o início da sessão de rastreamento no formato HH:MM:SS.
+
+## 3. Medidor de Dano (Damage Meter)
+
+A tabela exibe as estatísticas de combate para cada jogador (incluindo você) que o rastreador conseguiu identificar e processar eventos de combate.
 
 | Coluna | Descrição |
 | :--- | :--- |
-| **Player** | O nome do jogador. |
-| **Damage** | O total de dano causado pelo jogador na sessão atual. |
+| **Player** | O nome do jogador ou entidade que causou o dano/cura. |
+| **Damage** | O total de dano causado por este jogador durante a sessão. |
 | **DPS** | Dano por Segundo (Damage Per Second), calculado com base na duração da sessão. |
-| **Healing** | O total de cura realizada pelo jogador na sessão atual. |
+| **Healing** | O total de cura realizada por este jogador durante a sessão. |
 
-**Interpretação dos Dados:**
+### Como o DPS é Calculado
 
-*   **DPS:** É uma métrica dinâmica. Se o cronômetro for reiniciado, o DPS será recalculado com base no novo tempo de sessão.
-*   **Dados:** Os dados de Dano e Cura são acumulativos para a sessão.
+O DPS é calculado dividindo o **Dano Total** pelo **Tempo de Duração da Sessão** (em segundos).
 
-## 3. Gestão de Sessões
+$$
+\text{DPS} = \frac{\text{Dano Total}}{\text{Duração da Sessão (segundos)}}
+$$
 
-O Albion Insight permite que você gerencie a sessão de rastreamento de dados.
+**Nota:** Se a sessão estiver parada, o DPS exibido será o valor final da sessão. Se a sessão estiver em andamento, o valor é atualizado a cada segundo.
 
-### Parar a Captura
+## Dicas de Uso
 
-*   **Botão "Stop Sniffing":** Interrompe a captura de novos pacotes. O cronômetro para, e as estatísticas permanecem na tela. Você pode inspecionar os dados ou salvar a sessão.
-
-### Reiniciar a Sessão
-
-*   **Botão "Reset Session":** Limpa todos os dados de dano, cura e o cronômetro. O rastreamento **não** é reiniciado automaticamente; você deve clicar em "Start Sniffing" novamente, se desejar.
-
-### Salvar a Sessão
-
-*   **Botão "Save Session":** Salva as estatísticas atuais em um arquivo JSON no diretório do projeto.
-    *   **Formato:** O arquivo JSON contém um snapshot dos dados do Damage Meter, incluindo o nome do jogador, dano, cura e a duração total da sessão.
-    *   **Localização:** O arquivo será salvo com um nome baseado na data e hora (ex: `session_20251103_153000.json`).
-
-## 4. Decodificação de Eventos
-
-O Albion Insight decodifica eventos de rede para rastrear:
-
-*   **Eventos de Combate:** Dano e Cura (parcialmente implementado, focado nos eventos principais).
-*   **Eventos de Economia:** Atualizações de Prata (`UpdateMoney`).
-*   **Eventos de Fama:** Atualizações de Fama (`UpdateFame`).
-*   **Eventos de Morte:** Morte de jogadores (`Died`) e Abates (`KilledPlayer`).
-
-Para mais detalhes sobre a decodificação do protocolo, consulte a página **[Detalhes Técnicos: Protocolo Photon](Technical-Details-Photon-Protocol)**.
+*   **Execução como Administrador/Root:** Lembre-se de que o aplicativo **deve** ser executado com privilégios elevados para funcionar corretamente.
+*   **Seleção de Interface:** Se você tiver várias interfaces de rede (Wi-Fi, Ethernet, VPN), certifique-se de selecionar a correta no dropdown antes de iniciar o rastreamento.
+*   **Decodificação Contínua:** O Albion Insight está em desenvolvimento. Se você notar que alguns eventos de combate não estão sendo rastreados, isso pode significar que o código de decodificação para aquele evento específico ainda não foi implementado. Considere [contribuir](Contribution-Guide) com a decodificação!

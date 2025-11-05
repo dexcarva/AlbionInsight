@@ -1,97 +1,98 @@
 # Guia de Instalação do Albion Insight
 
-Este guia fornece instruções passo a passo para instalar e executar o Albion Insight em diferentes sistemas operacionais.
+Este guia fornece instruções detalhadas sobre como instalar e executar o **Albion Insight** em diferentes sistemas operacionais.
 
 ## Pré-requisitos
 
-*   **Python 3.8+**
-*   **Git** (para clonar o repositório)
-*   **Root/Administrator Privileges** (para a captura de pacotes de rede com `scapy`).
+O Albion Insight é construído em Python e requer as seguintes dependências:
+
+1.  **Python 3.8+**: Certifique-se de ter uma versão compatível do Python instalada.
+2.  **Bibliotecas Python**: `flet` e `scapy`.
+3.  **Privilégios de Administrador/Root**: A captura de pacotes de rede (sniffing) requer permissões elevadas. O aplicativo **deve** ser executado como `root` (Linux/macOS) ou **Administrador** (Windows).
+
+---
 
 ## Opção 1: Instalação Rápida (Linux - Recomendado)
 
-Para usuários Linux, fornecemos scripts automatizados que simplificam o processo:
+Para usuários de Linux (Debian/Ubuntu), o repositório inclui scripts que automatizam a instalação de dependências do sistema, a criação de um ambiente virtual e a execução.
 
-1.  **Clone o repositório:**
+1.  **Clone o Repositório:**
     ```bash
     git clone https://github.com/dexcarva/AlbionInsight.git
     cd AlbionInsight
     ```
 
-2.  **Execute o script de instalação:**
+2.  **Execute o Script de Instalação:**
     ```bash
     ./install.sh
     ```
-    Este script irá:
-    *   Instalar dependências de sistema (como `libpcap-dev`).
-    *   Criar e ativar um ambiente virtual Python (`venv`).
-    *   Instalar as dependências Python (`flet`, `scapy`).
+    Este script irá instalar as dependências do sistema (`libpcap-dev`, `python3-pip`, `python3-venv`), criar um ambiente virtual (`venv`) e instalar as bibliotecas Python necessárias.
 
-3.  **Execute a aplicação:**
+3.  **Execute o Aplicativo:**
     ```bash
     ./run.sh
     ```
-    O script `run.sh` solicitará automaticamente privilégios de root para iniciar a captura de pacotes.
+    O script `run.sh` solicitará automaticamente a senha de `root` (via `sudo`) e iniciará o aplicativo.
 
-## Opção 2: Instalação Manual
+---
 
-### 1. Instalar Dependências de Sistema
+## Opção 2: Instalação Manual (Windows, macOS e Outros Linux)
 
-**No Linux (Debian/Ubuntu):**
-```bash
-sudo apt update
-sudo apt install libpcap-dev python3-pip python3-venv
-```
+### Passo 1: Instalar Dependências do Sistema
 
-**No Windows:**
-*   Instale o Python 3.8+ a partir de [python.org](https://www.python.org/downloads/).
-*   Certifique-se de que o **Wireshark** ou **Npcap** esteja instalado para que o `scapy` funcione corretamente.
+| Sistema Operacional | Dependências Necessárias | Comando de Instalação |
+| :--- | :--- | :--- |
+| **Linux (Debian/Ubuntu)** | `libpcap-dev`, `python3-pip`, `python3-venv` | `sudo apt update && sudo apt install libpcap-dev python3-pip python3-venv` |
+| **macOS** | `libpcap` (geralmente pré-instalado) | N/A |
+| **Windows** | Python 3.8+ (Instalador oficial) | N/A |
 
-### 2. Instalar Dependências Python
+### Passo 2: Instalar Bibliotecas Python
 
-Recomendamos o uso de um ambiente virtual para isolar as dependências do projeto.
+Recomendamos o uso de um **ambiente virtual** para isolar as dependências do projeto.
 
-1.  **Clone o repositório:**
+1.  **Crie e Ative o Ambiente Virtual:**
     ```bash
-    git clone https://github.com/dexcarva/AlbionInsight.git
-    cd AlbionInsight
-    ```
-
-2.  **Crie e ative o ambiente virtual:**
-    ```bash
-    # Criar ambiente virtual
+    # Crie o ambiente virtual
     python3 -m venv venv
-
-    # Ativar (Linux/macOS)
+    
+    # Ative (Linux/macOS)
     source venv/bin/activate
-
-    # Ativar (Windows)
-    venv\Scripts\activate
+    
+    # Ative (Windows - PowerShell)
+    .\venv\Scripts\Activate.ps1
+    
+    # Ative (Windows - CMD)
+    .\venv\Scripts\activate.bat
     ```
 
-3.  **Instale as dependências:**
+2.  **Instale as Dependências:**
     ```bash
     pip install -r requirements.txt
+    # ou
+    pip install flet scapy
     ```
 
-### 3. Executar a Aplicação
+### Passo 3: Executar o Aplicativo
 
-A captura de pacotes requer privilégios elevados.
+O Albion Insight deve ser executado com privilégios elevados para permitir a captura de pacotes de rede.
 
-**No Linux (com ambiente virtual ativado):**
-```bash
-sudo python3 albion_insight.py
-```
+| Sistema Operacional | Comando de Execução (dentro do ambiente virtual) |
+| :--- | :--- |
+| **Linux/macOS** | `sudo venv/bin/python3 albion_insight.py` |
+| **Windows** | **Execute o Prompt de Comando/PowerShell como Administrador** e depois: `python albion_insight.py` |
 
-**No Windows (Execute o Prompt de Comando/PowerShell como Administrador):**
-```bash
-python albion_insight.py
-```
+Após a execução, o aplicativo abrirá em uma janela de desktop nativa.
 
-A aplicação será aberta em uma janela de desktop nativa.
+## Solução de Problemas Comuns
 
-## Solução de Problemas
+### "Permission denied" (Permissão Negada)
+*   **Causa:** O aplicativo não está sendo executado com privilégios de administrador/root.
+*   **Solução:** Certifique-se de usar `sudo` no Linux/macOS ou de executar o terminal como Administrador no Windows.
 
-*   **"Permission denied" ao iniciar:** Certifique-se de que está executando a aplicação com `sudo` (Linux/macOS) ou como **Administrador** (Windows).
-*   **"No network interfaces found"**: Verifique se o `scapy` está instalado corretamente e se as dependências de sistema (como `libpcap-dev`) estão presentes.
-*   **Erro de ícone (`AttributeError: module 'flet' has no attribute 'icons'`):** Certifique-se de que sua versão do `flet` está atualizada (verifique o `requirements.txt`).
+### "No network interfaces found" (Nenhuma interface de rede encontrada)
+*   **Causa:** O Scapy não conseguiu listar as interfaces de rede.
+*   **Solução:** Verifique se o `libpcap` (ou equivalente no seu sistema) está instalado corretamente. No Windows, certifique-se de que o **Npcap** (necessário para o Scapy) está instalado.
+
+### Erros de Decodificação
+*   **Causa:** O protocolo do Albion Online pode ter sido atualizado.
+*   **Solução:** Verifique o repositório para atualizações ou abra uma [Issue](https://github.com/dexcarva/AlbionInsight/issues) para relatar o problema.

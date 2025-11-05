@@ -1,55 +1,68 @@
-# Photon Protocol Decoding
+# Decodificação do Protocolo Photon
 
-**[Leia em Português](Photon-Protocol-Decoding.pt-BR.md)**
+O Albion Insight depende da decodificação correta do protocolo de rede do Albion Online, que é baseado no **Photon Engine**. Esta página da Wiki serve como um guia para entender como a decodificação funciona e como os contribuidores podem ajudar a expandir a funcionalidade do aplicativo.
 
-## Overview
+## O que é o Photon Engine?
 
-Albion Online uses the **Photon** networking engine, specifically **Protocol 1.6**, for client-server communication. The core function of Albion Insight is to decode these proprietary packets to extract meaningful game statistics.
+O Photon Engine é uma solução de rede em tempo real amplamente utilizada em jogos multiplayer. Ele usa um sistema de eventos, operações e respostas para sincronizar o estado do jogo entre o servidor e os clientes.
 
-The decoding logic is implemented in the `PhotonParser` class within `albion_insight.py`, which is a direct translation of the C# `Protocol16Deserializer` from the original AlbionOnline-StatisticsAnalysis project.
+No Albion Insight, o código de decodificação (`PhotonParser` em `albion_insight.py`) é uma tradução do `Protocol16Deserializer` do projeto original em C#.
 
-## The `PhotonParser` Class
+## Estrutura da Mensagem Photon
 
-The `PhotonParser` is responsible for reading the raw byte payload of a network packet and converting it into structured Python data types (dictionaries, lists, integers, strings).
+As mensagens do Photon são estruturadas em torno de três tipos principais:
 
-### Key Methods
+1.  **Eventos (`EventData`):** Usados pelo servidor para notificar os clientes sobre mudanças no estado do jogo (ex: `UpdateMoney`, `KilledPlayer`, eventos de combate).
+2.  **Requisições de Operação (`OperationRequest`):** Enviadas pelo cliente ao servidor (ex: mover-se, usar uma habilidade).
+3.  **Respostas de Operação (`OperationResponse`):** Enviadas pelo servidor em resposta a uma requisição de operação.
 
-| Method | Description |
-| :--- | :--- |
-| `deserialize()` | The main entry point. Reads the type code and calls the appropriate deserialization method. |
-| `_deserialize(type_code)` | Handles the recursive deserialization based on the type code. |
-| `deserialize_byte()`, `deserialize_short()`, etc. | Methods for reading primitive data types using Python's `struct` module for correct endianness (`>h`, `>i`, etc.). |
-| `deserialize_dictionary()` | Handles complex types like `Dictionary` (typed key/value pairs). |
-| `deserialize_hashtable()` | Handles the `Hashtable` type (untyped key/value pairs, used for event parameters). |
-| `deserialize_event_data()` | Decodes a full Photon Event, which contains an event code and a parameter table. |
-| `deserialize_parameter_table()` | Decodes the key-value pairs that make up the event's parameters. |
+Cada mensagem contém um **código** que identifica o evento ou operação específica, e uma **tabela de parâmetros** (um dicionário) que contém os dados relevantes.
 
-## Event Structure
+## Como Contribuir com a Decodificação
 
-A typical Photon event packet, after the transport layer headers are stripped, follows this structure:
+A maior parte do trabalho de expansão do Albion Insight reside em identificar e decodificar novos eventos e operações.
 
-1.  **Type Code**: A single byte indicating the message type (e.g., `101` for `EventData`).
-2.  **Event Code**: A single byte identifying the specific game event (e.g., `1` for `UpdateMoney`, `10` for `KilledPlayer`).
-3.  **Parameter Table**: A `Hashtable` containing the event data.
+### 1. Captura de Dados
 
-### Example: `UpdateMoney` Event
+Para identificar novos eventos, você precisa capturar o tráfego de rede enquanto realiza a ação no jogo.
 
-The `UpdateMoney` event (Event Code `1`) is a crucial event for tracking silver. Its parameter table typically contains:
+*   **Ferramenta:** Use o próprio Albion Insight ou ferramentas como **Wireshark** com o filtro `udp port 5055 or 5056 or 5058`.
+*   **Ação:** Realize a ação que você deseja decodificar (ex: usar uma habilidade específica, coletar um recurso, negociar).
+*   **Isolamento:** Tente isolar a ação o máximo possível para reduzir o ruído no tráfego.
 
-| Parameter Key (Byte) | Value Type | Description |
-| :--- | :--- | :--- |
-| `1` | `Integer` | The amount of silver gained or lost. |
-| `2` | `Integer` | The new total silver amount. |
-| `3` | `Byte` | The type of currency (e.g., `1` for Silver). |
+### 2. Análise de Pacotes
 
-The `NetworkTracker` processes this decoded data to update the `LiveStats` model.
+Após a captura, o pacote UDP precisa ser analisado para encontrar a mensagem Photon.
 
-## Limitations and Future Work
+*   **Payload:** O payload do pacote UDP (após o cabeçalho Enet/Photon) é o que o `PhotonParser` tenta decodificar.
+*   **Identificação:** Procure por mensagens do tipo **EventData** (código 101) ou **OperationResponse** (código 112) que ocorrem imediatamente após a ação.
 
-The current implementation is functional but has limitations inherited from the original project's translation:
+### 3. Mapeamento de Códigos e Parâmetros
 
-1.  **Partial Combat Event Coverage**: While core events are handled, many specific combat abilities and effects are not yet fully mapped and decoded. This is why the damage meter is currently labeled as "(Simulated)" in the UI.
-2.  **Transport Layer Simplification**: The `PhotonParser.parse_photon_message` method makes a simplifying assumption about the Enet/Photon transport headers. A more robust implementation would require a full Enet/Photon protocol stack to handle fragmentation and reliable delivery.
-3.  **Missing Types**: Some complex or less-used Photon types (e.g., `Array`, `CustomType`) may not be fully implemented or tested.
+O objetivo é mapear o **código do evento/operação** para a ação no jogo e entender o significado de cada **parâmetro** na tabela.
 
-Community contributions are highly encouraged to help map and implement the remaining Photon event codes for greater accuracy. See the [Contributing Guidelines](../CONTRIBUTING.md) for more information.
+| Exemplo de Evento | Código (Byte) | Parâmetros Chave | Significado |
+| :--- | :--- | :--- | :--- |
+| `UpdateMoney` | `~2` (Exemplo) | `1: (int) SilverAmount` | Quantidade de prata atualizada. |
+| `CastHit` | `~5` (Exemplo) | `2: (int) TargetID`, `3: (float) Damage` | Dano causado a um alvo. |
+
+**Se você identificar um novo evento:**
+
+1.  **Documente** o código do evento e os parâmetros que você conseguiu identificar.
+2.  **Implemente** a lógica de processamento no método `NetworkTracker._process_photon_message` em `albion_insight.py`.
+3.  **Abra um Pull Request** com suas descobertas e implementações.
+
+## Estrutura de Dados em Python
+
+O `PhotonParser` usa os seguintes métodos para desserializar os tipos de dados do Photon:
+
+*   `deserialize_byte()` -> `Byte`
+*   `deserialize_short()` -> `Short` (2 bytes)
+*   `deserialize_integer()` -> `Integer` (4 bytes)
+*   `deserialize_long()` -> `Long` (8 bytes)
+*   `deserialize_string()` -> `String`
+*   `deserialize_hashtable()` -> `Dictionary/Hashtable`
+
+Ao analisar os pacotes, o tipo de dado de cada parâmetro é crucial para a decodificação correta.
+
+**Sua contribuição é vital para expandir a funcionalidade do Albion Insight!**
