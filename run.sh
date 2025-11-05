@@ -26,5 +26,5 @@ fi
 # Run the application
 echo "🚀 Starting Albion Insight..."
 echo ""
-./venv/bin/python3 albion_insight.py
+./venv/bin/python3 albion_insight/main.py
 
