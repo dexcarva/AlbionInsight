@@ -11,6 +11,7 @@ from datetime import datetime
 
 # Import refactored modules
 from network_tracker import NetworkTracker
+from models import SessionStats # Importar SessionStats para tipagem, se necessário
 
 
 # Basic logging configuration
@@ -219,7 +220,7 @@ class AlbionInsightApp(ft.UserControl):
         '''Background thread to periodically update the UI for duration and DPS.'''
         while self.timer_running:
             time.sleep(1)
-            if self.tracker.is_running:
+            if self.tracker.session_stats.is_running:
                 self.update_ui()
 
     def on_close(self, e):

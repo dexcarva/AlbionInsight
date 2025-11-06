@@ -7,8 +7,8 @@ import threading
 import time
 from enum import Enum
 from scapy.all import sniff, UDP, IP, get_if_list
-from collections import defaultdict
 from datetime import datetime, timedelta
+from models import SessionStats
 
 logger = logging.getLogger(__name__)
 
@@ -189,14 +189,10 @@ class PhotonParser:
     def deserialize_operation_response(self):
         code = self.deserialize_byte()
         return_code = self.deserialize_short()
-        # The C# code reads a string here, which is the debug message.
-        # In Python, we need to read the type code first, then the value.
-        # Assuming the debug message is always a string (type code 115)
         debug_message_type = self.deserialize_byte()
         if debug_message_type == Protocol16Type.String.value:
             debug_message = self.deserialize_string()
         else:
-            # Fallback if it's not a string, though unlikely for debug message
             debug_message = self._deserialize(debug_message_type)
             logger.warning(f"Debug message was not a string (type {debug_message_type})")
 
@@ -205,42 +201,60 @@ class PhotonParser:
 
     @staticmethod
     def parse_photon_message(payload):
-        # Simplified Enet/Photon header check and stripping
         if not payload or payload[0] not in {0xF1, 0xF2, 0xFE}:
             return None
 
-        # The actual Photon message starts after the Enet/Photon header (usually 1 byte)
         try:
             parser = PhotonParser(payload[1:])
-            
-            # The first byte of the raw Photon message is the message type code
-            message_type_code = parser.deserialize_byte()
-            
-            # Reset parser to the start of the message (after the header)
-            parser = PhotonParser(payload[1:])
-            
-            # The C# code calls Deserialize(input, (byte) input.ReadByte());
-            # which means it reads the type code and then calls the internal deserializer.
-            # We need to read the type code again and pass it to _deserialize.
-            
-            # Read the type code again
             type_code = parser.deserialize_byte()
-            
-            # Now deserialize the content based on the type code
             return parser._deserialize(type_code)
 
         except Exception as e:
             logger.error(f"Error parsing Photon message: {e}")
             return None
 
+class NetworkTracker:
+    def __init__(self, update_callback):
+        self.update_callback = update_callback
+        self.session_stats = SessionStats()
+        self.sniff_thread = None
+
+    def get_interfaces(self):
+        return get_if_list()
+
+    def start_sniffing(self, interface):
+        if self.session_stats.is_running:
+            return
+        
+        self.interface = interface
+        self.session_stats.start()
+        self.sniff_thread = threading.Thread(target=self._sniff_loop, daemon=True)
+        self.sniff_thread.start()
+        logger.info(f"Started sniffing on {interface}")
+
+    def stop_sniffing(self):
+        if not self.session_stats.is_running:
+            return
+        
+        self.session_stats.stop()
+        logger.info("Stopping sniffing...")
+
+    def _sniff_loop(self):
+        bpf_filter = "udp and (port 5055 or port 5056 or port 5058)"
+        try:
+            sniff(iface=self.interface, filter=bpf_filter, prn=self._process_packet, store=0, stop_filter=lambda x: not self.session_stats.is_running)
+        except Exception as e:
+            logger.error(f"Sniffing error: {e}")
+        finally:
+            self.session_stats.stop()
+            logger.info("Sniffing thread finished.")
+
     def _process_packet(self, packet):
-        if not self.is_running:
+        if not self.session_stats.is_running:
             return
 
         if IP in packet and UDP in packet:
             payload = bytes(packet[UDP].payload)
-            
-            # The payload is the raw Enet/Photon message
             parsed_message = PhotonParser.parse_photon_message(payload)
             
             if parsed_message and parsed_message.get("type") == "event":
@@ -250,43 +264,18 @@ class PhotonParser:
         event_code = event["code"]
         params = event["parameters"]
         
-        # Event Codes (Simplified from C# project)
-        # 1: UpdateMoney
-        # 2: UpdateFame
-        # 3: KilledPlayer
-        # 4: Died
-        # 5: CombatEvent (This is the most complex one)
-        
         if event_code == 5: # CombatEvent
             self._handle_combat_event(params)
-        elif event_code == 1: # UpdateMoney
-            # Not directly relevant for damage meter, but good for general stats
-            pass
-        elif event_code == 2: # UpdateFame
-            pass
-        elif event_code == 3: # KilledPlayer
-            pass
-        elif event_code == 4: # Died
-            pass
-        elif event_code == 10: # NewPlayer (Simplified, actual code is complex)
-            # Example: {1: object_id, 2: player_name}
+        elif event_code == 10: # NewPlayer
             object_id = params.get(1)
             player_name = params.get(2)
             if object_id and player_name:
-                self.player_id_map[object_id] = player_name
-                self.players[player_name]["name"] = player_name
+                self.session_stats.get_player_stats(object_id, player_name)
                 logger.info(f"New Player: {player_name} (ID: {object_id})")
         
-        # After handling the event, notify the UI to update
         self.update_callback()
 
     def _handle_combat_event(self, params):
-        # CombatEvent parameters (Simplified)
-        # 0: EventType (Byte) - 1: Damage, 2: Healing
-        # 1: SourceId (Integer) - ID of the entity that caused the damage/healing
-        # 2: TargetId (Integer) - ID of the entity that received the damage/healing
-        # 3: Amount (Float) - The amount of damage/healing
-        
         event_type = params.get(0)
         source_id = params.get(1)
         amount = params.get(3)
@@ -294,77 +283,25 @@ class PhotonParser:
         if not source_id or not amount:
             return
 
-        source_name = self.player_id_map.get(source_id)
+        player_stats = self.session_stats.get_player_stats(source_id)
         
-        if source_name:
+        if player_stats:
             if event_type == 1: # Damage
-                self.players[source_name]["damage_done"] += amount
-                logger.debug(f"Damage: {source_name} hit for {amount}")
+                player_stats.add_damage(amount)
+                logger.debug(f"Damage: {player_stats.name} hit for {amount}")
             elif event_type == 2: # Healing
-                self.players[source_name]["healing_done"] += amount
-                logger.debug(f"Healing: {source_name} healed for {amount}")
+                player_stats.add_healing(amount)
+                logger.debug(f"Healing: {player_stats.name} healed for {amount}")
 
     def get_damage_meter_data(self):
-        '''Returns data for the damage meter UI.'''
-        data = []
-        session_duration = (datetime.now() - self.start_time).total_seconds() if self.start_time and self.is_running else 0
-        
-        for name, stats in self.players.items():
-            damage = int(stats["damage_done"])
-            healing = int(stats["healing_done"])
-            dps = damage / session_duration if session_duration > 0 else 0
-            
-            data.append({
-                "name": name,
-                "damage": damage,
-                "dps": dps,
-                "healing": healing
-            })
-            
-        # Sort by damage done (descending)
-        data.sort(key=lambda x: x["damage"], reverse=True)
-        return data
+        return self.session_stats.get_damage_meter_data()
 
     def get_session_duration(self):
-        '''Returns the current session duration as a formatted string.'''
-        if not self.start_time or not self.is_running:
-            return "00:00:00"
-        
-        duration = datetime.now() - self.start_time
-        total_seconds = int(duration.total_seconds())
-        hours = total_seconds // 3600
-        minutes = (total_seconds % 3600) // 60
-        seconds = total_seconds % 60
-        
-        return f"{hours:02}:{minutes:02}:{seconds:02}"
+        return self.session_stats.get_session_duration_formatted()
 
     def reset_session(self):
-        '''Resets all session data.'''
-        self.players.clear()
-        self.player_id_map.clear()
-        self.start_time = datetime.now() if self.is_running else None
+        self.session_stats.reset()
         self.update_callback()
-        logger.info("Session data reset.")
 
     def save_session(self):
-        '''Saves the current session data to a JSON file.'''
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"albion_insight_session_{timestamp}.json"
-        
-        session_data = {
-            "timestamp": timestamp,
-            "duration": self.get_session_duration(),
-            "players": dict(self.players),
-            "player_id_map": self.player_id_map
-        }
-        
-        try:
-            with open(filename, "w") as f:
-                json.dump(session_data, f, indent=4)
-            logger.info(f"Session saved to {filename}")
-            return filename
-        except Exception as e:
-            logger.error(f"Error saving session: {e}")
-            return None
-
-
+        return self.session_stats.save_session()
