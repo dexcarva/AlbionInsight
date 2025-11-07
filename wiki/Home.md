@@ -4,14 +4,17 @@ O **Albion Insight** é uma ferramenta de análise de estatísticas multiplatafo
 
 Este projeto é um port moderno e em Python do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), focado em compatibilidade com Linux, Windows e macOS.
 
-## Comece Aqui
+## Navegação da Wiki
 
 | Tópico | Descrição |
 | :--- | :--- |
-| **[Guia de Instalação](Wiki_Installation_Guide)** | Instruções passo a passo para instalar e executar o Albion Insight em diferentes sistemas operacionais. |
-| **[Guia de Uso](Wiki_Usage_Guide)** | Como usar o Damage Meter, gerenciar sessões e interpretar os dados coletados. |
-| **[Contribuição](CONTRIBUTING.md)** | Quer ajudar? Saiba como reportar bugs, sugerir funcionalidades e contribuir com código. |
-| **[Detalhes Técnicos: Protocolo Photon](Wiki_Photon_Protocol_Decodification)** | Uma visão aprofundada sobre como o Albion Insight decodifica os pacotes de rede do Albion Online. |
+| **[Guia de Instalação](Installation-Guide)** | Instruções passo a passo para instalar e executar o Albion Insight em diferentes sistemas operacionais. |
+| **[Guia de Uso](Usage-Guide)** | Como usar o Damage Meter, gerenciar sessões e interpretar os dados coletados. |
+| **[Visão Geral da Arquitetura](Architecture-Overview)** | Uma visão geral da arquitetura do projeto, incluindo os principais componentes e como eles interagem. |
+| **[Decodificação do Protocolo Photon](Photon-Protocol-Decoding)** | Uma visão aprofundada sobre como o Albion Insight decodifica os pacotes de rede do Albion Online. |
+| **[Guia de Contribuição](Contribution-Guide)** | Quer ajudar? Saiba como reportar bugs, sugerir funcionalidades e contribuir com código. |
+| **[FAQ](FAQ)** | Perguntas frequentes sobre o projeto. |
+| **[Roadmap](Roadmap)** | O futuro do Albion Insight: funcionalidades planejadas e em desenvolvimento. |
 
 ## Status do Projeto
 
@@ -25,4 +28,4 @@ O projeto está em desenvolvimento ativo. A funcionalidade principal de rastream
 Agradecemos o seu interesse e contribuição!
 
 ---
-*Última atualização: 03 de Novembro de 2025*
+*Última atualização: 07 de Novembro de 2025*
