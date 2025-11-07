@@ -1,42 +1,24 @@
-## Description
-Please include a summary of the changes and the related issue. Include relevant motivation and context.
+## Descrição
 
-Fixes # (issue)
+[Descreva sucintamente as alterações feitas neste Pull Request.]
 
-## Type of Change
-Please delete options that are not relevant.
+## Tipo de Mudança
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update
-- [ ] Code refactoring
-- [ ] Performance improvement
-- [ ] Test addition/modification
-
-## How Has This Been Tested?
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce.
-
-- [ ] Test A
-- [ ] Test B
-
-**Test Configuration**:
-- OS: [e.g. Ubuntu 22.04]
-- Python Version: [e.g. 3.10.5]
-- Albion Online Version: [if applicable]
+- [ ] Bug fix (correção de um problema)
+- [ ] Nova feature (adição de funcionalidade)
+- [ ] Melhoria (refatoração, otimização, etc.)
+- [ ] Documentação (apenas alterações na documentação)
 
 ## Checklist
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published
 
-## Screenshots (if applicable)
-Add screenshots to help explain your changes.
+- [ ] Meu código segue as diretrizes de estilo deste projeto.
+- [ ] Eu realizei uma auto-revisão do meu próprio código.
+- [ ] Eu comentei meu código, particularmente em áreas difíceis de entender.
+- [ ] Eu fiz as alterações correspondentes na documentação.
+- [ ] Minhas alterações não geram novos warnings.
+- [ ] Eu testei minhas alterações.
+- [ ] Eu adicionei testes que provam que minha correção é eficaz ou que minha feature funciona (se aplicável).
 
-## Additional Notes
-Add any other notes about the pull request here.
+## Observações Adicionais
+
+[Qualquer outra informação relevante.]
