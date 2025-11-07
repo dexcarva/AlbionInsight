@@ -1,5 +1,7 @@
 # Contributing to Albion Insight
 
+**[Leia em Português do Brasil](CONTRIBUTING.pt-br.md)**
+
 **[Leia em Português](CONTRIBUTING.pt-BR.md)**
 **[Leer en Español](CONTRIBUTING.es-ES.md)**
 **[Lire en Français](CONTRIBUTING.fr-FR.md)**

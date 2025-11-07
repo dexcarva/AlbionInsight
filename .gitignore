@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv
+env
+
+# Flet
+.flet
+
+# PyInstaller
+# https://pyinstaller.org/en/stable/
+build/
+dist/
+*.spec
+
+# Operating System
+.DS_Store
+Thumbs.db

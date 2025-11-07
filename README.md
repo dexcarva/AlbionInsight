@@ -143,7 +143,11 @@ The entire application is contained within a single file for simplicity:
 | File | Description |
 | :--- | :--- |
 | `albion_insight.py` | The main application file containing all logic (Models, Network Tracker, Flet UI). |
-| `README.md` | This documentation file. |
+|| `README.md` | This documentation file. |
+| `README.pt-BR.md` | This documentation file in Brazilian Portuguese. |
+| `CONTRIBUTING.md` | Guidelines for contributing to the project. |
+| `CODE_OF_CONDUCT.md` | The project's Code of Conduct. |
+| `SECURITY.md` | Policy for reporting security vulnerabilities. |
 
 ## Current Status (Real-Time Data)
 
