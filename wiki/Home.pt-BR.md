@@ -63,4 +63,4 @@ Aceitamos contribuições da comunidade! Por favor, leia nossas [Diretrizes de C
 
 ---
 
-*Última atualização: Outubro de 2025*
+*Última atualização: Novembro de 2025*
