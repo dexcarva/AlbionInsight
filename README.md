@@ -9,7 +9,7 @@
 **[Read this in German (Lesen Sie dies auf Deutsch)](README.de-DE.md)**\n**[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**
 **[Read this in Spanish (Leer en Español)](README.es-ES.md)**
 **[Read this in French (Lire en Français)](README.fr-FR.md)**
-**[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**\n**[Read this in Simplified Chinese (阅读简体中文)](README.zh-CN.md)**\n**[Read this in Russian (Прочитать на русском)](README.ru-RU.md)**
+**[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**\n**[Read this in Simplified Chinese (阅读简体中文)](README.zh-CN.md)**\n**[Read this in Russian (Прочитать на русском)](README.ru-RU.md)**\n**[Read this in Japanese (日本語で読む)](README.ja-JP.md)**
 
 **Albion Insight** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
 
