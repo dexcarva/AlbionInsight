@@ -104,19 +104,19 @@ Como a captura de rede requer privilégios elevados, você deve executar a aplic
 **No Linux (com ambiente virtual):**
 
 ```bash
-sudo venv/bin/python3 albion_insight.py
+sudo venv/bin/python3 albion_insight/app.py
 ```
 
 **No Linux (instalação em todo o sistema):**
 
 ```bash
-sudo python3 albion_insight.py
+sudo python3 albion_insight/app.py
 ```
 
 **No Windows (Execute o Prompt de Comando/PowerShell como Administrador):**
 
 ```bash
-python albion_insight.py
+python albion_insight/app.py
 ```
 
 A aplicação será aberta em uma janela desktop nativa.
@@ -132,7 +132,7 @@ Para instruções detalhadas sobre como criar executáveis para Linux, Windows e
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight.py
+pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/app.py
 ```
 
 O executável estará localizado na pasta `dist/`.
@@ -143,7 +143,7 @@ A aplicação inteira está contida em um único arquivo para simplicidade:
 
 | Arquivo | Descrição |
 | :--- | :--- |
-| `albion_insight.py` | O arquivo principal da aplicação contendo toda a lógica (Modelos, Rastreador de Rede, Interface Flet). |
+| `albion_insight/app.py` | O arquivo principal da aplicação contendo toda a lógica (Modelos, Rastreador de Rede, Interface Flet). |
 | `README.md` | Este arquivo de documentação (em inglês). |
 | `README.pt-BR.md` | Este arquivo de documentação (em português). |
 | `README.fr-FR.md` | Este arquivo de documentação (em francês). |

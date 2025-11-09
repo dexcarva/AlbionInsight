@@ -1,40 +1,28 @@
 # Bem-vindo à Wiki do Albion Insight
 
 **[Read in English](Home.md)**
-**[Leer en Español](Home.es-ES.md)**
+**[Leer en Español](Home.es-ES.md)**\n**[Türkçe Oku](Home.tr-TR.md)**
 
 Bem-vindo à documentação oficial do **Albion Insight**, uma ferramenta de análise de estatísticas multiplataforma para Albion Online.
 
 ## Links Rápidos
 
 ### Primeiros Passos
-- [Guia de Instalação](Installation-Guide.pt-BR.md)
-- [Tutorial de Início Rápido](Quick-Start-Tutorial.pt-BR.md)
-- [Requisitos do Sistema](System-Requirements.pt-BR.md)
+- [Guia de Instalação](Installation-Guide.pt-BR.md)- [Tutorial de Início Rápido](Usage-Guide.pt-BR.md)
 
 ### Guias do Usuário
-- [Usando o Medidor de Dano](Using-the-Damage-Meter.pt-BR.md)
-- [Gerenciamento de Sessão](Session-Management.pt-BR.md)
-- [Exportando Estatísticas](Exporting-Statistics.pt-BR.md)
-- [Solucionando Problemas Comuns](Troubleshooting.pt-BR.md)
+- [Guia de Uso](Usage-Guide.pt-BR.md) [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
 
 ### Documentação para Desenvolvedores
 - [Visão Geral da Arquitetura](Architecture-Overview.pt-BR.md)
 - [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)
-- [Captura de Pacotes de Rede](Network-Packet-Capture.pt-BR.md)
+- [Detalhes Técnicos: Captura de Rede](Technical-Details-Photon-Protocol.pt-BR.md)
 - [Contribuindo para o Projeto](../CONTRIBUTING.pt-BR.md)
-- [Compilando a partir do Código Fonte](Building-from-Source.pt-BR.md)
+- [Guia de Refatoração](Refactoring-Guide.pt-BR.md)
 
-### Referência Técnica
-- [Referência de Tipos de Eventos](Event-Types-Reference.pt-BR.md)
-- [Documentação da API](API-Documentation.pt-BR.md)
-- [Opções de Configuração](Configuration-Options.pt-BR.md)
+### Referência Técnic- [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)\n- [Visão Geral da Arquitetura](Architecture-Overview.pt-BR.md)\n- [Roadmap](Roadmap.pt-BR.md)
 
-### Comunidade
-- [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
-- [Problemas Conhecidos](Known-Issues.pt-BR.md)
-- [Roadmap](Roadmap.pt-BR.md)
-- [Changelog](../CHANGELOG.md)
+### Comunidade- [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)\n- [Roadmap](Roadmap.pt-BR.md)- [Changelog](../CHANGELOG.md)
 
 ## Sobre Este Projeto
 
@@ -53,7 +41,7 @@ Albion Insight é uma reimplementação moderna e de código aberto da popular f
 Se você precisa de ajuda ou tem dúvidas:
 
 1. Confira o [FAQ](FAQ.pt-BR.md) para perguntas comuns
-2. Revise o [Guia de Solução de Problemas](Troubleshooting.pt-BR.md)
+2. Revise o [Guia de Uso](Usage-Guide.pt-BR.md)
 3. Pesquise nas [issues existentes](https://github.com/dexcarva/AlbionInsight/issues)
 4. Abra uma nova issue usando o template apropriado
 

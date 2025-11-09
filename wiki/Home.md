@@ -1,7 +1,7 @@
 # Welcome to the Albion Insight Wiki
 
 **[Leia em Português](Home.pt-BR.md)**
-**[Leer en Español](Home.es-ES.md)**
+**[Leer en Español](Home.es-ES.md)**\n**[Türkçe Oku](Home.tr-TR.md)**
 
 Welcome to the official documentation for **Albion Insight**, a cross-platform statistics analysis tool for Albion Online.
 
@@ -9,30 +9,25 @@ Welcome to the official documentation for **Albion Insight**, a cross-platform s
 
 ### Getting Started
 - [Installation Guide](Installation-Guide.md)
-- [Quick Start Tutorial](Quick-Start-Tutorial.md)
-- [System Requirements](System-Requirements.md)
+- [Quick Start Tutorial](Usage-Guide.md)
 
 ### User Guides
-- [Using the Damage Meter](Using-the-Damage-Meter.md)
-- [Session Management](Session-Management.md)
-- [Exporting Statistics](Exporting-Statistics.md)
-- [Troubleshooting Common Issues](Troubleshooting.md)
+- [Usage Guide](Usage-Guide.md)
+- [Frequently Asked Questions (FAQ)](FAQ.md)
 
 ### Developer Documentation
 - [Architecture Overview](Architecture-Overview.md)
 - [Photon Protocol Decoding](Photon-Protocol-Decoding.md)
-- [Network Packet Capture](Network-Packet-Capture.md)
+- [Technical Details: Network Capture](Technical-Details-Photon-Protocol.md)
 - [Contributing to the Project](../CONTRIBUTING.md)
-- [Building from Source](Building-from-Source.md)
+- [Refactoring Guide](Refactoring-Guide.md)
 
 ### Technical Reference
-- [Event Types Reference](Event-Types-Reference.md)
-- [API Documentation](API-Documentation.md)
-- [Configuration Options](Configuration-Options.md)
-
+- [Photon Protocol Decoding](Photon-Protocol-Decoding.md)
+- [Architecture Overview](Architecture-Overview.md)
+- [Roadmap](Roadmap.md)
 ### Community
 - [Frequently Asked Questions (FAQ)](FAQ.md)
-- [Known Issues](Known-Issues.md)
 - [Roadmap](Roadmap.md)
 - [Changelog](../CHANGELOG.md)
 
@@ -53,7 +48,7 @@ Albion Insight is a modern, open-source re-implementation of the popular AlbionO
 If you need assistance or have questions:
 
 1. Check the [FAQ](FAQ.md) for common questions
-2. Review the [Troubleshooting Guide](Troubleshooting.md)
+2. Review the [Usage Guide](Usage-Guide.md)
 3. Search [existing issues](https://github.com/dexcarva/AlbionInsight/issues)
 4. Open a new issue using the appropriate template
 
