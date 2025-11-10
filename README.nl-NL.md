@@ -111,19 +111,19 @@ Omdat het sniffen van netwerkverkeer verhoogde rechten vereist, moet u de applic
 **Op Linux (met virtuele omgeving):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/app.py
+sudo venv/bin/python3 albion_insight/main.py
 ```
 
 **Op Linux (systeembrede installatie):**
 
 ```bash
-sudo python3 albion_insight/app.py
+sudo python3 albion_insight/main.py
 ```
 
 **Op Windows (Voer Command Prompt/PowerShell uit als Administrator):**
 
 ```bash
-python albion_insight/app.py
+python albion_insight/main.py
 ```
 
 The application will open in a native desktop window.
@@ -139,7 +139,7 @@ Voor gedetailleerde instructies over het bouwen van uitvoerbare bestanden voor L
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/app.py
+pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
 ```
 
 Het uitvoerbare bestand bevindt zich in de `dist/` map.
@@ -150,7 +150,7 @@ De volledige applicatie is voor de eenvoud in één enkel bestand opgenomen:
 
 | Bestand | Beschrijving |
 | :--- | :--- |
-| `albion_insight/app.py` | Het hoofdbestand van de applicatie met alle logica (Modellen, Netwerk Tracker, Flet UI). |
+| `albion_insight/main.py` | Het hoofdbestand van de applicatie met alle logica (Modellen, Netwerk Tracker, Flet UI). |
 || `README.md` | Dit documentatiebestand. |
 | `README.pt-BR.md` | Dit documentatiebestand in het Braziliaans Portugees. |
 | `CONTRIBUTING.md` | Richtlijnen voor bijdragen aan het project. |
