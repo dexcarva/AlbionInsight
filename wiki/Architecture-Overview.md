@@ -1,6 +1,6 @@
 # Architecture Overview
 
-**[Leia em Português](Architecture-Overview.pt-BR.md)**
+**[Leia em Português](Architecture-Overview.pt-BR.md)**\n**[Lees in het Nederlands](Architecture-Overview.nl-NL.md)**
 **[Leer en Español](Architecture-Overview.es-ES.md)**
 
 This document provides a high-level overview of the Albion Insight architecture, explaining how the different components work together to track and display Albion Online statistics.
