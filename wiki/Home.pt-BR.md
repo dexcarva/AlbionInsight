@@ -8,21 +8,23 @@ Bem-vindo à documentação oficial do **Albion Insight**, uma ferramenta de an�
 ## Links Rápidos
 
 ### Primeiros Passos
-- [Guia de Instalação](Installation-Guide.pt-BR.md)- [Tutorial de Início Rápido](Usage-Guide.pt-BR.md)
+- [Guia de Instalação](Installation-Guide.md)
+- [Guia de Uso](Usage-Guide.md)
 
 ### Guias do Usuário
-- [Guia de Uso](Usage-Guide.pt-BR.md) [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
+- [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
 
-### Documentação para Desenvolvedores
+##### Documentação para Desenvolvedores
 - [Visão Geral da Arquitetura](Architecture-Overview.pt-BR.md)
 - [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)
-- [Detalhes Técnicos: Captura de Rede](Technical-Details-Photon-Protocol.pt-BR.md)
+- [Detalhes Técnicos: Captura de Rede](Technical-Details-Photon-Protocol.md)
+- [Guia de Refatoração](Refactoring-Guide.md)
 - [Contribuindo para o Projeto](../CONTRIBUTING.pt-BR.md)
-- [Guia de Refatoração](Refactoring-Guide.pt-BR.md)
 
-### Referência Técnic- [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)\n- [Visão Geral da Arquitetura](Architecture-Overview.pt-BR.md)\n- [Roadmap](Roadmap.pt-BR.md)
-
-### Comunidade- [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)\n- [Roadmap](Roadmap.pt-BR.md)- [Changelog](../CHANGELOG.md)
+### Referência
+- [Roadmap](Roadmap.md)
+- [Changelog](../CHANGELOG.md)
+- [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
 
 ## Sobre Este Projeto
 
