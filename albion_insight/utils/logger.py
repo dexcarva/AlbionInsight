@@ -1,8 +1,7 @@
 import logging
 from pathlib import Path
 
-# Cria o diretório 'utils' se não existir
-Path("AlbionInsight/albion_insight/utils").mkdir(parents=True, exist_ok=True)
+
 
 def setup_logger(name, log_file=None):
     """
@@ -43,4 +42,4 @@ def setup_logger(name, log_file=None):
     return logger
 
 # Configuração inicial do logger principal
-logger = setup_logger("AlbionInsight", log_file="AlbionInsight/logs/app.log")
+logger = setup_logger("AlbionInsight", log_file="logs/app.log")
