@@ -237,9 +237,10 @@
 </head>
 <body>
     <div class="lang-selector">
-        <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
-        <button onclick="setLanguage('pt-br')" id="btn-pt-br">Português</button>
-	        <button onclick="setLanguage('ar-sa')" id="btn-ar-sa" style="direction: rtl;">العربية</button>\n		        <button onclick="setLanguage('tr-tr')" id="btn-tr-tr">Türkçe</button>
+	        <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
+	        <button onclick="setLanguage('pt-br')" id="btn-pt-br">Português</button>
+		        <button onclick="setLanguage('ar-sa')" id="btn-ar-sa" style="direction: rtl;">العربية</button>
+		        <button onclick="setLanguage('tr-tr')" id="btn-tr-tr">Türkçe</button>
     </div>
 
     <div class="container">
@@ -518,41 +519,47 @@
     </div>
 
     <script>
-        function setLanguage(lang) {
-            const enContent = document.getElementById('content-en');
+	        function setLanguage(lang) {
+	            const enContent = document.getElementById('content-en');
+	            const ptContent = document.getElementById('content-pt-br');
 	            const arContent = document.getElementById('content-ar-sa');
-            const ptContent = document.getElementById('content-pt-br');
-	            const arContent = document.getElementById('content-ar-sa');
-            const btnEn = document.getElementById('btn-en');
-            const btnPt = document.getElementById('btn-pt-br');
+	            const trContent = document.getElementById('content-tr-tr');
+	            const btnEn = document.getElementById('btn-en');
+	            const btnPt = document.getElementById('btn-pt-br');
 	            const btnAr = document.getElementById('btn-ar-sa');
-
-            if (lang === 'en') {
-                enContent.classList.remove('hidden');
-	                ptContent.classList.add('hidden');
-	                arContent.classList.add('hidden');
+	            const btnTr = document.getElementById('btn-tr-tr');
+	
+	            // Hide all content sections
+	            enContent.classList.add('hidden');
+	            ptContent.classList.add('hidden');
+	            arContent.classList.add('hidden');
+	            trContent.classList.add('hidden');
+	
+	            // Deactivate all buttons
+	            btnEn.classList.remove('active');
+	            btnPt.classList.remove('active');
+	            btnAr.classList.remove('active');
+	            btnTr.classList.remove('active');
+	
+	            // Show selected content and activate button
+	            if (lang === 'en') {
+	                enContent.classList.remove('hidden');
 	                btnEn.classList.add('active');
-	                btnPt.classList.remove('active');
-	                btnAr.classList.remove('active');
 	                localStorage.setItem('language', 'en');
-            } else if (lang === 'pt-br') {
-	                enContent.classList.add('hidden');
+	            } else if (lang === 'pt-br') {
 	                ptContent.classList.remove('hidden');
-	                arContent.classList.add('hidden');
-	                btnEn.classList.remove('active');
 	                btnPt.classList.add('active');
-	                btnAr.classList.remove('active');
 	                localStorage.setItem('language', 'pt-br');
 	            } else if (lang === 'ar-sa') {
-	                enContent.classList.add('hidden');
-	                ptContent.classList.add('hidden');
 	                arContent.classList.remove('hidden');
-	                btnEn.classList.remove('active');
-	                btnPt.classList.remove('active');
 	                btnAr.classList.add('active');
 	                localStorage.setItem('language', 'ar-sa');
+	            } else if (lang === 'tr-tr') {
+	                trContent.classList.remove('hidden');
+	                btnTr.classList.add('active');
+	                localStorage.setItem('language', 'tr-tr');
 	            }
-        }
+	        }
 
         // Load saved language preference or default to English
         window.onload = function() {
