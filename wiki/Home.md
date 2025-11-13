@@ -9,9 +9,6 @@ Welcome to the official documentation for **Albion Insight**, a cross-platform s
 
 ### Getting Started
 - [Installation Guide](Installation-Guide.md)
-- [Quick Start Tutorial](Usage-Guide.md)
-
-### User Guides
 - [Usage Guide](Usage-Guide.md)
 - [Frequently Asked Questions (FAQ)](FAQ.md)
 
@@ -19,15 +16,10 @@ Welcome to the official documentation for **Albion Insight**, a cross-platform s
 - [Architecture Overview](Architecture-Overview.md)
 - [Photon Protocol Decoding](Photon-Protocol-Decoding.md)
 - [Technical Details: Network Capture](Technical-Details-Photon-Protocol.md)
+- [Network Tracker Refactoring (Latest)](Refactoring-Guide.md)
 - [Contributing to the Project](../CONTRIBUTING.md)
-- [Refactoring Guide](Refactoring-Guide.md)
 
-### Technical Reference
-- [Photon Protocol Decoding](Photon-Protocol-Decoding.md)
-- [Architecture Overview](Architecture-Overview.md)
-- [Roadmap](Roadmap.md)
-### Community
-- [Frequently Asked Questions (FAQ)](FAQ.md)
+### Project Information
 - [Roadmap](Roadmap.md)
 - [Changelog](../CHANGELOG.md)
 
