@@ -6,7 +6,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**[Read this in German (Lesen Sie dies auf Deutsch)](README.de-DE.md)**\n**[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**
+**[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**\n**[Read this in German (Lesen Sie dies auf Deutsch)](README.de-DE.md)**
 **[Read this in Spanish (Leer en Español)](README.es-ES.md)**
 **[Read this in French (Lire en Français)](README.fr-FR.md)**
 **[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**\n**[Read this in Simplified Chinese (阅读简体中文)](README.zh-CN.md)**\n**[Read this in Russian (Прочитать на русском)](README.ru-RU.md)**\n**[Read this in Japanese (日本語で読む)](README.ja-JP.md)**\n**[Read this in Arabic (اقرأ هذا بالعربية)](README.ar-SA.md)**\n**[Read this in Turkish (Türkçe Oku)](README.tr-TR.md)**\n**[Read this in Korean (한국어로 읽기)](README.ko-KR.md)**\n**[Read this in Dutch (Lees dit in het Nederlands)](README.nl-NL.md)**\n**[Read this in Polish (Czytaj po polsku)](README.pl-PL.md)**
