@@ -1,5 +1,5 @@
 import flet as ft
-from ..core.network_tracker import get_current_stats
+from ..core.network_tracker import tracker_instance
 
 def start_ui(page: ft.Page):
     """
@@ -10,10 +10,13 @@ def start_ui(page: ft.Page):
     
     stats_text = ft.Text("Estatísticas: Aguardando captura...")
 
-    def update_stats(e):
-        stats = get_current_stats()
+    def update_stats(e=None):
+        stats = tracker_instance.get_current_stats()
         stats_text.value = f"Silver: {stats.total_silver}, Fame: {stats.total_fame}"
         page.update()
+
+    # Inicia o Network Tracker
+    tracker_instance.start()
 
     page.add(
         ft.Text("Albion Insight - UI (Flet)"),
