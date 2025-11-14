@@ -4,7 +4,7 @@
 
 **[Leia em Português](CONTRIBUTING.pt-BR.md)**
 **[Leer en Español](CONTRIBUTING.es-ES.md)**
-**[Lire en Français](CONTRIBUTING.fr-FR.md)**\n**[Read in Arabic (اقرأ بالعربية)](CONTRIBUTING.ar-SA.md)**\n**[Czytaj po Polsku](CONTRIBUTING.pl-PL.md)**
+**[Lire en Français](CONTRIBUTING.fr-FR.md)**\n**[Read in Arabic (اقرأ بالعربية)](CONTRIBUTING.ar-SA.md)**\n**[Czytaj po Polsku](CONTRIBUTING.pl-PL.md)**\n**[Read in Hindi (हिंदी में पढ़ें)](CONTRIBUTING.hi-IN.md)**
 
 First off, thank you for considering contributing to Albion Insight! It's people like you that make Albion Insight such a great tool for the Albion Online community.
 
