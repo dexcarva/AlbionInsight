@@ -1,8 +1,8 @@
 import flet as ft
-from ..core.network_tracker import get_current_stats
+from ..core.network_tracker import get_current_stats, start_network_tracker
 
 
-def start_ui(page: ft.Page):
+def start_ui(page: ft.Page):\n    # Inicia o Network Tracker em uma thread separada para não bloquear a UI\n    start_network_tracker(page)
     """
     Função principal da interface do usuário (Flet).
     """
