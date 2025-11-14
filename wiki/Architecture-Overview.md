@@ -115,17 +115,15 @@ Albion Insight uses a multi-threaded architecture to ensure responsive UI and ef
 
 ## File Structure
 
-The application is designed with simplicity in mind, contained primarily in a single file:
+The application is designed with a modular structure to facilitate maintenance and scaling. The initial single-file approach has been refactored into distinct modules:
 
 ```
 AlbionInsight/
-├── albion_insight.py       # Main application file
-│   ├── Data Models
-│   ├── Network Capture
-│   ├── Photon Decoder
-│   ├── Event Handlers
-│   ├── State Management
-│   └── Flet UI
+├── albion_insight/
+│   ├── core/               # Core logic (Models, Network Tracker, Photon Decoding)
+│   ├── ui/                 # User Interface (Flet components)
+│   ├── utils/              # Utility functions (Logging, Configuration)
+│   └── main.py             # Application entry point
 ├── install.sh              # Linux installation script
 ├── run.sh                  # Linux run script
 ├── requirements.txt        # Python dependencies
@@ -193,4 +191,4 @@ If you're interested in contributing to the architecture:
 
 ---
 
-*Last updated: October 2025*
+*Last updated: November 2025*
