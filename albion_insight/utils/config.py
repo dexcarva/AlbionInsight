@@ -5,7 +5,6 @@ Carrega variáveis de ambiente e fornece valores padrão.
 
 import os
 from pathlib import Path
-from typing import Optional
 
 
 class Config:

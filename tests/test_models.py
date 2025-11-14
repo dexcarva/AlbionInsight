@@ -2,7 +2,7 @@
 Testes unitários para os modelos de dados do Albion Insight.
 """
 
-import pytest
+
 from albion_insight.core.models import PlayerStats, SessionStats, CombatEvent
 import time
 

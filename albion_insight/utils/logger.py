@@ -43,9 +43,7 @@ def setup_logger(name: str, log_file: str = None) -> logging.Logger:
         logger.addHandler(fh)
 
         # Formatter
-        formatter = logging.Formatter(
-            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-        )
+        formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
         ch.setFormatter(formatter)
         fh.setFormatter(formatter)

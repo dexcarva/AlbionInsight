@@ -1,1 +1,1 @@
-from .logger import setup_logger, logger
+# Este arquivo é intencionalmente vazio para marcar o diretório como um pacote Python.

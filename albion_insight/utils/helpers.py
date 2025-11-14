@@ -3,7 +3,7 @@ Módulo de funções auxiliares para a aplicação Albion Insight.
 Contém funções utilitárias reutilizáveis em toda a aplicação.
 """
 
-from typing import Any, Callable, Optional
+from typing import Any, Callable
 from functools import wraps
 import time
 
@@ -77,7 +77,7 @@ def retry(max_attempts: int = 3, delay: float = 1.0) -> Callable:
             for attempt in range(1, max_attempts + 1):
                 try:
                     return func(*args, **kwargs)
-                except Exception as e:
+                except Exception:
                     if attempt == max_attempts:
                         raise
                     time.sleep(delay)
