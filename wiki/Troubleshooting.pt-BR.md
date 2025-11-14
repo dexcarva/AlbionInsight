@@ -29,7 +29,17 @@ Este guia visa ajudar a resolver os problemas mais comuns que você pode encontr
 2.  **Verifique as Portas:** Confirme se as portas UDP 5055, 5056 e 5058 ainda são as usadas pelo Albion Online.
 3.  **Verifique o Log:** Defina `LOG_LEVEL=DEBUG` no seu `.env` e verifique o arquivo de log (`logs/app.log`) para ver se os pacotes estão sendo capturados e se há erros de decodificação.
 
-## 3. Erros de Dependência
+## 3. Erro de Importação Relativa
+
+*   **Erro de Importação Relativa (`ImportError: attempted relative import with no known parent package`)**
+    *   **Causa:** Este erro ocorre quando se tenta executar o arquivo principal (`albion_insight/main.py`) diretamente, pois ele usa importações relativas que só funcionam quando o módulo é executado como parte de um pacote.
+    *   **Solução:** Em vez de usar `sudo venv/bin/python3 albion_insight/main.py`, execute o módulo como um pacote a partir do diretório raiz do projeto (`AlbionInsight`) usando a flag `-m`:
+        ```bash
+        sudo venv/bin/python3 -m albion_insight
+        ```
+    *   **Observação:** O script de execução (`run.sh`) foi atualizado para usar o comando correto, mas esta informação é útil para quem executa manualmente.
+
+## 4. Erros de Dependência
 
 **Problema:** Erros como `ModuleNotFoundError` ou problemas de versão ao iniciar.
 
@@ -45,7 +55,7 @@ Este guia visa ajudar a resolver os problemas mais comuns que você pode encontr
     pip install -r requirements.txt
     ```
 
-## 4. Problemas de UI (Flet)
+## 5. Problemas de UI (Flet)
 
 **Problema:** A interface do usuário não é exibida corretamente ou trava no Linux.
 
@@ -54,7 +64,7 @@ Este guia visa ajudar a resolver os problemas mais comuns que você pode encontr
 **Solução:**
 *   **Instale as Dependências do Flutter:** Em distribuições baseadas em Debian/Ubuntu, você pode precisar de pacotes como `libgtk-3-dev` ou outros pacotes de desenvolvimento. Consulte a documentação oficial do Flet/Flutter para as dependências do seu sistema operacional.
 
-## 5. O Aplicativo Não Fecha
+## 6. O Aplicativo Não Fecha
 
 **Problema:** Ao fechar a janela, o processo Python continua em execução.
 
