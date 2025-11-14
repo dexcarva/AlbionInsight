@@ -1,55 +1,35 @@
-# Bem-vindo à Wiki do Albion Insight
+# Albion Insight - Página Inicial
 
 **[Read in English](Home.md)**
-**[Leer en Español](Home.es-ES.md)**\n**[Türkçe Oku](Home.tr-TR.md)**
 
-Bem-vindo à documentação oficial do **Albion Insight**, uma ferramenta de análise de estatísticas multiplataforma para Albion Online.
+## Bem-vindo ao Albion Insight
 
-## Links Rápidos
+**Albion Insight** é uma ferramenta de análise de estatísticas multiplataforma para o jogo Albion Online. Nosso objetivo é fornecer aos jogadores uma alternativa moderna, de código aberto e compatível com Linux, Windows e macOS para rastrear dados de jogo essenciais.
 
-### Primeiros Passos
-- [Guia de Instalação](Installation-Guide.md)
-- [Guia de Uso](Usage-Guide.md)
+O projeto é um *port* e uma modernização do popular **AlbionOnline-StatisticsAnalysis** (originalmente em C#/WPF), que estava limitado ao Windows.
 
-### Guias do Usuário
-- [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
+### O que o Albion Insight faz?
 
-##### Documentação para Desenvolvedores
-- [Visão Geral da Arquitetura](Architecture-Overview.pt-BR.md)
-- [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)
-- [Detalhes Técnicos: Captura de Rede](Technical-Details-Photon-Protocol.md)
-- [Guia de Refatoração](Refactoring-Guide.md)
-- [Contribuindo para o Projeto](../CONTRIBUTING.pt-BR.md)
+Ao analisar o tráfego de rede do jogo, o Albion Insight rastreia em tempo real:
 
-### Referência
-- [Roadmap](Roadmap.md)
-- [Changelog](../CHANGELOG.md)
-- [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
+*   **Medidor de Dano (Damage Meter):** Acompanhe o dano e a cura causados por você e seus aliados.
+*   **Rastreador de Prata e Fama:** Monitore seus ganhos e perdas de prata e fama durante a sessão.
+*   **Eventos de Jogo:** Registre abates, mortes e outras interações importantes.
 
-## Sobre Este Projeto
+### Comece Agora
 
-Albion Insight é uma reimplementação moderna e de código aberto da popular ferramenta AlbionOnline-StatisticsAnalysis, projetada para funcionar em múltiplas plataformas, incluindo Linux, Windows e macOS. Construído com Python e o framework Flet, ele fornece rastreamento em tempo real de estatísticas do jogo através da análise de tráfego de rede.
+Para começar a usar o Albion Insight, consulte o nosso [Guia de Instalação](Installation-Guide.md).
 
-### Principais Funcionalidades
+### Documentação da Wiki
 
-- **Multiplataforma**: Funciona no Linux, Windows e macOS
-- **Rastreamento em Tempo Real**: Monitore prata, fama e estatísticas de combate ao vivo
-- **Medidor de Dano**: Acompanhe dano causado, cura realizada e DPS
-- **Gerenciamento de Sessão**: Salve e analise suas sessões de jogo
-- **Código Aberto**: Desenvolvimento gratuito e orientado pela comunidade
+Explore as seguintes páginas para saber mais sobre o projeto:
 
-## Obtendo Ajuda
-
-Se você precisa de ajuda ou tem dúvidas:
-
-1. Confira o [FAQ](FAQ.pt-BR.md) para perguntas comuns
-2. Revise o [Guia de Uso](Usage-Guide.pt-BR.md)
-3. Pesquise nas [issues existentes](https://github.com/dexcarva/AlbionInsight/issues)
-4. Abra uma nova issue usando o template apropriado
-
-## Contribuindo
-
-Aceitamos contribuições da comunidade! Por favor, leia nossas [Diretrizes de Contribuição](../CONTRIBUTING.pt-BR.md) para começar.
+*   [Visão Geral da Arquitetura](Architecture-Overview.pt-BR.md)
+*   [Guia de Contribuição](Contribution-Guide.pt-BR.md)
+*   [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
+*   [Solução de Problemas Comuns](Troubleshooting.pt-BR.md)
+*   [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)
+*   [Roadmap](Roadmap.md)
 
 ---
 
