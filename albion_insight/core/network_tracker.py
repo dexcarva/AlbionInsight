@@ -1,4 +1,7 @@
-from .models import SessionStats\nimport flet as ft\nimport threading\nimport time
+from .models import SessionStats
+import flet as ft
+import threading
+import time
 from ..utils.logger import logger
 
 # Inicializa as estatísticas da sessão
