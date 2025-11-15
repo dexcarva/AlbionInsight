@@ -1,4 +1,4 @@
-from ui.app import run_app
+from .ui.main_window import run_app
 from utils.logger import logger
 
 

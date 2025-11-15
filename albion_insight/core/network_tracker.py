@@ -1,24 +1,40 @@
-from .models import SessionStats\nimport flet as ft
+from .models import SessionStats\nimport flet as ft\nimport threading\nimport time
 from ..utils.logger import logger
 
 # Inicializa as estatísticas da sessão
 current_session = SessionStats(start_time=0.0)
 
 
+def network_tracker_thread(page: ft.Page):
+    """
+    Função que roda em uma thread separada para simular a captura de pacotes.
+    """
+    logger.info("Network Tracker iniciado em thread separada. (Simulação Scapy)")
+    
+    # Simulação de captura de pacotes e atualização de estatísticas
+    silver_counter = 0
+    fame_counter = 0
+    
+    while True:
+        # Simula a decodificação de um pacote
+        silver_counter += 100
+        fame_counter += 50
+        
+        current_session.total_silver = silver_counter
+        current_session.total_fame = fame_counter
+        
+        # A UI será atualizada pelo botão, mas a thread de rede está rodando
+        logger.debug(f"Estatísticas atualizadas: Silver={silver_counter}, Fame={fame_counter}")
+        
+        time.sleep(5) # Simula o intervalo entre pacotes ou atualizações
+
 def start_network_tracker(page: ft.Page):
     """
-    Inicia a captura de pacotes de rede.
+    Inicia a captura de pacotes de rede em uma thread separada.
     """
-    logger.info("Network Tracker iniciado. (Scapy)")\n    # TODO: Implementar a lógica de Scapy aqui. O 'page' é passado para que o tracker possa atualizar a UI.
-    # TODO: Implementar a lógica de Scapy aqui.
-    # Por enquanto, apenas simula a atualização de estatísticas
-    current_session.total_silver = 10000
-    current_session.total_fame = 5000
-    logger.info(
-        f"Estatísticas simuladas: "
-        f"Silver={current_session.total_silver}, "
-        f"Fame={current_session.total_fame}"
-    )
+    # Cria e inicia a thread do tracker
+    tracker_thread = threading.Thread(target=network_tracker_thread, args=(page,), daemon=True)
+    tracker_thread.start()
 
 
 def get_current_stats():
