@@ -18,7 +18,7 @@ O objetivo principal do Albion Insight é fornecer uma alternativa **open-source
 ### Páginas da Wiki
 
 *   [Arquitetura do Projeto](#arquitetura-do-projeto)
-*   [Guia de Contribuição](#guia-de-contribuição)
+*   [Guia de Contribuição](#guia-de-contribuição)\n*   [Melhores Práticas de Código](#melhores-práticas-de-código)
 *   [Solução de Problemas Comuns](#solução-de-problemas-comuns)
 
 ---
