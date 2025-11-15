@@ -1,4 +1,4 @@
-# Albion Insight
+# Albion Insight (การวิเคราะห์สถิติ)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -10,10 +10,9 @@
 **[Read this in Spanish (Leer en Español)](README.es-ES.md)**
 **[Read this in French (Lire en Français)](README.fr-FR.md)**
 **[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**\n**[Read this in Simplified Chinese (阅读简体中文)](README.zh-CN.md)**\n**[Read this in Russian (Прочитать на русском)](README.ru-RU.md)**\n**[Read this in Japanese (日本語で読む)](README.ja-JP.md)**\n**[Read this in Arabic (اقرأ هذا بالعربية)](README.ar-SA.md)**\n**[Read this in Turkish (Türkçe Oku)](README.tr-TR.md)**\n**[Read this in Korean (한국어로 읽기)](README.ko-KR.md)**\n**[Read this in Dutch (Lees dit in het Nederlands)](README.nl-NL.md)**\n**[Read this in Polish (Czytaj po polsku)](README.pl-PL.md)****[Read this in Hindi (इसे हिंदी में पढ़ें)](README.hi-IN.md)**
-**[Read this in Swedish (Läs detta på svenska)](README.sv-SE.md)**\n**[Read this in Vietnamese (Đọc bằng tiếng Việt)](README.vi-VN.md)
-**[Read this in Thai (อ่านเป็นภาษาไทย)](README.th-TH.md)****
+**[Read this in Swedish (Läs detta på svenska)](README.sv-SE.md)**\n**[Read this in Vietnamese (Đọc bằng tiếng Việt)](README.vi-VN.md)**
 
-**Albion Insight** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
+**Albion Insight (การวิเคราะห์สถิติ)** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
 
 This project is a modern, open-source alternative to the original C#/WPF-based `AlbionOnline-StatisticsAnalysis` tool, focusing on multi-platform compatibility and ease of use.
 
@@ -159,7 +158,7 @@ The application now includes the **Photon Protocol Decoding** logic, translated 
 
 ## Contributing
 
-We welcome contributions from the community! Whether you're a developer, designer, or just an Albion Online enthusiast, there are many ways to help improve Albion Insight.
+We welcome contributions from the community! Whether you're a developer, designer, or just an Albion Online enthusiast, there are many ways to help improve Albion Insight (การวิเคราะห์สถิติ).
 
 Please read our [Contributing Guidelines](CONTRIBUTING.md) for detailed information on how to contribute to this project.
 
@@ -183,5 +182,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Network analysis powered by [Scapy](https://scapy.net/)
 
 ---
-*A cross-platform solution for the Albion Online community.*
+*โซลูชันข้ามแพลตฟอร์มสำหรับชุมชน Albion Online.*
 
