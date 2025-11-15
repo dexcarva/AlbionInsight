@@ -1,4 +1,4 @@
-from .ui.main_window import run_app\n\nif __name__ == "__main__":\n    main()
+from .ui.main_window import run_app
 from utils.logger import logger
 
 
@@ -12,3 +12,6 @@ def main():
 
     # Inicia a aplicação Flet
     run_app()
+
+if __name__ == "__main__":
+    main()
