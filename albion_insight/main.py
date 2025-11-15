@@ -1,4 +1,4 @@
-from .ui.main_window import run_app
+from .ui.main_window import run_app\n\nif __name__ == "__main__":\n    main()
 from utils.logger import logger
 
 
