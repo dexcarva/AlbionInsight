@@ -22,3 +22,6 @@ O objetivo principal do Albion Insight é fornecer uma alternativa **open-source
 
 *   [Documentation en Français (README.fr-FR.md)](../README.fr-FR.md)
 
+
+*   [Documentation en Français (README.fr-FR.md)](../README.fr-FR.md)
+
