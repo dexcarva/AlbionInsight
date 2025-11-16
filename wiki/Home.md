@@ -19,3 +19,6 @@ O objetivo principal do Albion Insight é fornecer uma alternativa **open-source
 *   [Guia de Contribuição](Guia-de-Contribuicao)
 *   [Melhores Práticas de Código](Melhores-Praticas-de-Codigo)
 *   [Solução de Problemas Comuns](Solucao-de-Problemas-Comuns)
+
+*   [Documentation en Français (README.fr-FR.md)](../README.fr-FR.md)
+
