@@ -1,5 +1,5 @@
 from .ui.main_window import run_app
-from utils.logger import logger
+from .utils.logger import logger
 
 
 def main():
