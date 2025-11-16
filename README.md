@@ -6,11 +6,22 @@
 [![GitHub Issues](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**[Read this in German (Lesen Sie dies auf Deutsch)](README.de-DE.md)**\n**[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**
+**[Read this in German (Lesen Sie dies auf Deutsch)](README.de-DE.md)**
+**[Read this in Portuguese (Leia em Português)](README.pt-BR.md)**
 **[Read this in Spanish (Leer en Español)](README.es-ES.md)**
 **[Read this in French (Lire en Français)](README.fr-FR.md)**
-**[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**\n**[Read this in Simplified Chinese (阅读简体中文)](README.zh-CN.md)**\n**[Read this in Russian (Прочитать на русском)](README.ru-RU.md)**\n**[Read this in Japanese (日本語で読む)](README.ja-JP.md)**\n**[Read this in Arabic (اقرأ هذا بالعربية)](README.ar-SA.md)**\n**[Read this in Turkish (Türkçe Oku)](README.tr-TR.md)**\n**[Read this in Korean (한국어로 읽기)](README.ko-KR.md)**\n**[Read this in Dutch (Lees dit in het Nederlands)](README.nl-NL.md)**\n**[Read this in Polish (Czytaj po polsku)](README.pl-PL.md)****[Read this in Hindi (इसे हिंदी में पढ़ें)](README.hi-IN.md)**
-**[Read this in Swedish (Läs detta på svenska)](README.sv-SE.md)**\n**[Read this in Vietnamese (Đọc bằng tiếng Việt)](README.vi-VN.md)**\n**[Read this in Greek (Διαβάστε στα Ελληνικά)](README.el-GR.md)**
+**[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**
+**[Read this in Simplified Chinese (阅读简体中文)](README.zh-CN.md)**
+**[Read this in Russian (Прочитать на русском)](README.ru-RU.md)**
+**[Read this in Japanese (日本語で読む)](README.ja-JP.md)**
+**[Read this in Arabic (اقرأ هذا بالعربية)](README.ar-SA.md)**
+**[Read this in Turkish (Türkçe Oku)](README.tr-TR.md)**
+**[Read this in Korean (한국어로 읽기)](README.ko-KR.md)**
+**[Read this in Dutch (Lees dit in het Nederlands)](README.nl-NL.md)**
+**[Read this in Polish (Czytaj po polsku)](README.pl-PL.md)****[Read this in Hindi (इसे हिंदी में पढ़ें)](README.hi-IN.md)**
+**[Read this in Swedish (Läs detta på svenska)](README.sv-SE.md)**
+**[Read this in Vietnamese (Đọc bằng tiếng Việt)](README.vi-VN.md)**
+**[Read this in Greek (Διαβάστε στα Ελληνικά)](README.el-GR.md)**
 
 **Albion Insight** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
 
