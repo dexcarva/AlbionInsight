@@ -2,7 +2,7 @@ from .models import SessionStats
 import flet as ft
 import threading
 import time
-from .utils.logger import logger
+from ..utils.logger import logger
 
 # Inicializa as estatísticas da sessão
 current_session = SessionStats(start_time=0.0)
