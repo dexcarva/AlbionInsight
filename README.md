@@ -12,6 +12,7 @@
 **[Read this in French (Lire en Français)](README.fr-FR.md)**
 **[Read this in Italian (Leggi in Italiano)](README.it-IT.md)**
 **[Read this in Simplified Chinese (阅读简体中文)](README.zh-CN.md)**
+**[Read this in Traditional Chinese (閱讀繁體中文)](README.zh-TW.md)**
 **[Read this in Russian (Прочитать на русском)](README.ru-RU.md)**
 **[Read this in Japanese (日本語で読む)](README.ja-JP.md)**
 **[Read this in Arabic (اقرأ هذا بالعربية)](README.ar-SA.md)**

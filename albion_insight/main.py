@@ -13,5 +13,6 @@ def main():
     # Inicia a aplicação Flet
     run_app()
 
+
 if __name__ == "__main__":
     main()
