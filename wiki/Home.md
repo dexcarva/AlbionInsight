@@ -1,27 +1,39 @@
-# Albion Insight
+# Albion Insight - Visão Geral do Projeto
 
-**Albion Insight** é uma ferramenta de análise de estatísticas multiplataforma para o jogo Albion Online, reimplementada em **Python** usando o framework **Flet**. O projeto nasceu da necessidade de modernizar e tornar acessível à comunidade um projeto anterior, que estava limitado ao ambiente Windows.
+O **Albion Insight** é uma ferramenta de análise de estatísticas de código aberto e multiplataforma, desenvolvida em **Python** com o framework **Flet**, dedicada à comunidade do jogo **Albion Online**. Seu propósito é rastrear e exibir estatísticas em tempo real, como dados de combate (Damage Meter), ganhos de prata e fama, através da análise do tráfego de rede do jogo.
 
-### Contexto do Projeto
+Este projeto representa um esforço de modernização e portabilidade do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), superando as limitações de plataforma e promovendo a colaboração da comunidade.
 
-O **Albion Insight** é um *port* do projeto original **AlbionOnline-StatisticsAnalysis** (originalmente em C#/WPF), que se destacava por sua capacidade de rastrear dados de combate e economia analisando o tráfego de rede do jogo.
+## 🎯 Objetivos Principais
 
-| Projeto | Linguagem/Framework | Plataformas | Foco |
-| :--- | :--- | :--- | :--- |
-| **AlbionOnline-StatisticsAnalysis** | C#/WPF | Windows | Funcionalidade, mas limitado a uma plataforma. |
-| **Albion Insight** | Python/Flet | Linux, Windows, macOS | Modernização, portabilidade e modularidade. |
+1.  **Portabilidade:** Garantir o funcionamento nativo em Linux, Windows e macOS.
+2.  **Transparência:** Ser uma alternativa de código aberto e auditável.
+3.  **Funcionalidade:** Fornecer um Damage Meter preciso e um rastreador de estatísticas de sessão confiável.
+4.  **Modularidade:** Manter uma estrutura de código limpa e modular para facilitar a manutenção e a contribuição.
 
-O objetivo principal do Albion Insight é fornecer uma alternativa **open-source** e **cross-platform** para que jogadores de todas as plataformas possam ter acesso a um Damage Meter e rastreador de estatísticas confiável.
+## 🗺️ Mapa da Wiki
 
-### Páginas da Wiki
+A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o Albion Insight.
 
-*   [Arquitetura do Projeto](Arquitetura-do-Projeto)
-*   [Guia de Contribuição](Guia-de-Contribuicao)
-*   [Melhores Práticas de Código](Melhores-Praticas-de-Codigo)
-*   [Solução de Problemas Comuns](Solucao-de-Problemas-Comuns)
+| Seção | Descrição | Status |
+| :--- | :--- | :--- |
+| **[Guia de Uso](Usage-Guide.md)** | Instruções passo a passo sobre como instalar, configurar e usar o aplicativo. | ✅ Completo |
+| **[Guia de Instalação](Installation-Guide.md)** | Detalhes sobre os pré-requisitos e métodos de instalação para diferentes sistemas operacionais. | ✅ Completo |
+| **[Arquitetura do Projeto](Architecture-Overview.md)** | Visão geral da estrutura de código, módulos e fluxo de dados. | ✅ Completo |
+| **[Decodificação do Protocolo Photon](Photon-Protocol-Decoding.md)** | Explicação técnica sobre como o tráfego do Albion Online é decodificado. | ✅ Completo |
+| **[Perguntas Frequentes (FAQ)](FAQ.md)** | Respostas para as dúvidas mais comuns da comunidade. | ✅ Completo |
+| **[Guia de Contribuição](Contribution-Guide.md)** | Como configurar o ambiente de desenvolvimento, padrões de código e processo de Pull Request. | ✅ Completo |
+| **[Solução de Problemas](Troubleshooting.pt-BR.md)** | Soluções para erros e problemas de configuração comuns. | ✅ Completo |
+| **[Roadmap](Roadmap.md)** | Funcionalidades planejadas e o futuro do projeto. | ✅ Completo |
 
-*   [Documentation en Français (README.fr-FR.md)](../README.fr-FR.md)
+## 🛠️ Detalhes Técnicos
 
+O Albion Insight é construído sobre as seguintes tecnologias:
 
-*   [Documentation en Français (README.fr-FR.md)](../README.fr-FR.md)
+*   **Linguagem:** Python 3.8+
+*   **Interface Gráfica:** [Flet](https://flet.dev/) (para uma UI nativa e multiplataforma)
+*   **Análise de Rede:** [Scapy](https://scapy.net/) (para captura e manipulação de pacotes)
+*   **Protocolo:** Implementação de decodificação do protocolo **Photon** do Albion Online.
 
+---
+*Última atualização: 17 de Novembro de 2025*
