@@ -3,9 +3,9 @@ Módulo de funções auxiliares para a aplicação Albion Insight.
 Contém funções utilitárias reutilizáveis em toda a aplicação.
 """
 
-from typing import Any, Callable
-from functools import wraps
 import time
+from functools import wraps
+from typing import Any, Callable
 
 
 def format_number(value: int) -> str:

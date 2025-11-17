@@ -5,6 +5,7 @@ Fornece um logger pré-configurado para uso em toda a aplicação.
 
 import logging
 from pathlib import Path
+
 from .config import Config
 
 
