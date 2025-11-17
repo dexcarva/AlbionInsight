@@ -1,3 +1,4 @@
+"""Módulo de interface do usuário (UI) da aplicação Albion Insight."""
 import flet as ft
 
 from ..core.network_tracker import get_current_stats, start_network_tracker

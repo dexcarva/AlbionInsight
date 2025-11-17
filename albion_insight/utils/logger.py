@@ -1,7 +1,4 @@
-"""
-Módulo de configuração centralizado de logging para a aplicação Albion Insight.
-Fornece um logger pré-configurado para uso em toda a aplicação.
-"""
+"""Módulo de configuração centralizado de logging para a aplicação Albion Insight."""
 
 import logging
 from pathlib import Path

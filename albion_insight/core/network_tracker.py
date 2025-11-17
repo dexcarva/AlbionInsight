@@ -1,3 +1,4 @@
+"""Módulo de rastreamento de rede da aplicação Albion Insight."""
 import threading
 import time
 
