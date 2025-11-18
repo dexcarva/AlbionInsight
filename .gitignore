@@ -41,3 +41,4 @@ htmlcov/
 .env
 .env.local
 
+translate_readme.py
