@@ -4,8 +4,8 @@ import time
 
 import flet as ft
 
-from ..utils.logger import logger
-from .models import SessionStats
+from albion_insight.utils.logger import logger
+from albion_insight.core.models import SessionStats
 
 # Inicializa as estatísticas da sessão
 current_session = SessionStats(start_time=0.0)
