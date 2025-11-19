@@ -8,6 +8,7 @@
 **[Read in Arabic (اقرأ بالعربية)](CONTRIBUTING.ar-SA.md)**
 **[Czytaj po Polsku](CONTRIBUTING.pl-PL.md)**
 **[Read in Hindi (हिंदी में पढ़ें)](CONTRIBUTING.hi-IN.md)**
+**[Read in Thai (อ่านเป็นภาษาไทย)](CONTRIBUTING.th-TH.md)**
 
 First off, thank you for considering contributing to Albion Insight! It's people like you that make Albion Insight such a great tool for the Albion Online community.
 
