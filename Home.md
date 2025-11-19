@@ -45,10 +45,10 @@ Para executar a aplicação manualmente, use o seguinte comando (após instalar 
 
 ```bash
 # No Linux (com privilégios de root)
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 
 # No Windows (em Prompt de Comando/PowerShell como Administrador)
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 ## 🤝 Contribuições
@@ -57,7 +57,7 @@ Contribuições são muito bem-vindas! Se você deseja ajudar a melhorar o Albio
 
 As áreas de contribuição incluem:
 *   **Desenvolvimento:** Implementação de mais eventos do protocolo Photon.
-*   **Tradução:** Adicionar documentação em novos idiomas (como o recém-adicionado Chinês Tradicional).
+*   **Tradução:** Adicionar documentação em novos idiomas (como o recém-adicionado Tailandês).
 *   **Relatório de Bugs:** Abrir Issues para problemas encontrados.
 
 ## 📦 Construindo um Executável
