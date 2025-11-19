@@ -1,8 +1,9 @@
 """Módulo de rastreamento de rede da aplicação Albion Insight."""
+import flet as ft
 import threading
 import time
 
-import flet as ft
+
 
 from albion_insight.utils.logger import logger
 from albion_insight.core.models import SessionStats
