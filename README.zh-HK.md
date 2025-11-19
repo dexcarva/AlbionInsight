@@ -140,11 +140,14 @@ pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
 
 ## 項目結構 (Project Structure)
 
-為了簡潔起見，整個應用程序包含在一個文件中：
+為了更好的可維護性和可擴展性，應用程序被構建為模塊化組件：
 
 | 文件 | 描述 |
 | :--- | :--- |
-| `albion_insight/main.py` | 包含所有邏輯（模型、網絡追蹤器、Flet 用戶界面）的主應用程序文件。 |
+| `albion_insight/core/` | 核心邏輯、網絡追蹤、數據模型和協議解碼。 |
+| `albion_insight/ui/` | 使用 Flet 構建的用戶界面組件。 |
+| `albion_insight/utils/` | 實用函數、配置和日誌記錄。 |
+| `albion_insight/__main__.py` | 應用程序的入口點。 |
 | `README.md` | 此文檔文件。 |
 | `README.pt-BR.md` | 此文檔文件的巴西葡萄牙語版本。 |
 | `CONTRIBUTING.md` | 貢獻項目的指南。 |

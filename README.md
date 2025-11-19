@@ -140,11 +140,14 @@ The executable will be located in the `dist/` folder.
 
 ## Project Structure
 
-The entire application is contained within a single file for simplicity:
+The application is structured into modular components for better maintainability and scalability:
 
 | File | Description |
 | :--- | :--- |
-| `albion_insight/main.py` | The main application file containing all logic (Models, Network Tracker, Flet UI). |
+| `albion_insight/core/` | Core logic, network tracking, data models, and protocol decoding. |
+| `albion_insight/ui/` | User interface components built with Flet. |
+| `albion_insight/utils/` | Utility functions, configuration, and logging. |
+| `albion_insight/__main__.py` | Entry point for the application. |
 || `README.md` | This documentation file. |
 | `README.pt-BR.md` | This documentation file in Brazilian Portuguese. |
 | `CONTRIBUTING.md` | Guidelines for contributing to the project. |
