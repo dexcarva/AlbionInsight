@@ -19,14 +19,14 @@ A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o 
 | :--- | :--- | :--- |
 | **[Guia de Uso](Usage-Guide.md)** | Instruções passo a passo sobre como instalar, configurar e usar o aplicativo. | ✅ Completo |
 | **[Guia de Instalação](Installation-Guide.md)** | Detalhes sobre os pré-requisitos e métodos de instalação para diferentes sistemas operacionais. | ✅ Completo |
-| **[Arquitetura do Projeto](Architecture-Overview.md)** | Visão geral da estrutura de código, módulos e fluxo de dados. | ✅ Completo |
+| **[Visão Geral da Arquitetura](Architecture-Overview.md)** | Visão geral da estrutura de código, módulos e fluxo de dados. | ✅ Completo |
 | **[Decodificação do Protocolo Photon](Photon-Protocol-Decoding.md)** | Explicação técnica sobre como o tráfego do Albion Online é decodificado. | ✅ Completo |
 | **[Perguntas Frequentes (FAQ)](FAQ.md)** | Respostas para as dúvidas mais comuns da comunidade. | ✅ Completo |
 | **[Guia de Contribuição](Contribution-Guide.md)** | Como configurar o ambiente de desenvolvimento, padrões de código e processo de Pull Request. | ✅ Completo |
 | **[Solução de Problemas](Troubleshooting.pt-BR.md)** | Soluções para erros e problemas de configuração comuns. | ✅ Completo |
 | **[Roadmap](Roadmap.md)** | Funcionalidades planejadas e o futuro do projeto. | ✅ Completo |
 
-## 🛠️ Detalhes Técnicos
+## 🤝 Comunidade e Código Aberto\n\nO Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.\n\n## 🛠️ Detalhes Técnicos
 
 O Albion Insight é construído sobre as seguintes tecnologias:
 
