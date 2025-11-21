@@ -26,7 +26,11 @@ A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o 
 | **[Solução de Problemas](Troubleshooting.pt-BR.md)** | Soluções para erros e problemas de configuração comuns. | ✅ Completo |
 | **[Roadmap](Roadmap.md)** | Funcionalidades planejadas e o futuro do projeto. | ✅ Completo |
 
-## 🤝 Comunidade e Código Aberto\n\nO Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.\n\n## 🛠️ Detalhes Técnicos
+## 🤝 Comunidade e Código Aberto
+
+O Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.
+
+## 🛠️ Detalhes Técnicos
 
 O Albion Insight é construído sobre as seguintes tecnologias:
 
@@ -36,4 +40,4 @@ O Albion Insight é construído sobre as seguintes tecnologias:
 *   **Protocolo:** Implementação de decodificação do protocolo **Photon** do Albion Online.
 
 ---
-*Última atualização: 19 de Novembro de 2025*
+*Última atualização: 21 de Novembro de 2025*
