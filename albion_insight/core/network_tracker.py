@@ -1,8 +1,8 @@
 """Módulo de rastreamento de rede da aplicação Albion Insight."""
+
 import flet as ft
 import threading
 import time
-
 
 
 from albion_insight.utils.logger import logger
