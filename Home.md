@@ -51,13 +51,25 @@ sudo python3 -m albion_insight
 python -m albion_insight
 ```
 
+## 🏗️ Estrutura do Projeto (Para Contribuidores)
+
+O projeto segue uma estrutura modular para facilitar a manutenção e o desenvolvimento:
+
+| Diretório/Módulo | Responsabilidade |
+| :--- | :--- |
+| `albion_insight/core/` | Contém a lógica de negócio principal, como o rastreamento de rede (`network_tracker.py`), a decodificação do protocolo Photon (`photon_decoder.py`) e os modelos de dados (`models.py`). |
+| `albion_insight/ui/` | Responsável pela interface do usuário e seus componentes, utilizando o framework Flet. |
+| `albion_insight/utils/` | Funções auxiliares, como configuração de logging (`logger.py`) e variáveis de ambiente. |
+| `tests/` | Contém os testes unitários e de integração para garantir a qualidade do código. |
+
 ## 🤝 Contribuições
 
 Contribuições são muito bem-vindas! Se você deseja ajudar a melhorar o Albion Insight, por favor, leia o nosso [Guia de Contribuição](CONTRIBUTING.md).
 
 As áreas de contribuição incluem:
-*   **Desenvolvimento:** Implementação de mais eventos do protocolo Photon.
-*   **Tradução:** Adicionar documentação em novos idiomas (como o recém-adicionado Tailandês).
+*   **Desenvolvimento:** Implementação de mais eventos do protocolo Photon e refatoração de módulos.
+*   **Testes:** Adição de testes unitários e de integração.
+*   **Documentação:** Tradução e melhoria da documentação existente.
 *   **Relatório de Bugs:** Abrir Issues para problemas encontrados.
 
 ## 📦 Construindo um Executável
@@ -65,4 +77,4 @@ As áreas de contribuição incluem:
 Para criar uma versão standalone do aplicativo que não requer a instalação do Python, você pode usar o **PyInstaller**. Consulte o arquivo [PACKAGING.md](PACKAGING.md) para instruções detalhadas sobre como construir executáveis para diferentes sistemas operacionais.
 
 ---
-*Esta página foi atualizada como parte de um esforço de manutenção e aplicação de melhores práticas de código aberto.*
+*Esta página foi atualizada como parte de um esforço de manutenção e aplicação de melhores práticas de código aberto, incluindo a adição de detalhes sobre a estrutura do projeto para novos contribuidores.*
