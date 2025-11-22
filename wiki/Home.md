@@ -1,44 +1,66 @@
-# Albion Insight - Visão Geral do Projeto
+# Albion Insight Wiki - Welcome
 
-O **Albion Insight** é uma ferramenta de análise de estatísticas de código aberto e multiplataforma, desenvolvida em **Python** com o framework **Flet**, dedicada à comunidade do jogo **Albion Online**. Seu propósito é rastrear e exibir estatísticas em tempo real, como dados de combate (Damage Meter), ganhos de prata e fama, através da análise do tráfego de rede do jogo.
+Welcome to the **Albion Insight** Wiki!
 
-Este projeto representa um esforço de modernização e portabilidade do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), superando as limitações de plataforma e promovendo a colaboração da comunidade.
+This Wiki serves as the comprehensive documentation for the **Albion Insight** project, a cross-platform, open-source statistics analysis tool for the game **Albion Online**. It is developed in **Python** using the **Flet** framework.
 
-## 🎯 Objetivos Principais
+To get started, please select your preferred language below:
 
-1.  **Portabilidade:** Garantir o funcionamento nativo em Linux, Windows e macOS.
-2.  **Transparência:** Ser uma alternativa de código aberto e auditável.
-3.  **Funcionalidade:** Fornecer um Damage Meter preciso e um rastreador de estatísticas de sessão confiável.
-4.  **Modularidade:** Manter uma estrutura de código limpa e modular para facilitar a manutenção e a contribuição.
+| Language | Link |
+| :--- | :--- |
+| **English (US)** | [Home.en-US.md](Home.en-US.md) |
+| **Português (BR)** | [Home.pt-BR.md](Home.pt-BR.md) |
+| **中文 (Hong Kong)** | [Home.zh-HK.md](Home.zh-HK.md) |
 
-## 🗺️ Mapa da Wiki
+## 🗺️ Wiki Map (English)
 
-A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o Albion Insight.
+The following sections are available in English. Please check the language-specific homepages for translated content.
 
-| Seção | Descrição | Status |
-| **[Filipino (Tagalog) README](README.fil-PH.md)** | Documentação principal traduzida para Filipino (Tagalog). | ✅ Completo |
+| Section | Description | Status |
 | :--- | :--- | :--- |
-| **[Guia de Uso](Usage-Guide.md)** | Instruções passo a passo sobre como instalar, configurar e usar o aplicativo. | ✅ Completo |
-| **[Guia de Instalação](Installation-Guide.md)** | Detalhes sobre os pré-requisitos e métodos de instalação para diferentes sistemas operacionais. | ✅ Completo |
-| **[Visão Geral da Arquitetura](Architecture-Overview.md)** | Visão geral da estrutura de código, módulos e fluxo de dados. | ✅ Completo |
-| **[Decodificação do Protocolo Photon](Photon-Protocol-Decoding.md)** | Explicação técnica sobre como o tráfego do Albion Online é decodificado. | ✅ Completo |
-| **[Perguntas Frequentes (FAQ)](FAQ.md)** | Respostas para as dúvidas mais comuns da comunidade. | ✅ Completo |
-| **[Guia de Contribuição](Contribution-Guide.md)** | Como configurar o ambiente de desenvolvimento, padrões de código e processo de Pull Request. | ✅ Completo |
-| **[Solução de Problemas](Troubleshooting.pt-BR.md)** | Soluções para erros e problemas de configuração comuns. | ✅ Completo |
-| **[Roadmap](Roadmap.md)** | Funcionalidades planejadas e o futuro do projeto. | ✅ Completo |
+| **[Usage Guide](Usage-Guide.md)** | Step-by-step instructions on how to install, configure, and use the application. | ✅ Complete |
+| **[Installation Guide](Installation-Guide.md)** | Details on prerequisites and installation methods for different operating systems. | ✅ Complete |
+| **[Architecture Overview](Architecture-Overview.md)** | Overview of the code structure, modules, and data flow. | ✅ Complete |
+| **[Photon Protocol Decoding](Photon-Protocol-Decoding.md)** | Technical explanation of how Albion Online traffic is decoded. | ✅ Complete |
+| **[Frequently Asked Questions (FAQ)](FAQ.md)** | Answers to the community's most common questions. | ✅ Complete |
+| **[Contribution Guide](Contribution-Guide.md)** | How to set up the development environment, code standards, and Pull Request process. | ✅ Complete |
+| **[Troubleshooting](Troubleshooting.pt-BR.md)** | Solutions for common errors and configuration issues. | ✅ Complete |
+| **[Roadmap](Roadmap.md)** | Planned features and the future of the project. | ✅ Complete |
 
-## 🤝 Comunidade e Código Aberto
+## 🤝 Community and Open Source
 
-O Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.
+Albion Insight thrives on community collaboration. As an open-source project, it ensures **transparency** in data processing and allows anyone to audit the code, guaranteeing the tool's security and integrity. We actively encourage contributions, whether through bug reports, feature suggestions, or code. Your involvement is fundamental to the project's success and longevity.
 
-## 🛠️ Detalhes Técnicos
+## 🛠️ Technical Details
 
-O Albion Insight é construído sobre as seguintes tecnologias:
+Albion Insight is built on the following technologies:
 
-*   **Linguagem:** Python 3.8+
-*   **Interface Gráfica:** [Flet](https://flet.dev/) (para uma UI nativa e multiplataforma)
-*   **Análise de Rede:** [Scapy](https://scapy.net/) (para captura e manipulação de pacotes)
-*   **Protocolo:** Implementação de decodificação do protocolo **Photon** do Albion Online.
+*   **Language:** Python 3.8+
+*   **Graphical Interface:** [Flet](https://flet.dev/) (for a native, cross-platform UI)
+*   **Network Analysis:** [Scapy](https://scapy.net/) (for packet capture and manipulation)
+*   **Protocol:** Implementation of the **Photon** protocol decoding for Albion Online.
 
 ---
-*Última atualização: 22 de Novembro de 2025*
+*Last updated: 22 November 2025*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
