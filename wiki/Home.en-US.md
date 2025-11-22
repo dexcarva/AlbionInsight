@@ -11,7 +11,7 @@ This project represents an effort to modernize and port the original C# project 
 3.  **Functionality:** Provide an accurate Damage Meter and a reliable session statistics tracker.
 4.  **Modularity:** Maintain a clean and modular code structure to facilitate maintenance and contribution.
 
-## 🗺️ Wiki Map
+## 🗺️ Wiki Map (English)
 
 The project Wiki is your complete guide to understanding, using, and contributing to Albion Insight.
 
@@ -26,6 +26,10 @@ The project Wiki is your complete guide to understanding, using, and contributin
 | **[Troubleshooting](Troubleshooting.pt-BR.md)** | Solutions for common errors and configuration issues. | ✅ Complete |
 | **[Roadmap](Roadmap.md)** | Planned features and the future of the project. | ✅ Complete |
 
+## 🤝 Community and Open Source
+
+Albion Insight thrives on community collaboration. As an open-source project, it ensures **transparency** in data processing and allows anyone to audit the code, guaranteeing the tool's security and integrity. We actively encourage contributions, whether through bug reports, feature suggestions, or code. Your involvement is fundamental to the project's success and longevity.
+
 ## 🛠️ Technical Details
 
 Albion Insight is built upon the following technologies:
@@ -36,4 +40,4 @@ Albion Insight is built upon the following technologies:
 *   **Protocol:** Implementation of the **Photon** protocol decoding for Albion Online.
 
 ---
-*Last updated: November 17, 2025*
+*Last updated: 22 November 2025*
