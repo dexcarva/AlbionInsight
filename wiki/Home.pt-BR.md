@@ -31,6 +31,10 @@ Explore as seguintes páginas para saber mais sobre o projeto:
 *   [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)
 *   [Roadmap](Roadmap.md)
 
+## 🤝 Comunidade e Código Aberto
+
+O Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.
+
 ---
 
-*Última atualização: Novembro de 2025*
+*Última atualização: 22 de Novembro de 2025*
