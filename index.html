@@ -240,7 +240,7 @@
 	        <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
 	        <button onclick="setLanguage('pt-br')" id="btn-pt-br">Português</button>
 		        <button onclick="setLanguage('ar-sa')" id="btn-ar-sa" style="direction: rtl;">العربية</button>
-		        <button onclick="setLanguage('tr-tr')" id="btn-tr-tr">Türkçe</button>\n\t\t        <button onclick="setLanguage('fr-fr')" id="btn-fr-fr">Français</button>
+		        <button onclick="setLanguage('tr-tr')" id="btn-tr-tr">Türkçe</button>\n\t\t        <button onclick="setLanguage('fr-fr')" id="btn-fr-fr">Français</button>\n<button onclick="setLanguage('fil-ph')" id="btn-fil-ph">Filipino</button>
     </div>
 
     <div class="container">
@@ -570,3 +570,125 @@
 </body>
 </html>
 
+
+		        <!-- Filipino (Tagalog) Content -->
+		        <div id="content-fil-ph" class="hidden">
+		            <header>
+		                <h1>🛡️ Albion Insight</h1>
+		                <p>Isang tool sa pagsusuri ng istatistika na cross-platform para sa Albion Online</p>
+		                <p style="font-size: 0.9em; color: #888;">Subaybayan ang silver, fame, damage, at marami pa sa real-time sa Linux, Windows, at macOS</p>
+		                <div style="margin-top: 20px;">
+		                    <a href="https://github.com/dexcarva/AlbionInsight/releases/latest" class="download-btn">
+		                        I-download ang Pinakabagong Bersyon <span class="badge">Beta 0.0.1</span>
+		                    </a>
+		                </div>
+		                <div class="platform-icons">
+		                    <span title="Linux">🐧</span>
+		                    <span title="Windows">🪟</span>
+		                    <span title="macOS">🍎</span>
+		                </div>
+		            </header>
+		
+		            <div class="requirements">
+		                <h3>📋 Mga Kinakailangan</h3>
+		                <ul>
+		                    <li><strong>Python 3.8+</strong> (o gamitin ang standalone executable mula sa releases)</li>
+		                    <li><strong>Root/Administrator Privileges</strong> para sa network packet capture</li>
+		                    <li><strong>Linux:</strong> I-install ang <code>libpcap-dev</code> para sa Scapy support</li>
+		                    <li><strong>Windows/macOS:</strong> Walang karagdagang dependencies para sa executable</li>
+		                </ul>
+		            </div>
+		
+		            <section>
+		                <h2 style="text-align: center; color: #ffd700; margin-bottom: 30px;">✨ Mga Tampok</h2>
+		                <div class="features">
+		                    <div class="feature-card">
+		                        <h3>🌍 Cross-Platform</h3>
+		                        <p>Tumatakbo nang natural sa Linux, Windows, at macOS. Binuo gamit ang Python at Flet para sa maximum compatibility.</p>
+		                    </div>
+		                    <div class="feature-card">
+		                        <h3>📊 Real-Time Tracking</h3>
+		                        <p>Kinukuha ang UDP packets sa Albion Online ports (5055, 5056, 5058) at dine-decode ang Photon Protocol sa real-time.</p>
+		                    </div>
+		                    <div class="feature-card">
+		                        <h3>⚔️ Damage Meter</h3>
+		                        <p>Subaybayan ang damage done, healing done, DPS, kills, at deaths para sa iyo at sa iyong party members habang nakikipaglaban.</p>
+		                    </div>
+		                    <div class="feature-card">
+		                        <h3>💰 Silver & Fame Tracking</h3>
+		                        <p>Subaybayan ang iyong silver at fame gains na may per-hour statistics upang i-optimize ang iyong farming routes.</p>
+		                    </div>
+		                    <div class="feature-card">
+		                        <h3>🔔 Live Notifications</h3>
+		                        <p>Kumuha ng instant notifications para sa mahahalagang events tulad ng kills, deaths, silver gains, at marami pa.</p>
+		                    </div>
+		                    <div class="feature-card">
+		                        <h3>💾 Session Management</h3>
+		                        <p>I-save ang iyong session statistics sa JSON files para sa pag-aaral at paghahambing sa ibang pagkakataon.</p>
+		                    </div>
+		                </div>
+		            </section>
+		
+		            <div class="contributing">
+		                <h2>🤝 Pag-ambag sa Albion Insight</h2>
+		                <p>Tinatanggap namin ang mga kontribusyon mula sa komunidad! Kung ikaw ay isang developer, designer, o isang tagahanga lamang ng Albion Online, maraming paraan upang makatulong na mapabuti ang Albion Insight.</p>
+		                
+		                <h3 style="color: #ffd700; margin-top: 20px; margin-bottom: 10px;">Paano Ka Makakapag-ambag:</h3>
+		                <ul>
+		                    <li><strong>Mag-ulat ng Bugs:</strong> Nakakita ng bug? Magbukas ng issue sa aming <a href="https://github.com/dexcarva/AlbionInsight/issues" style="color: #667eea;">GitHub Issues</a> page na may detalyadong hakbang upang ma-reproduce ito.</li>
+		                    <li><strong>Magmungkahi ng Features:</strong> May ideya para sa isang bagong feature? Ibahagi ito sa Issues section na may label na "enhancement".</li>
+		                    <li><strong>Pagbutihin ang Dokumentasyon:</strong> Tulungan kaming pagbutihin ang README, magdagdag ng tutorials, o isalin ang dokumentasyon sa ibang wika.</li>
+		                    <li><strong>Mga Kontribusyon sa Code:</strong> I-fork ang repository, gawin ang iyong mga pagbabago, at magsumite ng Pull Request. Siguraduhin na sundin ang coding style at isama ang mga pagsusulit kung naaangkop.</li>
+		                    <li><strong>Subukan sa Iba't Ibang Platform:</strong> Tulungan kaming subukan ang application sa iba't ibang Linux distributions, Windows versions, at macOS upang matiyak ang compatibility.</li>
+		                    <li><strong>I-decode ang Marami pang Events:</strong> Ang Photon Protocol ay may daan-daang uri ng event. Tulungan kaming isalin ang mas maraming event handlers mula sa orihinal na C# code patungo sa Python.</li>
+		                </ul>
+		
+		                <h3 style="color: #ffd700; margin-top: 20px; margin-bottom: 10px;">Para Magsimula:</h3>
+		                <ul>
+		                    <li>I-fork ang repository: <a href="https://github.com/dexcarva/AlbionInsight" style="color: #667eea;">github.com/dexcarva/AlbionInsight</a></li>
+		                    <li>I-clone ang iyong fork: <code>git clone https://github.com/YOUR_USERNAME/AlbionInsight.git</code></li>
+		                    <li>Gumawa ng bagong branch: <code>git checkout -b feature/your-feature-name</code></li>
+		                    <li>Gawin ang iyong mga pagbabago at i-commit: <code>git commit -m "Idagdag ang iyong tampok"</code></li>
+		                    <li>I-push sa iyong fork: <code>git push origin feature/your-feature-name</code></li>
+		                    <li>Magbukas ng Pull Request sa pangunahing repository</li>
+		                </ul>
+		
+		                <p style="margin-top: 20px;">Para sa karagdagang detalye, tingnan ang <a href="https://github.com/dexcarva/AlbionInsight/blob/master/README.fil-PH.md" style="color: #667eea;">README.fil-PH.md</a> sa GitHub.</p>
+		            </div>
+		
+		            <footer>
+		                <p>&copy; 2025 Albion Insight. Pinapagana ng <a href="https://flet.dev/">Flet</a> at <a href="https://scapy.net/">Scapy</a>.</p>
+		                <p>Orihinal na proyekto: <a href="https://github.com/Triky313/AlbionOnline-StatisticsAnalysis">AlbionOnline-StatisticsAnalysis</a> ni Triky313.</p>
+		            </footer>
+		        </div>
+		    </div>
+		    <script>
+		        function setLanguage(lang) {
+		            // Hide all content sections
+		            document.querySelectorAll('[id^="content-"]').forEach(el => {
+		                el.classList.add('hidden');
+		            });
+		
+		            // Show the selected content section
+		            const contentId = 'content-' + lang;
+		            const contentEl = document.getElementById(contentId);
+		            if (contentEl) {
+		                contentEl.classList.remove('hidden');
+		            }
+		
+		            // Update active button state
+		            document.querySelectorAll('.lang-selector button').forEach(btn => {
+		                btn.classList.remove('active');
+		            });
+		            const btnId = 'btn-' + lang;
+		            const btnEl = document.getElementById(btnId);
+		            if (btnEl) {
+		                btnEl.classList.add('active');
+		            }
+		        }
+		
+		        // Set default language on load
+		        setLanguage('en');
+		    </script>
+		</body>
+		</html>
