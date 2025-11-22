@@ -3,10 +3,12 @@
 import logging
 from pathlib import Path
 
+from typing import Optional
+
 from .config import Config
 
 
-def setup_logger(name: str, log_file: str = None) -> logging.Logger:
+def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
     """
     Configura um logger centralizado para a aplicação.
 
