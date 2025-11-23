@@ -240,10 +240,85 @@
 	        <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
 	        <button onclick="setLanguage('pt-br')" id="btn-pt-br">Português</button>
 		        <button onclick="setLanguage('ar-sa')" id="btn-ar-sa" style="direction: rtl;">العربية</button>
-		        <button onclick="setLanguage('tr-tr')" id="btn-tr-tr">Türkçe</button>\n\t\t        <button onclick="setLanguage('fr-fr')" id="btn-fr-fr">Français</button>\n<button onclick="setLanguage('fil-ph')" id="btn-fil-ph">Filipino</button>
+		        <button onclick="setLanguage('tr-tr')" id="btn-tr-tr">Türkçe</button><button onclick="setLanguage('fr-fr')" id="btn-fr-fr">Français</button>
+<button onclick="setLanguage('fil-ph')" id="btn-fil-ph">Filipino</button>
+<button onclick="setLanguage('he-il')" id="btn-he-il" style="direction: rtl;">עברית</button>
     </div>
 
     <div class="container">
+        <!-- Hebrew Content -->
+        <div id="content-he-il" class="hidden" style="direction: rtl; text-align: right;">
+            <header>
+                <h1>🛡️ Albion Insight (עברית)</h1>
+                <p>כלי חוצה-פלטפורמות לניתוח סטטיסטיקות עבור Albion Online</p>
+                <p style="font-size: 0.9em; color: #888;">עקוב אחר כסף, מוניטין, נזק ועוד בזמן אמת בלינוקס, ווינדוס, ו-macOS</p>
+                <div style="margin-top: 20px;">
+                    <a href="https://github.com/dexcarva/AlbionInsight/releases/latest" class="download-btn">
+                        הורד את הגרסה האחרונה <span class="badge">בטא 0.0.1</span>
+                    </a>
+                </div>
+                <div class="platform-icons">
+                    <span title="Linux">🐧</span>
+                    <span title="Windows">🪟</span>
+                    <span title="macOS">🍎</span>
+                </div>
+            </header>
+
+            <div class="requirements">
+                <h3>📋 דרישות קדם</h3>
+                <ul>
+                    <li><strong>Python 3.8+</strong> (או השתמש בקובץ ההרצה העצמאי מההפצות)</li>
+                    <li><strong>הרשאות מנהל/שורש</strong> ללכידת חבילות רשת</li>
+                    <li><strong>לינוקס:</strong> התקן <code>libpcap-dev</code> לתמיכה ב-Scapy</li>
+                    <li><strong>ווינדוס/macOS:</strong> אין דרישות נוספות עבור קובץ ההרצה</li>
+                </ul>
+            </div>
+
+            <section>
+                <h2 style="text-align: center; color: #ffd700; margin-bottom: 30px;">✨ תכונות</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>🌍 חוצה-פלטפורמות</h3>
+                        <p>פועל באופן טבעי בלינוקס, ווינדוס, ו-macOS. נבנה עם Python ו-Flet לתאימות מרבית.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📊 מעקב בזמן אמת</h3>
+                        <p>לוכד חבילות UDP בפורטים של Albion Online (5055, 5056, 5058) ומפענח את פרוטוקול Photon בזמן אמת.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚔️ מד נזק</h3>
+                        <p>עקוב אחר נזק שנגרם, ריפוי שבוצע, DPS, הריגות, ומוות עבורך ועבור חברי הקבוצה שלך במהלך קרב.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💰 מעקב אחר כסף ומוניטין</h3>
+                        <p>עקוב אחר רווחי הכסף והמוניטין שלך עם סטטיסטיקות לשעה כדי לייעל את מסלולי החקלאות שלך.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔔 התראות חיות</h3>
+                        <p>קבל התראות מיידיות על אירועים חשובים כמו הריגות, מוות, רווחי כסף ועוד.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💾 ניהול סשנים</h3>
+                        <p>שמור את סטטיסטיקות הסשן שלך לקבצי JSON לניתוח והשוואה מאוחרים יותר.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contributing">
+                <h2>🤝 תרומה לפרויקט</h2>
+                <p>אנו מקדמים בברכה תרומות! אם ברצונך לתרום, אנא עקוב אחר השלבים הבאים:</p>
+                <ul>
+                    <li>קרא את [CONTRIBUTING.md](CONTRIBUTING.md) לקבלת הנחיות מפורטות.</li>
+                    <li>דווח על באגים או הצע תכונות חדשות ב-[Issues](https://github.com/dexcarva/AlbionInsight/issues).</li>
+                    <li>שלח Pull Requests עם התיקונים או התכונות שלך.</li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 Albion Insight. מורשה תחת <a href="LICENSE">רישיון MIT</a>.</p>
+                <p>קוד פתוח ב-[GitHub](https://github.com/dexcarva/AlbionInsight).</p>
+            </footer>
+        </div>
         <!-- English Content -->
         <div id="content-en">
             <header>
