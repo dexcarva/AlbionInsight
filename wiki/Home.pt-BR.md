@@ -31,6 +31,14 @@ Explore as seguintes páginas para saber mais sobre o projeto:
 *   [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)
 *   [Roadmap](Roadmap.md)
 
+### Para Desenvolvedores
+
+Se você deseja contribuir com o código, as seguintes páginas são essenciais:
+
+*   [Guia de Refatoração](Refactoring-Guide.md)
+*   [Melhores Práticas de Código](Melhores-Praticas-de-Codigo.md)
+*   [Detalhes Técnicos do Protocolo Photon](Technical-Details-Photon-Protocol.md)
+
 ---
 
 *Última atualização: Novembro de 2025*
