@@ -1,8 +1,9 @@
 ---
 name: Relatório de Bug
-about: Relate um erro para nos ajudar a melhorar
-title: "[BUG] Descrição concisa do problema"
+about: Reporte um erro para nos ajudar a melhorar
+title: "[BUG] Breve descrição do problema"
 labels: bug
+assignees: ''
 ---
 
 ## Descrição do Bug
@@ -15,7 +16,7 @@ Passos para reproduzir o comportamento:
 
 1. Vá para '...'
 2. Clique em '....'
-3. Role para baixo até '....'
+3. Role para '....'
 4. Veja o erro
 
 ## Comportamento Esperado
@@ -28,11 +29,10 @@ Se aplicável, adicione capturas de tela para ajudar a explicar seu problema.
 
 ## Ambiente
 
-- **Sistema Operacional:** [e.g. Windows 10, Ubuntu 22.04, macOS Ventura]
-- **Versão do Python:** [e.g. 3.10.4]
-- **Versão do Albion Insight:** [e.g. v1.0.0 ou commit hash]
+- **Sistema Operacional:** [e.g. Windows 10, macOS Big Sur, Ubuntu 20.04]
+- **Versão do Python:** [e.g. 3.9.7]
+- **Versão do Albion Insight:** [e.g. 1.0.0]
 
-## Contexto Adicional
+## Informações Adicionais
 
 Adicione qualquer outro contexto sobre o problema aqui.
-
