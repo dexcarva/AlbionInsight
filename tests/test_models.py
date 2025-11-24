@@ -2,9 +2,9 @@
 Testes unitários para os modelos de dados do Albion Insight.
 """
 
-
-from albion_insight.core.models import PlayerStats, SessionStats, CombatEvent
 import time
+
+from albion_insight.core.models import CombatEvent, PlayerStats, SessionStats
 
 
 class TestPlayerStats:
