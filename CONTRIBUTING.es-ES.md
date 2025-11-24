@@ -1,179 +1,187 @@
-# Contribuyendo a Albion Insight
+# Contributing to Albion Insight
 
-**[Read in English](CONTRIBUTING.md)**
+**[Leia em Português do Brasil](CONTRIBUTING.pt-br.md)**
 
-En primer lugar, ¡gracias por considerar contribuir a Albion Insight! Son personas como tú las que hacen de Albion Insight una herramienta tan valiosa para la comunidad de Albion Online.
+**[Leia em Português (Brasil)](CONTRIBUTING.pt-BR.md)** | **[Leia em Português (Portugal)](CONTRIBUTING.pt-PT.md)**
+**[Leer en Español](CONTRIBUTING.es-ES.md)**
+**[Lire en Français](CONTRIBUTING.fr-FR.md)**
+**[Read in Arabic (اقرأ بالعربية)](CONTRIBUTING.ar-SA.md)**
+**[Czytaj po Polsku](CONTRIBUTING.pl-PL.md)**
+**[Read in Hindi (हिंदी में पढ़ें)](CONTRIBUTING.hi-IN.md)**
+**[Read in Thai (อ่านเป็นภาษาไทย)](CONTRIBUTING.th-TH.md)**
 
-## Tabla de Contenidos
+First off, thank you for considering contributing to Albion Insight! It's people like you that make Albion Insight such a great tool for the Albion Online community.
 
-- [Código de Conducta](#código-de-conducta)
-- [¿Cómo Puedo Contribuir?](#cómo-puedo-contribuir)
-  - [Reportar Errores](#reportar-errores)
-  - [Sugerir Funcionalidades](#sugerir-funcionalidades)
-  - [Contribuciones de Código](#contribuciones-de-código)
-  - [Documentación](#documentación)
-- [Configuración del Entorno de Desarrollo](#configuración-del-entorno-de-desarrollo)
-- [Estándares de Codificación](#estándares-de-codificación)
-- [Mensajes de Commit](#mensajes-de-commit)
-- [Proceso de Solicitud de Extracción (Pull Request)](#proceso-de-solicitud-de-extracción-pull-request)
+## Table of Contents
 
-## Código de Conducta
+- [Code of Conduct](#code-of-conduct)
+- [How Can I Contribute?](#how-can-i-contribute)
+  - [Reporting Bugs](#reporting-bugs)
+  - [Suggesting Features](#suggesting-features)
+  - [Code Contributions](#code-contributions)
+  - [Documentation](#documentation)
+- [Development Setup](#development-setup)
+- [Coding Standards](#coding-standards)
+- [Commit Messages](#commit-messages)
+- [Pull Request Process](#pull-request-process)
 
-Este proyecto y todos los que participan en él se rigen por nuestro Código de Conducta. Al participar, se espera que usted mantenga este código. Por favor, informe de comportamientos inaceptables a los mantenedores del proyecto.
+## Code of Conduct
 
-## ¿Cómo Puedo Contribuir?
+This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to the project maintainers.
 
-### Reportar Errores
+## How Can I Contribute?
 
-Antes de crear informes de errores, por favor, revise los problemas existentes para evitar duplicados. Cuando cree un informe de error, incluya tantos detalles como sea posible utilizando la plantilla de informe de error.
+### Reporting Bugs
 
-**Los buenos informes de errores incluyen:**
-- Un título claro y descriptivo
-- Pasos exactos para reproducir el problema
-- Comportamiento esperado frente a comportamiento real
-- Capturas de pantalla si son aplicables
-- Los detalles de su entorno (SO, versión de Python, etc.)
-- Registros o mensajes de error relevantes
+Before creating bug reports, please check the existing issues to avoid duplicates. When you create a bug report, include as many details as possible using the bug report template.
 
-### Sugerir Funcionalidades
+**Good bug reports include:**
+- A clear and descriptive title
+- Exact steps to reproduce the problem
+- Expected vs actual behavior
+- Screenshots if applicable
+- Your environment details (OS, Python version, etc.)
+- Relevant logs or error messages
 
-¡Las sugerencias de funcionalidades son bienvenidas! Por favor, utilice la plantilla de solicitud de funcionalidad y proporcione:
-- Una descripción clara de la funcionalidad
-- El problema que resuelve
-- Posibles enfoques de implementación
-- Cualquier alternativa que haya considerado
+### Suggesting Features
 
-### Contribuciones de Código
+Feature suggestions are welcome! Please use the feature request template and provide:
+- A clear description of the feature
+- The problem it solves
+- Possible implementation approaches
+- Any alternatives you've considered
 
-¡Nos encantan las contribuciones de código! Aquí le explicamos cómo empezar:
+### Code Contributions
 
-1. **Bifurque el repositorio (Fork)** y cree su rama a partir de `master`
-2. **Configure su entorno de desarrollo** (vea Configuración del Entorno de Desarrollo a continuación)
-3. **Realice sus cambios** siguiendo nuestros estándares de codificación
-4. **Pruebe sus cambios** a fondo
-5. **Actualice la documentación** si es necesario
-6. **Envíe una solicitud de extracción (Pull Request)** utilizando nuestra plantilla de PR
+We love code contributions! Here's how to get started:
 
-### Documentación
+1. **Fork the repository** and create your branch from `master`
+2. **Set up your development environment** (see Development Setup below)
+3. **Make your changes** following our coding standards
+4. **Test your changes** thoroughly
+5. **Update documentation** if needed
+6. **Submit a pull request** using our PR template
 
-¡Las mejoras en la documentación siempre son apreciadas! Esto incluye:
-- Archivos README
-- Páginas Wiki
-- Comentarios en el código
-- Tutoriales y guías
-- Traducciones a otros idiomas
+### Documentation
 
-## Configuración del Entorno de Desarrollo
+Improvements to documentation are always appreciated! This includes:
+- README files
+- Wiki pages
+- Code comments
+- Tutorials and guides
+- Translations to other languages
 
-### Requisitos Previos
+## Development Setup
 
-- Python 3.8 o superior
+### Prerequisites
+
+- Python 3.8 or higher
 - Git
-- Privilegios de Root/Administrador (para la captura de paquetes)
+- Root/Administrator privileges (for packet capture)
 
-### Configuración de Su Entorno
+### Setting Up Your Environment
 
 ```bash
-# Clonar su bifurcación
-git clone https://github.com/SU_NOMBRE_DE_USUARIO/AlbionInsight.git
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/AlbionInsight.git
 cd AlbionInsight
 
-# Crear un entorno virtual
+# Create a virtual environment
 python3 -m venv venv
 
-# Activar el entorno virtual
-# En Linux/macOS:
+# Activate the virtual environment
+# On Linux/macOS:
 source venv/bin/activate
-# En Windows:
+# On Windows:
 venv\Scripts\activate
 
-# Instalar dependencias
+# Install dependencies
 pip install -r requirements.txt
 
-# Instalar dependencias de desarrollo
+# Install development dependencies
 pip install pylint flake8 black pytest
 ```
 
-### Ejecutar la Aplicación
+### Running the Application
 
 ```bash
-# En Linux/macOS:
+# On Linux/macOS:
 sudo venv/bin/python3 albion_insight.py
 
-# En Windows (como Administrador):
+# On Windows (as Administrator):
 python albion_insight.py
 ```
 
-## Estándares de Codificación
+## Coding Standards
 
-Seguimos las directrices de estilo PEP 8 para el código Python. Por favor, asegúrese de que su código se adhiere a estos estándares:
+We follow PEP 8 style guidelines for Python code. Please ensure your code adheres to these standards:
 
-- Utilice 4 espacios para la indentación (sin tabulaciones)
-- Longitud máxima de línea de 100 caracteres
-- Utilice nombres de variables y funciones significativos
-- Agregue docstrings a todas las funciones y clases
-- Incluya sugerencias de tipo (type hints) cuando sea apropiado
-- Mantenga las funciones enfocadas y concisas
+- Use 4 spaces for indentation (no tabs)
+- Maximum line length of 100 characters
+- Use meaningful variable and function names
+- Add docstrings to all functions and classes
+- Include type hints where appropriate
+- Keep functions focused and concise
 
-**Herramientas para ayudar:**
+**Tools to help:**
 ```bash
-# Formatee su código con black
+# Format your code with black
 black albion_insight.py
 
-# Verifique problemas de estilo
+# Check for style issues
 flake8 albion_insight.py
 
-# Ejecute el linter
+# Run linter
 pylint albion_insight.py
 ```
 
-## Mensajes de Commit
+## Commit Messages
 
-Escriba mensajes de commit claros y significativos:
+Write clear and meaningful commit messages:
 
-- Utilice el tiempo presente ("Añadir funcionalidad" y no "Añadió funcionalidad")
-- Utilice el modo imperativo ("Mover el cursor a..." y no "Mueve el cursor a...")
-- Limite la primera línea a 72 caracteres
-- Referencie problemas y solicitudes de extracción cuando sea relevante
+- Use the present tense ("Add feature" not "Added feature")
+- Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
+- Limit the first line to 72 characters
+- Reference issues and pull requests when relevant
 
-**Ejemplos:**
+**Examples:**
 ```
-Añadir funcionalidad de exportación del medidor de daño
+Add damage meter export functionality
 
-Corregir el análisis de paquetes de red para conexiones IPv6
+Fix network packet parsing for IPv6 connections
 
-Actualizar README con instrucciones de instalación para macOS
+Update README with macOS installation instructions
 
-Cierra #123
+Closes #123
 ```
 
-## Proceso de Solicitud de Extracción (Pull Request)
+## Pull Request Process
 
-1. **Actualice la documentación** para cualquier cambio en la funcionalidad
-2. **Agregue pruebas** para nuevas funcionalidades o correcciones de errores
-3. **Asegúrese de que todas las pruebas pasen** antes de enviar
-4. **Actualice el README.md** si es necesario
-5. **Rellene la plantilla de PR** completamente
-6. **Vincule problemas relacionados** en la descripción de su PR
-7. **Solicite revisión** a los mantenedores
-8. **Aborde los comentarios** de manera rápida y profesional
+1. **Update documentation** for any changes to functionality
+2. **Add tests** for new features or bug fixes
+3. **Ensure all tests pass** before submitting
+4. **Update the README.md** if needed
+5. **Fill out the PR template** completely
+6. **Link related issues** in your PR description
+7. **Request review** from maintainers
+8. **Address feedback** promptly and professionally
 
-### Lista de Verificación de PR
+### PR Checklist
 
-Antes de enviar su PR, asegúrese de que:
-- [ ] El código sigue las directrices de estilo del proyecto
-- [ ] La auto-revisión está completa
-- [ ] Se añaden comentarios a las secciones de código complejas
-- [ ] La documentación está actualizada
-- [ ] No se generan nuevas advertencias
-- [ ] Las pruebas se añaden y pasan
-- [ ] Los cambios dependientes se fusionan
+Before submitting your PR, ensure:
+- [ ] Code follows the project's style guidelines
+- [ ] Self-review completed
+- [ ] Comments added to complex code sections
+- [ ] Documentation updated
+- [ ] No new warnings generated
+- [ ] Tests added and passing
+- [ ] Dependent changes merged
 
-## ¿Preguntas?
+## Questions?
 
-¡No dude en hacer preguntas! Puede:
-- Abrir un problema con la etiqueta "question"
-- Unirse a nuestras discusiones comunitarias
-- Ponerse en contacto con los mantenedores
+Don't hesitate to ask questions! You can:
+- Open an issue with the "question" label
+- Join our community discussions
+- Reach out to the maintainers
 
-¡Gracias por contribuir a Albion Insight! Sus esfuerzos ayudan a mejorar esta herramienta para toda la comunidad de Albion Online.
+Thank you for contributing to Albion Insight! Your efforts help make this tool better for the entire Albion Online community.
