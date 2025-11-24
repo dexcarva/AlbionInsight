@@ -17,6 +17,7 @@ A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o 
 
 | Seção | Descrição | Status |
 | **[Filipino (Tagalog) README](README.fil-PH.md)** | Documentação principal traduzida para Filipino (Tagalog). | ✅ Completo |
+| **[Roteiro do Projeto (pt-BR)](Roadmap.pt-BR.md)** | Versão detalhada do Roadmap em Português do Brasil. | ✅ Completo |
 | :--- | :--- | :--- |
 | **[Guia de Uso](Usage-Guide.md)** | Instruções passo a passo sobre como instalar, configurar e usar o aplicativo. | ✅ Completo |
 | **[Guia de Instalação](Installation-Guide.md)** | Detalhes sobre os pré-requisitos e métodos de instalação para diferentes sistemas operacionais. | ✅ Completo |
