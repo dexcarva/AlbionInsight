@@ -108,19 +108,19 @@ Uma vez que a análise de rede requer privilégios elevados, deve executar a apl
 **No Linux (com ambiente virtual):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **No Linux (instalação em todo o sistema):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **No Windows (Executar Linha de Comandos/PowerShell como Administrador):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 A aplicação abrirá numa janela de desktop nativa.
@@ -136,7 +136,7 @@ Para instruções detalhadas sobre como criar executáveis para Linux, Windows e
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 O executável estará localizado na pasta `dist/`.

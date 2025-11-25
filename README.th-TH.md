@@ -100,19 +100,19 @@ pip install flet scapy
 **บน Linux (พร้อมสภาพแวดล้อมเสมือน):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **บน Linux (การติดตั้งทั่วทั้งระบบ):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **บน Windows (เรียกใช้ Command Prompt/PowerShell ในฐานะ Administrator):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 แอปพลิเคชันจะเปิดขึ้นในหน้าต่างเดสก์ท็อป
@@ -128,7 +128,7 @@ python albion_insight/main.py
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 ไฟล์ปฏิบัติการจะอยู่ในโฟลเดอร์ `dist/`
@@ -139,7 +139,7 @@ pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
 
 | ไฟล์ | คำอธิบาย |
 | :--- | :--- |
-| `albion_insight/main.py` | ไฟล์แอปพลิเคชันหลักที่มีตรรกะทั้งหมด (Models, Network Tracker, Flet UI) |
+| `-m albion_insight` | ไฟล์แอปพลิเคชันหลักที่มีตรรกะทั้งหมด (Models, Network Tracker, Flet UI) |
 | `README.md` | ไฟล์เอกสารนี้ |
 | `README.pt-BR.md` | ไฟล์เอกสารนี้ในภาษาโปรตุเกสแบบบราซิล |
 | `CONTRIBUTING.md` | แนวทางสำหรับการมีส่วนร่วมในโปรเจกต์ |

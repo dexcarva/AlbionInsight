@@ -105,19 +105,19 @@ pip install flet scapy
 **在 Linux 上 (使用虛擬環境):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **在 Linux 上 (系統範圍安裝):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **在 Windows 上 (以管理員身份運行命令提示符/PowerShell):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 應用程序將在原生桌面窗口中打開。
@@ -133,7 +133,7 @@ python albion_insight/main.py
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 可執行文件將位於 `dist/` 文件夾中。

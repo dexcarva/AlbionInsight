@@ -105,19 +105,19 @@ Since network sniffing requires elevated privileges, you must run the applicatio
 **On Linux (with virtual environment):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **On Linux (system-wide installation):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **On Windows (Run Command Prompt/PowerShell as Administrator):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 The application will open in a native desktop window.

@@ -105,19 +105,19 @@ Protože odposlech sítě vyžaduje zvýšená oprávnění, musíte aplikaci sp
 **Na Linuxu (s virtuálním prostředím):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **Na Linuxu (systémová instalace):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **Na Windows (Spusťte Příkazový řádek/PowerShell jako administrátor):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 Aplikace se otevře v nativním desktopovém okně.
@@ -133,7 +133,7 @@ Podrobné pokyny k vytváření spustitelných souborů pro Linux, Windows a mac
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 Spustitelný soubor bude umístěn ve složce `dist/`.

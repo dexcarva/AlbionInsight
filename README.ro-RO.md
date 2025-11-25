@@ -100,19 +100,19 @@ Deoarece interceptarea traficului de rețea necesită privilegii ridicate, trebu
 **Pe Linux (cu mediu virtual):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **Pe Linux (instalare la nivel de sistem):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **Pe Windows (Rulează Command Prompt/PowerShell ca Administrator):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 Aplicația se va deschide într-o fereastră desktop nativă.
@@ -128,7 +128,7 @@ Pentru instrucțiuni detaliate despre construirea executabilelor pentru Linux, W
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 Executabilul va fi localizat în directorul `dist/`.
@@ -139,7 +139,7 @@ Executabilul va fi localizat în directorul `dist/`.
 
 | Fișier | Descriere |
 | :--- | :--- |
-| `albion_insight/main.py` | Fișierul principal al aplicației care conține toată logica (Modele, Network Tracker, Interfață Flet). |
+| `-m albion_insight` | Fișierul principal al aplicației care conține toată logica (Modele, Network Tracker, Interfață Flet). |
 | `README.md` | Acest fișier de documentație (Engleză). |
 | `README.ro-RO.md` | Acest fișier de documentație în Română. |
 | `CONTRIBUTING.md` | Ghid pentru contribuția la proiect. |

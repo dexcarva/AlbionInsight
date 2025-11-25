@@ -104,19 +104,19 @@ Since network sniffing requires elevated privileges, you must run the applicatio
 **On Linux (with virtual environment):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **On Linux (system-wide installation):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **On Windows (Run Command Prompt/PowerShell as Administrator):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 The application will open in a native desktop window.
@@ -132,7 +132,7 @@ For detailed instructions on building executables for Linux, Windows, and macOS,
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 The executable will be located in the `dist/` folder.
@@ -143,7 +143,7 @@ The entire application is contained within a single file for simplicity:
 
 | File | Description |
 | :--- | :--- |
-| `albion_insight/main.py` | The main application file containing all logic (Models, Network Tracker, Flet UI). |
+| `-m albion_insight` | The main application file containing all logic (Models, Network Tracker, Flet UI). |
 || `README.md` | This documentation file. |
 | `README.pt-BR.md` | This documentation file in Brazilian Portuguese. |
 | `CONTRIBUTING.md` | Guidelines for contributing to the project. |
