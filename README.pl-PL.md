@@ -113,19 +113,19 @@ Ponieważ nasłuchiwanie sieci wymaga podwyższonych uprawnień, musisz uruchomi
 **Na Linuksie (z wirtualnym środowiskiem):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **Na Linuksie (instalacja systemowa):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **Na Windowsie (Uruchom Wiersz Polecenia/PowerShell jako Administrator):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 Aplikacja otworzy się w natywnym oknie desktopowym.
@@ -141,7 +141,7 @@ Szczegółowe instrukcje dotyczące budowania plików wykonywalnych dla systemó
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 Plik wykonywalny znajdzie się w folderze `dist/`.
@@ -152,7 +152,7 @@ Cała aplikacja jest zawarta w jednym pliku dla uproszczenia:
 
 | Plik | Opis |
 | :--- | :--- |
-| `albion_insight/main.py` | Główny plik aplikacji zawierający całą logikę (Modele, Śledzenie Sieci, Interfejs Użytkownika Flet). |
+| `-m albion_insight` | Główny plik aplikacji zawierający całą logikę (Modele, Śledzenie Sieci, Interfejs Użytkownika Flet). |
 | `README.md` | Ten plik dokumentacji. |
 | `README.pt-BR.md` | Ten plik dokumentacji w języku portugalskim (brazylijskim). |
 | `CONTRIBUTING.md` | Wytyczne dotyczące wkładu w projekt. |

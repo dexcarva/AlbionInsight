@@ -116,19 +116,19 @@ pip install flet scapy
 **Σε Linux (με εικονικό περιβάλλον):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **Σε Linux (εγκατάσταση σε όλο το σύστημα):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **Σε Windows (Εκτελέστε τη Γραμμή Εντολών/PowerShell ως Διαχειριστής):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 Η εφαρμογή θα ανοίξει σε ένα εγγενές παράθυρο επιφάνειας εργασίας.
@@ -144,7 +144,7 @@ python albion_insight/main.py
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 Το εκτελέσιμο θα βρίσκεται στο φάκελο `dist/`.
@@ -155,7 +155,7 @@ pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
 
 | Αρχείο | Περιγραφή |
 | :--- | :--- |
-| `albion_insight/main.py` | Το κύριο αρχείο εφαρμογής που περιέχει όλη τη λογική (Μοντέλα, Network Tracker, Flet UI). |
+| `-m albion_insight` | Το κύριο αρχείο εφαρμογής που περιέχει όλη τη λογική (Μοντέλα, Network Tracker, Flet UI). |
 | `README.md` | Αυτό το αρχείο τεκμηρίωσης. |
 | `README.el-GR.md` | Αυτό το αρχείο τεκμηρίωσης στα Ελληνικά. |
 | `CONTRIBUTING.md` | Οδηγίες για τη συνεισφορά στο έργο. |

@@ -106,19 +106,19 @@ pip install flet scapy
 **در لینوکس (با محیط مجازی):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **در لینوکس (نصب در سطح سیستم):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **در ویندوز (اجرای Command Prompt/PowerShell به عنوان مدیر):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 برنامه در یک پنجره دسکتاپ بومی باز خواهد شد.
@@ -134,7 +134,7 @@ python albion_insight/main.py
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 فایل اجرایی در پوشه `dist/` قرار خواهد گرفت.

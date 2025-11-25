@@ -110,17 +110,17 @@ pip install flet scapy
 **लिनक्स पर (वर्चुअल वातावरण के साथ):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 **लिनक्स पर (सिस्टम-व्यापी इंस्टॉलेशन):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 **विंडोज पर (कमांड प्रॉम्प्ट/पावरशेल को एडमिनिस्ट्रेटर के रूप में चलाएँ):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 एप्लिकेशन एक देशी डेस्कटॉप विंडो में खुलेगा।
 
@@ -135,7 +135,7 @@ python albion_insight/main.py
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 निष्पादन योग्य `dist/` फ़ोल्डर में स्थित होगा।
 
@@ -145,7 +145,7 @@ pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
 
 | फ़ाइल | विवरण |
 | :--- | :--- |
-| `albion_insight/main.py` | मुख्य एप्लिकेशन फ़ाइल जिसमें सभी तर्क (मॉडल, नेटवर्क ट्रैकर, फलेट UI) शामिल हैं। |
+| `-m albion_insight` | मुख्य एप्लिकेशन फ़ाइल जिसमें सभी तर्क (मॉडल, नेटवर्क ट्रैकर, फलेट UI) शामिल हैं। |
 | `README.md` | यह दस्तावेज़ीकरण फ़ाइल। |
 | `README.hi-IN.md` | यह दस्तावेज़ीकरण फ़ाइल हिंदी में। |
 | `CONTRIBUTING.md` | परियोजना में योगदान के लिए दिशानिर्देश। |

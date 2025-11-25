@@ -105,19 +105,19 @@ pip install flet scapy
 **Sur Linux (avec environnement virtuel) :**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **Sur Linux (installation à l'échelle du système) :**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **Sur Windows (Exécuter l'Invite de Commandes/PowerShell en tant qu'Administrateur) :**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 L'application s'ouvrira dans une fenêtre de bureau native.
@@ -133,7 +133,7 @@ Pour des instructions détaillées sur la création d'exécutables pour Linux, W
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 L'exécutable sera situé dans le dossier `dist/`.

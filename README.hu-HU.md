@@ -68,15 +68,15 @@ pip install flet scapy
 Mivel a hálózati rögzítés emelt szintű jogosultságokat igényel, az alkalmazást rootként vagy rendszergazdaként kell futtatnia.
 **Linuxon (virtuális környezettel):**
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 **Linuxon (rendszer szintű telepítés):**
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 **Windowson (Futtassa a Parancssort/PowerShellt Rendszergazdaként):**
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 Az alkalmazás natív asztali ablakban nyílik meg.
 
@@ -88,7 +88,7 @@ A Linux, Windows és macOS rendszerekre vonatkozó végrehajtható fájlok létr
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 A végrehajtható fájl a `dist/` mappában található.
 
@@ -96,7 +96,7 @@ A végrehajtható fájl a `dist/` mappában található.
 Az egész alkalmazás egyetlen fájlban található az egyszerűség kedvéért:
 | Fájl | Leírás |
 | :--- | :--- |
-| `albion_insight/main.py` | Az alkalmazás fő fájlja, amely tartalmazza az összes logikát (modellek, hálózati nyomkövető, Flet felület). |
+| `-m albion_insight` | Az alkalmazás fő fájlja, amely tartalmazza az összes logikát (modellek, hálózati nyomkövető, Flet felület). |
 | `README.md` | Ez a dokumentációs fájl (angol nyelven). |
 | `README.pt-BR.md` | Ez a dokumentációs fájl (portugál nyelven). |
 | `README.hu-HU.md` | Ez a dokumentációs fájl (magyar nyelven). |

@@ -105,19 +105,19 @@ Dahil ang network sniffing ay nangangailangan ng mataas na pribilehiyo, kailanga
 **Sa Linux (may virtual environment):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **Sa Linux (system-wide installation):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **Sa Windows (Patakbuhin ang Command Prompt/PowerShell bilang Administrator):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 Ang application ay magbubukas sa isang native desktop window.
@@ -133,7 +133,7 @@ Para sa detalyadong instruksyon sa paggawa ng executables para sa Linux, Windows
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 Ang executable ay matatagpuan sa `dist/` folder.

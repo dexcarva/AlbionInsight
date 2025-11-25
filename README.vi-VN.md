@@ -116,19 +116,19 @@ Vì việc theo dõi mạng yêu cầu quyền hạn cao, bạn phải chạy �
 **Trên Linux (với môi trường ảo):**
 
 ```bash
-sudo venv/bin/python3 albion_insight/main.py
+sudo venv/bin/python3 -m albion_insight
 ```
 
 **Trên Linux (cài đặt toàn hệ thống):**
 
 ```bash
-sudo python3 albion_insight/main.py
+sudo python3 -m albion_insight
 ```
 
 **Trên Windows (Chạy Command Prompt/PowerShell với quyền Quản trị viên):**
 
 ```bash
-python albion_insight/main.py
+python -m albion_insight
 ```
 
 Ứng dụng sẽ mở trong một cửa sổ máy tính để bàn gốc.
@@ -144,7 +144,7 @@ python albion_insight/main.py
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
+pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
 ```
 
 Tệp thực thi sẽ nằm trong thư mục `dist/`.
@@ -155,7 +155,7 @@ Toàn bộ ứng dụng được chứa trong một tệp duy nhất để đơn
 
 | Tệp | Mô tả |
 | :--- | :--- |
-| `albion_insight/main.py` | Tệp ứng dụng chính chứa tất cả logic (Mô hình, Trình theo dõi mạng, Giao diện người dùng Flet). |
+| `-m albion_insight` | Tệp ứng dụng chính chứa tất cả logic (Mô hình, Trình theo dõi mạng, Giao diện người dùng Flet). |
 | `README.md` | Tệp tài liệu này. |
 | `README.pt-BR.md` | Tệp tài liệu này bằng tiếng Bồ Đào Nha Brazil. |
 | `CONTRIBUTING.md` | Hướng dẫn đóng góp cho dự án. |
