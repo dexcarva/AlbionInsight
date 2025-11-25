@@ -16,8 +16,6 @@ Este projeto representa um esforço de modernização e portabilidade do projeto
 A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o Albion Insight.
 
 | Seção | Descrição | Status |
-| **[Filipino (Tagalog) README](README.fil-PH.md)** | Documentação principal traduzida para Filipino (Tagalog). | ✅ Completo |
-| **[Roteiro do Projeto (pt-BR)](Roadmap.pt-BR.md)** | Versão detalhada do Roadmap em Português do Brasil. | ✅ Completo |
 | :--- | :--- | :--- |
 | **[Guia de Uso](Usage-Guide.md)** | Instruções passo a passo sobre como instalar, configurar e usar o aplicativo. | ✅ Completo |
 | **[Guia de Instalação](Installation-Guide.md)** | Detalhes sobre os pré-requisitos e métodos de instalação para diferentes sistemas operacionais. | ✅ Completo |
@@ -32,6 +30,15 @@ A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o 
 
 O Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.
 
+## 🌟 Melhores Práticas de Contribuição
+
+Para garantir a qualidade e a consistência do projeto, pedimos que os contribuidores sigam estas diretrizes:
+
+*   **Comunique-se:** Use as [Issues](https://github.com/dexcarva/AlbionInsight/issues) para discutir grandes mudanças antes de começar a codificar.
+*   **Padrões de Código:** Siga o estilo de código Python definido por `black` e `isort`.
+*   **Testes:** Inclua testes unitários para novas funcionalidades ou correções de bugs.
+*   **Commits:** Use mensagens de commit claras e sem quebras de linha desnecessárias, seguindo o padrão **Conventional Commits** (ex: `feat: Adiciona nova funcionalidade` ou `fix: Corrige erro de importação`).
+
 ## 🛠️ Detalhes Técnicos
 
 O Albion Insight é construído sobre as seguintes tecnologias:
@@ -42,4 +49,4 @@ O Albion Insight é construído sobre as seguintes tecnologias:
 *   **Protocolo:** Implementação de decodificação do protocolo **Photon** do Albion Online.
 
 ---
-*Última atualização: 24 de Novembro de 2025*
+*Última atualização: 25 de Novembro de 2025*
