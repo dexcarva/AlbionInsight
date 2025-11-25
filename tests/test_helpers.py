@@ -3,7 +3,8 @@ Testes unitários para as funções auxiliares do Albion Insight.
 """
 
 import pytest
-from albion_insight.utils.helpers import format_number, format_duration, safe_get, retry
+
+from albion_insight.utils.helpers import format_duration, format_number, retry, safe_get
 
 
 class TestFormatNumber:
