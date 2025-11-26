@@ -21,7 +21,8 @@ def process_packet(packet):
         # Aqui entra a lógica de decodificação do protocolo Photon
         # Por enquanto, apenas logamos que um pacote foi recebido
         logger.debug(
-            f"Pacote Albion Online recebido de {packet[IP].src}:{packet[UDP].sport} para {packet[IP].dst}:{packet[IP].dport}"
+            f"Pacote Albion Online recebido de {packet[IP].src}:{packet[UDP].sport} "
+            f"para {packet[IP].dst}:{packet[IP].dport}"
         )
         # Simulação de atualização de estatísticas (a ser substituída pela lógica real)
         global current_session
@@ -35,8 +36,8 @@ def network_tracker_thread(interface: str):
     """
     logger.info(f"Network Tracker iniciado em thread separada na interface: {interface}")
 
-    # Filtro BPF (Berkeley Packet Filter) para pacotes UDP nas portas do Albion Online (5055, 5056, 5058)
-    bpf_filter = "udp and (port 5055 or port 5056 or port 5058)"
+    # Filtro BPF (Berkeley Packet Filter) para pacotes UDP nas portas do Albion Online
+    bpf_filter = "udp and (port 5055 or port 5056 or port 5058)"  # Filtro BPF para Albion Online
 
     while is_sniffing.is_set():
         try:
@@ -53,7 +54,8 @@ def start_network_tracker(interface: str = None):
     """
     Inicia a captura de pacotes de rede em uma thread separada.
 
-    :param interface: A interface de rede a ser usada para o sniffing. Se None, Scapy tentará adivinhar.
+    :param interface: A interface de rede a ser usada para o sniffing.
+        Se None, Scapy tentará adivinhar.
     """
     global current_session
     current_session = SessionStats(start_time=time.time())
