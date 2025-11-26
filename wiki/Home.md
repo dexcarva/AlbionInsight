@@ -1,5 +1,12 @@
 # Albion Insight - Visão Geral do Projeto
 
+<details>
+<summary>Read this in other languages</summary>
+
+**[Português (Brasil)](Home.pt-BR.md)** | **[English](Home.md)**
+
+</details>
+
 O **Albion Insight** é uma ferramenta de análise de estatísticas de código aberto e multiplataforma, desenvolvida em **Python** com o framework **Flet**, dedicada à comunidade do jogo **Albion Online**. Seu propósito é rastrear e exibir estatísticas em tempo real, como dados de combate (Damage Meter), ganhos de prata e fama, através da análise do tráfego de rede do jogo.
 
 Este projeto representa um esforço de modernização e portabilidade do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), superando as limitações de plataforma e promovendo a colaboração da comunidade.

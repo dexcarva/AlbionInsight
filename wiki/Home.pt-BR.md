@@ -1,44 +1,52 @@
-# Albion Insight - Página Inicial
+# Albion Insight - Visão Geral do Projeto
 
-**[Read in English](Home.md)**
+O **Albion Insight** é uma ferramenta de análise de estatísticas de código aberto e multiplataforma, desenvolvida em **Python** com o framework **Flet**, dedicada à comunidade do jogo **Albion Online**. Seu propósito é rastrear e exibir estatísticas em tempo real, como dados de combate (Damage Meter), ganhos de prata e fama, através da análise do tráfego de rede do jogo.
 
-## Bem-vindo ao Albion Insight
+Este projeto representa um esforço de modernização e portabilidade do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), superando as limitações de plataforma e promovendo a colaboração da comunidade.
 
-**Albion Insight** é uma ferramenta de análise de estatísticas multiplataforma para o jogo Albion Online. Nosso objetivo é fornecer aos jogadores uma alternativa moderna, de código aberto e compatível com Linux, Windows e macOS para rastrear dados de jogo essenciais.
+## 🎯 Objetivos Principais
 
-O projeto é um *port* e uma modernização do popular **AlbionOnline-StatisticsAnalysis** (originalmente em C#/WPF), que estava limitado ao Windows.
+1.  **Portabilidade:** Garantir o funcionamento nativo em Linux, Windows e macOS.
+2.  **Transparência:** Ser uma alternativa de código aberto e auditável.
+3.  **Funcionalidade:** Fornecer um Damage Meter preciso e um rastreador de estatísticas de sessão confiável.
+4.  **Modularidade:** Manter uma estrutura de código limpa e modular para facilitar a manutenção e a contribuição.
 
-### O que o Albion Insight faz?
+## 🗺️ Mapa da Wiki
 
-Ao analisar o tráfego de rede do jogo, o Albion Insight rastreia em tempo real:
+A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o Albion Insight.
 
-*   **Medidor de Dano (Damage Meter):** Acompanhe o dano e a cura causados por você e seus aliados.
-*   **Rastreador de Prata e Fama:** Monitore seus ganhos e perdas de prata e fama durante a sessão.
-*   **Eventos de Jogo:** Registre abates, mortes e outras interações importantes.
+| Seção | Descrição | Status |
+| :--- | :--- | :--- |
+| **[Guia de Uso](Usage-Guide.md)** | Instruções passo a passo sobre como instalar, configurar e usar o aplicativo. | ✅ Completo |
+| **[Guia de Instalação](Installation-Guide.md)** | Detalhes sobre os pré-requisitos e métodos de instalação para diferentes sistemas operacionais. | ✅ Completo |
+| **[Visão Geral da Arquitetura](Architecture-Overview.md)** | Visão geral da estrutura de código, módulos e fluxo de dados. | ✅ Completo |
+| **[Decodificação do Protocolo Photon](Photon-Protocol-Decoding.md)** | Explicação técnica sobre como o tráfego do Albion Online é decodificado. | ✅ Completo |
+| **[Perguntas Frequentes (FAQ)](FAQ.md)** | Respostas para as dúvidas mais comuns da comunidade. | ✅ Completo |
+| **[Guia de Contribuição](Contribution-Guide.md)** | Como configurar o ambiente de desenvolvimento, padrões de código e processo de Pull Request. | ✅ Completo |
+| **[Solução de Problemas](Troubleshooting.pt-BR.md)** | Soluções para erros e problemas de configuração comuns. | ✅ Completo |
+| **[Roadmap](Roadmap.md)** | Funcionalidades planejadas e o futuro do projeto. | ✅ Completo |
 
-### Comece Agora
+## 🤝 Comunidade e Código Aberto
 
-Para começar a usar o Albion Insight, consulte o nosso [Guia de Instalação](Installation-Guide.md).
+O Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.
 
-### Documentação da Wiki
+## 🌟 Melhores Práticas de Contribuição
 
-Explore as seguintes páginas para saber mais sobre o projeto:
+Para garantir a qualidade e a consistência do projeto, pedimos que os contribuidores sigam estas diretrizes:
 
-*   [Visão Geral da Arquitetura](Architecture-Overview.pt-BR.md)
-*   [Guia de Contribuição](Contribution-Guide.pt-BR.md)
-*   [Perguntas Frequentes (FAQ)](FAQ.pt-BR.md)
-*   [Solução de Problemas Comuns](Troubleshooting.pt-BR.md)
-*   [Decodificação do Protocolo Photon](Photon-Protocol-Decoding.pt-BR.md)
-*   [Roadmap](Roadmap.md)
+*   **Comunique-se:** Use as [Issues](https://github.com/dexcarva/AlbionInsight/issues) para discutir grandes mudanças antes de começar a codificar.
+*   **Padrões de Código:** Siga o estilo de código Python definido por `black` e `isort`.
+*   **Testes:** Inclua testes unitários para novas funcionalidades ou correções de bugs.
+*   **Commits:** Use mensagens de commit claras e sem quebras de linha desnecessárias, seguindo o padrão **Conventional Commits** (ex: `feat: Adiciona nova funcionalidade` ou `fix: Corrige erro de importação`).
 
-### Para Desenvolvedores
+## 🛠️ Detalhes Técnicos
 
-Se você deseja contribuir com o código, as seguintes páginas são essenciais:
+O Albion Insight é construído sobre as seguintes tecnologias:
 
-*   [Guia de Refatoração](Refactoring-Guide.md)
-*   [Melhores Práticas de Código](Melhores-Praticas-de-Codigo.md)
-*   [Detalhes Técnicos do Protocolo Photon](Technical-Details-Photon-Protocol.md)
+*   **Linguagem:** Python 3.8+
+*   **Interface Gráfica:** [Flet](https://flet.dev/) (para uma UI nativa e multiplataforma)
+*   **Análise de Rede:** [Scapy](https://scapy.net/) (para captura e manipulação de pacotes)
+*   **Protocolo:** Implementação de decodificação do protocolo **Photon** do Albion Online.
 
 ---
-
-*Última atualização: Novembro de 2025*
+*Última atualização: 25 de Novembro de 2025*
