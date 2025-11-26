@@ -1,4 +1,4 @@
-# Melhores Práticas de Código
+# Melhores Práticas de Código e Contribuição
 
 Para garantir a qualidade e a manutenibilidade do projeto, pedimos que todos os colaboradores sigam as seguintes diretrizes:
 
@@ -8,8 +8,9 @@ Para garantir a qualidade e a manutenibilidade do projeto, pedimos que todos os 
     *   Classes: `PascalCase` (ex: `NetworkTracker`).
     *   Constantes: `UPPER_CASE_SNAKE_CASE` (ex: `MAX_PLAYERS`).
 3.  **Docstrings:** Todas as funções e classes devem ter *docstrings* no formato **Google Style** para documentação clara e geração automática de documentação.
-4.  **Testes Unitários:** Sempre que possível, inclua testes unitários para novas funcionalidades ou correções de bugs. Os testes devem ser colocados no diretório `tests/`.
-5.  **Separação de Preocupações:** Mantenha a lógica de UI, rede e dados estritamente separada, conforme definido na seção **Arquitetura do Projeto**.
+4.  **Ambientes Virtuais (Virtual Environments):** É **obrigatório** o uso de ambientes virtuais (como `venv` ou `conda`) para isolar as dependências do projeto. Isso garante que as bibliotecas instaladas não interfiram com o sistema operacional e que as versões corretas sejam utilizadas.
+5.  **Testes Unitários e Cobertura:** Sempre que possível, inclua testes unitários para novas funcionalidades ou correções de bugs. Buscamos manter uma **cobertura de testes** razoável, e novos Pull Requests que adicionem código devem incluir testes que cubram esse novo código. Os testes devem ser colocados no diretório `tests/`.
+6.  **Separação de Preocupações:** Mantenha a lógica de UI, rede e dados estritamente separada, conforme definido na seção **Arquitetura do Projeto**.
 
 ## Ferramentas de Qualidade de Código
 
@@ -48,4 +49,4 @@ O novo painel utiliza o componente DamageMeter para exibir o DPS e a cura por se
 ```
 
 ---
-*Esta página foi atualizada como parte de um esforço de manutenção e aplicação de melhores práticas de projeto.*
+*Esta página foi atualizada como parte de um esforço de manutenção e aplicação de melhores práticas de projeto, com foco em ambientes virtuais e cobertura de testes.*
