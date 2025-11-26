@@ -152,6 +152,8 @@ The application is structured into modular components for better maintainability
 | `README.pt-BR.md` | This documentation file in Brazilian Portuguese. |
 | `README.fil-PH.md` | This documentation file in Filipino (Tagalog). |
 | `README.pt-PT.md` | This documentation file in Portuguese (Portugal). |
+| `README.sv-SE.md` | This documentation file in Swedish. |
+| `CONTRIBUTING.sv-SE.md` | Guidelines for contributing to the project in Swedish. |
 | `CONTRIBUTING.md` | Guidelines for contributing to the project. |
 | `CODE_OF_CONDUCT.md` | The project's Code of Conduct. |
 | `SECURITY.md` | Policy for reporting security vulnerabilities. |
