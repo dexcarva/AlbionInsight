@@ -62,7 +62,15 @@ Para usuários de Linux, o repositório oferece *scripts* de instalação e exec
 | **O aplicativo não abre** (Erro de Importação) | Dependências ausentes ou versão incorreta do Python. | Verifique se o Python 3.8+ está instalado e se todas as dependências em `requirements.txt` foram instaladas corretamente. |
 | **Não rastreia dados** | O jogo não está aberto ou o *sniffing* de pacotes está bloqueado pelo firewall. | Verifique se o Albion Online está rodando e se o firewall permite o tráfego nas portas 5055, 5056 e 5058. |
 
-## 4. Como Contribuir
+## 4. Tópicos Avançados
+
+Para informações mais detalhadas sobre a arquitetura do projeto, decodificação do Protocolo Photon e diretrizes de contribuição de código, consulte a página **[Tópicos Avançados](WIKI_ADVANCED.md)**.
+
+## 5. Próximos Passos
+
+Para acompanhar o roadmap e as funcionalidades futuras, consulte a seção [Próximos Passos e Roadmap](WIKI_ADVANCED.md#4-próximos-passos-e-roadmap) na página de Tópicos Avançados.
+
+## 6. Como Contribuir
 
 O Albion Insight é um projeto de código aberto e agradecemos todas as contribuições.
 
