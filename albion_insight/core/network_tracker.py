@@ -25,7 +25,6 @@ def process_packet(packet):
             f"para {packet[IP].dst}:{packet[IP].dport}"
         )
         # Simulação de atualização de estatísticas (a ser substituída pela lógica real)
-        global current_session
         current_session.total_silver += 1
         current_session.total_fame += 1
 
