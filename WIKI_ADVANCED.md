@@ -11,7 +11,7 @@ O Albion Insight segue uma arquitetura modular, separando a lógica de negócios
 | **`albion_insight/core/`** | Contém a lógica central do aplicativo. É aqui que a decodificação do protocolo Photon e o gerenciamento de dados em tempo real ocorrem. | Python, Scapy, Protocolo Photon (Reverse-Engineered) |
 | **`albion_insight/ui/`** | Responsável pela interface gráfica do usuário. Utiliza o framework Flet para criar uma aplicação desktop nativa e responsiva. | Python, Flet |
 | **`albion_insight/utils/`** | Funções de utilidade, como configuração, logging e manipulação de arquivos. | Python, Logging |
-| **`albion_insight/__main__.py`** | O ponto de entrada principal do aplicativo. Inicializa o *sniffing* de pacotes e a interface do usuário. | Python |
+| **`albion_insight/__main__.py`** | O ponto de entrada principal do aplicativo. Ele chama o módulo `app.py` que, por sua vez, orquestra a inicialização da lógica principal (`core/main_logic.py`) e da interface do usuário. | Python |
 
 ## 2. Decodificação do Protocolo Photon
 
