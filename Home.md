@@ -2,13 +2,11 @@
 
 Bem-vindo à Wiki do **Albion Insight**, uma ferramenta de análise estatística multiplataforma para o jogo Albion Online. Este projeto é uma reimplementação moderna em **Python** e **Flet** do projeto original em C#, focando em compatibilidade e facilidade de uso.
 
-## 🚀 Visão Geral do Projeto
+## 1. Visão Geral do Projeto
 
 O Albion Insight foi desenvolvido para fornecer aos jogadores de Albion Online uma visão em tempo real de suas estatísticas de jogo, como ganhos de silver, fame e, crucialmente, um **Damage Meter** (Medidor de Dano) para acompanhar o desempenho em combate.
 
 A ferramenta opera analisando o tráfego de rede do jogo, decodificando o protocolo Photon para extrair dados relevantes de forma não intrusiva.
-
-## ✨ Principais Recursos
 
 | Recurso | Descrição |
 | :--- | :--- |
@@ -18,17 +16,17 @@ A ferramenta opera analisando o tráfego de rede do jogo, decodificando o protoc
 | **Interface Moderna** | Construído com o framework Flet, oferecendo uma experiência de desktop rápida e com aparência nativa. |
 | **Gerenciamento de Sessão** | Funcionalidades para iniciar, parar, redefinir e salvar estatísticas de sessões de jogo. |
 
-## 🛠️ Instalação e Uso
+## 2. Instalação e Uso
 
 A instalação requer **Python 3.8+** e as bibliotecas **Flet** e **Scapy**. Devido à natureza da captura de pacotes de rede, a aplicação **deve ser executada com privilégios de administrador/root**.
 
-### 1. Pré-requisitos
+### 2.1. Pré-requisitos
 
 *   Python 3.8+
 *   Flet e Scapy (instalados via `pip`)
 *   No Windows, pode ser necessário instalar o **Npcap** para o Scapy funcionar.
 
-### 2. Instalação Rápida (Linux)
+### 2.2. Instalação Rápida (Linux)
 
 O repositório inclui scripts de automação para facilitar a instalação:
 
@@ -39,7 +37,7 @@ cd AlbionInsight
 ./run.sh      # Executa a aplicação com privilégios de root
 ```
 
-### 3. Execução Manual
+### 2.3. Execução Manual
 
 Para executar a aplicação manualmente, use o seguinte comando (após instalar as dependências e dentro do ambiente virtual, se aplicável):
 
@@ -51,30 +49,23 @@ sudo python3 -m albion_insight
 python -m albion_insight
 ```
 
-## 🏗️ Estrutura do Projeto (Para Contribuidores)
+## 3. Solução de Problemas Comuns (FAQ)
 
-O projeto segue uma estrutura modular para facilitar a manutenção e o desenvolvimento:
+Para problemas comuns e suas soluções, consulte a página **[FAQ.md](FAQ.md)**.
 
-| Diretório/Módulo | Responsabilidade |
-| :--- | :--- |
-| `albion_insight/core/` | Contém a lógica de negócio principal, como o rastreamento de rede (`network_tracker.py`), a decodificação do protocolo Photon (`photon_decoder.py`) e os modelos de dados (`models.py`). |
-| `albion_insight/ui/` | Responsável pela interface do usuário e seus componentes, utilizando o framework Flet. |
-| `albion_insight/utils/` | Funções auxiliares, como configuração de logging (`logger.py`) e variáveis de ambiente. |
-| `tests/` | Contém os testes unitários e de integração para garantir a qualidade do código. |
+| Problema Comum | Causa Potencial | Solução Sugerida |
+| :--- | :--- | :--- |
+| **"Permissão Negada"** ao executar | Falta de privilégios de root/administrador para o *sniffing* de pacotes. | Execute o aplicativo com `sudo` (Linux/macOS) ou como Administrador (Windows). |
+| **O aplicativo não abre** (Erro de Importação) | Dependências ausentes ou versão incorreta do Python. | Verifique se o Python 3.8+ está instalado e se todas as dependências em `requirements.txt` foram instaladas corretamente. |
+| **Não rastreia dados** | O jogo não está aberto ou o *sniffing* de pacotes está bloqueado pelo firewall. | Verifique se o Albion Online está rodando e se o firewall permite o tráfego nas portas 5055, 5056 e 5058. |
 
-## 🤝 Contribuições
+## 4. Tópicos Avançados e Contribuição
 
-Contribuições são muito bem-vindas! Se você deseja ajudar a melhorar o Albion Insight, por favor, leia o nosso [Guia de Contribuição](CONTRIBUTING.md).
+Para informações mais detalhadas sobre a arquitetura do projeto, decodificação do Protocolo Photon, roadmap de melhorias e diretrizes de contribuição de código, consulte as páginas:
 
-As áreas de contribuição incluem:
-*   **Desenvolvimento:** Implementação de mais eventos do protocolo Photon e refatoração de módulos.
-*   **Testes:** Adição de testes unitários e de integração.
-*   **Documentação:** Tradução e melhoria da documentação existente.
-*   **Relatório de Bugs:** Abrir Issues para problemas encontrados.
-
-## 📦 Construindo um Executável
-
-Para criar uma versão standalone do aplicativo que não requer a instalação do Python, você pode usar o **PyInstaller**. Consulte o arquivo [PACKAGING.md](PACKAGING.md) para instruções detalhadas sobre como construir executáveis para diferentes sistemas operacionais.
+*   **[Tópicos Avançados](WIKI_ADVANCED.md)**
+*   **[Melhorias e Roadmap](IMPROVEMENTS.md)**
+*   **[Guia de Contribuição](CONTRIBUTING.md)**
 
 ---
-*Esta página foi atualizada como parte de um esforço de manutenção e aplicação de melhores práticas de código aberto, incluindo a adição de detalhes sobre a estrutura do projeto para novos contribuidores.*
+*Esta página foi consolidada e estruturada para servir como a página principal da Wiki do projeto Albion Insight.*
