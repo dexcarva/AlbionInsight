@@ -68,4 +68,4 @@ O Albion Insight é construído sobre as seguintes tecnologias:
 *   **Protocolo:** Implementação de decodificação do protocolo **Photon** do Albion Online.
 
 ---
-*Última atualização: 25 de Novembro de 2025*
+*Última atualização: 28 de Novembro de 2025*
