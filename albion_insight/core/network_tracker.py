@@ -3,9 +3,12 @@
 import threading
 import time
 
-from scapy.all import IP, UDP, sniff
+from scapy.all import IP, UDP, sniff, get_if_list
 
 from albion_insight.core.models import SessionStats
+import sys
+import os
+from datetime import datetime
 from albion_insight.utils.logger import logger
 
 # Variável global para controlar o estado do rastreador
@@ -13,6 +16,9 @@ is_sniffing = threading.Event()
 
 # Inicializa as estatísticas da sessão
 current_session = SessionStats(start_time=0.0)
+
+# O sniffer agora é um script autônomo que se comunica via stdout
+# Ele não precisa mais de threads, pois será um subprocesso dedicado.
 
 
 def process_packet(packet):
@@ -29,7 +35,7 @@ def process_packet(packet):
         current_session.total_fame += 1
 
 
-def network_tracker_thread(interface: str):
+def run_network_tracker(interface: str):
     """
     Função que roda em uma thread separada para capturar pacotes de rede.
     """
@@ -38,41 +44,36 @@ def network_tracker_thread(interface: str):
     # Filtro BPF (Berkeley Packet Filter) para pacotes UDP nas portas do Albion Online
     bpf_filter = "udp and (port 5055 or port 5056 or port 5058)"  # Filtro BPF para Albion Online
 
-    while is_sniffing.is_set():
-        try:
-            # Sniff é bloqueante, o timeout permite que o loop verifique is_sniffing.is_set()
-            sniff(prn=process_packet, filter=bpf_filter, iface=interface, store=0, timeout=1)
-        except Exception as e:
-            logger.error(f"Erro durante a captura de pacotes: {e}")
-            time.sleep(1)  # Pausa em caso de erro
-
+    # Sniff é bloqueante. Ele só para com um KeyboardInterrupt (SIGINT)
+    try:
+        sniff(prn=process_packet, filter=bpf_filter, iface=interface, store=0)
+    except Exception as e:
+        logger.error(f"Erro durante a captura de pacotes: {e}")
+    
     logger.info("Network Tracker parado.")
 
 
-def start_network_tracker(interface: str = None):
-    """
-    Inicia a captura de pacotes de rede em uma thread separada.
+def get_interface():
+    """Tenta adivinhar a interface de rede."""
+    # Lógica simplificada para encontrar uma interface ativa
+    interfaces = get_if_list()
+    # Tenta encontrar uma interface que não seja loopback e não seja 'any'
+    for iface in interfaces:
+        if iface != 'lo' and iface != 'any':
+            return iface
+    return 'any'
 
-    :param interface: A interface de rede a ser usada para o sniffing.
-        Se None, Scapy tentará adivinhar.
-    """
-    global current_session
-    current_session = SessionStats(start_time=time.time())
-    is_sniffing.set()  # Sinaliza que o rastreador deve rodar
+def main():
+    """Ponto de entrada para o processo sniffer."""
+    if os.geteuid() != 0:
+        sys.stderr.write("ERRO: O sniffer deve ser executado como root/administrador.\n")
+        sys.exit(1)
 
-    # Cria e inicia a thread do tracker
-    tracker_thread = threading.Thread(target=network_tracker_thread, args=(interface,), daemon=True)
-    tracker_thread.start()
+    interface = get_interface()
+    sys.stdout.write(f"Sniffer iniciado em {datetime.now().isoformat()} na interface {interface}\n")
+    sys.stdout.flush()
 
+    run_network_tracker(interface)
 
-def stop_network_tracker():
-    """Para a captura de pacotes de rede."""
-    is_sniffing.clear()  # Sinaliza que o rastreador deve parar
-    logger.info("Sinal de parada enviado ao Network Tracker.")
-
-
-def get_current_stats():
-    """
-    Retorna as estatísticas da sessão atual.
-    """
-    return current_session
+if __name__ == "__main__":
+    main()

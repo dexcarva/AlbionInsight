@@ -2,12 +2,11 @@
 
 import flet as ft
 
-from ..core.network_tracker import get_current_stats, start_network_tracker
+from ..core.network_tracker import get_current_stats # Mantido para compatibilidade, mas não será usado diretamente
 
 
-def start_ui(page: ft.Page):
-    # Inicia o Network Tracker em uma thread separada para não bloquear a UI
-    start_network_tracker(page)
+def start_ui(page: ft.Page, sniffer_manager):
+    # O Network Tracker é gerenciado pelo SnifferManager passado como argumento
     """
     Função principal da interface do usuário (Flet).
     """
@@ -16,9 +15,15 @@ def start_ui(page: ft.Page):
 
     stats_text = ft.Text("Estatísticas: Aguardando captura...")
 
-    def update_stats(e):
-        stats = get_current_stats()
-        stats_text.value = f"Silver: {stats.total_silver}, Fame: {stats.total_fame}"
+        def update_stats(e):
+        # Pega os dados do sniffer_manager
+        data = sniffer_manager.get_latest_data()
+        if data:
+            # Simplesmente exibe o último evento simulado
+            last_event = data[-1]
+            stats_text.value = f"Último Evento: {last_event}"
+        else:
+            stats_text.value = "Estatísticas: Aguardando dados do sniffer..."
         page.update()
 
     page.add(
@@ -28,8 +33,9 @@ def start_ui(page: ft.Page):
     )
 
 
-def run_app():
+def run_app(sniffer_manager):
     """
-    Inicia a aplicação Flet.
+    Inicia a aplicação Flet, passando o SnifferManager.
     """
-    ft.app(target=start_ui)
+    # Cria uma função lambda para passar o sniffer_manager para start_ui
+    ft.app(target=lambda page: start_ui(page, sniffer_manager))
