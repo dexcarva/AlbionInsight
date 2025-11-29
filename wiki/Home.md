@@ -1,71 +1,71 @@
-# Albion Insight - Visão Geral do Projeto
+# Albion Insight - Project Overview
 
 <details>
 <summary>Read this in other languages</summary>
 
-**[Português (Brasil)](Home.pt-BR.md)** | **[English](Home.md)** | **[Ukrainian](Home.uk-UA.md)**
+**[Portuguese (Brazil)](Home.pt-BR.md)** | **[English](Home.md)** | **[Ukrainian](Home.uk-UA.md)**
 
 </details>
 
-O **Albion Insight** é uma ferramenta de análise de estatísticas de código aberto e multiplataforma, desenvolvida em **Python** com o framework **Flet**, dedicada à comunidade do jogo **Albion Online**. Seu propósito é rastrear e exibir estatísticas em tempo real, como dados de combate (Damage Meter), ganhos de prata e fama, através da análise do tráfego de rede do jogo.
+**Albion Insight** is a cross-platform (Linux, Windows, macOS) open-source statistics analysis tool, developed in **Python** with the **Flet** framework, dedicated to the **Albion Online** game community. Its purpose is to track and display real-time statistics, such as combat data (Damage Meter), silver and fame gains, by analyzing the game's network traffic.
 
-Este projeto representa um esforço de modernização e portabilidade do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), superando as limitações de plataforma e promovendo a colaboração da comunidade.
+This project represents a modernization and portability effort of the original C# project (`AlbionOnline-StatisticsAnalysis`), overcoming platform limitations and promoting community collaboration.
 
-## 🎯 Objetivos Principais
+## 🎯 Key Objectives
 
-1.  **Portabilidade:** Garantir o funcionamento nativo em Linux, Windows e macOS.
-2.  **Transparência:** Ser uma alternativa de código aberto e auditável.
-3.  **Funcionalidade:** Fornecer um Damage Meter preciso e um rastreador de estatísticas de sessão confiável.
-4.  **Modularidade:** Manter uma estrutura de código limpa e modular para facilitar a manutenção e a contribuição.
+1.  **Portability:** Ensure native operation on Linux, Windows, and macOS.
+2.  **Transparency:** Be an open-source and auditable alternative.
+3.  **Functionality:** Provide an accurate Damage Meter and a reliable session statistics tracker.
+4.  **Modularity:** Maintain a clean and modular code structure to facilitate maintenance and contribution.
 
-## 🗺️ Mapa da Wiki
+## 🗺️ Wiki Map
 
-A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o Albion Insight.
+The project Wiki is your complete guide to understanding, using, and contributing to Albion Insight.
 
 | Seção | Descrição | Status |
 | :--- | :--- | :--- |
-| **[Guia de Uso](Usage-Guide.md)** | Instruções passo a passo sobre como instalar, configurar e usar o aplicativo. | ✅ Completo |
-| **[Guia de Instalação](Installation-Guide.md)** | Detalhes sobre os pré-requisitos e métodos de instalação para diferentes sistemas operacionais. | ✅ Completo |
-| **[Visão Geral da Arquitetura](Architecture-Overview.md)** | Visão geral da estrutura de código, módulos e fluxo de dados. | ✅ Completo |
-| **[Decodificação do Protocolo Photon](Photon-Protocol-Decoding.md)** | Explicação técnica sobre como o tráfego do Albion Online é decodificado. | ✅ Completo |
-| **[Perguntas Frequentes (FAQ)](FAQ.md)** | Respostas para as dúvidas mais comuns da comunidade. | ✅ Completo |
-| **[Guia de Contribuição](Contribution-Guide.md)** | Como configurar o ambiente de desenvolvimento, padrões de código e processo de Pull Request. | ✅ Completo |
-| **[Solução de Problemas](Troubleshooting.pt-BR.md)** | Soluções para erros e problemas de configuração comuns. | ✅ Completo |
-| **[Roadmap](Roadmap.md)** | Funcionalidades planejadas e o futuro do projeto. | ✅ Completo |
+| **[Usage Guide](Usage-Guide.md)** | Step-by-step instructions on how to install, configure, and use the application. | ✅ Complete |
+| **[Installation Guide](Installation-Guide.md)** | Details on prerequisites and installation methods for different operating systems. | ✅ Complete |
+| **[Architecture Overview](Architecture-Overview.md)** | Overview of the code structure, modules, and data flow. | ✅ Complete |
+| **[Photon Protocol Decoding](Photon-Protocol-Decoding.md)** | Technical explanation of how Albion Online traffic is decoded. | ✅ Complete |
+| **[Frequently Asked Questions (FAQ)](FAQ.md)** | Answers to the most common community questions. | ✅ Complete |
+| **[Contribution Guide](Contribution-Guide.md)** | How to set up the development environment, code standards, and Pull Request process. | ✅ Complete |
+| **[Troubleshooting](Troubleshooting.md)** | Solutions for common errors and configuration issues. | ✅ Complete |
+| **[Roadmap](Roadmap.md)** | Planned features and the future of the project. | ✅ Complete |
 
-## 💖 Filosofia Open Source e Comunidade
+## 💖 Open Source Philosophy and Community
 
-O **Albion Insight** nasceu da crença de que as melhores ferramentas são aquelas construídas pela própria comunidade que as utiliza. Acreditamos no poder da colaboração para criar soluções transparentes, seguras e que atendam às necessidades reais dos jogadores de Albion Online.
+**Albion Insight** was born from the belief that the best tools are those built by the community that uses them. We believe in the power of collaboration to create transparent, secure solutions that meet the real needs of Albion Online players.
 
-Nossa filosofia se baseia em três pilares:
+Our philosophy is based on three pillars:
 
-1.  **Transparência Total:** Todo o código-fonte é aberto e auditável. Queremos que você saiba exatamente como seus dados são processados, sem caixas-pretas ou surpresas.
-2.  **Segurança em Primeiro Lugar:** Ao contrário de ferramentas de código fechado, a natureza aberta do Albion Insight permite que a comunidade revise e valide a segurança do código, garantindo que ele não realize ações maliciosas ou viole os termos de serviço do jogo.
-3.  **Construído para a Comunidade, pela Comunidade:** O projeto evolui com base no feedback e nas contribuições dos usuários. Cada sugestão, relatório de bug ou pull request é valorizado e contribui para o futuro da ferramenta.
+1.  **Total Transparency:** All source code is open and auditable. We want you to know exactly how your data is processed, with no black boxes or surprises.
+2.  **Security First:** Unlike closed-source tools, the open nature of Albion Insight allows the community to review and validate the code's security, ensuring it does not perform malicious actions or violate the game's terms of service.
+3.  **Built for the Community, by the Community:** The project evolves based on user feedback and contributions. Every suggestion, bug report, or pull request is valued and contributes to the future of the tool.
 
-Ao usar e contribuir com o Albion Insight, você não está apenas obtendo uma ferramenta, mas fazendo parte de um movimento por um ecossistema de ferramentas mais aberto e seguro para a comunidade de Albion Online.
+By using and contributing to Albion Insight, you are not just getting a tool, but becoming part of a movement for a more open and secure tool ecosystem for the Albion Online community.
 
-## 🤝 Como Contribuir
+## 🤝 How to Contribute
 
-O Albion Insight prospera com a colaboração da comunidade. Sendo um projeto de código aberto, ele garante **transparência** no processamento de dados e permite que qualquer pessoa audite o código, garantindo a segurança e a integridade da ferramenta. Encorajamos ativamente a contribuição, seja através de relatórios de bugs, sugestões de funcionalidades ou código. Seu envolvimento é fundamental para o sucesso e a longevidade do projeto.
+Albion Insight thrives on community collaboration. As an open-source project, it ensures **transparency** in data processing and allows anyone to audit the code, guaranteeing the tool's security and integrity. We actively encourage contributions, whether through bug reports, feature suggestions, or code. Your involvement is fundamental to the project's success and longevity.
 
-## 🌟 Melhores Práticas de Contribuição
+## 🌟 Best Contribution Practices
 
-Para garantir a qualidade e a consistência do projeto, pedimos que os contribuidores sigam estas diretrizes:
+To ensure the quality and consistency of the project, we ask contributors to follow these guidelines:
 
-*   **Comunique-se:** Use as [Issues](https://github.com/dexcarva/AlbionInsight/issues) para discutir grandes mudanças antes de começar a codificar.
-*   **Padrões de Código:** Siga o estilo de código Python definido por `black` e `isort`.
-*   **Testes:** Inclua testes unitários para novas funcionalidades ou correções de bugs.
-*   **Commits:** Use mensagens de commit claras e sem quebras de linha desnecessárias, seguindo o padrão **Conventional Commits** (ex: `feat: Adiciona nova funcionalidade` ou `fix: Corrige erro de importação`).
+*   **Communicate:** Use [Issues](https://github.com/dexcarva/AlbionInsight/issues) to discuss major changes before starting to code.
+*   **Code Standards:** Follow the Python code style defined by `black` and `isort`.
+*   **Tests:** Include unit tests for new features or bug fixes.
+*   **Commits:** Use clear commit messages without unnecessary line breaks, following the **Conventional Commits** standard (e.g., `feat: Add new feature` or `fix: Fix import error`).
 
-## 🛠️ Detalhes Técnicos
+## 🛠️ Technical Details
 
-O Albion Insight é construído sobre as seguintes tecnologias:
+Albion Insight is built on the following technologies:
 
-*   **Linguagem:** Python 3.8+
-*   **Interface Gráfica:** [Flet](https://flet.dev/) (para uma UI nativa e multiplataforma)
-*   **Análise de Rede:** [Scapy](https://scapy.net/) (para captura e manipulação de pacotes)
-*   **Protocolo:** Implementação de decodificação do protocolo **Photon** do Albion Online.
+*   **Language:** Python 3.8+
+*   **Graphical Interface:** [Flet](https://flet.dev/) (for a native and cross-platform UI)
+*   **Network Analysis:** [Scapy](https://scapy.net/) (for packet capture and manipulation)
+*   **Protocol:** Implementation of **Photon** protocol decoding for Albion Online.
 
 ---
-*Última atualização: 28 de Novembro de 2025*
+*Last updated: November 28, 2025*
