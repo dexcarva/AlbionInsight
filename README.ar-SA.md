@@ -6,10 +6,7 @@
 [![مشاكل GitHub](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
 [![نرحب بالمساهمات](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**[اقرأ هذا بالإنجليزية (Read this in English)](README.md)**\n**[اقرأ هذا بالبرتغالية (Leia em Português)](README.pt-BR.md)**
-**[اقرأ هذا بالإسبانية (Leer en Español)](README.es-ES.md)**
-**[اقرأ هذا بالفرنسية (Lire en Français)](README.fr-FR.md)**
-**[اقرأ هذا بالإيطالية (Leggi in Italiano)](README.it-IT.md)**\n**[اقرأ هذا بالصينية المبسطة (阅读简体中文)](README.zh-CN.md)**\n**[اقرأ هذا بالروسية (Прочитать на русском)](README.ru-RU.md)**\n**[اقرأ هذا باليابانية (日本語で読む)](README.ja-JP.md)**
+**[اقرأ هذا بالإنجليزية (Read this in English)](README.md)** | **[اقرأ هذا بالبرتغالية (Leia em Português)](README.pt-BR.md)** | **[اقرأ هذا بالإسبانية (Leer en Español)](README.es-ES.md)** | **[اقرأ هذا بالفرنسية (Lire en Français)](README.fr-FR.md)** | **[اقرأ هذا بالإيطالية (Leggi in Italiano)](README.it-IT.md)** | **[اقرأ هذا بالصينية المبسطة (阅读简体中文)](README.zh-CN.md)** | **[اقرأ هذا بالروسية (Прочитать на русском)](README.ru-RU.md)** | **[اقرأ هذا باليابانية (日本語で読む)](README.ja-JP.md)**
 
 **رؤية ألبيون (Albion Insight)** هي أداة تحليل إحصائيات متعددة المنصات (Linux، Windows، macOS) للعبة Albion Online، أعيد تنفيذها بلغة **بايثون (Python)** باستخدام إطار عمل **فليت (Flet)**. تم تصميمها لتتبع الإحصائيات داخل اللعبة في الوقت الفعلي، بما في ذلك الفضة والشهرة وبيانات القتال (مقياس الضرر)، عن طريق تحليل حركة مرور الشبكة.
 
