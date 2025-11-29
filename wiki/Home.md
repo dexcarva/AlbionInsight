@@ -3,7 +3,7 @@
 <details>
 <summary>Read this in other languages</summary>
 
-**[Português (Brasil)](Home.pt-BR.md)** | **[English](Home.md)** | **[Ukrainian](Home.uk-UA.md)** | **[Korean](Home.ko-KR.md)**
+**[Português (Brasil)](Home.pt-BR.md)** | **[English](Home.md)** | **[Ukrainian](Home.uk-UA.md)** | **[Korean](Home.ko-KR.md)** | **[Français](Home.fr-FR.md)**
 
 </details>
 
