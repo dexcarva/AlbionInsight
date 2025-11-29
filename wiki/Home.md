@@ -3,7 +3,7 @@
 <details>
 <summary>Read this in other languages</summary>
 
-**[Português (Brasil)](Home.pt-BR.md)** | **[English](Home.md)** | **[Ukrainian](Home.uk-UA.md)**
+**[Português (Brasil)](Home.pt-BR.md)** | **[English](Home.md)** | **[Ukrainian](Home.uk-UA.md)** | **[Korean](Home.ko-KR.md)**
 
 </details>
 
@@ -31,6 +31,7 @@ A Wiki do projeto é o seu guia completo para entender, usar e contribuir com o 
 | **[Perguntas Frequentes (FAQ)](FAQ.md)** | Respostas para as dúvidas mais comuns da comunidade. | ✅ Completo |
 | **[Guia de Contribuição](Contribution-Guide.md)** | Como configurar o ambiente de desenvolvimento, padrões de código e processo de Pull Request. | ✅ Completo |
 | **[Solução de Problemas](Troubleshooting.pt-BR.md)** | Soluções para erros e problemas de configuração comuns. | ✅ Completo |
+| **[Korean (한국어) Home](Home.ko-KR.md)** | Visão geral do projeto em Coreano. | ✅ Completo |
 | **[Roadmap](Roadmap.md)** | Funcionalidades planejadas e o futuro do projeto. | ✅ Completo |
 
 ## 💖 Filosofia Open Source e Comunidade
