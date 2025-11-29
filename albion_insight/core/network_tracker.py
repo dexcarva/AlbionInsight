@@ -66,11 +66,11 @@ def get_interface():
 def main():
     """Ponto de entrada para o processo sniffer."""
     if os.geteuid() != 0:
-        sys.stderr.write("ERRO: O sniffer deve ser executado como root/administrador.\n")
+        logger.error("O sniffer deve ser executado como root/administrador.")
         sys.exit(1)
 
     interface = get_interface()
-    sys.stdout.write(f"Sniffer iniciado em {datetime.now().isoformat()} na interface {interface}\n")
+    logger.info(f"Sniffer iniciado em {datetime.now().isoformat()} na interface {interface}")
     sys.stdout.flush()
 
     run_network_tracker(interface)

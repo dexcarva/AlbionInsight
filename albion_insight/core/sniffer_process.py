@@ -14,9 +14,9 @@ def run_sniffer():
     if os.geteuid() != 0:
         # Em um ambiente real, isso seria um erro, mas aqui é apenas um aviso.
         # A UI deve garantir que este processo seja iniciado com sudo.
-        sys.stderr.write("AVISO: O sniffer não está sendo executado como root. A captura de pacotes pode falhar.\n")
+        print("AVISO: O sniffer não está sendo executado como root. A captura de pacotes pode falhar.", file=sys.stderr)
 
-    sys.stdout.write(f"Sniffer iniciado com PID: {os.getpid()} em {datetime.now().isoformat()}\n")
+    print(f"Sniffer iniciado com PID: {os.getpid()} em {datetime.now().isoformat()}")
     sys.stdout.flush()
 
     # Simulação de captura de dados e envio para a UI via stdout
@@ -25,12 +25,12 @@ def run_sniffer():
         while True:
             # Simula a decodificação de um evento (ex: UpdateMoney)
             simulated_event = f"EVENT:UpdateMoney|Silver:{1000 + count * 10}"
-            sys.stdout.write(f"{simulated_event}\n")
+            print(simulated_event)
             sys.stdout.flush()
             count += 1
             time.sleep(5) # Simula o intervalo entre eventos
     except KeyboardInterrupt:
-        sys.stdout.write("Sniffer encerrado.\n")
+        print("Sniffer encerrado.")
         sys.stdout.flush()
         sys.exit(0)
 
