@@ -152,6 +152,7 @@ The application is structured into modular components for better maintainability
 | `README.pt-BR.md` | This documentation file in Brazilian Portuguese. |
 | `README.fil-PH.md` | This documentation file in Filipino (Tagalog). |
 | `README.pt-PT.md` | This documentation file in Portuguese (Portugal). |
+| `README.ko-KR.md` | This documentation file in Korean. |
 | `README.sv-SE.md` | This documentation file in Swedish. |
 | `README.da-DK.md` | This documentation file in Danish. |
 | `CONTRIBUTING.sv-SE.md` | Guidelines for contributing to the project in Swedish. |
