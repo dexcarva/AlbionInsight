@@ -1,9 +1,5 @@
 """Módulo principal para iniciar a aplicação Albion Insight."""
-
-from .ui.main_window import run_app
-from .utils.logger import logger
-
-
+from albion_insight.utils.logger import logger
 def main():
     """
     Função principal para iniciar a aplicação Albion Insight.
@@ -11,10 +7,7 @@ def main():
     O Network Tracker será iniciado a partir da UI.
     """
     logger.info("Albion Insight - Aplicação iniciada (Estrutura Modularizada)")
-
-    # Inicia a aplicação Flet
-    run_app()
-
-
+    # A UI será iniciada pelo __main__.py
 if __name__ == "__main__":
     main()
+
