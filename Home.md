@@ -18,7 +18,7 @@ A ferramenta opera analisando o tráfego de rede do jogo, decodificando o protoc
 
 ## 2. Instalação e Uso
 
-A instalação requer **Python 3.8+** e as bibliotecas **Flet** e **Scapy**. Devido à natureza da captura de pacotes de rede, a aplicação **deve ser executada com privilégios de administrador/root**.
+A instalação requer **Python 3.8+** e as bibliotecas **Flet** e **Scapy**. A arquitetura do projeto foi refatorada para separar a captura de pacotes (que requer privilégios de administrador/root) da interface do usuário (UI), melhorando a segurança.
 
 ### 2.1. Pré-requisitos
 
@@ -42,12 +42,14 @@ cd AlbionInsight
 Para executar a aplicação manualmente, use o seguinte comando (após instalar as dependências e dentro do ambiente virtual, se aplicável):
 
 ```bash
-# No Linux (com privilégios de root)
-sudo python3 -m albion_insight
+# No Linux (a UI não precisa de root, mas o sniffer será chamado com sudo)
+python3 -m albion_insight
 
 # No Windows (em Prompt de Comando/PowerShell como Administrador)
 python -m albion_insight
 ```
+
+A aplicação solicitará privilégios de administrador/root apenas para o processo de captura de pacotes, enquanto a interface do usuário será executada com privilégios normais.
 
 ## 3. Solução de Problemas Comuns (FAQ)
 
@@ -55,7 +57,7 @@ Para problemas comuns e suas soluções, consulte a página **[FAQ.md](FAQ.md)**
 
 | Problema Comum | Causa Potencial | Solução Sugerida |
 | :--- | :--- | :--- |
-| **"Permissão Negada"** ao executar | Falta de privilégios de root/administrador para o *sniffing* de pacotes. | Execute o aplicativo com `sudo` (Linux/macOS) ou como Administrador (Windows). |
+| **"Permissão Negada"** ao executar | Falta de privilégios de root/administrador para o *sniffing* de pacotes. | A aplicação solicitará privilégios de administrador/root automaticamente. Se o problema persistir, verifique as configurações do `sudo`. |
 | **O aplicativo não abre** (Erro de Importação) | Dependências ausentes ou versão incorreta do Python. | Verifique se o Python 3.8+ está instalado e se todas as dependências em `requirements.txt` foram instaladas corretamente. |
 | **Não rastreia dados** | O jogo não está aberto ou o *sniffing* de pacotes está bloqueado pelo firewall. | Verifique se o Albion Online está rodando e se o firewall permite o tráfego nas portas 5055, 5056 e 5058. |
 

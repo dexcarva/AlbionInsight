@@ -9,16 +9,17 @@
 **Cause:** Network packet sniffing requires elevated privileges (root/administrator access).
 
 **Solution:**
-- **Linux/macOS:** Run the application with `sudo`:
+- **Linux/macOS:** A aplicação agora solicitará privilégios de root/administrador apenas para o processo de captura de pacotes. Execute a aplicação normalmente:
   ```bash
-  sudo venv/bin/python3 albion_insight/main.py
+  venv/bin/python3 -m albion_insight
   ```
-  Or use the provided script:
+  Ou use o script:
   ```bash
   ./run.sh
   ```
+  Se o problema persistir, verifique se o `sudo` está configurado corretamente.
 
-- **Windows:** Run Command Prompt or PowerShell as **Administrator** before running the application.
+- **Windows:** A aplicação solicitará privilégios de administrador. Se o problema persistir, certifique-se de que o Prompt de Comando ou PowerShell não está sendo executado como Administrador, pois a aplicação fará a solicitação internamente.
 
 ---
 
@@ -30,7 +31,7 @@
 
 **Solution:**
 1. Ensure Albion Online is running and you're in-game.
-2. Check if the BPF filter in `albion_insight/core/network_tracker.py` is correct:
+2. Check if the BPF filter in `albion_insight/core/network_tracker.py` (executado pelo sniffer) está correto:
    ```
    udp and (port 5055 or port 5056 or port 5058)
    ```
@@ -65,15 +66,16 @@
 
 ### 4. Application Doesn't Close Properly
 
-**Problem:** The application hangs when you try to close it, or the sniffing thread doesn't stop.
+**Problem:** The application hangs when you try to close it, ou o processo do sniffer não é encerrado.
 
-**Cause:** The network sniffing thread wasn't properly terminated.
+**Cause:** O subprocesso do sniffer (que roda com privilégios elevados) não foi encerrado corretamente pelo `SnifferManager`.
 
 **Solution:**
-1. The `on_close` event handler in `albion_insight/ui/app.py` should handle cleanup.
-2. If the issue persists, manually kill the process:
+1. O `SnifferManager` deve lidar com o encerramento do subprocesso. Verifique os logs para erros no encerramento.
+2. Se o problema persistir, encerre manualmente os processos:
    - **Linux/macOS:**
      ```bash
+     sudo pkill -f "python.*sniffer_process"
      pkill -f "python.*albion_insight"
      ```
    - **Windows:**
@@ -226,4 +228,4 @@ If you encounter an issue not listed here:
 
 ---
 
-**Last Updated:** November 13, 2025
+**Last Updated:** November 29, 2025
