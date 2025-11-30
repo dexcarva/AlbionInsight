@@ -13,122 +13,122 @@
 
 </details>
 
-**Albion Insight** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
+**Albion Insight** é uma ferramenta de análise de estatísticas multiplataforma (Linux, Windows, macOS) para o jogo Albion Online, reimplementada em **Python** usando o framework **Flet**. Ele foi projetado para rastrear estatísticas em tempo real no jogo, incluindo prata, fama e dados de combate (Medidor de Dano), analisando o tráfego de rede.
 
 Este projeto é uma alternativa moderna e de código aberto à ferramenta original `AlbionOnline-StatisticsAnalysis` baseada em C#/WPF, focada em compatibilidade multiplataforma e facilidade de uso.
 
-## Features
+## Funcionalidades
 
-*   **Cross-Platform Compatibility:** Runs natively on Linux, Windows, and macOS.
-*   **Real-Time Tracking:** Uses the `Scapy` library to sniff UDP packets on Albion Online ports (5055, 5056, 5058).
-*   **Damage Meter Structure:** Includes the necessary data structures and UI to display live combat statistics (Damage Done, Healing Done, DPS).
-*   **Modern UI:** Built with Flet, providing a fast, native-looking desktop application.
-*   **Session Management:** Allows starting, stopping, resetting, and saving session statistics.
+*   **Compatibilidade Multiplataforma:** Funciona nativamente em Linux, Windows e macOS.
+*   **Rastreamento em Tempo Real:** Usa a biblioteca `Scapy` para farejar pacotes UDP nas portas do Albion Online (5055, 5056, 5058).
+*   **Estrutura do Medidor de Dano:** Inclui as estruturas de dados e a interface de usuário necessárias para exibir estatísticas de combate ao vivo (Dano Causado, Cura Realizada, DPS).
+*   **Interface de Usuário Moderna:** Construído com Flet, fornecendo um aplicativo de desktop rápido e com aparência nativa.
+*   **Gerenciamento de Sessão:** Permite iniciar, parar, redefinir e salvar estatísticas de sessão.
 
-## Prerequisites
+## Pré-requisitos
 
 *   Python 3.8+
-*   **Flet** and **Scapy** libraries.
-*   **Root/Administrator Privileges:** Necessary for network packet capture.
+*   Bibliotecas **Flet** e **Scapy**.
+*   **Privilégios de Root/Administrador:** Necessários para a captura de pacotes de rede.
 
-## Installation and Setup
+## Instalação e Configuração
 
-### Option 1: Quick Install (Linux - Recommended)
+### Opção 1: Instalação Rápida (Linux - Recomendado)
 
-For Linux users, we provide automated installation scripts:
+Para usuários Linux, fornecemos scripts de instalação automatizados:
 
 ```bash
-# 1. Clone the repository
+# 1. Clonar o repositório
 git clone https://github.com/dexcarva/AlbionInsight.git
 cd AlbionInsight
 
-# 2. Run the installation script
+# 2. Executar o script de instalação
 ./install.sh
 
-# 3. Run the application
+# 3. Executar o aplicativo
 ./run.sh
 ```
 
-The `install.sh` script will:
-- Install system dependencies (`libpcap-dev`, `python3-pip`, `python3-venv`)
-- Create a Python virtual environment
-- Install all required Python packages (Flet, Scapy)
+O script `install.sh` irá:
+- Instalar dependências do sistema (`libpcap-dev`, `python3-pip`, `python3-venv`)
+- Criar um ambiente virtual Python
+- Instalar todos os pacotes Python necessários (Flet, Scapy)
 
-The `run.sh` script will automatically request root privileges and run the application.
+O script `run.sh` solicitará automaticamente privilégios de root e executará o aplicativo.
 
-### Option 2: Manual Installation
+### Opção 2: Instalação Manual
 
-#### 1. Install System Dependencies
+#### 1. Instalar Dependências do Sistema
 
-**On Linux (Debian/Ubuntu):**
+**No Linux (Debian/Ubuntu):**
 
 ```bash
 sudo apt update
 sudo apt install libpcap-dev python3-pip python3-venv
 ```
 
-**On Windows:**
+**No Windows:**
 
-Install Python 3.8+ from [python.org](https://www.python.org/downloads/)
+Instale o Python 3.8+ em [python.org](https://www.python.org/downloads/)
 
-#### 2. Install Python Dependencies
+#### 2. Instalar Dependências Python
 
-**On Linux (using virtual environment - recommended):**
+**No Linux (usando ambiente virtual - recomendado):**
 
 ```bash
-# Create virtual environment
+# Criar ambiente virtual
 python3 -m venv venv
 
-# Activate virtual environment
+# Ativar ambiente virtual
 source venv/bin/activate
 
-# Install dependencies
+# Instalar dependências
 pip install flet scapy
 ```
 
-**On Linux (system-wide installation):**
+**No Linux (instalação em todo o sistema):**
 
 ```bash
 pip3 install flet scapy --break-system-packages
 ```
 
-**On Windows:**
+**No Windows:**
 
 ```bash
 pip install flet scapy
 ```
 
-#### 3. Running the Application
+#### 3. Executando o Aplicativo
 
-Since network sniffing requires elevated privileges, you must run the application as root or administrator.
+Como o farejamento de rede requer privilégios elevados, você deve executar o aplicativo como root ou administrador.
 
-**On Linux (with virtual environment):**
+**No Linux (com ambiente virtual):**
 
 ```bash
 sudo venv/bin/python3 -m albion_insight
 ```
 
-**On Linux (system-wide installation):**
+**No Linux (instalação em todo o sistema):**
 
 ```bash
 sudo python3 -m albion_insight
 ```
 
-**On Windows (Run Command Prompt/PowerShell as Administrator):**
+**No Windows (Executar Prompt de Comando/PowerShell como Administrador):**
 
 ```bash
 python -m albion_insight
 ```
 
-The application will open in a native desktop window.
+O aplicativo será aberto em uma janela de desktop nativa.
 
-## How to Build an Executable
+## Como Criar um Executável
 
-The application can be packaged into a standalone executable using **PyInstaller**. This allows users to run the application without installing Python or its dependencies.
+O aplicativo pode ser empacotado em um executável autônomo usando **PyInstaller**. Isso permite que os usuários executem o aplicativo sem instalar o Python ou suas dependências.
 
-For detailed instructions on building executables for Linux, Windows, and macOS, see the **[PACKAGING.md](PACKAGING.md)** guide.
+Para instruções detalhadas sobre a criação de executáveis para Linux, Windows e macOS, consulte o guia **[PACKAGING.md](PACKAGING.md)**.
 
-### Quick Build (Linux)
+### Compilação Rápida (Linux)
 
 ```bash
 source venv/bin/activate
@@ -136,18 +136,18 @@ pip install pyinstaller
 pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
 ```
 
-The executable will be located in the `dist/` folder.
+O executável estará localizado na pasta `dist/`.
 
-## Project Structure
+## Estrutura do Projeto
 
 The application is structured into modular components for better maintainability and scalability:
 
-| File | Description |
+| Arquivo | Descrição |
 | :--- | :--- |
-| `albion_insight/core/` | Core logic, network tracking, data models, and protocol decoding. |
-| `albion_insight/ui/` | User interface components built with Flet. |
-| `albion_insight/utils/` | Utility functions, configuration, and logging. |
-| `albion_insight/__main__.py` | Entry point for the application. |
+| `albion_insight/core/` | Lógica central, rastreamento de rede, modelos de dados e decodificação de protocolo. |
+| `albion_insight/ui/` | Componentes da interface de usuário construídos com Flet. |
+| `albion_insight/utils/` | Funções utilitárias, configuração e registro (logging). |
+| `albion_insight/__main__.py` | Ponto de entrada para o aplicativo. |
 || `README.md` | Este arquivo de documentação principal. |
 | `README.pt-BR.md` | Este arquivo de documentação em Português do Brasil. |
 | `README.fil-PH.md` | Este arquivo de documentação em Filipino (Tagalog). |
@@ -156,36 +156,36 @@ The application is structured into modular components for better maintainability
 | `CODE_OF_CONDUCT.md` | Código de Conduta do projeto. |
 | `SECURITY.md` | Política para reportar vulnerabilidades de segurança. |
 
-## Current Status (Real-Time Data)
+## Status Atual (Dados em Tempo Real)
 
 O aplicativo agora inclui a lógica de **Decodificação do Protocolo Photon**, traduzida do projeto original em C#. Isso permite que o aplicativo processe eventos em tempo real como `UpdateMoney`, `UpdateFame`, `KilledPlayer` e `Died` diretamente do tráfego de rede.
 
 **Nota:** A tradução completa de todos os eventos de combate (como `CastHit`, `Attack`) é um esforço contínuo. A implementação atual foca nas estatísticas centrais e na estrutura para o Medidor de Dano. O cálculo de DPS do Medidor de Dano é baseado nos eventos decodificados.
 
-## Contributing
+## Contribuindo
 
 Aceitamos contribuições da comunidade! Seja você um desenvolvedor, designer ou apenas um entusiasta de Albion Online, há muitas maneiras de ajudar a melhorar o Albion Insight.
 
 Por favor, leia nossas [Diretrizes de Contribuição](CONTRIBUTING.md) para informações detalhadas sobre como contribuir para este projeto.
 
-### Quick Start for Contributors:
+### Início Rápido para Contribuidores:
 
-1.  Fork the repository: [github.com/dexcarva/AlbionInsight](https://github.com/dexcarva/AlbionInsight)
-2.  Clone your fork: `git clone https://github.com/YOUR_USERNAME/AlbionInsight.git`
-3.  Create a new branch: `git checkout -b feature/your-feature-name`
-4.  Make your changes and commit: `git commit -m "Add your feature"`
-5.  Push to your fork: `git push origin feature/your-feature-name`
-6.  Open a Pull Request on the main repository
+1.  Faça um Fork do repositório: [github.com/dexcarva/AlbionInsight](https://github.com/dexcarva/AlbionInsight)
+2.  Clone seu fork: `git clone https://github.com/SEU_NOME_DE_USUARIO/AlbionInsight.git`
+3.  Crie uma nova branch: `git checkout -b feature/seu-nome-da-funcionalidade`
+4.  Faça suas alterações e commit: `git commit -m "Adicionar sua funcionalidade"`
+5.  Envie para o seu fork: `git push origin feature/seu-nome-da-funcionalidade`
+6.  Abra um Pull Request no repositório principal
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## Acknowledgments
+## Agradecimentos
 
 - Projeto original: [AlbionOnline-StatisticsAnalysis](https://github.com/Triky313/AlbionOnline-StatisticsAnalysis) por Triky313
 - Construído com o framework [Flet](https://flet.dev/)
-- Análise de rede com [Scapy](https://scapy.net/)
+- Análise de rede otimizada por [Scapy](https://scapy.net/)
 
 ---
 *Uma solução multiplataforma para a comunidade de Albion Online.*
