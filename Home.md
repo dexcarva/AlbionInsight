@@ -12,7 +12,7 @@ A ferramenta opera analisando o tráfego de rede do jogo, decodificando o protoc
 | :--- | :--- |
 | **Multiplataforma** | Suporte nativo para **Linux**, **Windows** e **macOS**. |
 | **Rastreamento em Tempo Real** | Utiliza a biblioteca `Scapy` para capturar e processar pacotes UDP nas portas do Albion Online (5055, 5056, 5058). |
-| **Damage Meter** | Estrutura pronta para exibir estatísticas de combate ao vivo (Dano Causado, Cura Realizada, DPS). |
+| **Medidor de Dano** | Estrutura pronta para exibir estatísticas de combate ao vivo (Dano Causado, Cura Realizada, DPS). |
 | **Interface Moderna** | Construído com o framework Flet, oferecendo uma experiência de desktop rápida e com aparência nativa. |
 | **Gerenciamento de Sessão** | Funcionalidades para iniciar, parar, redefinir e salvar estatísticas de sessões de jogo. |
 

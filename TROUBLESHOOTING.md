@@ -1,14 +1,14 @@
-# Troubleshooting Guide - Albion Insight
+# Guia de Solução de Problemas - Albion Insight
 
-## Common Issues and Solutions
+## Problemas Comuns e Soluções
 
-### 1. Permission Denied or "No interfaces found"
+### 1. Permissão Negada ou "Nenhuma interface encontrada"
 
-**Problem:** You see an error message like "Permission denied" or "No interfaces found" when trying to run the application.
+**Problema:** Você vê uma mensagem de erro como "Permission denied" ou "No interfaces found" ao tentar executar a aplicação.
 
-**Cause:** Network packet sniffing requires elevated privileges (root/administrator access).
+**Causa:** A captura de pacotes de rede requer privilégios elevados (acesso de root/administrador).
 
-**Solution:**
+**Solução:**
 - **Linux/macOS:** A aplicação agora solicitará privilégios de root/administrador apenas para o processo de captura de pacotes. Execute a aplicação normalmente:
   ```bash
   venv/bin/python3 -m albion_insight
@@ -23,31 +23,31 @@
 
 ---
 
-### 2. Damage Meter Not Updating
+### 2. Medidor de Dano Não Atualiza
 
-**Problem:** The damage meter shows no data or doesn't update in real-time.
+**Problema:** O medidor de dano não mostra dados ou não atualiza em tempo real.
 
-**Cause:** The BPF filter may be incorrect, or Albion Online is not running, or using different ports.
+**Causa:** O filtro BPF pode estar incorreto, o Albion Online não está em execução ou está usando portas diferentes.
 
-**Solution:**
-1. Ensure Albion Online is running and you're in-game.
-2. Check if the BPF filter in `albion_insight/core/network_tracker.py` (executado pelo sniffer) está correto:
+**Solução:**
+1. Certifique-se de que o Albion Online está em execução e você está no jogo.
+2. Verifique se o filtro BPF em `albion_insight/core/network_tracker.py` (executado pelo sniffer) está correto:
    ```
    udp and (port 5055 or port 5056 or port 5058)
    ```
-3. Verify your network interface is correct in the configuration.
-4. Check the logs in `logs/app.log` for detailed error messages.
+3. Verifique se sua interface de rede está correta na configuração.
+4. Verifique os logs em `logs/app.log` para mensagens de erro detalhadas.
 
 ---
 
-### 3. Module Import Error
+### 3. Erro de Importação de Módulo
 
-**Problem:** You see an error like `ModuleNotFoundError: No module named 'flet'` or similar.
+**Problema:** Você vê um erro como `ModuleNotFoundError: No module named 'flet'` ou similar.
 
-**Cause:** The virtual environment is not activated or dependencies are not installed.
+**Causa:** O ambiente virtual não está ativado ou as dependências não estão instaladas.
 
-**Solution:**
-1. Activate the virtual environment:
+**Solução:**
+1. Ative o ambiente virtual:
    - **Linux/macOS:**
      ```bash
      source venv/bin/activate
@@ -57,20 +57,20 @@
      venv\Scripts\activate
      ```
 
-2. Install dependencies:
+2. Instale as dependências:
    ```bash
    pip install -r requirements.txt
    ```
 
 ---
 
-### 4. Application Doesn't Close Properly
+### 4. Aplicação Não Fecha Corretamente
 
-**Problem:** The application hangs when you try to close it, ou o processo do sniffer não é encerrado.
+**Problema:** A aplicação trava quando você tenta fechá-la, ou o processo do sniffer não é encerrado.
 
-**Cause:** O subprocesso do sniffer (que roda com privilégios elevados) não foi encerrado corretamente pelo `SnifferManager`.
+**Causa:** O subprocesso do sniffer (que roda com privilégios elevados) não foi encerrado corretamente pelo `SnifferManager`.
 
-**Solution:**
+**Solução:**
 1. O `SnifferManager` deve lidar com o encerramento do subprocesso. Verifique os logs para erros no encerramento.
 2. Se o problema persistir, encerre manualmente os processos:
    - **Linux/macOS:**
@@ -85,70 +85,70 @@
 
 ---
 
-### 5. UI Issues on Linux
+### 5. Problemas de UI no Linux
 
-**Problem:** The application window is blank, doesn't render properly, or crashes on Linux.
+**Problema:** A janela da aplicação está em branco, não renderiza corretamente ou trava no Linux.
 
-**Cause:** Missing system dependencies for Flet/GTK.
+**Causa:** Dependências de sistema ausentes para Flet/GTK.
 
-**Solution:**
-Install the required system libraries:
+**Solução:**
+Instale as bibliotecas de sistema necessárias:
 
 ```bash
-# For Debian/Ubuntu
+# Para Debian/Ubuntu
 sudo apt update
 sudo apt install libgtk-3-dev libglib2.0-dev
 
-# For Fedora/RHEL
+# Para Fedora/RHEL
 sudo dnf install gtk3-devel glib2-devel
 
-# For Arch
+# Para Arch
 sudo pacman -S gtk3 glib2
 ```
 
-Then reinstall Flet:
+Em seguida, reinstale o Flet:
 ```bash
 pip install --upgrade flet
 ```
 
 ---
 
-### 6. Flet Version Compatibility Issues
+### 6. Problemas de Compatibilidade de Versão do Flet
 
-**Problem:** You see errors like `AttributeError: module 'flet' has no attribute 'icons'`.
+**Problema:** Você vê erros como `AttributeError: module 'flet' has no attribute 'icons'`.
 
-**Cause:** The installed Flet version has breaking changes or incompatibilities.
+**Causa:** A versão instalada do Flet possui alterações incompatíveis.
 
-**Solution:**
-1. Check your Flet version:
+**Solução:**
+1. Verifique sua versão do Flet:
    ```bash
    pip show flet
    ```
 
-2. Update to the latest compatible version:
+2. Atualize para a versão compatível mais recente:
    ```bash
    pip install --upgrade flet==0.28.3
    ```
 
-3. If issues persist, try a different version:
+3. Se os problemas persistirem, tente uma versão diferente:
    ```bash
    pip install flet==0.27.0
    ```
 
 ---
 
-### 7. Network Interface Not Found
+### 7. Interface de Rede Não Encontrada
 
-**Problem:** The application can't find your network interface.
+**Problema:** A aplicação não consegue encontrar sua interface de rede.
 
-**Cause:** The configured interface name is incorrect or doesn't exist.
+**Causa:** O nome da interface configurada está incorreto ou não existe.
 
-**Solution:**
-1. List available network interfaces:
+**Solução:**
+1. Liste as interfaces de rede disponíveis:
    - **Linux/macOS:**
      ```bash
      ifconfig
-     # or
+     # ou
      ip link show
      ```
    - **Windows:**
@@ -156,76 +156,76 @@ pip install --upgrade flet
      ipconfig
      ```
 
-2. Update the `NETWORK_INTERFACE` in `.env` or `albion_insight/utils/config.py` with the correct interface name.
+2. Atualize o `NETWORK_INTERFACE` em `.env` ou `albion_insight/utils/config.py` com o nome correto da interface.
 
 ---
 
-### 8. High CPU Usage
+### 8. Alto Uso de CPU
 
-**Problem:** The application uses excessive CPU resources.
+**Problema:** A aplicação usa recursos excessivos da CPU.
 
-**Cause:** The packet sniffing loop is running too frequently or processing packets inefficiently.
+**Causa:** O loop de captura de pacotes está sendo executado com muita frequência ou processando pacotes de forma ineficiente.
 
-**Solution:**
-1. Check the sniffing loop in `albion_insight/core/network_tracker.py`.
-2. Add delays or optimize packet processing.
-3. Consider using a more efficient packet capture method.
+**Solução:**
+1. Verifique o loop de *sniffing* em `albion_insight/core/network_tracker.py`.
+2. Adicione atrasos ou otimize o processamento de pacotes.
+3. Considere usar um método de captura de pacotes mais eficiente.
 
 ---
 
-### 9. Data Not Saving
+### 9. Dados Não Estão Sendo Salvos
 
-**Problem:** Session data is not being saved to disk.
+**Problema:** Os dados da sessão não estão sendo salvos no disco.
 
-**Cause:** The session directory doesn't exist or there are permission issues.
+**Causa:** O diretório de sessões não existe ou há problemas de permissão.
 
-**Solution:**
-1. Ensure the `sessions/` directory exists:
+**Solução:**
+1. Garanta que o diretório `sessions/` exista:
    ```bash
    mkdir -p sessions
    ```
 
-2. Check directory permissions:
+2. Verifique as permissões do diretório:
    ```bash
    chmod 755 sessions/
    ```
 
-3. Verify the `SESSION_DIR` configuration in `.env` or `albion_insight/utils/config.py`.
+3. Verifique a configuração de `SESSION_DIR` em `.env` ou `albion_insight/utils/config.py`.
 
 ---
 
-### 10. Logging Issues
+### 10. Problemas de Logging
 
-**Problem:** Log files are not being created or logs are not appearing.
+**Problema:** Os arquivos de log não estão sendo criados ou os logs não estão aparecendo.
 
-**Cause:** The `logs/` directory doesn't exist or logger is not properly configured.
+**Causa:** O diretório `logs/` não existe ou o logger não está configurado corretamente.
 
-**Solution:**
-1. Ensure the `logs/` directory exists:
+**Solução:**
+1. Garanta que o diretório `logs/` exista:
    ```bash
    mkdir -p logs
    ```
 
-2. Check the logger configuration in `albion_insight/utils/logger.py`.
+2. Verifique a configuração do logger em `albion_insight/utils/logger.py`.
 
-3. Verify the `LOG_DIR` and `LOG_LEVEL` settings in `.env`.
-
----
-
-## Getting Help
-
-If you encounter an issue not listed here:
-
-1. **Check the logs:** Look at `logs/app.log` for detailed error messages.
-2. **Search existing issues:** Visit [GitHub Issues](https://github.com/dexcarva/AlbionInsight/issues).
-3. **Create a new issue:** Provide:
-   - Your operating system and version
-   - Python version
-   - Flet version
-   - Steps to reproduce the issue
-   - Error messages and logs
-   - Screenshots if applicable
+3. Verifique as configurações de `LOG_DIR` e `LOG_LEVEL` em `.env`.
 
 ---
 
-**Last Updated:** November 29, 2025
+## Obtendo Ajuda
+
+Se você encontrar um problema não listado aqui:
+
+1. **Verifique os logs:** Procure em `logs/app.log` por mensagens de erro detalhadas.
+2. **Pesquise Issues existentes:** Visite [GitHub Issues](https://github.com/dexcarva/AlbionInsight/issues).
+3. **Crie uma nova Issue:** Forneça:
+   - Seu sistema operacional e versão
+   - Versão do Python
+   - Versão do Flet
+   - Passos para reproduzir o problema
+   - Mensagens de erro e logs
+   - Capturas de tela, se aplicável
+
+---
+
+**Última Atualização:** 30 de Novembro de 2025

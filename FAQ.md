@@ -1,226 +1,226 @@
-# Frequently Asked Questions (FAQ) - Albion Insight
+# Perguntas Frequentes (FAQ) - Albion Insight
 
-## General Questions
+## Perguntas Gerais
 
-### Q1: What is Albion Insight?
+### P1: O que é o Albion Insight?
 
-**A:** Albion Insight is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online. It tracks real-time in-game statistics like silver, fame, and combat data (Damage Meter) by analyzing network traffic. It's a modern, open-source alternative to the original C#/WPF-based tool.
-
----
-
-### Q2: Is Albion Insight safe to use? Will I get banned?
-
-**A:** Yes, Albion Insight is safe to use. It only analyzes network traffic and does not modify game files or inject code into the game. It's similar to other legitimate tools used by the community. However, always check the official Albion Online terms of service for the latest policies.
+**R:** Albion Insight é uma ferramenta de análise estatística multiplataforma (Linux, Windows, macOS) para o jogo Albion Online. Ele rastreia estatísticas em tempo real no jogo, como prata, fama e dados de combate (Medidor de Dano), analisando o tráfego de rede. É uma alternativa moderna e de código aberto à ferramenta original baseada em C#/WPF.
 
 ---
 
-### Q3: Do I need administrator/root privileges to run Albion Insight?
+### P2: O Albion Insight é seguro de usar? Serei banido?
 
-**A:** Yes, network packet sniffing requires elevated privileges. You'll need to run the application with `sudo` on Linux/macOS or as Administrator on Windows.
-
----
-
-### Q4: What are the system requirements?
-
-**A:** 
-- **Python:** 3.8 or higher
-- **OS:** Linux, Windows, or macOS
-- **RAM:** Minimum 512 MB (1 GB recommended)
-- **Network:** Active internet connection to Albion Online servers
+**R:** Sim, o Albion Insight é seguro de usar. Ele apenas analisa o tráfego de rede e não modifica arquivos do jogo nem injeta código no jogo. É semelhante a outras ferramentas legítimas usadas pela comunidade. No entanto, verifique sempre os termos de serviço oficiais do Albion Online para as políticas mais recentes.
 
 ---
 
-## Installation and Setup
+### P3: Preciso de privilégios de administrador/root para executar o Albion Insight?
 
-### Q5: How do I install Albion Insight?
-
-**A:** Follow the installation guide in the [README.md](README.md). We provide both quick install scripts for Linux and manual installation steps for all platforms.
+**R:** Sim, a captura de pacotes de rede requer privilégios elevados. Você precisará executar a aplicação com `sudo` no Linux/macOS ou como Administrador no Windows.
 
 ---
 
-### Q6: Can I use Albion Insight on macOS?
+### P4: Quais são os requisitos de sistema?
 
-**A:** Yes! Albion Insight is fully compatible with macOS. Follow the manual installation steps in the README, and run the application with `sudo`.
-
----
-
-### Q7: What if I get a "Permission denied" error?
-
-**A:** This error occurs because network sniffing requires elevated privileges. Run the application with `sudo` on Linux/macOS or as Administrator on Windows. See the [TROUBLESHOOTING.md](TROUBLESHOOTING.md) guide for more details.
+**R:** 
+- **Python:** 3.8 ou superior
+- **SO:** Linux, Windows ou macOS
+- **RAM:** Mínimo 512 MB (1 GB recomendado)
+- **Rede:** Conexão ativa com a internet para os servidores do Albion Online
 
 ---
 
-### Q8: How do I update Albion Insight?
+## Instalação e Configuração
 
-**A:** 
-1. Navigate to your Albion Insight directory.
-2. Pull the latest changes:
+### P5: Como instalo o Albion Insight?
+
+**R:** Siga o guia de instalação no [README.md](README.md). Fornecemos scripts de instalação rápida para Linux e etapas de instalação manual para todas as plataformas.
+
+---
+
+### P6: Posso usar o Albion Insight no macOS?
+
+**R:** Sim! O Albion Insight é totalmente compatível com macOS. Siga as etapas de instalação manual no README e execute a aplicação com `sudo`.
+
+---
+
+### P7: E se eu receber um erro de "Permissão negada"?
+
+**R:** Este erro ocorre porque a captura de pacotes de rede requer privilégios elevados. Execute a aplicação com `sudo` no Linux/macOS ou como Administrador no Windows. Consulte o guia [TROUBLESHOOTING.md](TROUBLESHOOTING.md) para mais detalhes.
+
+---
+
+### P8: Como atualizo o Albion Insight?
+
+**R:** 
+1. Navegue até o seu diretório Albion Insight.
+2. Puxe as últimas alterações:
    ```bash
    git pull origin main
    ```
-3. Update dependencies:
+3. Atualize as dependências:
    ```bash
    pip install -r requirements.txt --upgrade
    ```
-4. Run the application again.
+4. Execute a aplicação novamente.
 
 ---
 
-## Features and Functionality
+## Recursos e Funcionalidades
 
-### Q9: What statistics does Albion Insight track?
+### P9: Quais estatísticas o Albion Insight rastreia?
 
-**A:** Currently, Albion Insight tracks:
-- **Silver:** In-game currency earned
-- **Fame:** Experience points gained
-- **Damage Meter:** Real-time combat statistics (damage done, healing done, DPS)
-- **Player Stats:** Individual player performance metrics
-
----
-
-### Q10: Can I export my session data?
-
-**A:** This feature is currently in development. Session data is saved locally in the `sessions/` directory. Future versions will support exporting to CSV, JSON, or other formats.
+**R:** Atualmente, o Albion Insight rastreia:
+- **Prata:** Moeda do jogo ganha
+- **Fama:** Pontos de experiência ganhos
+- **Medidor de Dano:** Estatísticas de combate em tempo real (dano causado, cura realizada, DPS)
+- **Estatísticas do Jogador:** Métricas de desempenho individual do jogador
 
 ---
 
-### Q11: Does Albion Insight work with all Albion Online servers?
+### P10: Posso exportar meus dados de sessão?
 
-**A:** Albion Insight is designed to work with the official Albion Online servers. It may not work with private servers or modified versions of the game.
-
----
-
-### Q12: Can I use Albion Insight while playing in fullscreen?
-
-**A:** Yes, Albion Insight runs as a separate application and can be displayed alongside the game. On Linux, you can use Alt+Tab to switch between windows. On Windows and macOS, you can arrange windows side-by-side or use virtual desktops.
+**R:** Este recurso está atualmente em desenvolvimento. Os dados da sessão são salvos localmente no diretório `sessions/`. Versões futuras suportarão a exportação para CSV, JSON ou outros formatos.
 
 ---
 
-## Troubleshooting
+### P11: O Albion Insight funciona com todos os servidores do Albion Online?
 
-### Q13: The damage meter is not updating. What should I do?
-
-**A:** 
-1. Ensure Albion Online is running and you're in-game.
-2. Check that your network interface is correctly configured.
-3. Verify that the BPF filter is correct in the configuration.
-4. Check the logs in `logs/app.log` for error messages.
-
-See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for more details.
+**R:** O Albion Insight foi projetado para funcionar com os servidores oficiais do Albion Online. Pode não funcionar com servidores privados ou versões modificadas do jogo.
 
 ---
 
-### Q14: I see an error about "flet" module. What should I do?
+### P12: Posso usar o Albion Insight enquanto jogo em tela cheia?
 
-**A:** This means the Flet library is not installed or not properly activated. Activate your virtual environment and reinstall dependencies:
+**R:** Sim, o Albion Insight é executado como um aplicativo separado e pode ser exibido ao lado do jogo. No Linux, você pode usar Alt+Tab para alternar entre as janelas. No Windows e macOS, você pode organizar as janelas lado a lado ou usar áreas de trabalho virtuais.
+
+---
+
+## Solução de Problemas
+
+### P13: O medidor de dano não está atualizando. O que devo fazer?
+
+**R:** 
+1. Certifique-se de que o Albion Online está em execução e você está no jogo.
+2. Verifique se sua interface de rede está configurada corretamente.
+3. Verifique se o filtro BPF está correto na configuração.
+4. Verifique os logs em `logs/app.log` para mensagens de erro.
+
+Consulte [TROUBLESHOOTING.md](TROUBLESHOOTING.md) para mais detalhes.
+
+---
+
+### P14: Vejo um erro sobre o módulo "flet". O que devo fazer?
+
+**R:** Isso significa que a biblioteca Flet não está instalada ou não está ativada corretamente. Ative seu ambiente virtual e reinstale as dependências:
 ```bash
-source venv/bin/activate  # On Linux/macOS
+source venv/bin/activate  # No Linux/macOS
 pip install -r requirements.txt
 ```
 
 ---
 
-### Q15: The application crashes on startup. How do I debug this?
+### P15: A aplicação trava na inicialização. Como depurar isso?
 
-**A:** 
-1. Check the logs in `logs/app.log`.
-2. Run the application from the terminal to see error messages:
+**R:** 
+1. Verifique os logs em `logs/app.log`.
+2. Execute a aplicação a partir do terminal para ver as mensagens de erro:
    ```bash
    python albion_insight/main.py
    ```
-3. Report the error on [GitHub Issues](https://github.com/dexcarva/AlbionInsight/issues) with the full error message and logs.
+3. Relate o erro em [GitHub Issues](https://github.com/dexcarva/AlbionInsight/issues) com a mensagem de erro completa e os logs.
 
 ---
 
-## Development and Contributing
+## Desenvolvimento e Contribuição
 
-### Q16: Can I contribute to Albion Insight?
+### P16: Posso contribuir para o Albion Insight?
 
-**A:** Absolutely! We welcome contributions from the community. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute code, documentation, translations, or bug reports.
+**R:** Com certeza! Aceitamos contribuições da comunidade. Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para obter diretrizes sobre como contribuir com código, documentação, traduções ou relatórios de bugs.
 
 ---
 
-### Q17: How do I set up a development environment?
+### P17: Como configuro um ambiente de desenvolvimento?
 
-**A:** 
-1. Fork the repository.
-2. Clone your fork.
-3. Create a virtual environment.
-4. Install development dependencies:
+**R:** 
+1. Faça um fork do repositório.
+2. Clone seu fork.
+3. Crie um ambiente virtual.
+4. Instale as dependências de desenvolvimento:
    ```bash
    pip install -r requirements-dev.txt
    ```
-5. Make your changes and test them.
-6. Submit a pull request.
+5. Faça suas alterações e teste-as.
+6. Envie um pull request.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions.
-
----
-
-### Q18: What programming languages does Albion Insight use?
-
-**A:** Albion Insight is written in **Python** using the **Flet** framework for the UI and **Scapy** for network packet analysis.
+Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para obter instruções detalhadas.
 
 ---
 
-### Q19: Can I build an executable from Albion Insight?
+### P18: Quais linguagens de programação o Albion Insight usa?
 
-**A:** Yes! See the [PACKAGING.md](PACKAGING.md) guide for instructions on building standalone executables using PyInstaller.
-
----
-
-## Performance and Optimization
-
-### Q20: Why is the application using a lot of CPU?
-
-**A:** High CPU usage can be caused by:
-1. Inefficient packet processing.
-2. Too frequent UI updates.
-3. Running multiple instances.
-
-Check the logs and consider optimizing the packet sniffing loop. Report performance issues on GitHub.
+**R:** O Albion Insight é escrito em **Python** usando o framework **Flet** para a UI e **Scapy** para análise de pacotes de rede.
 
 ---
 
-### Q21: Can I run Albion Insight on a low-end computer?
+### P19: Posso criar um executável a partir do Albion Insight?
 
-**A:** Albion Insight has modest system requirements. However, on very low-end systems, you might experience performance issues. Try:
-1. Closing unnecessary applications.
-2. Reducing the UI update frequency.
-3. Running the application from an SSD instead of HDD.
+**R:** Sim! Consulte o guia [PACKAGING.md](PACKAGING.md) para obter instruções sobre como criar executáveis autônomos usando PyInstaller.
 
 ---
 
-## Legal and Licensing
+## Desempenho e Otimização
 
-### Q22: What is the license for Albion Insight?
+### P20: Por que a aplicação está usando muita CPU?
 
-**A:** Albion Insight is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+**R:** O alto uso da CPU pode ser causado por:
+1. Processamento ineficiente de pacotes.
+2. Atualizações de UI muito frequentes.
+3. Execução de múltiplas instâncias.
 
----
-
-### Q23: Can I use Albion Insight commercially?
-
-**A:** The MIT License allows commercial use, modification, and distribution. However, you must include the original license and copyright notice.
-
----
-
-### Q24: Who is responsible for Albion Insight?
-
-**A:** Albion Insight is maintained by the community. The original project was created by dexcarva as a port of the original C#/WPF tool by Triky313.
+Verifique os logs e considere otimizar o loop de captura de pacotes. Relate problemas de desempenho no GitHub.
 
 ---
 
-## Getting Help
+### P21: Posso executar o Albion Insight em um computador de baixo desempenho?
 
-### Q25: Where can I get help if my question isn't answered here?
-
-**A:** 
-1. Check the [TROUBLESHOOTING.md](TROUBLESHOOTING.md) guide.
-2. Search existing [GitHub Issues](https://github.com/dexcarva/AlbionInsight/issues).
-3. Create a new issue with a detailed description of your problem.
-4. Join community discussions on Discord or forums.
+**R:** O Albion Insight tem requisitos de sistema modestos. No entanto, em sistemas muito fracos, você pode ter problemas de desempenho. Tente:
+1. Fechar aplicativos desnecessários.
+2. Reduzir a frequência de atualização da UI.
+3. Executar a aplicação a partir de um SSD em vez de um HDD.
 
 ---
 
-**Last Updated:** November 13, 2025
+## Legal e Licenciamento
+
+### P22: Qual é a licença do Albion Insight?
+
+**R:** O Albion Insight é licenciado sob a **Licença MIT**. Consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+
+---
+
+### P23: Posso usar o Albion Insight comercialmente?
+
+**R:** A Licença MIT permite o uso comercial, modificação e distribuição. No entanto, você deve incluir a licença original e o aviso de direitos autorais.
+
+---
+
+### P24: Quem é o responsável pelo Albion Insight?
+
+**R:** O Albion Insight é mantido pela comunidade. O projeto original foi criado por dexcarva como um port do original em C#/WPF de Triky313.
+
+---
+
+## Obtendo Ajuda
+
+### P25: Onde posso obter ajuda se minha pergunta não for respondida aqui?
+
+**R:** 
+1. Consulte o guia [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+2. Pesquise [Issues](https://github.com/dexcarva/AlbionInsight/issues) existentes no GitHub.
+3. Crie uma nova issue com uma descrição detalhada do seu problema.
+4. Participe de discussões da comunidade no Discord ou fóruns.
+
+---
+
+**Última Atualização:** 30 de Novembro de 2025
