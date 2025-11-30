@@ -1,0 +1,169 @@
+site_name: Albion Insight Documentation
+site_url: https://dexcarva.github.io/AlbionInsight/
+repo_url: https://github.com/dexcarva/AlbionInsight
+repo_name: dexcarva/AlbionInsight
+edit_uri: edit/master/docs/
+
+nav:
+  - Home: index.md
+  - Contributing: contributing.md
+  - Code of Conduct: code_of_conduct.md
+  - Security: security.md
+  - Packaging: packaging.md
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - i18n:
+      default_language: en
+      languages:
+        en:
+          name: English
+          build: true
+        pt-BR:
+          name: Português (Brasil)
+          build: true
+        pt-PT:
+          name: Português (Portugal)
+          build: true
+        es-ES:
+          name: Español
+          build: true
+        fr-FR:
+          name: Français
+          build: true
+        de-DE:
+          name: Deutsch
+          build: true
+        ru-RU:
+          name: Русский
+          build: true
+        ko-KR:
+          name: 한국어
+          build: true
+        ja-JP:
+          name: 日本語
+          build: true
+        zh-CN:
+          name: 简体中文
+          build: true
+        zh-TW:
+          name: 繁體中文
+          build: true
+        zh-HK:
+          name: 繁體中文 (香港)
+          build: true
+        ar-SA:
+          name: العربية
+          build: true
+        hi-IN:
+          name: हिन्दी
+          build: true
+        th-TH:
+          name: ไทย
+          build: true
+        pl-PL:
+          name: Polski
+          build: true
+        hu-HU:
+          name: Magyar
+          build: true
+        id-ID:
+          name: Bahasa Indonesia
+          build: true
+        it-IT:
+          name: Italiano
+          build: true
+        nl-NL:
+          name: Nederlands
+          build: true
+        sv-SE:
+          name: Svenska
+          build: true
+        tr-TR:
+          name: Türkçe
+          build: true
+        vi-VN:
+          name: Tiếng Việt
+          build: true
+        el-GR:
+          name: Ελληνικά
+          build: true
+        cs-CZ:
+          name: Čeština
+          build: true
+        fa-IR:
+          name: فارسی
+          build: true
+        fil-PH:
+          name: Filipino (Tagalog)
+          build: true
+        he-IL:
+          name: עברית
+          build: true
+        ms-MY:
+          name: Bahasa Melayu
+          build: true
+        mn-MN:
+          name: Монгол
+          build: true
+        ro-RO:
+          name: Română
+          build: true
+        uk-UA:
+          name: Українська
+          build: true
+        da-DK:
+          name: Dansk
+          build: true
+        et-EE:
+          name: Eesti
+          build: true
+        no-NO:
+          name: Norsk
+          build: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
