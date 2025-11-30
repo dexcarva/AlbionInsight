@@ -241,6 +241,7 @@
 	        <button onclick="setLanguage('pt-br')" id="btn-pt-br">Português</button>
 		        <button onclick="setLanguage('ar-sa')" id="btn-ar-sa" style="direction: rtl;">العربية</button>
 		        <button onclick="setLanguage('tr-tr')" id="btn-tr-tr">Türkçe</button>
+	<button onclick="setLanguage('de-de')" id="btn-de-de">Deutsch</button>
 <button onclick="setLanguage('fr-fr')" id="btn-fr-fr">Français</button>
 <button onclick="setLanguage('fil-ph')" id="btn-fil-ph">Filipino</button>
 <button onclick="setLanguage('he-il')" id="btn-he-il" style="direction: rtl;">עברית</button>
@@ -248,7 +249,97 @@
 
     <div class="container">
         <!-- Hebrew Content -->
-        <div id="content-he-il" class="hidden" style="direction: rtl; text-align: right;">
+        <div id="content-de-de" class="hidden">
+	            <header>
+	                <h1>🛡️ Albion Insight (Deutsch)</h1>
+	                <p>Ein plattformübergreifendes Statistik-Analyse-Tool für Albion Online</p>
+	                <p style="font-size: 0.9em; color: #888;">Verfolgen Sie Silber, Ruhm, Schaden und mehr in Echtzeit unter Linux, Windows und macOS</p>
+	                <div style="margin-top: 20px;">
+	                    <a href="https://github.com/dexcarva/AlbionInsight/releases/latest" class="download-btn">
+	                        Neueste Version herunterladen <span class="badge">Beta 0.0.1</span>
+	                    </a>
+	                </div>
+	                <div class="platform-icons">
+	                    <span title="Linux">🐧</span>
+	                    <span title="Windows">🪟</span>
+	                    <span title="macOS">🍎</span>
+	                </div>
+	            </header>
+	
+	            <div class="requirements">
+	                <h3>📋 Voraussetzungen</h3>
+	                <ul>
+	                    <li><strong>Python 3.8+</strong> (oder verwenden Sie die eigenständige ausführbare Datei aus den Releases)</li>
+	                    <li><strong>Root-/Administratorrechte</strong> für die Erfassung von Netzwerkpaketen</li>
+	                    <li><strong>Linux:</strong> Installieren Sie <code>libpcap-dev</code> für Scapy-Unterstützung</li>
+	                    <li><strong>Windows/macOS:</strong> Keine zusätzlichen Abhängigkeiten für die ausführbare Datei</li>
+	                </ul>
+	            </div>
+	
+	            <section>
+	                <h2 style="text-align: center; color: #ffd700; margin-bottom: 30px;">✨ Funktionen</h2>
+	                <div class="features">
+	                    <div class="feature-card">
+	                        <h3>🌍 Plattformübergreifend</h3>
+	                        <p>Läuft nativ unter Linux, Windows und macOS. Erstellt mit Python und Flet für maximale Kompatibilität.</p>
+	                    </div>
+	                    <div class="feature-card">
+	                        <h3>📊 Echtzeit-Verfolgung</h3>
+	                        <p>Fängt UDP-Pakete auf den Albion Online-Ports (5055, 5056, 5058) ab und decodiert das Photon-Protokoll in Echtzeit.</p>
+	                    </div>
+	                    <div class="feature-card">
+	                        <h3>⚔️ Schadenszähler</h3>
+	                        <p>Verfolgen Sie verursachten Schaden, Heilung, DPS, Kills und Tode für Sie und Ihre Gruppenmitglieder während des Kampfes.</p>
+	                    </div>
+	                    <div class="feature-card">
+	                        <h3>💰 Silber- & Ruhm-Verfolgung</h3>
+	                        <p>Überwachen Sie Ihre Silber- und Ruhmgewinne mit stündlichen Statistiken, um Ihre Farmrouten zu optimieren.</p>
+	                    </div>
+	                    <div class="feature-card">
+	                        <h3>🔔 Live-Benachrichtigungen</h3>
+	                        <p>Erhalten Sie sofortige Benachrichtigungen für wichtige Ereignisse wie Kills, Tode, Silbergewinne und mehr.</p>
+	                    </div>
+	                    <div class="feature-card">
+	                        <h3>💾 Sitzungsverwaltung</h3>
+	                        <p>Speichern Sie Ihre Sitzungsstatistiken in JSON-Dateien zur späteren Analyse und zum Vergleich.</p>
+	                    </div>
+	                </div>
+	            </section>
+	
+	            <section class="contributing">
+	                <h2>🤝 Zum Albion Insight beitragen</h2>
+	                <p>Wir freuen uns über Beiträge aus der Community! Egal, ob Sie Entwickler, Designer oder einfach nur ein Albion Online-Enthusiast sind, es gibt viele Möglichkeiten, Albion Insight zu verbessern.</p>
+	                
+	                <h3 style="color: #ffd700; margin-top: 20px; margin-bottom: 10px;">Wie Sie beitragen können:</h3>
+	                <ul>
+	                    <li><strong>Fehler melden:</strong> Einen Fehler gefunden? Erstellen Sie ein Issue auf unserer <a href="https://github.com/dexcarva/AlbionInsight/issues" style="color: #667eea;">GitHub Issues</a>-Seite mit detaillierten Schritten zur Reproduktion.</li>
+	                    <li><strong>Funktionen vorschlagen:</strong> Haben Sie eine Idee für eine neue Funktion? Teilen Sie diese im Issues-Bereich mit dem Label "enhancement".</li>
+	                    <li><strong>Dokumentation verbessern:</strong> Helfen Sie uns, die README zu verbessern, Tutorials hinzuzufügen oder die Dokumentation in andere Sprachen zu übersetzen.</li>
+	                    <li><strong>Code-Beiträge:</strong> Forken Sie das Repository, nehmen Sie Ihre Änderungen vor und senden Sie einen Pull Request. Stellen Sie sicher, dass Sie den Codestil befolgen und gegebenenfalls Tests einschließen.</li>
+	                    <li><strong>Auf verschiedenen Plattformen testen:</strong> Helfen Sie uns, die Anwendung auf verschiedenen Linux-Distributionen, Windows-Versionen und macOS zu testen, um die Kompatibilität zu gewährleisten.</li>
+	                    <li><strong>Weitere Ereignisse decodieren:</strong> Das Photon-Protokoll hat Hunderte von Ereignistypen. Helfen Sie uns, weitere Ereignis-Handler aus dem ursprünglichen C#-Code in Python zu übersetzen.</li>
+	                </ul>
+	
+	                <h3 style="color: #ffd700; margin-top: 20px; margin-bottom: 10px;">Erste Schritte:</h3>
+	                <ul>
+	                    <li>Forken Sie das Repository: <a href="https://github.com/dexcarva/AlbionInsight" style="color: #667eea;">github.com/dexcarva/AlbionInsight</a></li>
+	                    <li>Klonen Sie Ihren Fork: <code>git clone https://github.com/YOUR_USERNAME/AlbionInsight.git</code></li>
+	                    <li>Erstellen Sie einen neuen Branch: <code>git checkout -b feature/ihr-funktionsname</code></li>
+	                    <li>Nehmen Sie Ihre Änderungen vor und committen Sie: <code>git commit -m "Fügt Ihre Funktion hinzu"</code></li>
+	                    <li>Pushen Sie zu Ihrem Fork: <code>git push origin feature/ihr-funktionsname</code></li>
+	                    <li>Öffnen Sie einen Pull Request im Haupt-Repository</li>
+	                </ul>
+	
+	                <p style="margin-top: 20px;">Weitere Details finden Sie in der <a href="https://github.com/dexcarva/AlbionInsight/blob/master/README.de-DE.md" style="color: #667eea;">README.de-DE.md</a> auf GitHub.</p>
+	            </section>
+	
+	            <footer>
+	                <p>Open Source Projekt | <a href="https://github.com/dexcarva/AlbionInsight">GitHub Repository</a></p>
+	                <p style="margin-top: 10px; color: #888;">Eine plattformübergreifende Lösung für die Albion Online Community</p>
+	            </footer>
+	        </div>
+	        <!-- Hebrew Content -->
+	        <div id="content-he-il" class="hidden" style="direction: rtl; text-align: right;">
             <header>
                 <h1>🛡️ Albion Insight (עברית)</h1>
                 <p>כלי חוצה-פלטפורמות לניתוח סטטיסטיקות עבור Albion Online</p>
@@ -591,45 +682,49 @@
 
     <script>
 	        function setLanguage(lang) {
-	            const enContent = document.getElementById('content-en');
-	            const ptContent = document.getElementById('content-pt-br');
-	            const arContent = document.getElementById('content-ar-sa');
-	            const trContent = document.getElementById('content-tr-tr');
-	            const btnEn = document.getElementById('btn-en');
-	            const btnPt = document.getElementById('btn-pt-br');
-	            const btnAr = document.getElementById('btn-ar-sa');
-	            const btnTr = document.getElementById('btn-tr-tr');
+const contentSections = {
+		                'en': document.getElementById('content-en'),
+		                'pt-br': document.getElementById('content-pt-br'),
+		                'ar-sa': document.getElementById('content-ar-sa'),
+		                'tr-tr': document.getElementById('content-tr-tr'),
+		                'fr-fr': document.getElementById('content-fr-fr'),
+		                'fil-ph': document.getElementById('content-fil-ph'),
+		                'he-il': document.getElementById('content-he-il'),
+		                'de-de': document.getElementById('content-de-de')
+		            };
+		
+		            const buttons = {
+		                'en': document.getElementById('btn-en'),
+		                'pt-br': document.getElementById('btn-pt-br'),
+		                'ar-sa': document.getElementById('btn-ar-sa'),
+		                'tr-tr': document.getElementById('btn-tr-tr'),
+		                'fr-fr': document.getElementById('btn-fr-fr'),
+		                'fil-ph': document.getElementById('btn-fil-ph'),
+		                'he-il': document.getElementById('btn-he-il'),
+		                'de-de': document.getElementById('btn-de-de')
+		            };
 	
-	            // Hide all content sections
-	            enContent.classList.add('hidden');
-	            ptContent.classList.add('hidden');
-	            arContent.classList.add('hidden');
-	            trContent.classList.add('hidden');
-	
-	            // Deactivate all buttons
-	            btnEn.classList.remove('active');
-	            btnPt.classList.remove('active');
-	            btnAr.classList.remove('active');
-	            btnTr.classList.remove('active');
-	
-	            // Show selected content and activate button
-	            if (lang === 'en') {
-	                enContent.classList.remove('hidden');
-	                btnEn.classList.add('active');
-	                localStorage.setItem('language', 'en');
-	            } else if (lang === 'pt-br') {
-	                ptContent.classList.remove('hidden');
-	                btnPt.classList.add('active');
-	                localStorage.setItem('language', 'pt-br');
-	            } else if (lang === 'ar-sa') {
-	                arContent.classList.remove('hidden');
-	                btnAr.classList.add('active');
-	                localStorage.setItem('language', 'ar-sa');
-	            } else if (lang === 'tr-tr') {
-	                trContent.classList.remove('hidden');
-	                btnTr.classList.add('active');
-	                localStorage.setItem('language', 'tr-tr');
-	            }
+// Hide all content sections and deactivate all buttons
+		            for (const key in contentSections) {
+		                if (contentSections[key]) {
+		                    contentSections[key].classList.add('hidden');
+		                }
+		                if (buttons[key]) {
+		                    buttons[key].classList.remove('active');
+		                }
+		            }
+		
+		            // Show selected content and activate button
+		            if (contentSections[lang] && buttons[lang]) {
+		                contentSections[lang].classList.remove('hidden');
+		                buttons[lang].classList.add('active');
+		                localStorage.setItem('language', lang);
+		            } else {
+		                // Fallback to English if the requested language is not found
+		                contentSections['en'].classList.remove('hidden');
+		                buttons['en'].classList.add('active');
+		                localStorage.setItem('language', 'en');
+		            }
 	        }
 
         // Load saved language preference or default to English
