@@ -69,5 +69,12 @@ Para informações mais detalhadas sobre a arquitetura do projeto, decodificaç�
 *   **[Melhorias e Roadmap](IMPROVEMENTS.md)**
 *   **[Guia de Contribuição](CONTRIBUTING.md)**
 
+## 5. Qualidade de Código e Integração Contínua (CI/CD)
+
+O projeto agora utiliza **GitHub Actions** para garantir a qualidade do código e a estabilidade em diferentes plataformas e versões do Python.
+
+*   **Testes Automatizados:** Os testes unitários são executados automaticamente em Linux, Windows e macOS para Python 3.8 a 3.11.
+*   **Verificação de Qualidade:** Ferramentas como **Black** (formatação), **Flake8** (linting), **Mypy** (verificação de tipos) e **Pylint** (análise estática) são executadas em cada Pull Request para manter um alto padrão de código.
+
 ---
 *Esta página foi consolidada e estruturada para servir como a página principal da Wiki do projeto Albion Insight.*
