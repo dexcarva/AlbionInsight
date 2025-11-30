@@ -1,22 +1,22 @@
-# Packaging Albion Insight as a Standalone Executable
+# Empacotando o Albion Insight como um Executável Autônomo
 
-This guide explains how to create a standalone executable for **Albion Insight** using **PyInstaller**. This allows users to run the application without installing Python or its dependencies.
+Este guia explica como criar um executável autônomo para o **Albion Insight** usando **PyInstaller**. Isso permite que os usuários executem a aplicação sem instalar o Python ou suas dependências.
 
-## Prerequisites
+## Pré-requisitos
 
-*   Python 3.8+ installed
-*   Virtual environment with all dependencies installed (run `./install.sh` first)
+*   Python 3.8+ instalado
+*   Ambiente virtual com todas as dependências instaladas (execute `./install.sh` primeiro)
 
-## Installation
+## Instalação
 
-First, install PyInstaller in your virtual environment:
+Primeiro, instale o PyInstaller em seu ambiente virtual:
 
 ```bash
 source venv/bin/activate
 pip install pyinstaller
 ```
 
-## Building the Executable
+## Construindo o Executável
 
 ### Linux
 
@@ -32,9 +32,9 @@ pyinstaller --name "AlbionInsight" \
             albion_insight.py
 ```
 
-The executable will be located in `dist/AlbionInsight`.
+O executável estará localizado em `dist/AlbionInsight`.
 
-**Note:** On Linux, the executable still requires root privileges to capture network packets:
+**Nota:** No Linux, o executável ainda requer privilégios de root para capturar pacotes de rede:
 
 ```bash
 sudo ./dist/AlbionInsight
@@ -54,9 +54,9 @@ pyinstaller --name "AlbionInsight" ^
             albion_insight.py
 ```
 
-The executable will be located in `dist\AlbionInsight.exe`.
+O executável estará localizado em `dist\AlbionInsight.exe`.
 
-**Note:** On Windows, you must run the executable as Administrator (right-click → Run as Administrator).
+**Nota:** No Windows, você deve executar o executável como Administrador (clique com o botão direito → Executar como Administrador).
 
 ### macOS
 
@@ -72,63 +72,62 @@ pyinstaller --name "AlbionInsight" \
             albion_insight.py
 ```
 
-The executable will be located in `dist/AlbionInsight`.
+O executável estará localizado em `dist/AlbionInsight`.
 
-## PyInstaller Options Explained
+## Opções do PyInstaller Explicadas
 
-*   `--name "AlbionInsight"`: Sets the name of the executable file.
-*   `--onefile`: Creates a single executable file (easier distribution).
-*   `--windowed`: Hides the console window (for desktop apps).
-*   `--add-data`: Includes additional files (like README) in the executable.
-*   `--hidden-import`: Explicitly includes modules that PyInstaller might miss (Scapy layers).
+*   `--name "AlbionInsight"`: Define o nome do arquivo executável.
+*   `--onefile`: Cria um único arquivo executável (distribuição mais fácil).
+*   `--windowed`: Oculta a janela do console (para aplicativos de desktop).
+*   `--add-data`: Inclui arquivos adicionais (como README) no executável.
+*   `--hidden-import`: Inclui explicitamente módulos que o PyInstaller pode ignorar (camadas do Scapy).
 
-## Troubleshooting
+## Solução de Problemas
 
-### "Module not found" errors
+### Erros de "Módulo não encontrado"
 
-If you encounter errors about missing modules, add them with `--hidden-import`:
+Se você encontrar erros sobre módulos ausentes, adicione-os com `--hidden-import`:
 
 ```bash
---hidden-import module_name
+--hidden-import nome_do_modulo
 ```
 
-### Large executable size
+### Tamanho grande do executável
 
-The executable will be around 50-100 MB due to Flet and Scapy dependencies. This is normal for Python applications packaged with PyInstaller.
+O executável terá cerca de 50-100 MB devido às dependências do Flet e Scapy. Isso é normal para aplicativos Python empacotados com PyInstaller.
 
-### Antivirus false positives
+### Falsos positivos de antivírus
 
-Some antivirus software may flag the executable as suspicious. This is a known issue with PyInstaller. You can:
+Alguns softwares antivírus podem sinalizar o executável como suspeito. Este é um problema conhecido do PyInstaller. Você pode:
 
-1.  Add an exception in your antivirus software.
-2.  Sign the executable with a code signing certificate (for production releases).
+1.  Adicionar uma exceção no seu software antivírus.
+2.  Assinar o executável com um certificado de assinatura de código (para lançamentos de produção).
 
-## Distribution
+## Distribuição
 
-After building, you can distribute the executable from the `dist/` folder. Users will not need to install Python or any dependencies.
+Após a construção, você pode distribuir o executável da pasta `dist/`. Os usuários não precisarão instalar o Python ou quaisquer dependências.
 
-**Important:** Always include a README file explaining:
+**Importante:** Sempre inclua um arquivo README explicando:
 
-*   The application requires root/administrator privileges.
-*   How to run the application (e.g., `sudo ./AlbionInsight` on Linux).
-*   Any system-specific requirements (e.g., `libpcap` on Linux).
+*   A aplicação requer privilégios de root/administrador.
+*   Como executar a aplicação (ex: `sudo ./AlbionInsight` no Linux).
+*   Quaisquer requisitos específicos do sistema (ex: `libpcap` no Linux).
 
-## Creating a Release
+## Criando um Release
 
-To create a GitHub release with the executable:
+Para criar um release no GitHub com o executável:
 
 ```bash
-# 1. Build the executable
-./build.sh  # Or follow the steps above
+# 1. Construa o executável
+./build.sh  # Ou siga os passos acima
 
-# 2. Create a release on GitHub
+# 2. Crie um release no GitHub
 gh release create v0.0.2-beta \
-    --title "Beta Release 0.0.2 - Standalone Executable" \
-    --notes "Includes standalone executable for Linux/Windows/macOS" \
-    dist/AlbionInsight  # Attach the executable
+    --title "Beta Release 0.0.2 - Executável Autônomo" \
+    --notes "Inclui executável autônomo para Linux/Windows/macOS" \
+    dist/AlbionInsight  # Anexe o executável
 ```
 
 ---
 
-For more information, see the [PyInstaller documentation](https://pyinstaller.org/en/stable/).
-
+Para mais informações, consulte a [documentação do PyInstaller](https://pyinstaller.org/en/stable/).
