@@ -43,7 +43,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://github.com/dexcarva/AlbionInsight"
-Documentation = "https://github.com/dexcarva/AlbionInsight/wiki"
+Documentation = "https://dexcarva.github.io/AlbionInsight/"
 Repository = "https://github.com/dexcarva/AlbionInsight.git"
 Issues = "https://github.com/dexcarva/AlbionInsight/issues"
 
