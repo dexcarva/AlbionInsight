@@ -1,7 +1,7 @@
 """Módulo principal para iniciar a aplicação Albion Insight."""
 
-from .ui.main_window import run_app
 from .sniffer_manager import SnifferManager
+from .ui.main_window import run_app
 from .utils.logger import logger
 
 

@@ -2,8 +2,6 @@
 
 import flet as ft
 
-from ..core.network_tracker import get_current_stats # Mantido para compatibilidade, mas não será usado diretamente
-
 
 def start_ui(page: ft.Page, sniffer_manager):
     # O Network Tracker é gerenciado pelo SnifferManager passado como argumento
@@ -15,7 +13,7 @@ def start_ui(page: ft.Page, sniffer_manager):
 
     stats_text = ft.Text("Estatísticas: Aguardando captura...")
 
-        def update_stats(e):
+    def update_stats(e):
         # Pega os dados do sniffer_manager
         data = sniffer_manager.get_latest_data()
         if data:

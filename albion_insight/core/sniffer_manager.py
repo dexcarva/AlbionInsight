@@ -1,19 +1,20 @@
 import subprocess
 import sys
-import os
 import threading
-from time import sleep
+
 from ..utils.logger import logger
+
 
 class SnifferManager:
     """
     Gerencia o subprocesso do sniffer de pacotes (que requer privilégios de root).
     """
+
     def __init__(self):
         self.sniffer_process = None
         self.output_thread = None
         self.is_running = False
-        self.data_queue = [] # Fila simples para simular a passagem de dados
+        self.data_queue = []  # Fila simples para simular a passagem de dados
 
     def _read_output(self):
         """Lê a saída do subprocesso e a coloca na fila."""
@@ -23,7 +24,7 @@ class SnifferManager:
                 line = self.sniffer_process.stdout.readline()
                 if not line:
                     break
-                line = line.decode('utf-8').strip()
+                line = line.decode("utf-8").strip()
                 if line:
                     logger.debug(f"Sniffer Output: {line}")
                     self.data_queue.append(line)
@@ -44,7 +45,7 @@ class SnifferManager:
             "sudo",
             sys.executable,
             "-m",
-            "albion_insight.core.sniffer_process" # Executa o módulo
+            "albion_insight.core.sniffer_process",  # Executa o módulo
         ]
 
         try:
@@ -54,11 +55,11 @@ class SnifferManager:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 stdin=subprocess.PIPE,
-                bufsize=1, # Linha por linha
-                universal_newlines=False # Manter como bytes para decodificação manual
+                bufsize=1,  # Linha por linha
+                universal_newlines=False,  # Manter como bytes para decodificação manual
             )
             self.is_running = True
-            
+
             # Inicia a thread para ler a saída do sniffer
             self.output_thread = threading.Thread(target=self._read_output)
             self.output_thread.daemon = True
@@ -66,7 +67,9 @@ class SnifferManager:
 
             logger.info("Sniffer iniciado com sucesso.")
         except FileNotFoundError:
-            logger.error("Erro: 'sudo' ou 'python' não encontrado. Certifique-se de que estão no PATH.")
+            logger.error(
+                "Erro: 'sudo' ou 'python' não encontrado. Certifique-se de que estão no PATH."
+            )
             self.is_running = False
         except Exception as e:
             logger.error(f"Erro ao iniciar o sniffer: {e}")
@@ -99,12 +102,3 @@ class SnifferManager:
         data = self.data_queue
         self.data_queue = []
         return data
-
-# Adicionar um logger básico para que o SnifferManager funcione
-if not hasattr(sys.modules[__name__], 'logger'):
-    class DummyLogger:
-        def info(self, msg): pass
-        def warning(self, msg): pass
-        def error(self, msg): pass
-        def debug(self, msg): pass
-    logger = DummyLogger()

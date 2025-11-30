@@ -1,21 +1,20 @@
 """Módulo de rastreamento de rede da aplicação Albion Insight."""
 
-import threading
-import time
-
-from scapy.all import IP, UDP, sniff, get_if_list
-
-from albion_insight.core.models import SessionStats
-import sys
 import os
+import sys
+
 from datetime import datetime
+
+from scapy.all import IP, UDP, get_if_list, sniff
+
+
 from albion_insight.utils.logger import logger
 
 # Variável global para controlar o estado do rastreador
-is_sniffing = threading.Event()
+
 
 # Inicializa as estatísticas da sessão
-current_session = SessionStats(start_time=0.0)
+
 
 # O sniffer agora é um script autônomo que se comunica via stdout
 # Ele não precisa mais de threads, pois será um subprocesso dedicado.
@@ -31,8 +30,8 @@ def process_packet(packet):
             f"para {packet[IP].dst}:{packet[IP].dport}"
         )
         # Simulação de atualização de estatísticas (a ser substituída pela lógica real)
-        current_session.total_silver += 1
-        current_session.total_fame += 1
+        # print("DATA:SILVER:1")
+        # print("DATA:FAME:1")
 
 
 def run_network_tracker(interface: str):
@@ -49,7 +48,7 @@ def run_network_tracker(interface: str):
         sniff(prn=process_packet, filter=bpf_filter, iface=interface, store=0)
     except Exception as e:
         logger.error(f"Erro durante a captura de pacotes: {e}")
-    
+
     logger.info("Network Tracker parado.")
 
 
@@ -59,9 +58,10 @@ def get_interface():
     interfaces = get_if_list()
     # Tenta encontrar uma interface que não seja loopback e não seja 'any'
     for iface in interfaces:
-        if iface != 'lo' and iface != 'any':
+        if iface != "lo" and iface != "any":
             return iface
-    return 'any'
+    return "any"
+
 
 def main():
     """Ponto de entrada para o processo sniffer."""
@@ -74,6 +74,7 @@ def main():
     sys.stdout.flush()
 
     run_network_tracker(interface)
+
 
 if __name__ == "__main__":
     main()
