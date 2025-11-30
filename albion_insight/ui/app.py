@@ -2,13 +2,10 @@
 
 import flet as ft
 
-from albion_insight.core.network_tracker import (get_current_stats,
-                                                 start_network_tracker)
+from albion_insight.core.network_tracker import run_network_tracker
 
 
 def start_ui(page: ft.Page):
-    # Inicia o Network Tracker em uma thread separada para não bloquear a UI
-    start_network_tracker(page)
     """
     Função principal da interface do usuário (Flet).
     """
@@ -18,8 +15,7 @@ def start_ui(page: ft.Page):
     stats_text = ft.Text("Estatísticas: Aguardando captura...")
 
     def update_stats(e):
-        stats = get_current_stats()
-        stats_text.value = f"Silver: {stats.total_silver}, Fame: {stats.total_fame}"
+        stats_text.value = "Estatísticas: Capturando dados..."
         page.update()
 
     page.add(
