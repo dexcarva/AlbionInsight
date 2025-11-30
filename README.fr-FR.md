@@ -1,17 +1,17 @@
- 
+# Albion Insight (FR)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/dexcarva/AlbionInsight)
 [![GitHub Issues](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**[Lire en Anglais (Read this in English)](README.md)**
-**[Lire en Portugais (Leia em Português)](README.pt-BR.md)**
-**[Lire en Espagnol (Leer en Español)](README.es-ES.md)**
-**[Lire en Allemand (Lesen Sie dies auf Deutsch)](README.de-DE.md)**
-**[Lire en Italien (Leggi in Italiano)](README.it-IT.md)**
+<details>
+<summary>Lire dans d'autres langues</summary>
 
-# Albion Insight (FR)
+**[Anglais](README.md)** | **[Allemand](README.de-DE.md)** | **[Grec](README.el-GR.md)** | **[Espagnol](README.es-ES.md)** | **[Français](README.fr-FR.md)** | **[Hindi](README.hi-IN.md)** | **[Hongrois](README.hu-HU.md)** | **[Indonésien](README.id-ID.md)** | **[Italien](README.it-IT.md)** | **[Japonais](README.ja-JP.md)** | **[Coréen](README.ko-KR.md)** | **[Néerlandais](README.nl-NL.md)** | **[Polonais](README.pl-PL.md)** | **[Portugais (Brésil)](README.pt-BR.md)** | **[Roumain](README.ro-RO.md)** | **[Russe](README.ru-RU.md)** | **[Suédois](README.sv-SE.md)** | **[Thaï](README.th-TH.md)** | **[Turc](README.tr-TR.md)** | **[Vietnamien](README.vi-VN.md)** | **[Chinois (Simplifié)](README.zh-CN.md)** | **[Chinois (Traditionnel)](README.zh-TW.md)** | **[Chinois (Traditionnel - Hong Kong)](README.zh-HK.md)** | **[Tchèque](README.cs-CZ.md)** | **[Persan (Farsi)](README.fa-IR.md)** | **[Filipino (Tagalog)](README.fil-PH.md)** | **[Portugais (Portugal)](README.pt-PT.md)** | **[Hébreu](README.he-IL.md)** | **[Norvégien](README.no-NO.md)** | **[Finnois](README.fi-FI.md)** | **[Danois](README.da-DK.md)** | **[Ukrainien](README.uk-UA.md)** | **[Malais](README.ms-MY.md)** | **[Estonien](README.et-EE.md)**
+
+</details>
 
 **Albion Insight** est un outil d'analyse de statistiques multiplateforme (Linux, Windows, macOS) pour le jeu Albion Online, réimplémenté en **Python** avec le framework **Flet**. Il est conçu pour suivre en temps réel les statistiques du jeu, y compris l'argent, la renommée et les données de combat (Compteur de Dégâts), en analysant le trafic réseau.
 
@@ -133,7 +133,7 @@ Pour des instructions détaillées sur la création d'exécutables pour Linux, W
 ```bash
 source venv/bin/activate
 pip install pyinstaller
-pyinstaller --name "AlbionInsight" --onefile --windowed -m albion_insight
+pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
 ```
 
 L'exécutable sera situé dans le dossier `dist/`.
@@ -148,7 +148,8 @@ L'application est structurée en composants modulaires pour une meilleure mainte
 | `albion_insight/ui/` | Composants de l'interface utilisateur construits avec Flet. |
 | `albion_insight/utils/` | Fonctions utilitaires, configuration et journalisation. |
 | `albion_insight/__main__.py` | Point d'entrée de l'application. |
-| `README.md` | Ce fichier de documentation. |
+| `README.md` | Ce fichier de documentation principal (en Anglais). |
+| `README.fr-FR.md` | Ce fichier de documentation en Français. |
 
 ## État Actuel (Données en Temps Réel)
 
