@@ -181,4 +181,4 @@ You can track the progress of roadmap items through:
 
 *This roadmap is subject to change based on community feedback and contributions.*
 
-*Last updated: November 2025*
+*Last updated: November 30, 2025*
