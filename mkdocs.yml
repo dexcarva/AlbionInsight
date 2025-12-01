@@ -152,6 +152,9 @@ plugins:
         no-NO:
           name: Norsk
           build: true
+        fi-FI:
+          name: Suomi
+          build: true
 
 markdown_extensions:
   - admonition
