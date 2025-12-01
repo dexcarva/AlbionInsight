@@ -2,11 +2,9 @@
 
 import os
 import sys
-
 from datetime import datetime
 
 from scapy.all import IP, UDP, get_if_list, sniff
-
 
 from albion_insight.utils.logger import logger
 

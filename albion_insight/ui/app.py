@@ -3,8 +3,6 @@
 import flet as ft
 
 
-
-
 def start_ui(page: ft.Page):
     """
     Função principal da interface do usuário (Flet).
