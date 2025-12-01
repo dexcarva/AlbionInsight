@@ -2,7 +2,7 @@
 
 import flet as ft
 
-from albion_insight.core.network_tracker import run_network_tracker
+
 
 
 def start_ui(page: ft.Page):
