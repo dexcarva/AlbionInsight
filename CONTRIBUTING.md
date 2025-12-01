@@ -1,24 +1,24 @@
 # Contributing to Albion Insight
 
-**[Leia em Português (Brasil)](CONTRIBUTING.pt-BR.md)** | **[Leia em Português (Portugal)](CONTRIBUTING.pt-PT.md)**
-**[Leer en Español](CONTRIBUTING.es-ES.md)**
-**[Lire en Français](CONTRIBUTING.fr-FR.md)**
-**[Read in Arabic (اقرأ بالعربية)](CONTRIBUTING.ar-SA.md)**
-**[Czytaj po Polsku](CONTRIBUTING.pl-PL.md)**
-**[Read in Hindi (हिंदी में पढ़ें)](CONTRIBUTING.hi-IN.md)**
-**[Read in Thai (อ่านเป็นภาษาไทย)](CONTRIBUTING.th-TH.md)**
-**[Read in Korean (한국어로 읽기)](CONTRIBUTING.ko-KR.md)**
-**[Přečtěte si v Češtině](CONTRIBUTING.cs-CZ.md)**
-**[Læs på Dansk](CONTRIBUTING.da-DK.md)**
-**[Διαβάστε στα Ελληνικά](CONTRIBUTING.el-GR.md)**
-**[بخوانید به فارسی](CONTRIBUTING.fa-IR.md)**
-**[Lue Suomeksi](CONTRIBUTING.fi-FI.md)**
-**[Basahin sa Filipino](CONTRIBUTING.fil-PH.md)**
-**[קראו בעברית](CONTRIBUTING.he-IL.md)**
-**[Baca dalam Bahasa Melayu](CONTRIBUTING.ms-MY.md)**
-**[Монгол хэлээр унших](CONTRIBUTING.mn-MN.md)**
-**[Citiți în Română](CONTRIBUTING.ro-RO.md)**
-**[Читати Українською](CONTRIBUTING.uk-UA.md)**
+**[Leia em Português (Brasil)](docs/pt-BR/contributing.md)** | **[Leia em Português (Portugal)](docs/pt-PT/contributing.md)**
+**[Leer en Español](docs/es-ES/contributing.md)**
+**[Lire en Français](docs/fr-FR/contributing.md)**
+**[Read in Arabic (اقرأ بالعربية)](docs/ar-SA/contributing.md)**
+**[Czytaj po Polsku](docs/pl-PL/contributing.md)**
+**[Read in Hindi (हिंदी में पढ़ें)](docs/hi-IN/contributing.md)**
+**[Read in Thai (อ่านเป็นภาษาไทย)](docs/th-TH/contributing.md)**
+**[Read in Korean (한국어로 읽기)](docs/ko-KR/contributing.md)**
+**[Přečtěte si v Češtině](docs/cs-CZ/contributing.md)**
+**[Læs på Dansk](docs/da-DK/contributing.md)**
+**[Διαβάστε στα Ελληνικά](docs/el-GR/contributing.md)**
+**[بخوانید به فارسی](docs/fa-IR/contributing.md)**
+**[Lue Suomeksi](docs/fi-FI/contributing.md)**
+**[Basahin sa Filipino](docs/fil-PH/contributing.md)**
+**[קראו בעברית](docs/he-IL/contributing.md)**
+**[Baca dalam Bahasa Melayu](docs/ms-MY/contributing.md)**
+**[Монгол хэлээр унших](docs/mn-MN/contributing.md)**
+**[Citiți în Română](docs/ro-RO/contributing.md)**
+**[Читати Українською](docs/uk-UA/contributing.md)**
 
 First off, thank you for considering contributing to Albion Insight! It's people like you that make Albion Insight such a great tool for the Albion Online community.
 
