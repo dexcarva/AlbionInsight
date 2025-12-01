@@ -145,6 +145,7 @@ The application is structured into modular components for better maintainability
 | `CONTRIBUTING.md` | Guidelines for contributing to the project. |
 | `CODE_OF_CONDUCT.md` | The project's Code of Conduct. |
 | `SECURITY.md` | Policy for reporting security vulnerabilities. |
+| `README.it-IT.md` | Documentazione in italiano. |
 
 ## Current Status (Real-Time Data)
 
