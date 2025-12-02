@@ -148,6 +148,7 @@ The application is structured into modular components for better maintainability
 | `README.it-IT.md` | Documentazione in italiano. |
 | `README.pt-BR.md` | Documentação em português do Brasil. |
 | `README.ru-RU.md` | Документация на русском языке. |
+| `README.fr-FR.md` | Documentation en français. |
 
 ## Current Status (Real-Time Data)
 
