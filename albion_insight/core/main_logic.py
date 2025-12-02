@@ -13,14 +13,13 @@ def main():
     """
     logger.info("Albion Insight - Aplicação iniciada (Estrutura Modularizada)")
 
-    # Inicia o gerenciador do sniffer (que inicia o sniffer como subprocesso)
+    # Inicia o gerenciador do sniffer (que gerencia o sniffer como subprocesso)
     sniffer_manager = SnifferManager()
-    sniffer_manager.start_sniffer()
 
-    # Inicia a aplicação Flet
+    # Inicia a aplicação Flet, passando o gerenciador para controle pela UI
     run_app(sniffer_manager)
 
-    # Garante que o sniffer seja encerrado ao fechar a UI
+    # Garante que o sniffer seja encerrado ao fechar a UI (se estiver rodando)
     sniffer_manager.stop_sniffer()
 
 
