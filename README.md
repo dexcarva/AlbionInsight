@@ -147,6 +147,7 @@ The application is structured into modular components for better maintainability
 | `SECURITY.md` | Policy for reporting security vulnerabilities. |
 | `README.it-IT.md` | Documentazione in italiano. |
 | `README.pt-BR.md` | Documentação em português do Brasil. |
+| `README.ru-RU.md` | Документация на русском языке. |
 
 ## Current Status (Real-Time Data)
 
