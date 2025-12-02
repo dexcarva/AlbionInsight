@@ -146,6 +146,7 @@ The application is structured into modular components for better maintainability
 | `CODE_OF_CONDUCT.md` | The project's Code of Conduct. |
 | `SECURITY.md` | Policy for reporting security vulnerabilities. |
 | `README.it-IT.md` | Documentazione in italiano. |
+| `README.pt-BR.md` | Documentação em português do Brasil. |
 
 ## Current Status (Real-Time Data)
 
