@@ -27,9 +27,11 @@ def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
 
     # Evita adicionar handlers duplicados se o logger já foi configurado
     if not logger.handlers:
-        # Console handler
-        ch = logging.StreamHandler()
-        ch.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
+        # Console handler (apenas se não for DEBUG, para evitar logs duplicados no console)
+        if not Config.DEBUG:
+            ch = logging.StreamHandler()
+            ch.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
+            logger.addHandler(ch)
 
         # File handler (opcional)
         if log_file is None:
@@ -44,9 +46,9 @@ def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
         # Formatter
         formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
-        ch.setFormatter(formatter)
-        fh.setFormatter(formatter)
-        logger.addHandler(ch)
+        # Aplica o formatter a todos os handlers
+        for handler in logger.handlers:
+            handler.setFormatter(formatter)
 
     return logger
 
