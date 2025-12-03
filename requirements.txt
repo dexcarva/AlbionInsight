@@ -1,4 +1,0 @@
-scapy==2.6.1
-anyio==4.1.0
-flet==0.28.3
-pydantic==2.5.3
