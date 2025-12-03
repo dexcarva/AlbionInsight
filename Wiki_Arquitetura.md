@@ -44,6 +44,47 @@ O módulo `utils` contém funções auxiliares e configurações globais.
 
 ---
 
+# Melhores Práticas de Contribuição e Desenvolvimento
+
+Esta seção detalha as diretrizes e ferramentas que garantem a qualidade e a consistência do código no projeto Albion Insight.
+
+## 1. Qualidade de Código (Linting e Formatação)
+
+Utilizamos ferramentas de formatação e linting para manter um padrão de código unificado.
+
+| Ferramenta | Propósito | Comando de Execução |
+| :--- | :--- | :--- |
+| **Black** | Formatador de código Python. Garante um estilo consistente (PEP 8). | `black albion_insight/` |
+| **isort** | Ordenador de importações. Organiza as importações alfabeticamente e por seção. | `isort albion_insight/` |
+| **Flake8** | Linter. Verifica a conformidade com o estilo PEP 8 e identifica erros de programação. | `flake8 albion_insight/` |
+| **mypy** | Verificador de tipagem estática. Ajuda a encontrar erros antes da execução. | `mypy albion_insight/` |
+
+**Recomendação:** Antes de submeter um Pull Request, execute `black` e `isort` para formatar seu código automaticamente.
+
+## 2. Testes
+
+O projeto utiliza `pytest` para testes unitários e de integração.
+
+*   **Execução de Testes:** `pytest`
+*   **Cobertura de Código:** `pytest --cov=albion_insight`
+
+**Diretriz:** Qualquer nova funcionalidade ou correção de bug deve ser acompanhada por testes que garantam seu funcionamento e previnam regressões.
+
+## 3. Gerenciamento de Dependências
+
+As dependências do projeto são gerenciadas através do arquivo `pyproject.toml`, seguindo o padrão **PEP 621**.
+
+*   **Dependências de Produção:** Listadas na seção `[project.dependencies]`.
+*   **Dependências de Desenvolvimento:** Listadas na seção `[project.optional-dependencies.dev]`.
+
+## 4. Comunicação e Issues
+
+*   **Reporte de Bugs:** Use o template de Issue `Bug Report` e forneça o máximo de detalhes possível, incluindo logs de erro e passos para reprodução.
+*   **Sugestões de Funcionalidades:** Use o template `Feature Request` para descrever a funcionalidade e o valor que ela adiciona ao projeto.
+*   **Política de Fechamento de Issues:** Issues com soluções propostas **não serão fechadas** sem a confirmação do usuário que reportou o problema. Issues sem atividade por mais de 7 dias serão marcadas como `inativas` e fechadas, mas podem ser reabertas a qualquer momento.
+
+---
+
 # Albion Insight Project Architecture (English Translation)
 
 The Albion Insight project is designed with a modular architecture to ensure separation of concerns, ease of maintenance, and scalability. The structure is divided into three main components: **Core**, **UI (User Interface)**, and **Utils (Utilities)**.
@@ -87,3 +128,44 @@ The `utils` module contains auxiliary functions and global configurations.
 4. The UI interacts with `main_logic` to start or stop the packet capture process (`network_tracker.py`).
 5. `sniffer_process.py` (executed with `sudo`) captures and decodes packets, sending the data back to `main_logic` (and consequently to the UI) via Inter-Process Communication (IPC).
 6. The UI updates the data models and displays real-time statistics to the user.
+
+---
+
+# Best Practices for Contribution and Development (English Translation)
+
+This section details the guidelines and tools that ensure the quality and consistency of the code in the Albion Insight project.
+
+## 1. Code Quality (Linting and Formatting)
+
+We use formatting and linting tools to maintain a unified code standard.
+
+| Tool | Purpose | Execution Command |
+| :--- | :--- | :--- |
+| **Black** | Python code formatter. Ensures consistent style (PEP 8). | `black albion_insight/` |
+| **isort** | Import sorter. Organizes imports alphabetically and by section. | `isort albion_insight/` |
+| **Flake8** | Linter. Checks for PEP 8 compliance and identifies programming errors. | `flake8 albion_insight/` |
+| **mypy** | Static type checker. Helps find errors before execution. | `mypy albion_insight/` |
+
+**Recommendation:** Before submitting a Pull Request, run `black` and `isort` to automatically format your code.
+
+## 2. Testing
+
+The project uses `pytest` for unit and integration tests.
+
+*   **Running Tests:** `pytest`
+*   **Code Coverage:** `pytest --cov=albion_insight`
+
+**Guideline:** Any new feature or bug fix must be accompanied by tests that ensure its functionality and prevent regressions.
+
+## 3. Dependency Management
+
+Project dependencies are managed through the `pyproject.toml` file, following the **PEP 621** standard.
+
+*   **Production Dependencies:** Listed in the `[project.dependencies]` section.
+*   **Development Dependencies:** Listed in the `[project.optional-dependencies.dev]` section.
+
+## 4. Communication and Issues
+
+*   **Bug Reporting:** Use the `Bug Report` Issue template and provide as much detail as possible, including error logs and reproduction steps.
+*   **Feature Suggestions:** Use the `Feature Request` template to describe the feature and the value it adds to the project.
+*   **Issue Closing Policy:** Issues with proposed solutions **will not be closed** without confirmation from the user who reported the problem. Issues without activity for more than 7 days will be marked as `inactive` and closed, but can be reopened at any time.
