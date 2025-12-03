@@ -23,15 +23,14 @@ def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
         >>> logger.info("Aplicação iniciada")
     """
     logger = logging.getLogger(name)
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
 
     # Evita adicionar handlers duplicados se o logger já foi configurado
     if not logger.handlers:
-        # Console handler (apenas se não for DEBUG, para evitar logs duplicados no console)
-        if not Config.DEBUG:
-            ch = logging.StreamHandler()
-            ch.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
-            logger.addHandler(ch)
+        # Console handler
+        ch = logging.StreamHandler()
+        ch.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
+        logger.addHandler(ch)
 
         # File handler (opcional)
         if log_file is None:
@@ -40,7 +39,7 @@ def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
         # Garante que o diretório do log exista
         Path(log_file).parent.mkdir(parents=True, exist_ok=True)
         fh = logging.FileHandler(log_file)
-        fh.setLevel(logging.DEBUG)
+        fh.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
         logger.addHandler(fh)
 
         # Formatter
