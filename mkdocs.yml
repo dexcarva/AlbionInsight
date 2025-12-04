@@ -155,6 +155,9 @@ plugins:
         fi-FI:
           name: Suomi
           build: true
+        lt-LT:
+          name: Lietuvių
+          build: true
         ja-JP:
           name: 日本語
           build: true
