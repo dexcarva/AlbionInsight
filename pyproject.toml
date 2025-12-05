@@ -26,10 +26,10 @@ classifiers = [
 ]
 
 dependencies = [
-    "scapy==2.6.1",
-    "flet==0.28.3",
-    "anyio==4.1.0",
-    "pydantic==2.5.3",
+    "scapy~=2.6.1",
+    "flet~=0.28.3",
+    "anyio~=4.12.0",
+    "pydantic~=2.12.5",
 ]
 
 [project.optional-dependencies]
@@ -37,11 +37,11 @@ dev = [
     "pytest==7.4.0",
     "pytest-cov==4.1.0",
     "black==23.7.0",
-    "flake8==6.0.0",
-    "mypy==1.4.1",
-    "pylint==2.17.5",
-    "isort==5.13.2",
-    "pre-commit==3.5.0",
+    "flake8~=7.0.0",
+    "mypy~=1.8.0",
+    "pylint~=3.0.0",
+    "isort~=5.13.2",
+    "pre-commit~=3.6.0",
 ]
 
 [project.urls]
