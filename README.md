@@ -151,6 +151,7 @@ The application is structured into modular components for better maintainability
 | `README.fr-FR.md` | Documentation en français. |\n| `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |\n| `README.ko-KR.md` | 한국어 문서 (Korean documentation). |\n| `README.es-ES.md` | Documentación en español (Spanish documentation). |
 | `README.pl-PL.md` | Dokumentacja w języku polskim (Polish documentation). |
 | `README.sv-SE.md` | Dokumentation på svenska (Swedish documentation). |
+| `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
 
 ## Current Status (Real-Time Data)
 
