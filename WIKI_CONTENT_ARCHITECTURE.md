@@ -58,3 +58,12 @@ Contém funções de suporte que são usadas em toda a aplicação.
 7.  **Atualização:** Os dados processados são comunicados de volta ao `SnifferManager` (geralmente via *queues* ou *pipes* em Python) e, em seguida, atualizam o estado da UI.
 
 Esta separação garante que a UI permaneça responsiva, mesmo durante a intensa atividade de captura e processamento de pacotes de rede.
+
+## 4. Melhorias Futuras e Direções de Desenvolvimento
+
+A arquitetura modular permite que o projeto evolua em várias direções:
+
+*   **Persistência de Dados:** Implementação de um módulo de banco de dados (SQLite ou similar) para salvar o histórico de sessões e estatísticas de longo prazo.
+*   **Decodificação Assíncrona:** Refatorar a comunicação entre o `SnifferManager` e a UI para usar `asyncio` ou `anyio` de forma mais explícita, melhorando a performance em ambientes de alta carga.
+*   **Plugins/Extensões:** Criar uma interface de programação (API) para que a comunidade possa desenvolver plugins que se conectem ao Core para processamento de dados customizado.
+*   **Suporte a Múltiplas Interfaces:** Adicionar a capacidade de selecionar a interface de rede a ser farejada (sniffed) via UI, melhorando a usabilidade em máquinas com múltiplas placas de rede.
