@@ -5,11 +5,11 @@ import sys
 from datetime import datetime
 
 from scapy.all import get_if_list, sniff  # type: ignore
-from scapy.layers.inet import IP, UDP
+from scapy.layers.inet import IP, UDP\n\nfrom .protocol_decoder import ProtocolDecoder\nfrom .models import SessionStats
 
 from albion_insight.utils.logger import logger
 
-# Variável global para controlar o estado do rastreador
+# Variável global para controlar o estado do rastreador\n\ncurrent_session = SessionStats()\nprotocol_decoder = ProtocolDecoder(current_session)
 
 
 # Inicializa as estatísticas da sessão
@@ -23,7 +23,7 @@ def process_packet(packet):
     """Processa um pacote capturado pelo Scapy."""
     if UDP in packet and IP in packet:
         # Aqui entra a lógica de decodificação do protocolo Photon
-        # Por enquanto, apenas logamos que um pacote foi recebido
+        # Tenta decodificar o pacote com a lógica do Photon\n        # A decodificação real deve ser implementada em ProtocolDecoder\n        if protocol_decoder.decode_and_update(bytes(packet)):\n            # Se decodificado com sucesso, envia um sinal para a UI\n            # No futuro, o ProtocolDecoder enviará os dados diretamente para a UI\n            print(f"DATA:SILVER:{current_session.total_silver}")\n            sys.stdout.flush()
         logger.debug(
             "Pacote Albion Online recebido de %s:%s para %s:%s",
             packet[IP].src,
