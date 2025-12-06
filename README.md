@@ -152,6 +152,7 @@ The application is structured into modular components for better maintainability
 | `README.pl-PL.md` | Dokumentacja w języku polskim (Polish documentation). |
 | `README.sv-SE.md` | Dokumentation på svenska (Swedish documentation). |
 | `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
+| `README.pt-PT.md` | Documentação em português europeu. |
 
 ## Current Status (Real-Time Data)
 
