@@ -5,6 +5,7 @@
 **[Lire en Français](docs/fr-FR/contributing.md)**
 **[Read in Arabic (اقرأ بالعربية)](docs/ar-SA/contributing.md)**
 **[Czytaj po Polsku](docs/pl-PL/contributing.md)**
+**[Lesen Sie auf Deutsch](docs/de-DE/contributing.md)**
 **[Read in Hindi (हिंदी में पढ़ें)](docs/hi-IN/contributing.md)**
 **[Read in Thai (อ่านเป็นภาษาไทย)](docs/th-TH/contributing.md)**
 **[Read in Korean (한국어로 읽기)](docs/ko-KR/contributing.md)**

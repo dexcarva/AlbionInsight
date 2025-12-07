@@ -1,7 +1,22 @@
-**[Read in English](CONTRIBUTING.md)**
-**[Leia em Português](CONTRIBUTING.pt-BR.md)**
-**[Leer en Español](CONTRIBUTING.es-ES.md)**
-**[Lire en Français](CONTRIBUTING.fr-FR.md)**
+**[Read in English](../../CONTRIBUTING.md)** | **[Leia em Português (Brasil)](../pt-BR/contributing.md)** | **[Leia em Português (Portugal)](../pt-PT/contributing.md)**
+**[Leer en Español](../es-ES/contributing.md)**
+**[Lire en Français](../fr-FR/contributing.md)**
+**[Read in Arabic (اقرأ بالعربية)](../ar-SA/contributing.md)**
+**[Czytaj po Polsku](../pl-PL/contributing.md)**
+**[Read in Hindi (हिंदी में पढ़ें)](../hi-IN/contributing.md)**
+**[Read in Thai (อ่านเป็นภาษาไทย)](../th-TH/contributing.md)**
+**[Read in Korean (한국어로 읽기)](../ko-KR/contributing.md)**
+**[Přečtěte si v Češtině](../cs-CZ/contributing.md)**
+**[Læs på Dansk](../da-DK/contributing.md)**
+**[Διαβάστε στα Ελληνικά](../el-GR/contributing.md)**
+**[بخوانید به فارسی](../fa-IR/contributing.md)**
+**[Lue Suomeksi](../fi-FI/contributing.md)**
+**[Basahin sa Filipino](../fil-PH/contributing.md)**
+**[קראו בעברית](../he-IL/contributing.md)**
+**[Baca dalam Bahasa Melayu](../ms-MY/contributing.md)**
+**[Монгол хэлээр унших](../mn-MN/contributing.md)**
+**[Citiți în Română](../ro-RO/contributing.md)**
+**[Читати Українською](../uk-UA/contributing.md)**
 
 Zunächst einmal vielen Dank, dass Sie in Erwägung ziehen, zu Albion Insight beizutragen! Es sind Menschen wie Sie, die Albion Insight zu einem so großartigen Werkzeug für die Albion Online Community machen.
 
@@ -92,17 +107,20 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 # Entwicklungsabhängigkeiten installieren
-pip install pylint flake8 black pytest
+pip install -r requirements-dev.txt
+
+# Richten Sie Pre-Commit-Hooks ein (optional, aber empfohlen)
+pre-commit install
 ```
 
 ### Ausführen der Anwendung
 
 ```bash
 # Unter Linux/macOS:
-sudo venv/bin/python3 albion_insight.py
+sudo venv/bin/python3 -m albion_insight
 
 # Unter Windows (als Administrator):
-python albion_insight.py
+python -m albion_insight
 ```
 
 ## Codierungsstandards
@@ -116,36 +134,73 @@ Wir folgen den PEP 8 Style-Richtlinien für Python-Code. Bitte stellen Sie siche
 - Fügen Sie Typ-Hinweise hinzu, wo angebracht
 - Halten Sie Funktionen fokussiert und prägnant
 
-**Hilfswerkzeuge:**
+**Hilfswerkzeuge (vor dem Committen ausführen):**
+
 ```bash
-# Formatieren Sie Ihren Code mit black
-black albion_insight.py
+# Formatieren Sie Ihren Code mit black und isort
+black albion_insight/
+isort albion_insight/
 
 # Überprüfen Sie auf Stilprobleme
-flake8 albion_insight.py
+flake8 albion_insight/
+
+# Führen Sie die Typprüfung durch
+mypy albion_insight/
 
 # Führen Sie den Linter aus
-pylint albion_insight.py
+pylint albion_insight/
+```
+
+**Automatisierte Qualitätsprüfungen:**
+
+Wir verwenden `pre-commit` Hooks, um die Codequalität automatisch vor Commits zu prüfen. Wenn Sie Pre-Commit-Hooks installiert haben, werden sie automatisch bei `git commit` ausgeführt. Um sie manuell auszuführen:
+
+```bash
+pre-commit run --all-files
 ```
 
 ## Commit-Nachrichten
 
-Schreiben Sie klare und aussagekräftige Commit-Nachrichten:
+Wir folgen der **Conventional Commits** Spezifikation für klare und strukturierte Commit-Nachrichten:
 
-- Verwenden Sie die Gegenwartsform ("Füge Funktion hinzu" statt "Funktion hinzugefügt")
-- Verwenden Sie den Imperativ ("Bewege Cursor zu..." statt "Bewegt Cursor zu...")
-- Beschränken Sie die erste Zeile auf 72 Zeichen
-- Verweisen Sie auf Issues und Pull Requests, wenn relevant
+**Format:**
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**Typen:**
+- `feat:` Eine neue Funktion
+- `fix:` Eine Fehlerbehebung
+- `docs:` Änderungen an der Dokumentation
+- `style:` Code-Stil-Änderungen (Formatierung, fehlende Semikola usw.)
+- `refactor:` Code-Umgestaltung ohne Funktionsänderungen
+- `perf:` Leistungsverbesserungen
+- `test:` Hinzufügen oder Aktualisieren von Tests
+- `chore:` Build-Prozess, Abhängigkeiten oder Tooling-Änderungen
 
 **Beispiele:**
 ```
-Füge Exportfunktion für Schadenszähler hinzu
+feat(damage-meter): Exportfunktion für DPS-Berichte hinzufügen
 
-Behebe Netzwerkpaket-Parsing für IPv6-Verbindungen
-
-Aktualisiere README mit Installationsanweisungen für macOS
+Implementieren Sie CSV-Exportfunktion für Schadenszähler-Daten,
+wodurch Benutzer Kampfstatistiken zur Analyse speichern können.
 
 Schließt #123
+
+fix(network): IPv6-Paketanalyse-Problem beheben
+
+Aktualisieren Sie den Paketparser, um IPv6-Adressen korrekt zu verarbeiten
+in der Netzwerkverkehrsanalyse.
+
+docs(readme): macOS-Installationsanweisungen hinzufügen
+
+style(code): Importe mit isort formatieren
+
+refactor(core): Netzwerkverfolgungsmodul neu organisieren
 ```
 
 ## Pull-Request-Prozess
