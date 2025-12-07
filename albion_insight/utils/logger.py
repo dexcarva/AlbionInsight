@@ -42,12 +42,13 @@ def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
         fh.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
         logger.addHandler(fh)
 
-        # Formatter
-        formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        # Formatter para o console (mais conciso)
+        console_formatter = logging.Formatter("%(levelname)s: %(name)s: %(message)s")
+        ch.setFormatter(console_formatter)
 
-        # Aplica o formatter a todos os handlers
-        for handler in logger.handlers:
-            handler.setFormatter(formatter)
+        # Formatter para o arquivo (mais detalhado)
+        file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(pathname)s:%(lineno)d - %(message)s")
+        fh.setFormatter(file_formatter)
 
     return logger
 
