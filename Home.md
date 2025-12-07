@@ -26,5 +26,5 @@ Para mais detalhes, consulte o arquivo [[GITHUB_BEST_PRACTICES]].
 *   [[Guia de Uso]]
 *   [[Solução de Problemas (FAQ)]]
 *   [[Guia para Desenvolvedores]]
-*   [[WIKI_CONTENT_ARCHITECTURE]] (Arquitetura do Projeto)
+*   [[Arquitetura de Software]]
 *   [[WIKI_CONTENT_PROTOCOL_DECODING]] (Decodificação do Protocolo)
