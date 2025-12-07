@@ -24,4 +24,15 @@ A aba "Damage Meter" exibe estatísticas de combate em tempo real.
 *   **Resetar:** Limpa todos os dados da sessão atual.
 *   **Salvar:** Exporta os dados da sessão para um arquivo (formato em desenvolvimento).
 
+## 3. Status de Desenvolvimento e Feedback
+
+O Albion Insight está em desenvolvimento ativo. A decodificação do protocolo Photon do Albion Online é um processo contínuo.
+
+*   **O que funciona:** Rastreamento de pacotes, estatísticas básicas (Silver, Fame, Kills, Deaths) e a estrutura do Damage Meter.
+*   **O que está em desenvolvimento:** A decodificação completa de **todos** os eventos de combate (como `CastHit`, `Attack`) para uma precisão total do Damage Meter.
+
+**Seu Feedback é Vital:**
+
+Se você encontrar um bug, um evento não decodificado ou tiver uma sugestão de melhoria, por favor, abra uma [Issue no GitHub](https://github.com/dexcarva/AlbionInsight/issues).
+
 [[Home]]

@@ -34,8 +34,32 @@ Recomendamos o uso dos scripts de instalação para uma configuração mais ráp
     python -m albion_insight
     ```
 
-## 3. macOS
+## 3. macOS (Instalação Manual)
 
-*Instruções de instalação para macOS serão adicionadas em breve. Atualmente, a instalação manual via `pip` e a execução com `sudo` são necessárias.*
+A instalação no macOS é manual e requer a instalação de ferramentas de desenvolvimento e privilégios de administrador.
+
+1.  **Instale o Python:** Instale o Python 3.8+ (via Homebrew ou do site oficial).
+2.  **Instale o Xcode Command Line Tools:**
+    ```bash
+    xcode-select --install
+    ```
+3.  **Instale o libpcap (necessário para o Scapy):**
+    ```bash
+    brew install libpcap
+    ```
+    *Se você não tiver o Homebrew, instale-o primeiro.*
+4.  **Instale as Dependências Python:**
+    ```bash
+    # Crie e ative um ambiente virtual (recomendado)
+    python3 -m venv venv
+    source venv/bin/activate
+    
+    # Instale as dependências
+    pip install flet scapy
+    ```
+5.  **Execute como Root:** A captura de pacotes requer privilégios elevados.
+    ```bash
+    sudo venv/bin/python3 -m albion_insight
+    ```
 
 [[Home]]
