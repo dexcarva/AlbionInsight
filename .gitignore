@@ -42,3 +42,6 @@ htmlcov/
 .env.local
 
 translate_readme.py
+
+# PyInstaller
+dist/
