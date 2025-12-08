@@ -148,17 +148,21 @@ The application is structured into modular components for better maintainability
 | `README.it-IT.md` | Documentazione in italiano. |
 | `README.pt-BR.md` | Documentação em português do Brasil. |
 | `README.ru-RU.md` | Документация на русском языке. |
-| `README.fr-FR.md` | Documentation en français. |\n| `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |\n| `README.ko-KR.md` | 한국어 문서 (Korean documentation). |\n| `README.es-ES.md` | Documentación en español (Spanish documentation). |\n| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
+| `README.fr-FR.md` | Documentation en français. |
+| `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |
+| `README.ko-KR.md` | 한국어 문서 (Korean documentation). |
+| `README.es-ES.md` | Documentación en español (Spanish documentation). |
+| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
 | `README.pl-PL.md` | Dokumentacja w języku polskim (Polish documentation). |
 | `README.sv-SE.md` | Dokumentation på svenska (Swedish documentation). |
 | `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
-| `README.ar-SA.md` | توثيق باللغة العربية (Arabic documentation). |\n|| `README.pt-PT.md` | Documentação em português europeu. |
+| `README.ar-SA.md` | توثيق باللغة العربية (Arabic documentation). |
+| `README.pt-PT.md` | Documentação em português europeu. |
 | `README.hi-IN.md` | Hindi में दस्तावेज़ीकरण (Hindi documentation). |
-| `README.ja-JP.md` | 日本語のドキュメント (Japanese documentation). |
-| `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |
 | `README.hu-HU.md` | Dokumentáció magyar nyelven (Hungarian documentation). |
 | `README.th-TH.md` | เอกสารประกอบภาษาไทย (Thai documentation). |
-| `README.es-ES.md` | Documentación en español (Spanish documentation). |\n| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
+| `README.ja-JP.md` | 日本語のドキュメント (Japanese documentation). |
+| `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |
 
 ## Current Status (Real-Time Data)
 
