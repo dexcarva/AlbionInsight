@@ -22,7 +22,7 @@ Este projeto nasceu como um *port* do projeto original em C# (`AlbionOnline-Stat
 *   [Guia de Instalação](#2-guia-de-instalação)
 *   [Guia de Uso](#3-guia-de-uso)
 *   [Solução de Problemas (FAQ)](#4-solução-de-problemas-faq)
-*   [Como Contribuir](#5-como-contribuir)
+*   [Como Contribuir](#6-como-contribuir)
 
 ---
 
@@ -105,6 +105,42 @@ A aba "Damage Meter" exibe estatísticas de combate em tempo real.
 
 ## 4. Solução de Problemas (FAQ)
 
+---
+
+## 5. Arquitetura do Protocolo Photon
+
+**Título:** Entendendo a Decodificação do Protocolo Photon
+
+**Conteúdo:**
+
+O Albion Insight depende da decodificação correta do protocolo de rede **Photon** para extrair dados do jogo. O Photon é um *middleware* de rede popular em jogos, e o Albion Online o utiliza para a comunicação entre o cliente e o servidor.
+
+### 5.1. O Desafio da Decodificação
+
+O projeto original em C# já possuía a lógica de decodificação. O desafio no Albion Insight foi **portar** essa lógica para o Python, garantindo a fidelidade e a performance.
+
+*   **Camada de Captura:** Utilizamos o **Scapy** para capturar os pacotes UDP nas portas específicas do Albion Online (5055, 5056, 5058).
+*   **Camada de Decodificação:** A classe `ProtocolDecoder` é responsável por:
+    1.  Identificar o cabeçalho do pacote Photon.
+    2.  Extrair o **Operation Code (OpCode)**, que indica o tipo de evento (ex: `UpdateMoney`, `KilledPlayer`).
+    3.  Deserializar o *payload* do pacote para extrair os dados relevantes (ex: a quantidade de prata, o nome do jogador).
+
+### 5.2. Estrutura de Dados
+
+A decodificação alimenta o modelo `SessionStats`, que armazena todas as estatísticas acumuladas da sessão atual.
+
+| Campo | Descrição | Exemplo de OpCode Relacionado |
+| :--- | :--- | :--- |
+| `total_silver` | Prata total ganha/perdida na sessão. | `UpdateMoney` |
+| `total_fame` | Fama total ganha na sessão. | `UpdateFame` |
+| `damage_done` | Dano total causado. | `CastHit`, `Attack` |
+| `healing_done` | Cura total realizada. | `CastHeal` |
+
+**Nota:** A decodificação completa de todos os eventos de combate é um trabalho em andamento, focado na tradução progressiva do código-fonte original.
+
+---
+
+
 **Título:** Perguntas Frequentes e Solução de Problemas
 
 **Conteúdo:**
@@ -118,7 +154,7 @@ A aba "Damage Meter" exibe estatísticas de combate em tempo real.
 
 ---
 
-## 5. Como Contribuir
+## 6. Como Contribuir
 
 **Título:** Guia para Desenvolvedores
 
