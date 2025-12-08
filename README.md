@@ -155,6 +155,7 @@ The application is structured into modular components for better maintainability
 | `README.ar-SA.md` | توثيق باللغة العربية (Arabic documentation). |\n|| `README.pt-PT.md` | Documentação em português europeu. |
 | `README.hi-IN.md` | Hindi में दस्तावेज़ीकरण (Hindi documentation). |
 | `README.hu-HU.md` | Dokumentáció magyar nyelven (Hungarian documentation). |
+| `README.th-TH.md` | เอกสารประกอบภาษาไทย (Thai documentation). |
 | `README.es-ES.md` | Documentación en español (Spanish documentation). |\n| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
 
 ## Current Status (Real-Time Data)
