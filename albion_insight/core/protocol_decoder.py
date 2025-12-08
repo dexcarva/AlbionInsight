@@ -6,7 +6,7 @@ traduzindo o código C# do projeto original.
 
 from typing import Dict, Any
 
-from albion_insight.core.models import SessionStats, PlayerStats
+from albion_insight.core.models import SessionStats
 from albion_insight.utils.logger import logger
 
 
@@ -58,7 +58,9 @@ class ProtocolDecoder:
         # Simulação:
         silver_change = 1000  # Valor extraído do payload
         self.session_stats.total_silver += silver_change
-        logger.info(f"Silver atualizado: +{silver_change}. Total: {self.session_stats.total_silver}")
+        logger.info(
+            f"Silver atualizado: +{silver_change}. Total: {self.session_stats.total_silver}"
+        )
 
     # Outros handlers (fame, combate, etc.) seriam adicionados aqui
     # def _handle_update_fame(self, raw_packet_data: bytes):

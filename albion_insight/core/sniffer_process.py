@@ -1,5 +1,4 @@
-import os
-import sys
+
 from albion_insight.core.network_tracker import main as network_tracker_main
 
 # Este módulo deve ser executado com privilégios de root/administrador

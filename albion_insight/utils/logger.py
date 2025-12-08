@@ -47,7 +47,9 @@ def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
         ch.setFormatter(console_formatter)
 
         # Formatter para o arquivo (mais detalhado)
-        file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(pathname)s:%(lineno)d - %(message)s")
+        file_formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(pathname)s:%(lineno)d - %(message)s"
+        )
         fh.setFormatter(file_formatter)
 
     return logger
