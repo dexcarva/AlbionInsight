@@ -152,7 +152,9 @@ The application is structured into modular components for better maintainability
 | `README.pl-PL.md` | Dokumentacja w języku polskim (Polish documentation). |
 | `README.sv-SE.md` | Dokumentation på svenska (Swedish documentation). |
 | `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
-| `README.ar-SA.md` | توثيق باللغة العربية (Arabic documentation). |\n| `README.pt-PT.md` | Documentação em português europeu. |\n| `README.hi-IN.md` | हिंदी में दस्तावेज़ीकरण (Hindi documentation). |
+| `README.ar-SA.md` | توثيق باللغة العربية (Arabic documentation). |\n|| `README.pt-PT.md` | Documentação em português europeu. |
+| `README.hi-IN.md` | Hindi में दस्तावेज़ीकरण (Hindi documentation). |
+| `README.hu-HU.md` | Dokumentáció magyar nyelven (Hungarian documentation). |
 | `README.es-ES.md` | Documentación en español (Spanish documentation). |\n| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
 
 ## Current Status (Real-Time Data)

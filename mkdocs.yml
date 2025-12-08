@@ -158,6 +158,9 @@ plugins:
         lt-LT:
           name: Lietuvių
           build: true
+        hu-HU:
+          name: Magyar
+          build: true
         fil-PH:
           name: Filipino (Tagalog)
           build: true
