@@ -16,7 +16,7 @@ O projeto adota rigorosas **Melhores Práticas de Projetos GitHub** para garanti
 
 *   **Padrão de Commits:** Utilizamos o **Conventional Commits** para mensagens claras e automação de releases.
 *   **Qualidade de Código:** Ferramentas como **Black**, **Flake8** e **mypy** são aplicadas via `pre-commit hooks` para manter um código limpo e tipado.
-*   **Gestão de Issues:** Priorizamos a **resposta humanizada** e o **fechamento seguro** de issues, sempre buscando a confirmação do usuário para a solução.
+*   **Gestão de Issues:** Priorizamos a **resposta humanizada** e o **fechamento seguro** de issues, sempre buscando a confirmação do usuário para a solução.\n*   **Integração Contínua (CI/CD):** Um pipeline de GitHub Actions garante que todos os Pull Requests passem por testes e verificações de linting antes do merge.
 
 Para mais detalhes, consulte o arquivo [[GITHUB_BEST_PRACTICES]].
 
