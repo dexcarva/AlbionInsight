@@ -19,7 +19,7 @@ O projeto adota rigorosas **Melhores Práticas de Projetos GitHub** para garanti
 *   **Gestão de Issues:** Priorizamos a **resposta humanizada** e o **fechamento seguro** de issues, sempre buscando a confirmação do usuário para a solução.
 *   **Integração Contínua (CI/CD):** Um pipeline de GitHub Actions garante que todos os Pull Requests passem por testes e verificações de linting antes do merge.
 
-Para mais detalhes, consulte o arquivo [[GITHUB_BEST_PRACTICES]].
+Para mais detalhes, consulte o arquivo [[Melhores Práticas de Projetos GitHub no Albion Insight]].
 
 ## Links Rápidos da Wiki
 
@@ -27,6 +27,7 @@ Para mais detalhes, consulte o arquivo [[GITHUB_BEST_PRACTICES]].
 *   [[Guia de Uso]]
 *   [[Solução de Problemas (FAQ)]]
 *   [[Guia de Contribuição Geral]]
+*   [[Melhores Práticas de Projetos GitHub no Albion Insight]]
 *   [[Arquitetura Modular do Albion Insight]]
 *   [[Guia de Contribuição: Decodificação do Protocolo Photon]]
 
