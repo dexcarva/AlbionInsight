@@ -162,7 +162,8 @@ The application is structured into modular components for better maintainability
 | `README.hu-HU.md` | Dokumentáció magyar nyelven (Hungarian documentation). |
 | `README.th-TH.md` | เอกสารประกอบภาษาไทย (Thai documentation). |
 | `README.ja-JP.md` | 日本語のドキュメント (Japanese documentation). |
-| `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |\n| `README.id-ID.md` | Dokumentasi dalam Bahasa Indonesia. |
+| `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |
+| `README.id-ID.md` | Dokumentasi dalam Bahasa Indonesia. |
 | `README.cs-CZ.md` | Dokumentace v češtině (Czech documentation). |
 | `README.nl-NL.md` | Documentatie in het Nederlands (Dutch documentation). |
 
