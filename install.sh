@@ -47,4 +47,3 @@ echo "  2. Run the application with sudo: sudo venv/bin/python3 -m albion_insigh
 echo ""
 echo "Or use the provided run script: ./run.sh"
 echo ""
-

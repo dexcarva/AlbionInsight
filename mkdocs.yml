@@ -95,9 +95,7 @@ plugins:
         pl-PL:
           name: Polski
           build: true
-        hu-HU:
-          name: Magyar
-          build: true
+
         id-ID:
           name: Bahasa Indonesia
           build: true
@@ -158,9 +156,7 @@ plugins:
         lt-LT:
           name: Lietuvių
           build: true
-        hu-HU:
-          name: Magyar
-          build: true
+
 
 markdown_extensions:
   - admonition

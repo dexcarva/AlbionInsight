@@ -27,4 +27,3 @@ fi
 echo "🚀 Starting Albion Insight..."
 echo ""
 ./venv/bin/python3 -m albion_insight
-

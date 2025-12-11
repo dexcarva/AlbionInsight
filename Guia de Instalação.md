@@ -74,7 +74,7 @@ A instalação no macOS é manual e requer a instalação de ferramentas de dese
     # Crie e ative um ambiente virtual (recomendado)
     python3 -m venv venv
     source venv/bin/activate
-    
+
     # Instale as dependências
     pip install flet scapy
     ```

@@ -193,4 +193,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 *A cross-platform solution for the Albion Online community.*
-

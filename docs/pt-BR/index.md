@@ -189,4 +189,3 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ---
 *Uma solução multiplataforma para a comunidade de Albion Online.*
-

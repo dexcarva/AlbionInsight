@@ -6,7 +6,7 @@
 Tout d'abord, merci d'envisager de contribuer à Albion Insight! Ce sont des gens comme vous qui font d'Albion Insight un outil si formidable pour la communauté Albion Online.
 
 ## Table des Matières
-	
+
 - [Code de Conduite](#code-de-conduite)
 - [Comment puis-je Contribuer?](#comment-puis-je-contribuer)
   - [Rapporter des Bugs](#rapporter-des-bugs)
@@ -140,11 +140,11 @@ pylint albion_insight.py
 **Exemples:**
 ```
 Ajouter la fonctionnalité d'exportation du compteur de dégâts
-	
+
 Corriger l'analyse des paquets réseau pour les connexions IPv6
-	
+
 Mettre à jour le README avec les instructions d'installation macOS
-	
+
 Ferme #123
 ```
 
