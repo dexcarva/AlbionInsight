@@ -20,6 +20,7 @@
 **[Монгол хэлээр унших](docs/mn-MN/contributing.md)**
 **[Citiți în Română](docs/ro-RO/contributing.md)**
 **[Читати Українською](docs/uk-UA/contributing.md)**
+**[Leggi in Italiano](docs/it-IT/contributing.md)**
 
 First off, thank you for considering contributing to Albion Insight! It's people like you that make Albion Insight such a great tool for the Albion Online community.
 
