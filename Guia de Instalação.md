@@ -22,6 +22,23 @@ Recomendamos o uso dos scripts de instalação para uma configuração mais ráp
     ```
     *O script `run.sh` solicitará automaticamente a senha de root/sudo para iniciar a captura de pacotes.*
 
+### B. Configuração de Segurança Avançada (Recomendado para Desenvolvedores)
+
+Para evitar a execução de todo o Python como `root`, você pode usar o comando `setcap` para dar permissão de rede apenas ao executável do Python dentro do ambiente virtual.
+
+1.  **Instale as dependências e crie o ambiente virtual** (conforme o passo 1.A).
+2.  **Aplique as permissões de rede:**
+    \`\`\`bash
+    # Assumindo que você está no diretório raiz do projeto
+    sudo setcap cap_net_raw,cap_net_admin=eip venv/bin/python
+    \`\`\`
+    **Atenção:** O uso de `setcap` é mais seguro, mas requer que você confie no código que está executando.
+
+3.  **Execute a aplicação sem `sudo`:**
+    \`\`\`bash
+    venv/bin/python -m albion_insight
+    \`\`\`
+
 ## 2. Windows
 
 1.  **Instale o Python:** Baixe e instale o Python 3.8+ em [python.org](https://www.python.org/downloads/).
