@@ -37,14 +37,14 @@ Para usuários de Linux, o método mais rápido é usar os scripts de instalaç�
     ./run.sh
     \`\`\`
 
-Para outras plataformas ou instalação manual, consulte a seção [Instalação e Configuração](https://github.com/dexcarva/AlbionInsight#installation-and-setup) no \`README.md\` principal.
+Para outras plataformas ou instalação manual, consulte o [[Guia de Instalação Segura no Linux]] e a seção [Instalação e Configuração](https://github.com/dexcarva/AlbionInsight#installation-and-setup) no \`README.md\` principal.
 
 ## 3. Solução de Problemas Comuns (FAQ)
 
 | Problema | Solução Proposta | Status |
 | :--- | :--- | :--- |
-| **Tela Branca no Linux (LTS)** | Este problema geralmente está relacionado a incompatibilidades com a versão do Flet ou drivers gráficos. Tente atualizar o Flet para a versão mais recente ou execute a aplicação com a flag \`--web\` para usar a interface no navegador (se suportado). | Em Investigação/Aguardando Feedback |
-| **"Permission Denied" ao executar** | A captura de pacotes de rede requer privilégios elevados. Certifique-se de estar executando o script com \`sudo\` (Linux/macOS) ou como Administrador (Windows). | Resolvido (Requisito) |
+| **Tela Branca no Linux (LTS)** | Este problema foi reportado na Issue #1 e a correção foi aplicada. Caso persista, verifique se a versão do Flet está atualizada. | **Resolvido** (Fechado por Inatividade) |
+| **"Permission Denied" ao executar** | A captura de pacotes de rede requer privilégios elevados. **Recomendamos o uso do `setcap`** para permitir que o Python capture pacotes sem rodar como root. Consulte o [[Guia de Instalação Segura no Linux]]. | **Resolvido** (Requisito/Documentado) |
 | **Não captura pacotes** | Verifique se o Albion Online está rodando e se o seu firewall não está bloqueando o tráfego nas portas 5055, 5056 e 5058. | Requer Diagnóstico |
 
 ## 4. Contribuição
@@ -52,7 +52,7 @@ Para outras plataformas ou instalação manual, consulte a seção [Instalação
 O Albion Insight é um projeto comunitário. Sua ajuda é sempre bem-vinda!
 
 *   **Reportar Bugs/Sugestões:** Use a seção [Issues](https://github.com/dexcarva/AlbionInsight/issues).
-*   **Contribuir com Código:** Leia nosso [Guia de Contribuição](CONTRIBUTING.md) para começar.
+*   **Contribuir com Código:** Leia nosso [[Guia de Contribuição Geral]] para começar.
 
 ---
 *Esta Wiki é mantida pela comunidade. Sinta-se à vontade para expandir e melhorar esta documentação!*
