@@ -1,67 +1,94 @@
-# Albion Insight - アルビオン・オンライン統計分析ツール
+# Albion Insight
 
-Albion Insightは、人気MMORPG「アルビオン・オンライン」のプレイヤー向けに設計された、オープンソースの統計分析ツールです。このツールは、ゲームのネットワークトラフィックを監視し、貴重なゲーム内データ（マーケット情報、戦利品ログ、ダンジョン追跡など）を収集して分析します。
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/dexcarva/AlbionInsight)
+[![GitHub Issues](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## 主な機能
+**Albion Insight** は、ゲーム『Albion Online』用のクロスプラットフォーム（Linux、Windows、macOS）統計分析ツールであり、**Flet** フレームワークを使用して **Python** で再実装されました。ネットワークトラフィックを分析することで、シルバー、名声、戦闘データ（ダメージメーター）など、リアルタイムのゲーム内統計を追跡するように設計されています。
 
-*   **マーケットデータ分析:** リアルタイムのオークションハウスデータを追跡し、取引の意思決定を支援します。
-*   **戦利品ロガー:** ダンジョンやPvEアクティビティからの戦利品を自動的に記録します。
-*   **ダンジョン追跡:** 完了したダンジョンと関連する統計を監視します。
-*   **クロスプラットフォーム対応:** Pythonで開発されており、Windows、Linux、macOSで動作します。
+このプロジェクトは、元の C#/WPF ベースの `AlbionOnline-StatisticsAnalysis` ツールに代わる、モダンでオープンソースな代替手段であり、マルチプラットフォームの互換性と使いやすさに焦点を当てています。
 
-## インストール
+## 特徴 (Features)
 
-Albion Insightをインストールするには、以下の手順に従ってください。
+*   **クロスプラットフォーム互換性:** Linux、Windows、macOS でネイティブに動作します。
+*   **リアルタイム追跡:** `Scapy` ライブラリを使用して、Albion Online のポート（5055、5056、5058）上の UDP パケットをスニッフィングします。
+*   **ダメージメーター構造:** ライブ戦闘統計（与ダメージ、回復量、DPS）を表示するために必要なデータ構造と UI が含まれています。
+*   **モダンな UI:** Flet で構築されており、高速でネイティブな外観のデスクトップアプリケーションを提供します。
+*   **セッション管理:** セッション統計の開始、停止、リセット、保存が可能です。
 
-### 前提条件
+## 前提条件 (Prerequisites)
 
-*   Python 3.10以上
-*   `pip` (Pythonパッケージインストーラ)
+*   Python 3.8+
+*   **Flet** および **Scapy** ライブラリ。
+*   **ルート/管理者権限:** ネットワークパケットキャプチャに必要です。
 
-### クイックインストール（推奨）
+## インストールとセットアップ (Installation and Setup)
 
-`install.sh` スクリプトを使用して、必要な依存関係を自動的に設定できます。
+### オプション 1: クイックインストール (Linux - 推奨)
 
-```bash
+Linux ユーザー向けに、自動インストールスクリプトを提供しています。
+
+\`\`\`bash
+# 1. リポジトリをクローンする
+git clone https://github.com/dexcarva/AlbionInsight.git
+cd AlbionInsight
+
+# 2. インストールスクリプトを実行する
 ./install.sh
-```
 
-### 手動インストール
+# 3. アプリケーションを実行する
+./run.sh
+\`\`\`
 
-1.  リポジトリをクローンします:
-    ```bash
+`install.sh` スクリプトは以下を実行します。
+- システム依存関係 (`libpcap-dev`、`python3-pip`、`python3-venv`) をインストールします。
+- Python 仮想環境を作成します。
+- 必要なすべての Python パッケージ (Flet、Scapy) をインストールします。
+
+`run.sh` スクリプトは、自動的にルート権限を要求し、アプリケーションを実行します。
+
+### オプション 2: 手動インストール (Windows/macOS/Linux)
+
+1.  **リポジトリをクローンする:**
+    \`\`\`bash
     git clone https://github.com/dexcarva/AlbionInsight.git
     cd AlbionInsight
-    ```
-2.  仮想環境を作成し、アクティブ化します:
-    ```bash
+    \`\`\`
+
+2.  **仮想環境を作成し、アクティブ化する:**
+    \`\`\`bash
     python3 -m venv venv
-    source venv/bin/activate  # Linux/macOS
-    # venv\Scripts\activate  # Windows
-    ```
-3.  依存関係をインストールします:
-    ```bash
+    # Windows
+    .\venv\Scripts\activate
+    # Linux/macOS
+    source venv/bin/activate
+    \`\`\`
+
+3.  **依存関係をインストールする:**
+    \`\`\`bash
     pip install -r requirements.txt
-    ```
+    \`\`\`
 
-## 実行
+4.  **アプリケーションを実行する:**
+    \`\`\`bash
+    # Windows: 管理者として実行する必要があります
+    flet run albion_insight/main.py
+    # Linux/macOS: root/sudo 権限が必要です
+    sudo flet run albion_insight/main.py
+    \`\`\`
 
-アプリケーションを実行するには、アクティブ化された仮想環境内で `run.sh` スクリプトを使用します。
+## 貢献 (Contributing)
 
-```bash
-./run.sh
-```
+貢献を歓迎します！バグ報告、機能リクエスト、コードの改善など、お気軽にご参加ください。詳細については、[CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
-## 貢献
+## ライセンス (License)
 
-私たちはコミュニティからの貢献を歓迎します！バグ報告、機能提案、コードの貢献など、お気軽にお寄せください。
+このプロジェクトは MIT ライセンスの下でライセンスされています。詳細については、[LICENSE](LICENSE) ファイルを参照してください。
 
-*   **バグ報告:** [Issues](https://github.com/dexcarva/AlbionInsight/issues) ページを使用してください。
-*   **コード貢献:** [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+## 謝辞 (Acknowledgments)
 
-## ライセンス
-
-このプロジェクトは [MIT License](LICENSE) の下でライセンスされています。
-
----
-**注:** このツールは、ゲームのネットワークトラフィックを読み取ることで動作します。これは、アルビオン・オンラインの利用規約で許可されている「サードパーティ製ツール」のガイドラインに準拠しています。
+*   元の C#/WPF プロジェクト `AlbionOnline-StatisticsAnalysis` の作成者である **Triky313** に感謝します。
+*   ネットワークパケットキャプチャ機能を提供する **Scapy** チームに感謝します。
+*   クロスプラットフォーム UI を可能にする **Flet** チームに感謝します。
