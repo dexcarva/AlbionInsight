@@ -29,6 +29,14 @@ class SessionStats:
     total_fame: int = 0
     players: Dict[str, PlayerStats] = field(default_factory=dict)
 
+    def reset_stats(self):
+        """Reseta todas as estatísticas da sessão para o estado inicial."""
+        self.start_time = 0.0
+        self.end_time = 0.0
+        self.total_silver = 0
+        self.total_fame = 0
+        self.players = {}
+
 
 @dataclass
 class CombatEvent:
