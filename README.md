@@ -164,6 +164,7 @@ The application is structured into modular components for better maintainability
 | `README.ja-JP.md` | 日本語のドキュメント (Japanese documentation). |
 | `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |\n| `README.id-ID.md` | Dokumentasi dalam Bahasa Indonesia. |
 | `README.cs-CZ.md` | Dokumentace v češtině (Czech documentation). |
+| `README.fi-FI.md` | Dokumentaatio suomeksi (Finnish documentation). |
 | `README.nl-NL.md` | Documentatie in het Nederlands (Dutch documentation). |
 
 ## Current Status (Real-Time Data)
