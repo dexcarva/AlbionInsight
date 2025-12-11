@@ -47,6 +47,10 @@ Para outras plataformas ou instalação manual, consulte o [[Guia de Instalaçã
 | **"Permission Denied" ao executar** | A captura de pacotes de rede requer privilégios elevados. **Recomendamos o uso do `setcap`** para permitir que o Python capture pacotes sem rodar como root. Consulte o [[Guia de Instalação Segura no Linux]]. | **Resolvido** (Requisito/Documentado) |
 | **Não captura pacotes** | Verifique se o Albion Online está rodando e se o seu firewall não está bloqueando o tráfego nas portas 5055, 5056 e 5058. | Requer Diagnóstico |
 
+## 4. Qualidade de Código e Testes
+
+Para entender como garantimos a estabilidade e a qualidade do código, e como você pode contribuir com testes, consulte o [[Guia de Testes e Qualidade de Código]].
+
 ## 5. Segurança e Privacidade
 
 Para entender como o Albion Insight lida com a segurança da execução e a privacidade dos seus dados, consulte o [[Guia de Segurança e Privacidade]].
@@ -56,6 +60,7 @@ Para entender como o Albion Insight lida com a segurança da execução e a priv
 O Albion Insight é um projeto comunitário. Sua ajuda é sempre bem-vinda!
 
 *   **Reportar Bugs/Sugestões:** Use a seção [Issues](https://github.com/dexcarva/AlbionInsight/issues).
+*   **Testar e Validar:** Ajude a testar novas funcionalidades e a validar correções de bugs. Consulte o [[Guia de Testes e Qualidade de Código]].
 *   **Contribuir com Código:** Leia nosso [[Guia de Contribuição Geral]] para começar.
 
 ---
