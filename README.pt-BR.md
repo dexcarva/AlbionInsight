@@ -142,7 +142,10 @@ O aplicativo está estruturado em componentes modulares para melhor manutenibili
 | `albion_insight/utils/` | Funções de utilidade, configuração e registro (logging). |
 | `albion_insight/__main__.py` | Ponto de entrada para o aplicativo. |
 | `README.md` | Este arquivo de documentação (em Inglês). |
-| `README.pt-BR.md` | Este arquivo de documentação em Português do Brasil. |\n| `README.ru-RU.md` | Este arquivo de documentação em Russo. |\n| `README.es-ES.md` | Este arquivo de documentação em Espanhol. |\n| `CONTRIBUTING.md` | Diretrizes para contribuição ao projeto. |
+| `README.pt-BR.md` | Este arquivo de documentação em Português do Brasil. |
+| `README.ru-RU.md` | Este arquivo de documentação em Russo. |
+| `README.es-ES.md` | Este arquivo de documentação em Espanhol. |
+| `CONTRIBUTING.md` | Diretrizes para contribuição ao projeto. |
 | `CODE_OF_CONDUCT.md` | O Código de Conduta do projeto. |
 | `SECURITY.md` | Política para relatar vulnerabilidades de segurança. |
 

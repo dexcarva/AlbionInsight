@@ -23,10 +23,14 @@ O projeto adota rigorosas **Melhores Práticas de Projetos GitHub** para garanti
 
 | Guia | Descrição |
 | :--- | :--- |
-| [[Guia de Instalação]] | Instruções detalhadas para instalação, incluindo a configuração de segurança `setcap` no Linux. |
+| [[Guia de Instalação Segura no Linux]] | Instruções detalhadas para instalação, incluindo a configuração de segurança `setcap` no Linux. |
 | [[Guia de Uso]] | Como utilizar o Damage Meter, rastrear estatísticas e gerenciar sessões. |
-| [[Guia para Desenvolvedores]] | Arquitetura do projeto, fluxo de dados e detalhes sobre a decodificação do protocolo Photon. |
+| [[Arquitetura Modular do Albion Insight]] | Arquitetura do projeto, fluxo de dados e detalhes sobre a decodificação do protocolo Photon. |
 | [[Solução de Problemas (FAQ)]] | Respostas para perguntas frequentes e soluções para problemas comuns de permissão e rastreamento. |
+| [[Guia de Contribuição Geral]] | Como contribuir com o projeto, incluindo o padrão de Conventional Commits. |
+| [[Melhores Práticas de Projetos GitHub no Albion Insight]] | Documentação sobre o fluxo de trabalho de Issues e Pull Requests. |
+
+Para mais detalhes, consulte o arquivo [[Melhores Práticas de Projetos GitHub no Albion Insight]].
 
 ---
 *O Albion Insight é um projeto de código aberto, feito pela comunidade para a comunidade.*

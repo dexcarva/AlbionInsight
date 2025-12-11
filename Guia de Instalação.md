@@ -1,10 +1,14 @@
-# Instalação e Configuração
+# Guia de Instalação e Configuração
 
 A instalação do Albion Insight requer o Python 3.8+ e privilégios de administrador/root para a captura de pacotes de rede.
 
-## 1. Linux (Recomendado)
+## 1. Linux (Recomendado - Instalação Segura com `setcap`)
 
-Recomendamos o uso dos scripts de instalação para uma configuração mais rápida:
+O Albion Insight utiliza a biblioteca `Scapy` para "farejar" (sniff) o tráfego de rede. Para evitar a má prática de executar o aplicativo inteiro como `root`, usamos o utilitário `setcap` para conceder ao binário do Python apenas as permissões de rede necessárias.
+
+### 1.1. Instalação Rápida (Recomendado)
+
+Recomendamos o uso dos scripts de instalação para uma configuração mais rápida e segura:
 
 1.  **Clone o Repositório:**
     ```bash
@@ -15,12 +19,12 @@ Recomendamos o uso dos scripts de instalação para uma configuração mais ráp
     ```bash
     ./install.sh
     ```
-    *Este script instalará as dependências do sistema (`libpcap-dev`) e criará um ambiente virtual.*
-3.  **Execute o Aplicativo:**
+    *Este script instalará as dependências do sistema (`libpcap-dev`, `libcap2-bin`), criará um ambiente virtual e aplicará o `setcap` de forma segura.*
+3.  **Execute o Aplicativo (Sem `sudo`):**
     ```bash
     ./run.sh
     ```
-    *O script `run.sh` solicitará automaticamente a senha de root/sudo para iniciar a captura de pacotes.*
+    *O script `run.sh` executa o Python do ambiente virtual, que já possui as capacidades de rede necessárias, sem a necessidade de `sudo`.*
 
 ### B. Configuração de Segurança Avançada (Recomendado para Desenvolvedores)
 
