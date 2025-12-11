@@ -4,7 +4,7 @@ A lógica de decodificação real deve ser implementada aqui,
 traduzindo o código C# do projeto original.
 """
 
-from typing import Dict, Any
+from typing import Any, Dict
 
 from albion_insight.core.models import SessionStats
 from albion_insight.utils.logger import logger

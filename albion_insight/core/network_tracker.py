@@ -7,10 +7,10 @@ from datetime import datetime
 from scapy.all import get_if_list, sniff  # type: ignore
 from scapy.layers.inet import IP, UDP
 
-from .protocol_decoder import ProtocolDecoder
-from .models import SessionStats
-
 from albion_insight.utils.logger import logger
+
+from .models import SessionStats
+from .protocol_decoder import ProtocolDecoder
 
 # Variável global para controlar o estado do rastreador
 
