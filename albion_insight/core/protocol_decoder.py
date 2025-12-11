@@ -20,7 +20,7 @@ class ProtocolDecoder:
         # Mapeamento de OpCodes do Photon para métodos de tratamento
         self.op_code_handlers: Dict[int, Any] = {
             # Exemplo de OpCodes (precisam ser verificados no projeto original)
-            # 1: self._handle_update_money,
+            1: self._handle_update_money,
             # 2: self._handle_update_fame,
             # 3: self._handle_killed_player,
             # 4: self._handle_died,
