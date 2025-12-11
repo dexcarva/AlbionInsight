@@ -161,15 +161,6 @@ plugins:
         hu-HU:
           name: Magyar
           build: true
-        fil-PH:
-          name: Filipino (Tagalog)
-          build: true
-        he-IL:
-          name: עברית
-          build: true
-        ja-JP:
-          name: 日本語
-          build: true
 
 markdown_extensions:
   - admonition
