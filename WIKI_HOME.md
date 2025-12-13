@@ -47,15 +47,21 @@ Para outras plataformas ou instalação manual, consulte o [[Guia de Instalaçã
 | **"Permission Denied" ao executar** | A captura de pacotes de rede requer privilégios elevados. **Recomendamos o uso do `setcap`** para permitir que o Python capture pacotes sem rodar como root. Consulte o [[Guia de Instalação Segura no Linux]]. | **Resolvido** (Requisito/Documentado) |
 | **Não captura pacotes** | Verifique se o Albion Online está rodando e se o seu firewall não está bloqueando o tráfego nas portas 5055, 5056 e 5058. | Requer Diagnóstico |
 
-## 4. Qualidade de Código e Testes
+## 4. Decodificação do Protocolo Photon
+
+Para desenvolvedores e usuários avançados, entender como o Albion Insight interpreta os dados do jogo é crucial. A ferramenta utiliza a lógica de engenharia reversa do projeto original para desserializar os pacotes do Photon Engine.
+
+*   **Detalhes Técnicos:** Consulte o [[Decodificação do Protocolo Photon no Albion Insight]] para uma explicação aprofundada sobre a captura de pacotes, OpCodes e extração de estatísticas.
+
+## 5. Qualidade de Código e Testes
 
 Para entender como garantimos a estabilidade e a qualidade do código, e como você pode contribuir com testes, consulte o [[Guia de Testes e Qualidade de Código]].
 
-## 5. Segurança e Privacidade
+## 6. Segurança e Privacidade
 
 Para entender como o Albion Insight lida com a segurança da execução e a privacidade dos seus dados, consulte o [[Guia de Segurança e Privacidade]].
 
-## 6. Contribuição
+## 7. Contribuição
 
 O Albion Insight é um projeto comunitário. Sua ajuda é sempre bem-vinda!
 
