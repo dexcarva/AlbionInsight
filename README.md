@@ -169,6 +169,7 @@ The application is structured into modular components for better maintainability
 | `README.fi-FI.md` | Dokumentaatio suomeksi (Finnish documentation). |
 | `README.nl-NL.md` | Documentatie in het Nederlands (Dutch documentation). |
 | `README.zh-TW.md` | 繁體中文文件 (Traditional Chinese documentation). |
+| `README.el-GR.md` | Τεκμηρίωση στα Ελληνικά (Greek documentation). |
 
 ## Current Status (Real-Time Data)
 
