@@ -1,6 +1,7 @@
 """Módulo de configuração centralizado de logging para a aplicação Albion Insight."""
 
 import logging
+import sys
 from pathlib import Path
 from typing import Optional
 
@@ -28,7 +29,7 @@ def setup_logger(name: str, log_file: Optional[str] = None) -> logging.Logger:
     # Evita adicionar handlers duplicados se o logger já foi configurado
     if not logger.handlers:
         # Console handler
-        ch = logging.StreamHandler()
+        ch = logging.StreamHandler(sys.stderr)
         ch.setLevel(getattr(logging, Config.LOG_LEVEL, logging.INFO))
         logger.addHandler(ch)
 
