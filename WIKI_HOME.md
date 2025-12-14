@@ -61,11 +61,19 @@ Para entender como garantimos a estabilidade e a qualidade do código, e como vo
 
 Para entender como o Albion Insight lida com a segurança da execução e a privacidade dos seus dados, consulte o [[Guia de Segurança e Privacidade]].
 
-## 7. Contribuição
+## 7. Guias Técnicos e de Governança
+
+Para uma compreensão mais aprofundada da estrutura do projeto e das políticas de gestão, consulte os seguintes guias:
+
+*   **Arquitetura Modular:** Entenda a separação de responsabilidades entre os módulos Core, UI e Utils. Consulte o [[Arquitetura Modular do Albion Insight]].
+*   **Melhores Práticas de GitHub:** Detalhes sobre Conventional Commits, gestão de Issues e Pull Requests. Consulte o [[Melhores Práticas de Projetos GitHub no Albion Insight]].
+
+## 8. Contribuição
 
 O Albion Insight é um projeto comunitário. Sua ajuda é sempre bem-vinda!
 
 *   **Reportar Bugs/Sugestões:** Use a seção [Issues](https://github.com/dexcarva/AlbionInsight/issues).
+*   **Melhores Práticas de GitHub:** Detalhes sobre Conventional Commits, gestão de Issues e Pull Requests. Consulte o [[Melhores Práticas de Projetos GitHub no Albion Insight]].
 *   **Testar e Validar:** Ajude a testar novas funcionalidades e a validar correções de bugs. Consulte o [[Guia de Testes e Qualidade de Código]].
 *   **Contribuir com Código:** Leia nosso [[Guia de Contribuição Geral]] para começar.
 
