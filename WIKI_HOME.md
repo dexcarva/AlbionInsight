@@ -47,34 +47,21 @@ Para outras plataformas ou instalação manual, consulte o [[Guia de Instalaçã
 | **"Permission Denied" ao executar** | A captura de pacotes de rede requer privilégios elevados. **Recomendamos o uso do `setcap`** para permitir que o Python capture pacotes sem rodar como root. Consulte o [[Guia de Instalação Segura no Linux]]. | **Resolvido** (Requisito/Documentado) |
 | **Não captura pacotes** | Verifique se o Albion Online está rodando e se o seu firewall não está bloqueando o tráfego nas portas 5055, 5056 e 5058. | Requer Diagnóstico |
 
-## 4. Decodificação do Protocolo Photon
-
-Para desenvolvedores e usuários avançados, entender como o Albion Insight interpreta os dados do jogo é crucial. A ferramenta utiliza a lógica de engenharia reversa do projeto original para desserializar os pacotes do Photon Engine.
-
-*   **Detalhes Técnicos:** Consulte o [[Decodificação do Protocolo Photon no Albion Insight]] para uma explicação aprofundada sobre a captura de pacotes, OpCodes e extração de estatísticas.
-
-## 5. Qualidade de Código e Testes
-
-Para entender como garantimos a estabilidade e a qualidade do código, e como você pode contribuir com testes, consulte o [[Guia de Testes e Qualidade de Código]].
-
-## 6. Segurança e Privacidade
-
-Para entender como o Albion Insight lida com a segurança da execução e a privacidade dos seus dados, consulte o [[Guia de Segurança e Privacidade]].
-
-## 7. Guias Técnicos e de Governança
+## 4. Guias Técnicos e de Governança
 
 Para uma compreensão mais aprofundada da estrutura do projeto e das políticas de gestão, consulte os seguintes guias:
 
 *   **Arquitetura Modular:** Entenda a separação de responsabilidades entre os módulos Core, UI e Utils. Consulte o [[Arquitetura Modular do Albion Insight]].
-*   **Melhores Práticas de GitHub:** Detalhes sobre Conventional Commits, gestão de Issues e Pull Requests. Consulte o [[Melhores Práticas de Projetos GitHub no Albion Insight]].
+*   **Decodificação do Protocolo Photon:** Detalhes técnicos sobre a captura de pacotes, OpCodes e extração de estatísticas. Consulte o [[Decodificação do Protocolo Photon no Albion Insight]].
+*   **Qualidade de Código e Testes:** Entenda como garantimos a estabilidade e a qualidade do código, e como você pode contribuir com testes. Consulte o [[Guia de Testes e Qualidade de Código]].
+*   **Segurança e Privacidade:** Entenda como o Albion Insight lida com a segurança da execução e a privacidade dos seus dados. Consulte o [[Guia de Segurança e Privacidade]].
+*   **Governança e Melhores Práticas:** Detalhes sobre padrões de código, gestão de Issues e fluxo de Pull Requests. Consulte o [[Governança e Melhores Práticas do Projeto Albion Insight]].
 
-## 8. Contribuição
+## 5. Contribuição
 
 O Albion Insight é um projeto comunitário. Sua ajuda é sempre bem-vinda!
 
 *   **Reportar Bugs/Sugestões:** Use a seção [Issues](https://github.com/dexcarva/AlbionInsight/issues).
-*   **Melhores Práticas de GitHub:** Detalhes sobre Conventional Commits, gestão de Issues e Pull Requests. Consulte o [[Melhores Práticas de Projetos GitHub no Albion Insight]].
-*   **Testar e Validar:** Ajude a testar novas funcionalidades e a validar correções de bugs. Consulte o [[Guia de Testes e Qualidade de Código]].
 *   **Contribuir com Código:** Leia nosso [[Guia de Contribuição Geral]] para começar.
 
 ---
