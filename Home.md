@@ -29,6 +29,7 @@ O projeto adota rigorosas **Melhores Práticas de Projetos GitHub** para garanti
 | [[Solução de Problemas (FAQ)]] | Respostas para perguntas frequentes e soluções para problemas comuns de permissão e rastreamento. |
 | [[Guia de Contribuição Geral]] | Como contribuir com o projeto, incluindo o padrão de Conventional Commits. |
 | [[Melhores Práticas de Projetos GitHub no Albion Insight]] | Documentação sobre o fluxo de trabalho de Issues e Pull Requests. |
+| [[README.zu-ZA]] | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
 
 Para mais detalhes, consulte o arquivo [[Melhores Práticas de Projetos GitHub no Albion Insight]].
 
