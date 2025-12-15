@@ -172,6 +172,7 @@ The application is structured into modular components for better maintainability
 | `README.el-GR.md` | Τεκμηρίωση στα Ελληνικά (Greek documentation). |
 | `README.fa-IR.md` | مستندات به زبان فارسی (Persian documentation). |
 | `README.uk-UA.md` | Документація українською мовою (Ukrainian documentation). |
+| `README.zu-ZA.md` | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
 
 ## Current Status (Real-Time Data)
 
