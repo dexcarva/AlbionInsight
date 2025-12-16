@@ -40,6 +40,7 @@ Para usuários de Linux, o método mais rápido é usar os scripts de instalaç�
 Para outras plataformas ou instalação manual, consulte o [[Guia de Instalação Segura no Linux]] e a seção [Instalação e Configuração](https://github.com/dexcarva/AlbionInsight#installation-and-setup) no \`README.md\` principal.
 
 **Documentação em Ucraniano:** Para usuários de língua ucraniana, a documentação completa está disponível em [[README.uk-UA.md]].
+**Documentation in Nepali:** For Nepali-speaking users, the full documentation is available in [[README.ne-NP.md]].
 **Documentation in English:** For English-speaking users, the full documentation is available in [[WIKI_CONTENT_ARCHITECTURE_EN]].
 
 ## 3. Solução de Problemas Comuns (FAQ)
