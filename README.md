@@ -146,7 +146,7 @@ The application is structured into modular components for better maintainability
 | `CODE_OF_CONDUCT.md` | The project's Code of Conduct. |
 | `SECURITY.md` | Policy for reporting security vulnerabilities. |
 | `| README.it-IT.md | Documentazione in italiano. |\n| README.lv-LV.md | Dokumentācija latviešu valodā. || `README.pt-BR.md` | Documentação em português do Brasil. |
-| `README.ru-RU.md` | Документация на русском языке. |
+| `README.ru-RU.md` | Документация на русском языке. |\n| `README.ca-ES.md` | Documentació en català (Catalan documentation). |
 | `README.fr-FR.md` | Documentation en français. |
 | `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |
 | `README.ko-KR.md` | 한국어 문서 (Korean documentation). |
