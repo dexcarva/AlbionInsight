@@ -156,6 +156,9 @@ plugins:
         lt-LT:
           name: Lietuvių
           build: true
+        ne-NP:
+          name: नेपाली
+          build: true
 
 
 markdown_extensions:

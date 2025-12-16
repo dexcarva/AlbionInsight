@@ -1,11 +1,5 @@
 # Albion Insight
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/dexcarva/AlbionInsight)
-[![GitHub Issues](https://img.shields.io/github/issues/dexcarva/AlbionInsight)](https://github.com/dexcarva/AlbionInsight/issues)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
-
 **Albion Insight** is a cross-platform (Linux, Windows, macOS) statistics analysis tool for the game Albion Online, re-implemented in **Python** using the **Flet** framework. It is designed to track real-time in-game statistics, including silver, fame, and combat data (Damage Meter), by analyzing network traffic.
 
 This project is a modern, open-source alternative to the original C#/WPF-based `AlbionOnline-StatisticsAnalysis` tool, focusing on multi-platform compatibility and ease of use.
@@ -30,7 +24,7 @@ This project is a modern, open-source alternative to the original C#/WPF-based `
 
 For Linux users, we provide automated installation scripts:
 
-\`\`\`bash
+```bash
 # 1. Clone the repository
 git clone https://github.com/dexcarva/AlbionInsight.git
 cd AlbionInsight
@@ -40,7 +34,7 @@ cd AlbionInsight
 
 # 3. Run the application
 ./run.sh
-\`\`\`
+```
 
 The `install.sh` script will:
 - Install system dependencies (`libpcap-dev`, `python3-pip`, `python3-venv`)
@@ -55,10 +49,10 @@ The `run.sh` script will automatically request root privileges and run the appli
 
 **On Linux (Debian/Ubuntu):**
 
-\`\`\`bash
+```bash
 sudo apt update
 sudo apt install libpcap-dev python3-pip python3-venv
-\`\`\`
+```
 
 **On Windows:**
 
@@ -68,7 +62,7 @@ Install Python 3.8+ from [python.org](https://www.python.org/downloads/)
 
 **On Linux (using virtual environment - recommended):**
 
-\`\`\`bash
+```bash
 # Create virtual environment
 python3 -m venv venv
 
@@ -77,19 +71,19 @@ source venv/bin/activate
 
 # Install dependencies
 pip install flet scapy
-\`\`\`
+```
 
 **On Linux (system-wide installation):**
 
-\`\`\`bash
+```bash
 pip3 install flet scapy --break-system-packages
-\`\`\`
+```
 
 **On Windows:**
 
-\`\`\`bash
+```bash
 pip install flet scapy
-\`\`\`
+```
 
 #### 3. Running the Application
 
@@ -97,21 +91,21 @@ Since network sniffing requires elevated privileges, you must run the applicatio
 
 **On Linux (with virtual environment):**
 
-\`\`\`bash
+```bash
 sudo venv/bin/python3 -m albion_insight
-\`\`\`
+```
 
 **On Linux (system-wide installation):**
 
-\`\`\`bash
+```bash
 sudo python3 -m albion_insight
-\`\`\`
+```
 
 **On Windows (Run Command Prompt/PowerShell as Administrator):**
 
-\`\`\`bash
+```bash
 python -m albion_insight
-\`\`\`
+```
 
 The application will open in a native desktop window.
 
@@ -123,11 +117,11 @@ For detailed instructions on building executables for Linux, Windows, and macOS,
 
 ### Quick Build (Linux)
 
-\`\`\`bash
+```bash
 source venv/bin/activate
 pip install pyinstaller
 pyinstaller --name "AlbionInsight" --onefile --windowed albion_insight/main.py
-\`\`\`
+```
 
 The executable will be located in the `dist/` folder.
 
@@ -142,38 +136,16 @@ The application is structured into modular components for better maintainability
 | `albion_insight/utils/` | Utility functions, configuration, and logging. |
 | `albion_insight/__main__.py` | Entry point for the application. |
 | `README.md` | This documentation file. |
+| `README.pt-BR.md` | This documentation file in Brazilian Portuguese. |
+| `README.fil-PH.md` | This documentation file in Filipino (Tagalog). |
+| `README.pt-PT.md` | This documentation file in Portuguese (Portugal). |
+| `README.ko-KR.md` | This documentation file in Korean. |
+| `README.sv-SE.md` | This documentation file in Swedish. |
+| `README.da-DK.md` | This documentation file in Danish. |
+| `CONTRIBUTING.sv-SE.md` | Guidelines for contributing to the project in Swedish. |
 | `CONTRIBUTING.md` | Guidelines for contributing to the project. |
 | `CODE_OF_CONDUCT.md` | The project's Code of Conduct. |
 | `SECURITY.md` | Policy for reporting security vulnerabilities. |
-| `README.it-IT.md` | Documentazione in italiano. |
-| `README.pt-BR.md` | Documentação em português do Brasil. |
-| `README.ru-RU.md` | Документация на русском языке. |
-| `README.fr-FR.md` | Documentation en français. |
-| `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |
-| `README.ko-KR.md` | 한국어 문서 (Korean documentation). |
-| `README.es-ES.md` | Documentación en español (Spanish documentation). |
-| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
-| `README.pl-PL.md` | Dokumentacja w języku polskim (Polish documentation). |
-| `README.sv-SE.md` | Dokumentation på svenska (Swedish documentation). |
-| `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
-| `README.ar-SA.md` | توثيق باللغة العربية (Arabic documentation). |
-| `README.pt-PT.md` | Documentação em português europeu. |
-| `README.hi-IN.md` | Hindi में दस्तावेज़ीकरण (Hindi documentation). |
-| `README.hu-HU.md` | Dokumentáció magyar nyelven (Hungarian documentation). |
-| `README.th-TH.md` | เอกสารประกอบภาษาไทย (Thai documentation). |
-| `README.ja-JP.md` | 日本語のドキュメント (Japanese documentation). |
-| `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |
-| `README.id-ID.md` | Dokumentasi dalam Bahasa Indonesia. |
-| `README.sk-SK.md` | Dokumentácia v slovenčine (Slovak documentation). |
-| `README.cs-CZ.md` | Dokumentace v češtině (Czech documentation). |
-| `README.fi-FI.md` | Dokumentaatio suomeksi (Finnish documentation). |
-| `README.nl-NL.md` | Documentatie in het Nederlands (Dutch documentation). |
-| `README.zh-TW.md` | 繁體中文文件 (Traditional Chinese documentation). |
-| `README.el-GR.md` | Τεκμηρίωση στα Ελληνικά (Greek documentation). |
-| `README.fa-IR.md` | مستندات به زبان فارسی (Persian documentation). |
-| `README.uk-UA.md` | Документація українською мовою (Ukrainian documentation). |
-| `README.zu-ZA.md` | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
-| `README.ne-NP.md` | नेपालीमा कागजात (Nepali documentation). |
 
 ## Current Status (Real-Time Data)
 
