@@ -95,6 +95,9 @@ plugins:
         pl-PL:
           name: Polski
           build: true
+        lv-LV:
+          name: Latviešu
+          build: true
 
         id-ID:
           name: Bahasa Indonesia
