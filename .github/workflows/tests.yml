@@ -1,0 +1,78 @@
+name: Tests and Code Quality
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint with flake8
+        run: |
+          flake8 albion_insight tests --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 albion_insight tests --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
+
+      - name: Type check with mypy
+        run: mypy albion_insight --ignore-missing-imports
+        continue-on-error: true
+
+      - name: Run tests with pytest
+        run: pytest tests/ -v --cov=albion_insight --cov-report=xml --cov-report=term-missing
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+        continue-on-error: true
+
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Check code formatting with black
+        run: black --check albion_insight tests
+        continue-on-error: true
+
+      - name: Check import sorting with isort
+        run: isort --check-only albion_insight tests
+        continue-on-error: true
+
+      - name: Run pylint
+        run: pylint albion_insight --exit-zero
+        continue-on-error: true
