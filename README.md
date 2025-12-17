@@ -141,38 +141,48 @@ The application is structured into modular components for better maintainability
 | `albion_insight/ui/` | User interface components built with Flet. |
 | `albion_insight/utils/` | Utility functions, configuration, and logging. |
 | `albion_insight/__main__.py` | Entry point for the application. |
-| `README.md` | This documentation file. |
+| `README.md` | This documentation file (English). |
 | `CONTRIBUTING.md` | Guidelines for contributing to the project. |
 | `CODE_OF_CONDUCT.md` | The project's Code of Conduct. |
 | `SECURITY.md` | Policy for reporting security vulnerabilities. |
-| `| README.it-IT.md | Documentazione in italiano. |\n| README.lv-LV.md | Dokumentācija latviešu valodā. || `README.pt-BR.md` | Documentação em português do Brasil. |
-| `README.ru-RU.md` | Документация на русском языке. |\n| `README.ca-ES.md` | Documentació en català (Catalan documentation). |
-| `README.fr-FR.md` | Documentation en français. |
-| `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |
-| `README.ko-KR.md` | 한국어 문서 (Korean documentation). |
-| `README.es-ES.md` | Documentación en español (Spanish documentation). |
-| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
-| `README.pl-PL.md` | Dokumentacja w języku polskim (Polish documentation). |
-| `README.sv-SE.md` | Dokumentation på svenska (Swedish documentation). |
-| `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
 | `README.ar-SA.md` | توثيق باللغة العربية (Arabic documentation). |
-| `README.pt-PT.md` | Documentação em português europeu. |
+| `README.ca-ES.md` | Documentació en català (Catalan documentation). |
+| `README.cs-CZ.md` | Dokumentace v češtině (Czech documentation). |
+| `README.da-DK.md` | Dokumentation på dansk (Danish documentation). |
+| `README.de-DE.md` | Dokumentation in deutscher Sprache (German documentation). |
+| `README.el-GR.md` | Τεκμηρίωση στα Ελληνικά (Greek documentation). |
+| `README.es-ES.md` | Documentación en español (Spanish documentation). |
+| `README.fa-IR.md` | مستندات به زبان فارسی (Persian documentation). |
+| `README.fi-FI.md` | Dokumentaatio suomeksi (Finnish documentation). |
+| `README.fi.md` | Dokumentaatio suomeksi (Finnish documentation - Generic). |
+| `README.fil-PH.md` | Dokumentasyon sa Filipino (Filipino documentation). |
+| `README.fr-FR.md` | Documentation en français (French documentation). |
+| `README.he-IL.md` | תיעוד בעברית (Hebrew documentation). |
 | `README.hi-IN.md` | Hindi में दस्तावेज़ीकरण (Hindi documentation). |
 | `README.hu-HU.md` | Dokumentáció magyar nyelven (Hungarian documentation). |
-| `README.th-TH.md` | เอกสารประกอบภาษาไทย (Thai documentation). |
+| `README.id-ID.md` | Dokumentasi dalam Bahasa Indonesia (Indonesian documentation). |
+| `README.it-IT.md` | Documentazione in italiano (Italian documentation). |
 | `README.ja-JP.md` | 日本語のドキュメント (Japanese documentation). |
-| `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |
-| `README.id-ID.md` | Dokumentasi dalam Bahasa Indonesia. |
-| `README.sk-SK.md` | Dokumentácia v slovenčine (Slovak documentation). |
-| `README.cs-CZ.md` | Dokumentace v češtině (Czech documentation). |
-| `README.fi-FI.md` | Dokumentaatio suomeksi (Finnish documentation). |
-| `README.nl-NL.md` | Documentatie in het Nederlands (Dutch documentation). |
-| `README.zh-TW.md` | 繁體中文文件 (Traditional Chinese documentation). |
-| `README.el-GR.md` | Τεκμηρίωση στα Ελληνικά (Greek documentation). |
-| `README.fa-IR.md` | مستندات به زبان فارسی (Persian documentation). |
-| `README.uk-UA.md` | Документація українською мовою (Ukrainian documentation). |
-| `README.zu-ZA.md` | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
+| `README.ko-KR.md` | 한국어 문서 (Korean documentation). |
+| `README.lt-LT.md` | Dokumentacija lietuvių kalba (Lithuanian documentation). |
+| `README.lv-LV.md` | Dokumentācija latviešu valodā (Latvian documentation). |
 | `README.ne-NP.md` | नेपालीमा कागजात (Nepali documentation). |
+| `README.nl-NL.md` | Documentatie in het Nederlands (Dutch documentation). |
+| `README.no-NO.md` | Dokumentasjon på norsk (Norwegian documentation). |
+| `README.pl-PL.md` | Dokumentacja w języku polskim (Polish documentation). |
+| `README.pt-BR.md` | Documentação em português do Brasil (Brazilian Portuguese documentation). |
+| `README.pt-PT.md` | Documentação em português europeu (European Portuguese documentation). |
+| `README.ro-RO.md` | Documentație în română (Romanian documentation). |
+| `README.ru-RU.md` | Документация на русском языке (Russian documentation). |
+| `README.sk-SK.md` | Dokumentácia v slovenčine (Slovak documentation). |
+| `README.sv-SE.md` | Dokumentation på svenska (Swedish documentation). |
+| `README.th-TH.md` | เอกสารประกอบภาษาไทย (Thai documentation). |
+| `README.tr-TR.md` | Türkçe dokümantasyon (Turkish documentation). |
+| `README.uk-UA.md` | Документація українською мовою (Ukrainian documentation). |
+| `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
+| `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |
+| `README.zh-TW.md` | 繁體中文文件 (Traditional Chinese documentation). |
+| `README.zu-ZA.md` | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
 
 ## Current Status (Real-Time Data)
 
