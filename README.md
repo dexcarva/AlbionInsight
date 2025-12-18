@@ -182,6 +182,7 @@ The application is structured into modular components for better maintainability
 | `README.vi-VN.md` | Tài liệu bằng tiếng Việt (Vietnamese documentation). |
 | `README.zh-CN.md` | 简体中文文档 (Simplified Chinese documentation). |
 | `README.zh-TW.md` | 繁體中文文件 (Traditional Chinese documentation). |
+| `README.gl-ES.md` | Documentación en galego (Galician documentation). |
 | `README.zu-ZA.md` | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
 
 ## Current Status (Real-Time Data)
