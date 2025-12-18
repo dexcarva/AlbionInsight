@@ -4,6 +4,7 @@ Bem-vindo à Wiki do **Albion Insight**, a ferramenta de análise de estatístic
 
 O Albion Insight é um projeto de código aberto, reescrito em Python a partir do projeto original em C# (`AlbionOnline-StatisticsAnalysis`), com o objetivo de fornecer à comunidade uma ferramenta leve, moderna e compatível com Linux, Windows e macOS.
 
+
 ## 1. O que é Albion Insight?
 
 É um sniffer de pacotes de rede que monitora o tráfego de dados entre o cliente do Albion Online e os servidores do jogo. Ele decodifica esses pacotes para extrair informações valiosas em tempo real, como:
@@ -40,6 +41,7 @@ Para usuários de Linux, o método mais rápido é usar os scripts de instalaç�
 Para outras plataformas ou instalação manual, consulte o [[Guia de Instalação Segura no Linux]] e a seção [Instalação e Configuração](https://github.com/dexcarva/AlbionInsight#installation-and-setup) no \`README.md\` principal.
 
 **Documentação em Ucraniano:** Para usuários de língua ucraniana, a documentação completa está disponível em [[README.uk-UA.md]].
+**Documentation in Estonian:** For Estonian-speaking users, the full documentation is available in [[README.et-EE.md]].
 **Documentation in Nepali:** For Nepali-speaking users, the full documentation is available in [[README.ne-NP.md]].
 **Documentation in English:** For English-speaking users, the full documentation is available in [[WIKI_CONTENT_ARCHITECTURE_EN]].
 
