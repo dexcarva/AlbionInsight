@@ -258,6 +258,6 @@ Para manter o projeto saudável:
 
 ---
 
-**Última atualização:** 01/12/2025
+
 
 Para mais informações, consulte o [CONTRIBUTING.md](CONTRIBUTING.md) ou abra uma issue com a label "question".
