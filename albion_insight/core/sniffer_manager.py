@@ -1,7 +1,6 @@
 import sys
 import threading
 import subprocess
-import signal
 
 from ..utils.logger import logger
 
