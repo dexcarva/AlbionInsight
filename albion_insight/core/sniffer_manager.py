@@ -25,7 +25,7 @@ class SnifferManager:
                 line = self.sniffer_process.stdout.readline()
                 if not line:
                     break
-                line = line.decode("utf-8").strip()
+                line = line.decode("utf-8")
                 if line:
                     logger.debug(f"Sniffer Output: {line}")
                     self.data_queue.append(line)
