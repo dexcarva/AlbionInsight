@@ -185,7 +185,7 @@ The application is structured into modular components for better maintainability
 | `README.gl-ES.md` | Documentación en galego (Galician documentation). |
 | `README.et-EE.md` | Dokumentatsioon eesti keeles (Estonian documentation). |
 | `README.zu-ZA.md` | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
-| `README.mn-MN.md` | Монгол хэл дээрх баримт бичиг (Mongolian documentation). |
+| `README.mn-MN.md` | Монгол хэл дээрх баримт бичиг (Mongolian documentation). |\n| `README.sw-KE.md` | Nyaraka kwa lugha ya Kiswahili (Swahili documentation). |
 
 ## Current Status (Real-Time Data)
 
