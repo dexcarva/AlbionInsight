@@ -34,7 +34,7 @@ def process_packet(packet):
         if protocol_decoder.decode_and_update(bytes(packet)):
             # Se decodificado com sucesso, envia um sinal para a UI
             # No futuro, o ProtocolDecoder enviará os dados diretamente para a UI
-            print(f"DATA:SILVER:{current_session.total_silver}")
+            print(f"DATA:SILVER:{current_session.total_silver}", end="")
             sys.stdout.flush()
         logger.debug(
             "Pacote Albion Online recebido de %s:%s para %s:%s",
