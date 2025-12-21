@@ -162,15 +162,11 @@ plugins:
         sk-SK:
           name: Slovenčina
           build: true
-        mn-MN:
-          name: Монгол
-          build: true
-        zh-HK:
-          name: 繁體中文 (香港)
+        zu-ZA:
+          name: IsiZulu
           build: true
         ne-NP:
           name: नेपाली
-          build: true
 
 
 markdown_extensions:
