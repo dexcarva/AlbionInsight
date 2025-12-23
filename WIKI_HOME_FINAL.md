@@ -25,4 +25,4 @@ Seu feedback é muito importante! Por favor, abra uma [Issue no GitHub](https://
 
 ---
 *Última Atualização: 22 de Dezembro de 2025*
-*Criado por Manus - Agente de Manutenção Albion Insight*
+*Criado pela Comunidade Albion Insight*
