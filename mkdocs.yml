@@ -98,7 +98,6 @@ plugins:
         lv-LV:
           name: Latviešu
           build: true
-
         id-ID:
           name: Bahasa Indonesia
           build: true

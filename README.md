@@ -186,6 +186,7 @@ The application is structured into modular components for better maintainability
 | `README.et-EE.md` | Dokumentatsioon eesti keeles (Estonian documentation). |
 | `README.zu-ZA.md` | Imibhalo ngolimi lwesiZulu (Zulu documentation). |
 | `README.mn-MN.md` | Монгол хэл дээрх баримт бичиг (Mongolian documentation). |
+| `README.id-ID.md` | Dokumentasi dalam Bahasa Indonesia (Indonesian documentation). |
 
 ## Current Status (Real-Time Data)
 
