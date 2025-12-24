@@ -49,7 +49,7 @@ Para outras plataformas ou instalação manual, consulte o [[Guia de Instalaçã
 
 | Problema | Solução Proposta | Status |
 | :--- | :--- | :--- |
-| **Tela Branca no Linux (LTS)** | Este problema foi reportado na Issue #1 e a correção foi aplicada. Caso persista, verifique se a versão do Flet está atualizada. A Issue foi reaberta e aguarda confirmação do usuário. | **Aguardando Confirmação** (Issue #1) |
+| **Tela Branca no Linux (LTS)** | Este problema foi reportado na Issue #1 e a correção foi aplicada. A Issue foi fechada por inatividade do usuário. Se o problema persistir, por favor, reabra a Issue #1. | **Fechada por Inatividade** (Issue #1) |
 | **"Permission Denied" ao executar** | A captura de pacotes de rede requer privilégios elevados. **Recomendamos o uso do `setcap`** para permitir que o Python capture pacotes sem rodar como root. Consulte o [[Guia de Instalação Segura no Linux]]. | **Resolvido** (Requisito/Documentado) |
 | **Não captura pacotes** | Verifique se o Albion Online está rodando e se o seu firewall não está bloqueando o tráfego nas portas 5055, 5056 e 5058. | Requer Diagnóstico |
 
